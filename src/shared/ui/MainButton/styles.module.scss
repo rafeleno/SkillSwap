@@ -1,0 +1,53 @@
+.button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+
+  &.tag {
+    background-color: $white;
+  }
+
+  &.accent {
+    background-color: $accent-color;
+    border-color: $accent-color;
+    color: $black;
+
+    &:hover {
+      background-color: $accent-hover-color;
+      border-color: $accent-hover-color;
+    }
+
+    &:active {
+      background-color: $accent-active-color;
+      border-color: $accent-active-color;
+      color: $white;
+    }
+
+    &:disabled {
+      background-color: $disabled-color;
+      border-color: $disabled-color;
+      color: $caption-color;
+    }
+  }
+
+  &.white {
+    background-color: $white;
+    border-color: $accent-color;
+    color: $black;
+
+    &:hover {
+      border-color: $accent-hover-color;
+      color: $caption-color;
+    }
+
+    &:active {
+      border-color: $accent-active-color;
+    }
+
+    &:disabled {
+      border-color: $disabled-color;
+      color: $caption-color;
+    }
+  }
+}
