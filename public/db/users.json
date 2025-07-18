@@ -1,0 +1,1117 @@
+[
+  {
+    "id": "482",
+    "avatar": "../images/user1.jpg",
+    "name": "Иван",
+    "location": "Санкт-Петербург",
+    "age": "34 года",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "music_and_sound",
+      "name": "Игра на барабанах",
+      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без паритуры"
+    },
+    "images": [
+      "../images/playing_drums1.jpg",
+      "../images/playing_drums2.jpg",
+      "../images/playing_drums3.jpg",
+      "../images/playing_drums4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "time_management",
+        "name": "Тайм-менеджмент"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Медитация"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      }
+    ]
+  },
+  {
+    "id": "739",
+    "avatar": "../images/user2.jpg",
+    "name": "Анна",
+    "location": "Казань",
+    "age": "26 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "foreign_languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
+    },
+    "images": [
+      "../images/english1.jpg",
+      "../images/english2.jpg",
+      "../images/english3.jpg",
+      "../images/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      }
+    ]
+  },
+  {
+    "id": "215",
+    "avatar": "../images/user3.jpg",
+    "name": "Максим",
+    "location": "Москва",
+    "age": "23 года",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "health_and_lifestyle",
+      "subcategoryId": "yoga_and_meditation",
+      "name": "Йога для начинающих",
+      "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
+    },
+    "images": [
+      "../images/yoga1.jpg",
+      "../images/yoga2.jpg",
+      "../images/yoga3.jpg",
+      "../images/yoga4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ]
+  },
+  {
+    "id": "604",
+    "avatar": "../images/user4.jpg",
+    "name": "Илона",
+    "location": "Екатеринбург",
+    "age": "33 года",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "photography",
+      "name": "Основы фотографии",
+      "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
+    },
+    "images": [
+      "../images/photography1.jpg",
+      "../images/photography2.jpg",
+      "../images/photography3.jpg",
+      "../images/photography4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "team_management",
+        "name": "Управление командой"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "mindfulness",
+        "name": "Осознанность"
+      }
+    ]
+  },
+  {
+    "id": "918",
+    "avatar": "../images/user5.jpg",
+    "name": "Михаил",
+    "location": "Новосибирск",
+    "age": "29 лет",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "business_and_career",
+      "subcategoryId": "project_management",
+      "name": "Управление проектами",
+      "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
+    },
+    "images": [
+      "../images/project_management1.jpg",
+      "../images/project_management2.jpg",
+      "../images/project_management3.jpg",
+      "../images/project_management4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "music_and_sound",
+        "name": "Фортепиано"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "speed_reading",
+        "name": "Скорочтение"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      }
+    ]
+  },
+  {
+    "id": "357",
+    "avatar": "../images/user6.jpg",
+    "name": "Мария",
+    "location": "Краснодар",
+    "age": "21 год",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "foreign_languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
+    },
+    "images": [
+      "../images/english1.jpg",
+      "../images/english2.jpg",
+      "../images/english3.jpg",
+      "../images/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Йога"
+      }
+    ]
+  },
+  {
+    "id": "846",
+    "avatar": "../images/user7.jpg",
+    "name": "Виктория",
+    "location": "Кемерово",
+    "age": "30 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "home_and_comfort",
+      "subcategoryId": "cleaning_and_organization",
+      "name": "Организация пространства",
+      "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
+    },
+    "images": [
+      "../images/home1.jpg",
+      "../images/home2.jpg",
+      "../images/home3.jpg",
+      "../images/home4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "personal_brand",
+        "name": "Личный бренд"
+      }
+    ]
+  },
+  {
+    "id": "102",
+    "avatar": "../images/user8.jpg",
+    "name": "Елизавета",
+    "location": "Владивосток",
+    "age": "25 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "health_and_lifestyle",
+      "subcategoryId": "mental_health",
+      "name": "Психологическое здоровье",
+      "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
+    },
+    "images": [
+      "../images/mental1.jpg",
+      "../images/mental2.jpg",
+      "../images/mental3.jpg",
+      "../images/mental4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "japanese",
+        "name": "Японский"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "coaching",
+        "name": "Коучинг"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ]
+  },
+  {
+    "id": "573",
+    "avatar": "../images/user9.jpg",
+    "name": "Виктория",
+    "location": "Сочи",
+    "age": "31 год",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "health_and_lifestyle",
+      "subcategoryId": "nutrition_and_health",
+      "name": "Основы здорового питания",
+      "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
+    },
+    "images": [
+      "../images/nutrition1.jpg",
+      "../images/nutrition2.jpg",
+      "../images/nutrition3.jpg",
+      "../images/nutrition4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "english",
+        "name": "Английский"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      }
+    ]
+  },
+  {
+    "id": "294",
+    "avatar": "../images/user10.jpg",
+    "name": "Елена",
+    "location": "Красноярск",
+    "age": "28 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "drawing_and_illustration",
+      "name": "Основы рисования",
+      "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
+    },
+    "images": [
+      "../images/drawing1.jpg",
+      "../images/drawing2.jpg",
+      "../images/drawing3.jpg",
+      "../images/drawing4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "spanish",
+        "name": "Испанский"
+      },
+      {
+        "skillId": "home_and_comfort",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ]
+  },
+  {
+    "id": "680",
+    "avatar": "../images/user11.jpg",
+    "name": "Константин",
+    "location": "Иркутск",
+    "age": "36 лет",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "business_and_career",
+      "subcategoryId": "entrepreneurship",
+      "name": "Основы предпринимательства",
+      "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
+    },
+    "images": [
+      "../images/entrepreneurship1.jpg",
+      "../images/entrepreneurship2.jpg",
+      "../images/entrepreneurship3.jpg",
+      "../images/entrepreneurship4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "physical_training",
+        "name": "Тренировки"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "teaching_skills",
+        "name": "Преподавание"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ]
+  },
+  {
+    "id": "431",
+    "avatar": "../images/user12.jpg",
+    "name": "София",
+    "location": "Абакан",
+    "age": "24 года",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "foreign_languages",
+      "subcategoryId": "german",
+      "name": "Основы немецкого языка",
+      "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
+    },
+    "images": [
+      "../images/german1.jpg",
+      "../images/german2.jpg",
+      "../images/german3.jpg",
+      "../images/german4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "home_and_comfort",
+        "subcategoryId": "cleaning_and_organization",
+        "name": "Уборка"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "music_and_sound",
+        "name": "Музыка"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "resume_and_interview",
+        "name": "Резюме и собеседование"
+      }
+    ]
+  },
+  {
+    "id": "758",
+    "avatar": "../images/user13.jpg",
+    "name": "Екатерина",
+    "location": "Пермь",
+    "age": "33 года",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "education_and_development",
+      "subcategoryId": "speed_reading",
+      "name": "Скорочтение",
+      "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
+    },
+    "images": [
+      "../images/reading1.jpg",
+      "../images/reading2.jpg",
+      "../images/reading3.jpg",
+      "../images/reading4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "mental_health",
+        "name": "Здоровье"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "home_and_comfort",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      }
+    ]
+  },
+  {
+    "id": "019",
+    "avatar": "../images/user14.jpg",
+    "name": "Дарья",
+    "location": "Ярославль",
+    "age": "26 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "home_and_comfort",
+      "subcategoryId": "houseplants",
+      "name": "Уход за домашними растениями",
+      "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
+    },
+    "images": [
+      "../images/houseplants1.jpg",
+      "../images/houseplants2.jpg",
+      "../images/houseplants3.jpg",
+      "../images/houseplants4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "decor_and_diy",
+        "name": "Декор"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "team_management",
+        "name": "Управление"
+      },
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      }
+    ]
+  },
+  {
+    "id": "365",
+    "avatar": "../images/user15.jpg",
+    "name": "Алла",
+    "location": "Архангельск",
+    "age": "22 года",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "video_editing",
+      "name": "Видеомонтаж для начинающих",
+      "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
+    },
+    "images": [
+      "../images/video1.jpg",
+      "../images/video2.jpg",
+      "../images/video3.jpg",
+      "../images/video4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Питание"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      }
+    ]
+  },
+  {
+    "id": "827",
+    "avatar": "../images/user16.jpg",
+    "name": "Максим",
+    "location": "Иркутск",
+    "age": "35 лет",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "music_and_sound",
+      "name": "Игра на барабанах",
+      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без паритуры"
+    },
+    "images": [
+      "../images/playing_drums1.jpg",
+      "../images/playing_drums2.jpg",
+      "../images/playing_drums3.jpg",
+      "../images/playing_drums4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "time_management",
+        "name": "Тайм-менеджмент"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Медитация"
+      }
+    ]
+  },
+  {
+    "id": "540",
+    "avatar": "../images/user17.jpg",
+    "name": "Виктория",
+    "location": "Москва",
+    "age": "30 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "foreign_languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
+    },
+    "images": [
+      "../images/english1.jpg",
+      "../images/english2.jpg",
+      "../images/english3.jpg",
+      "../images/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      }
+    ]
+  },
+  {
+    "id": "693",
+    "avatar": "../images/user18.jpg",
+    "name": "Анатолий",
+    "location": "Киров",
+    "age": "32 года",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "health_and_lifestyle",
+      "subcategoryId": "yoga_and_meditation",
+      "name": "Йога для начинающих",
+      "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
+    },
+    "images": [
+      "../images/yoga1.jpg",
+      "../images/yoga2.jpg",
+      "../images/yoga3.jpg",
+      "../images/yoga4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ]
+  },
+  {
+    "id": "204",
+    "avatar": "../images/user19.jpg",
+    "name": "Любовь",
+    "location": "Уфа",
+    "age": "24 года",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "photography",
+      "name": "Основы фотографии",
+      "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
+    },
+    "images": [
+      "../images/photography1.jpg",
+      "../images/photography2.jpg",
+      "../images/photography3.jpg",
+      "../images/photography4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "team_management",
+        "name": "Управление командой"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "mindfulness",
+        "name": "Осознанность"
+      }
+    ]
+  },
+  {
+    "id": "871",
+    "avatar": "../images/user20.jpg",
+    "name": "Андрей",
+    "location": "Владивосток",
+    "age": "35 лет",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "business_and_career",
+      "subcategoryId": "project_management",
+      "name": "Управление проектами",
+      "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
+    },
+    "images": [
+      "../images/project_management1.jpg",
+      "../images/project_management2.jpg",
+      "../images/project_management3.jpg",
+      "../images/project_management4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "music_and_sound",
+        "name": "Фортепиано"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "speed_reading",
+        "name": "Скорочтение"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      }
+    ]
+  },
+  {
+    "id": "156",
+    "avatar": "../images/user21.jpg",
+    "name": "Влада",
+    "location": "Йошкар-Ола",
+    "age": "21 год",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "foreign_languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
+    },
+    "images": [
+      "../images/english1.jpg",
+      "../images/english2.jpg",
+      "../images/english3.jpg",
+      "../images/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Йога"
+      }
+    ]
+  },
+  {
+    "id": "308",
+    "avatar": "../images/user22.jpg",
+    "name": "Дарья",
+    "location": "Самара",
+    "age": "28 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "home_and_comfort",
+      "subcategoryId": "cleaning_and_organization",
+      "name": "Организация пространства",
+      "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
+    },
+    "images": [
+      "../images/home1.jpg",
+      "../images/home2.jpg",
+      "../images/home3.jpg",
+      "../images/home4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "personal_brand",
+        "name": "Личный бренд"
+      }
+    ]
+  },
+  {
+    "id": "942",
+    "avatar": "../images/user23.jpg",
+    "name": "Наталья",
+    "location": "Ростов-на-Дону",
+    "age": "35 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "health_and_lifestyle",
+      "subcategoryId": "mental_health",
+      "name": "Психологическое здоровье",
+      "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
+    },
+    "images": [
+      "../images/mental1.jpg",
+      "../images/mental2.jpg",
+      "../images/mental3.jpg",
+      "../images/mental4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "japanese",
+        "name": "Японский"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "coaching",
+        "name": "Коучинг"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ]
+  },
+  {
+    "id": "617",
+    "avatar": "../images/user24.jpg",
+    "name": "Ольга",
+    "location": "Челябинск",
+    "age": "31 год",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "health_and_lifestyle",
+      "subcategoryId": "nutrition_and_health",
+      "name": "Основы здорового питания",
+      "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
+    },
+    "images": [
+      "../images/nutrition1.jpg",
+      "../images/nutrition2.jpg",
+      "../images/nutrition3.jpg",
+      "../images/nutrition4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "english",
+        "name": "Английский"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      }
+    ]
+  },
+  {
+    "id": "485",
+    "avatar": "../images/user25.jpg",
+    "name": "Мария",
+    "location": "Красноярск",
+    "age": "28 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "drawing_and_illustration",
+      "name": "Основы рисования",
+      "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
+    },
+    "images": [
+      "../images/drawing1.jpg",
+      "../images/drawing2.jpg",
+      "../images/drawing3.jpg",
+      "../images/drawing4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "spanish",
+        "name": "Испанский"
+      },
+      {
+        "skillId": "home_and_comfort",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ]
+  },
+  {
+    "id": "230",
+    "avatar": "../images/user26.jpg",
+    "name": "Алексей",
+    "location": "Иркутск",
+    "age": "36 лет",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "business_and_career",
+      "subcategoryId": "entrepreneurship",
+      "name": "Основы предпринимательства",
+      "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
+    },
+    "images": [
+      "../images/entrepreneurship1.jpg",
+      "../images/entrepreneurship2.jpg",
+      "../images/entrepreneurship3.jpg",
+      "../images/entrepreneurship4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "physical_training",
+        "name": "Тренировки"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "teaching_skills",
+        "name": "Преподавание"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ]
+  },
+  {
+    "id": "759",
+    "avatar": "../images/user27.jpg",
+    "name": "Ольга",
+    "location": "Нижний Новгород",
+    "age": "30 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "foreign_languages",
+      "subcategoryId": "german",
+      "name": "Основы немецкого языка",
+      "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
+    },
+    "images": [
+      "../images/german1.jpg",
+      "../images/german2.jpg",
+      "../images/german3.jpg",
+      "../images/german4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "home_and_comfort",
+        "subcategoryId": "cleaning_and_organization",
+        "name": "Уборка"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "music_and_sound",
+        "name": "Музыка"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "resume_and_interview",
+        "name": "Резюме и собеседование"
+      }
+    ]
+  },
+  {
+    "id": "804",
+    "avatar": "../images/user28.jpg",
+    "name": "Казань",
+    "location": "Пермь",
+    "age": "25 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "education_and_development",
+      "subcategoryId": "speed_reading",
+      "name": "Скорочтение",
+      "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
+    },
+    "images": [
+      "../images/reading1.jpg",
+      "../images/reading2.jpg",
+      "../images/reading3.jpg",
+      "../images/reading4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "mental_health",
+        "name": "Здоровье"
+      },
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "home_and_comfort",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      }
+    ]
+  },
+  {
+    "id": "312",
+    "avatar": "../images/user29.jpg",
+    "name": "Юлия",
+    "location": "Ярославль",
+    "age": "26 лет",
+    "gender": "Женский",
+    "skillCanTeach": {
+      "skillId": "home_and_comfort",
+      "subcategoryId": "houseplants",
+      "name": "Уход за домашними растениями",
+      "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
+    },
+    "images": [
+      "../images/houseplants1.jpg",
+      "../images/houseplants2.jpg",
+      "../images/houseplants3.jpg",
+      "../images/houseplants4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "creativity_and_art",
+        "subcategoryId": "decor_and_diy",
+        "name": "Декор"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "team_management",
+        "name": "Управление"
+      },
+      {
+        "skillId": "foreign_languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      }
+    ]
+  },
+  {
+    "id": "678",
+    "avatar": "../images/user30.jpg",
+    "name": "Константин",
+    "location": "Архангельск",
+    "age": "22 года",
+    "gender": "Мужской",
+    "skillCanTeach": {
+      "skillId": "creativity_and_art",
+      "subcategoryId": "video_editing",
+      "name": "Видеомонтаж для начинающих",
+      "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
+    },
+    "images": [
+      "../images/video1.jpg",
+      "../images/video2.jpg",
+      "../images/video3.jpg",
+      "../images/video4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health_and_lifestyle",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Питание"
+      },
+      {
+        "skillId": "business_and_career",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "education_and_development",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      }
+    ]
+  }
+]
