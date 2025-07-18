@@ -1,19 +1,37 @@
-$color-text-primary: #253017;
-$color-text-disabled: #9CA197;
-$color-text-link: #508826;
-$color-button-pressed: $color-text-link;
-$color-caption: #69735D;
-$color-toggle: #B2B9A9;
-$color-disabled: #E4E8DF;
-$color-accent: #ABD27A;
-$color-button-hover: #DEEBC5;
-$color-background: #F9FAF7;
-$color-alarm: #E0796E;
-$color-error: #BF3920;
-$color-tag-business: #EEE7F7;
-$color-tag-arts: #F7E7F2;
-$color-tag-languages: #EBE5C5;
-$color-tag-education: #E7F2F6;
-$color-tag-home: #F7EBE5;
-$color-tag-health: #E9F7E7;
-$color-tag-additional: #E8ECF7;
+@import 'styles/global';
+@import 'styles/colors';
+@import 'styles/typography';
+@import './assets/fonts/fonts.scss';
+@import 'styles/mixins';
+
+h1 {
+  @include heading($font-weight-medium, $font-h1-size, $font-h1-line-height, $font-primary);
+}
+
+h2 {
+  @include heading($font-weight-medium, $font-h2-size, $font-h2-line-height, $font-primary);
+}
+
+h3 {
+  @include heading($font-weight-medium, $font-h3-size, $font-h3-line-height, $font-primary);
+}
+
+h4 {
+  @include heading($font-weight-medium, $font-h4-size, $font-h4-line-height, $font-secondary);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: $color-text-primary;
+	font-weight: $font-weight-regular;
+	font-size: $font-h1-size;
+	font-family: $font-secondary;
+	line-height: $font-h3-line-height;
+	background-color: $color-background;
+	border: 0;
+}
+
+caption {
+  @include heading($font-weight-regular, $font-caption-size, $font-caption-line-height, $font-secondary);
+}
