@@ -1,4 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -13,6 +15,7 @@ export default {
     filename: 'bundle.js',
     chunkFilename: '[name].[contenthash].js',
     clean: true,
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -55,6 +58,17 @@ export default {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       chunks: ['main'],
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../public'),
+          to: path.resolve(__dirname, '../dist'),
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
     }),
   ],
 };
