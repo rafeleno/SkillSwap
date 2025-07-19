@@ -20,7 +20,9 @@
     "paths": {
       "@widgetComponents/*": ["widgets/*"],
       "@pageComponents/*": ["pages/*"],
-      "@uiComponents/*": ["ui/*"]
+      "@uiComponents/*": ["ui/*"],
+      "@colors": ["styles/_colors.scss"],
+      "@typographyStyles": ["styles/_typography.scss"]
     }
   },
   "include": ["src"]

@@ -20,6 +20,11 @@ export default {
       '@widgetComponents': path.resolve(__dirname, '../src/widgets'),
       '@pageComponents': path.resolve(__dirname, '../src/pages'),
       '@uiComponents': path.resolve(__dirname, '../src/shared/ui'),
+      '@colors': path.resolve(__dirname, '../src/styles/_colors.scss'),
+      '@typographyStyles': path.resolve(
+        __dirname,
+        '../src/styles/_typography.scss',
+      ),
     },
   },
   module: {
