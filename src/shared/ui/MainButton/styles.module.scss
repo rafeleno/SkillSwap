@@ -1,0 +1,57 @@
+@use '@colors' as c;
+
+.button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+
+  &.tag {
+    background-color: c.$color-card-background;
+  }
+
+  &.accent {
+    background-color: c.$color-accent;
+    border-color: c.$color-accent;
+    color: black;
+
+    &:hover {
+      background-color: c.$color-button-hover;
+      border-color: c.$color-button-hover;
+    }
+
+    &:active {
+      background-color: c.$color-text-link;
+      border-color: c.$color-text-link;
+      color: c.$color-card-background;
+    }
+
+    &:disabled {
+      background-color: c.$color-disabled;
+      border-color: c.$color-disabled;
+      color: c.$color-caption;
+    }
+  }
+
+  &.white {
+    background-color: c.$color-card-background;
+    border-color: c.$color-accent;
+    color: black;
+
+    &:hover {
+      border-color: c.$color-button-hover;
+      color: c.$color-caption;
+    }
+
+    &:active {
+      border-color: c.$color-text-link;
+      color: c.$color-text-primary;
+    }
+
+    &:disabled {
+      border-color: c.$color-disabled;
+      color: c.$color-text-disabled;
+    }
+  }
+}
