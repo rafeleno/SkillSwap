@@ -1,37 +1,37 @@
-@use 'styles/global';
-@use 'styles/colors';
-@use 'styles/typography';
-@use './assets/fonts/fonts.scss';
-@use 'styles/mixins';
+@use './styles/global';
+@use './styles/colors' as c;
+@use './styles/typography' as t;
+@use './styles/mixins' as m;
+@use './assets/fonts/fonts' as *;
 
 h1 {
-  @include heading($font-weight-medium, $font-h1-size, $font-h1-line-height, $font-primary);
+  @include m.heading(t.$font-weight-medium, t.$font-h1-size, t.$font-h1-line-height, t.$font-primary);
 }
 
 h2 {
-  @include heading($font-weight-medium, $font-h2-size, $font-h2-line-height, $font-primary);
+  @include m.heading(t.$font-weight-medium, t.$font-h2-size, t.$font-h2-line-height, t.$font-primary);
 }
 
 h3 {
-  @include heading($font-weight-medium, $font-h3-size, $font-h3-line-height, $font-primary);
+  @include m.heading(t.$font-weight-medium, t.$font-h3-size, t.$font-h3-line-height, t.$font-primary);
 }
 
 h4 {
-  @include heading($font-weight-medium, $font-h4-size, $font-h4-line-height, $font-secondary);
+  @include m.heading(t.$font-weight-medium, t.$font-h4-size, t.$font-h4-line-height, t.$font-secondary);
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	color: $color-text-primary;
-	font-weight: $font-weight-regular;
-	font-size: $font-h1-size;
-	font-family: $font-secondary;
-	line-height: $font-h3-line-height;
-	background-color: $color-background;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  color: c.$color-text-primary;
+  font-weight: t.$font-weight-regular;
+  font-size: t.$font-h1-size;
+  font-family: t.$font-secondary;
+  line-height: t.$font-h3-line-height;
+  background-color: c.$color-background;
+  border: 0;
 }
 
 caption {
-  @include heading($font-weight-regular, $font-caption-size, $font-caption-line-height, $font-secondary);
+  @include m.heading(t.$font-weight-regular, t.$font-caption-size, t.$font-caption-line-height, t.$font-secondary);
 }
