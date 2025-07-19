@@ -6,9 +6,14 @@ export const MainButton: React.FC<MainButtonProps> = ({
   type,
   children,
   disabled,
+  onClick,
 }) => {
   return (
-    <button className={`${styles.button} ${styles[type]}`} disabled={disabled}>
+    <button
+      className={`${styles.button} ${styles[type]}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
