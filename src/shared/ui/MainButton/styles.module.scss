@@ -45,11 +45,12 @@
 
     &:active {
       border-color: c.$color-text-link;
+      color: c.$color-text-primary;
     }
 
     &:disabled {
-      border-color: c.$color-text-disabled;
-      color: c.$color-caption;
+      border-color: c.$color-disabled;
+      color: c.$color-text-disabled;
     }
   }
 }
