@@ -18,9 +18,9 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@widgetComponents/*": ["widgets/*"],
-      "@pageComponents/*": ["pages/*"],
-      "@uiComponents/*": ["ui/*"],
+      "@widgetComponents/*": ["../src/widgets/*"],
+      "@pageComponents/*": ["../src/pages/*"],
+      "@uiComponents/*": ["../src/shared/ui/*"],
       "@images/*": ["../public/images/*"],
       "@svg/*": ["../public/svg/*"]
     }
