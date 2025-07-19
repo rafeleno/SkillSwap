@@ -25,6 +25,8 @@ export default {
         __dirname,
         '../src/styles/_typography.scss',
       ),
+      '@images': path.resolve(__dirname, '../public/images'),
+      '@svg': path.resolve(__dirname, '../public/svg'),
     },
   },
   module: {

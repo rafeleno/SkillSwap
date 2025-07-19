@@ -20,7 +20,9 @@
     "paths": {
       "@widgetComponents/*": ["widgets/*"],
       "@pageComponents/*": ["pages/*"],
-      "@uiComponents/*": ["ui/*"]
+      "@uiComponents/*": ["ui/*"],
+      "@images/*": ["../public/images/*"],
+      "@svg/*": ["../public/svg/*"]
     }
   },
   "include": ["src"]
