@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { ButtonProps } from './MainButton.types';
+import { MainButtonProps } from './MainButton.types';
 
-export const Button: React.FC<ButtonProps> = ({ type, children }) => {
+export const MainButton: React.FC<MainButtonProps> = ({ type, children }) => {
   return (
     <button className={`${styles.button} ${styles[type]}`}>{children}</button>
   );
