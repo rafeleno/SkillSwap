@@ -1,3 +1,5 @@
+@use '../../../styles/colors' as c;
+
 .button {
   padding: 12px 24px;
   border-radius: 12px;
@@ -5,49 +7,49 @@
   border-style: solid;
 
   &.tag {
-    background-color: $white;
+    background-color: c.$color-card-background;
   }
 
   &.accent {
-    background-color: $accent-color;
-    border-color: $accent-color;
-    color: $black;
+    background-color: c.$color-accent;
+    border-color: c.$color-accent;
+    color: black;
 
     &:hover {
-      background-color: $accent-hover-color;
-      border-color: $accent-hover-color;
+      background-color: c.$color-button-hover;
+      border-color: c.$color-button-hover;
     }
 
     &:active {
-      background-color: $accent-active-color;
-      border-color: $accent-active-color;
-      color: $white;
+      background-color: c.$color-text-link;
+      border-color: c.$color-text-link;
+      color: c.$color-card-background;
     }
 
     &:disabled {
-      background-color: $disabled-color;
-      border-color: $disabled-color;
-      color: $caption-color;
+      background-color: c.$color-disabled;
+      border-color: c.$color-disabled;
+      color: c.$color-caption;
     }
   }
 
   &.white {
-    background-color: $white;
-    border-color: $accent-color;
-    color: $black;
+    background-color: c.$color-card-background;
+    border-color: c.$color-accent;
+    color: black;
 
     &:hover {
-      border-color: $accent-hover-color;
-      color: $caption-color;
+      border-color: c.$color-button-hover;
+      color: c.$color-caption;
     }
 
     &:active {
-      border-color: $accent-active-color;
+      border-color: c.$color-text-link;
     }
 
     &:disabled {
-      border-color: $disabled-color;
-      color: $caption-color;
+      border-color: c.$color-text-disabled;
+      color: c.$color-caption;
     }
   }
 }
