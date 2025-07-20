@@ -1,4 +1,18 @@
 {
+  "scripts": {
+    "prepare": "husky",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "create": "plop",
+    "stylelint": "stylelint '**/*{.css,.scss}'",
+    "stylelint:fix": "stylelint --fix",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "jest",
+    "format": "prettier --write '*.{html,scss}'"
+  },
   "dependencies": {
     "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.8.2",
@@ -7,6 +21,7 @@
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
@@ -23,10 +38,8 @@
     "css-minimizer-webpack-plugin": "^7.0.2",
     "cypress": "^14.5.2",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -53,33 +66,17 @@
   "overrides": {
     "eslint": "^9.31.0"
   },
-  "scripts": {
-    "prepare": "husky",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "create": "plop",
-    "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "lint": "eslint",
-    "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
-    "test": "jest"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
+    "src/**/*.{js,ts,tsx,jsx}": [
+      "lint:fix"
     ],
-    "*.(css|scss)": [
-      "stylelint --fix"
-    ],
-    "*.{js,ts,tsx,css,scss,md,json}": [
-      "prettier --write"
+    "src/**/*.{css,scss}": [
+      "stylelint:fix"
     ]
   }
 }

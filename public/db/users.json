@@ -10,7 +10,7 @@
       "skillId": "creativity_and_art",
       "subcategoryId": "music_and_sound",
       "name": "Игра на барабанах",
-      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без паритуры"
+      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
     },
     "images": [
       "../images/skillsImages/playing_drums2.jpg",
@@ -86,12 +86,7 @@
       "name": "Йога для начинающих",
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
     },
-    "images": [
-      "../images/skillsImages/yoga1.jpg",
-      "../images/skillsImages/yoga2.jpg",
-      "../images/skillsImages/yoga3.jpg",
-      "../images/skillsImages/yoga4.jpg"
-    ],
+    "images": ["../images/skillsImages/yoga1.jpg", "../images/skillsImages/yoga2.jpg", "../images/skillsImages/yoga3.jpg", "../images/skillsImages/yoga4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "business_and_career",
@@ -234,12 +229,7 @@
       "name": "Организация пространства",
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
     },
-    "images": [
-      "../images/skillsImages/home1.jpg",
-      "../images/skillsImages/home2.jpg",
-      "../images/skillsImages/home3.jpg",
-      "../images/skillsImages/home4.jpg"
-    ],
+    "images": ["../images/skillsImages/home1.jpg", "../images/skillsImages/home2.jpg", "../images/skillsImages/home3.jpg", "../images/skillsImages/home4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "education_and_development",
@@ -271,12 +261,7 @@
       "name": "Психологическое здоровье",
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
     },
-    "images": [
-      "../images/skillsImages/mental1.jpg",
-      "../images/skillsImages/mental2.jpg",
-      "../images/skillsImages/mental3.jpg",
-      "../images/skillsImages/mental4.jpg"
-    ],
+    "images": ["../images/skillsImages/mental1.jpg", "../images/skillsImages/mental2.jpg", "../images/skillsImages/mental3.jpg", "../images/skillsImages/mental4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "foreign_languages",
@@ -424,12 +409,7 @@
       "name": "Основы немецкого языка",
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
     },
-    "images": [
-      "../images/skillsImages/german1.jpg",
-      "../images/skillsImages/german2.jpg",
-      "../images/skillsImages/german3.jpg",
-      "../images/skillsImages/german4.jpg"
-    ],
+    "images": ["../images/skillsImages/german1.jpg", "../images/skillsImages/german2.jpg", "../images/skillsImages/german3.jpg", "../images/skillsImages/german4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "home_and_comfort",
@@ -535,12 +515,7 @@
       "name": "Видеомонтаж для начинающих",
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
     },
-    "images": [
-      "../images/skillsImages/video1.jpg",
-      "../images/skillsImages/video2.jpg",
-      "../images/skillsImages/video3.jpg",
-      "../images/skillsImages/video4.jpg"
-    ],
+    "images": ["../images/skillsImages/video1.jpg", "../images/skillsImages/video2.jpg", "../images/skillsImages/video3.jpg", "../images/skillsImages/video4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "health_and_lifestyle",
@@ -570,7 +545,7 @@
       "skillId": "creativity_and_art",
       "subcategoryId": "music_and_sound",
       "name": "Игра на барабанах",
-      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без паритуры"
+      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
     },
     "images": [
       "../images/skillsImages/playing_drums1.jpg",
@@ -641,12 +616,7 @@
       "name": "Йога для начинающих",
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
     },
-    "images": [
-      "../images/skillsImages/yoga1.jpg",
-      "../images/skillsImages/yoga2.jpg",
-      "../images/skillsImages/yoga3.jpg",
-      "../images/skillsImages/yoga4.jpg"
-    ],
+    "images": ["../images/skillsImages/yoga1.jpg", "../images/skillsImages/yoga2.jpg", "../images/skillsImages/yoga3.jpg", "../images/skillsImages/yoga4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "business_and_career",
@@ -789,12 +759,7 @@
       "name": "Организация пространства",
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
     },
-    "images": [
-      "../images/skillsImages/home1.jpg",
-      "../images/skillsImages/home2.jpg",
-      "../images/skillsImages/home3.jpg",
-      "../images/skillsImages/home4.jpg"
-    ],
+    "images": ["../images/skillsImages/home1.jpg", "../images/skillsImages/home2.jpg", "../images/skillsImages/home3.jpg", "../images/skillsImages/home4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "education_and_development",
@@ -826,12 +791,7 @@
       "name": "Психологическое здоровье",
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
     },
-    "images": [
-      "../images/skillsImages/mental1.jpg",
-      "../images/skillsImages/mental2.jpg",
-      "../images/skillsImages/mental3.jpg",
-      "../images/skillsImages/mental4.jpg"
-    ],
+    "images": ["../images/skillsImages/mental1.jpg", "../images/skillsImages/mental2.jpg", "../images/skillsImages/mental3.jpg", "../images/skillsImages/mental4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "foreign_languages",
@@ -979,12 +939,7 @@
       "name": "Основы немецкого языка",
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
     },
-    "images": [
-      "../images/skillsImages/german1.jpg",
-      "../images/skillsImages/german2.jpg",
-      "../images/skillsImages/german3.jpg",
-      "../images/skillsImages/german4.jpg"
-    ],
+    "images": ["../images/skillsImages/german1.jpg", "../images/skillsImages/german2.jpg", "../images/skillsImages/german3.jpg", "../images/skillsImages/german4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "home_and_comfort",
@@ -1090,12 +1045,7 @@
       "name": "Видеомонтаж для начинающих",
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
     },
-    "images": [
-      "../images/skillsImages/video1.jpg",
-      "../images/skillsImages/video2.jpg",
-      "../images/skillsImages/video3.jpg",
-      "../images/skillsImages/video4.jpg"
-    ],
+    "images": ["../images/skillsImages/video1.jpg", "../images/skillsImages/video2.jpg", "../images/skillsImages/video3.jpg", "../images/skillsImages/video4.jpg"],
     "subcategoriesWantToLearn": [
       {
         "skillId": "health_and_lifestyle",

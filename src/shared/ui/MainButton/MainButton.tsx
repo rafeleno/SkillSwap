@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './styles.module.scss';
-import { MainButtonProps } from './MainButton.types';
+import type { MainButtonProps } from './MainButton.types'
+import React from 'react'
+import styles from './styles.module.scss'
 
 export const MainButton: React.FC<MainButtonProps> = ({
   type,
@@ -16,5 +16,5 @@ export const MainButton: React.FC<MainButtonProps> = ({
     >
       {children}
     </button>
-  );
-};
+  )
+}
