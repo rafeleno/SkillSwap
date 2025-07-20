@@ -1,20 +1,26 @@
 @use '@colors' as c;
 
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: red;
+}
+
 .button {
   padding: 12px 24px;
   border-radius: 12px;
   border-width: 1px;
   border-style: solid;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 
-  &.tag {
-    background-color: c.$color-card-background;
-  }
-
-  &.accent {
+  &.primary {
     background-color: c.$color-accent;
     border-color: c.$color-accent;
-    color: black;
+    color: c.$color-black;
 
     &:hover {
       background-color: c.$color-button-hover;
@@ -34,10 +40,10 @@
     }
   }
 
-  &.white {
+  &.secondary {
     background-color: c.$color-card-background;
     border-color: c.$color-accent;
-    color: black;
+    color: c.$color-black;
 
     &:hover {
       border-color: c.$color-button-hover;
@@ -52,6 +58,23 @@
     &:disabled {
       border-color: c.$color-disabled;
       color: c.$color-text-disabled;
+    }
+  }
+
+  &.tertiary {
+    background-color: c.$color-card-background;
+    border-color: c.$color-card-background;
+    width: auto;
+
+    &:hover {
+      background-color: c.$color-disabled;
+      border-color: c.$color-disabled;
+    }
+
+    &:active {
+      background-color: c.$color-caption;
+      border-color: c.$color-caption;
+      color: c.$color-card-background;
     }
   }
 }

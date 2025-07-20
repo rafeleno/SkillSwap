@@ -1,6 +1,10 @@
+type IconId = `#${string}`
+
 export interface MainButtonProps {
-  type: 'accent' | 'white' | 'tag'
+  type: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
-  disabled?: boolean
   onClick: () => void
+  leftIconId?: IconId
+  rightIconId?: IconId
+  disabled?: boolean
 }

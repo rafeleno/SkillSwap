@@ -7,6 +7,8 @@ export const MainButton: React.FC<MainButtonProps> = ({
   children,
   disabled,
   onClick,
+  leftIconId,
+  rightIconId,
 }) => {
   return (
     <button
@@ -14,7 +16,17 @@ export const MainButton: React.FC<MainButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
     >
+      {leftIconId && (
+        <svg className={styles.icon}>
+          <use xlinkHref={leftIconId} />
+        </svg>
+      )}
       {children}
+      {rightIconId && (
+        <svg className={styles.icon}>
+          <use xlinkHref={rightIconId} />
+        </svg>
+      )}
     </button>
   )
 }
