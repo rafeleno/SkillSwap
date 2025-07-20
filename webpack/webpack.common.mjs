@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import SvgSpritePlugin from '../spriteCreator/plugin.mjs';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -69,6 +70,10 @@ export default {
           },
         },
       ],
+    }),
+    new SvgSpritePlugin({
+      inputDir: path.join(__dirname, '../src/assets/svg'),
+      outputFile: path.join(__dirname, '../dist/sprite.svg')
     }),
   ],
 };
