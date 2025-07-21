@@ -97,11 +97,11 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.{js,ts,tsx,jsx}": [
-      "lint:fix"
+    "**/*.{ts,js,tsx,jsx}": [
+      "npm run lint:fix"
     ],
-    "src/**/*.{css,scss}": [
-      "stylelint:fix"
+    "**/*.{css,scss}": [
+      "npm run stylelint:fix"
     ]
   }
 }
