@@ -1,0 +1,45 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/typography' as t;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: t.$font-secondary;
+  font-size: t.$font-caption-size;
+  font-weight: t.$font-weight-regular;
+  line-height: t.$font-caption-line-height;
+  color: c.$color-text-primary;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tag-languages {
+  background-color: c.$color-tag-languages;
+}
+
+.tag-business {
+  background-color: c.$color-tag-business;
+}
+
+.tag-health {
+  background-color: c.$color-tag-health;
+}
+
+.tag-arts {
+  background-color: c.$color-tag-arts;
+}
+
+.tag-home {
+  background-color: c.$color-tag-home;
+}
+
+.tag-education {
+  background-color: c.$color-tag-education;
+}
+
+.tag-additional {
+  background-color: c.$color-tag-additional;
+}
