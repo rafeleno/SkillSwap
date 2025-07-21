@@ -1,31 +1,29 @@
 declare module '*.module.css' {
-  const classes: { [key: string]: string };
-  export default classes;
+  const classes: { [key: string]: string }
+  export default classes
 }
 
 declare module '*.module.scss' {
-  const classes: { [key: string]: string };
-  export default classes;
+  const classes: { [key: string]: string }
+  export default classes
 }
 
 declare module '*.svg' {
-  import React = require('custom');
+  import type React from 'custom'
 
-  export const ReactComponent: React.FunctionComponent<
-    React.SVGProps<SVGSVGElement>
-  >;
-  const src: string;
-  export default src;
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+  const src: string
+  export default src
 }
 declare module '*.png' {
-  const content: any;
-  export default content;
+  const content: any
+  export default content
 }
 declare module '*.jpg' {
-  const content: any;
-  export default content;
+  const content: any
+  export default content
 }
 declare module '*.json' {
-  const content: any;
-  export default content;
-} 
+  const content: any
+  export default content
+}

@@ -1,65 +1,64 @@
-import { spawn } from 'child_process';
-import chokidar from 'chokidar';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { spawn } from 'node:child_process'
+import path from 'node:path'
+import process from 'node:process'
+import { fileURLToPath } from 'node:url'
+import chokidar from 'chokidar'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default class SvgSpritePlugin {
-    constructor(options = {}) {
-        this.options = {
-            inputDir: './src/assets/svg',
-            outputFile: './dist/sprite.svg',
-            watch: true,
-            ...options
-        };
-        this.watcher = null;
+  constructor(options = {}) {
+    this.options = {
+      inputDir: './src/assets/svg',
+      outputFile: './dist/sprite.svg',
+      watch: true,
+      ...options,
+    }
+    this.watcher = null
+  }
+
+  apply(compiler) {
+    this.generateSprite()
+
+    if (this.options.watch && compiler.options.mode === 'development') {
+      this.startWatching(compiler)
     }
 
-    apply(compiler) {
-        this.generateSprite();
+    compiler.hooks.watchClose.tap('SvgSpritePlugin', () => {
+      this.stopWatching()
+    })
+  }
 
-        if (this.options.watch && compiler.options.mode === 'development') {
-            this.startWatching(compiler);
-        }
+  generateSprite() {
+    const scriptPath = new URL(`${__dirname}/generator.mjs`, import.meta.url).pathname
+    const child = spawn('node', [scriptPath], {
+      stdio: 'inherit',
+      env: { ...process.env, SVG_SPRITE_ONCE: 'true' },
+    })
 
-        compiler.hooks.watchClose.tap('SvgSpritePlugin', () => {
-            this.stopWatching();
-        });
+    child.on('close', (code) => {
+      if (code !== 0) {
+        console.error(`SVG sprite generation failed with code ${code}`)
+      }
+    })
+  }
+
+  startWatching() {
+    this.watcher = chokidar.watch(this.options.inputDir, {
+      ignored: /(^|[/\\])\../,
+      persistent: true,
+      ignoreInitial: true,
+    })
+
+    this.watcher
+      .on('add', () => this.generateSprite())
+      .on('unlink', () => this.generateSprite())
+      .on('error', error => console.error('SVG watcher error:', error))
+  }
+
+  stopWatching() {
+    if (this.watcher) {
+      this.watcher.close()
     }
-
-    generateSprite() {
-        const scriptPath = new URL(__dirname + '/generator.mjs', import.meta.url).pathname;
-        const child = spawn('node', [scriptPath], {
-            stdio: 'inherit',
-            env: { ...process.env, SVG_SPRITE_ONCE: 'true' }
-        });
-
-        child.on('close', code => {
-            if (code !== 0) {
-                console.error(`SVG sprite generation failed with code ${code}`);
-            }
-        });
-    }
-
-    startWatching(compiler) {
-        this.watcher = chokidar.watch(this.options.inputDir, {
-            ignored: /(^|[\/\\])\../,
-            persistent: true,
-            ignoreInitial: true
-        });
-
-        this.watcher
-            .on('add', () => this.generateSprite())
-            .on('unlink', () => this.generateSprite())
-            .on('error', error => console.error('SVG watcher error:', error));
-
-        console.log(`Watching SVG files in ${this.options.inputDir}`);
-    }
-
-    stopWatching() {
-        if (this.watcher) {
-            this.watcher.close();
-        }
-    }
+  }
 }

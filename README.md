@@ -1,6 +1,6 @@
 # SkillSwap
 
-Сервис позволяет находить взаимно подходящие пары, отправлять заявки на обмен и вести список текущих/завершённых сессий. 
+Сервис позволяет находить взаимно подходящие пары, отправлять заявки на обмен и вести список текущих/завершённых сессий.
 
 ## Быстрый старт
 
@@ -34,7 +34,7 @@ npm run create
 ### Использование стилей
 
 ```tsx
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 
-<div className={styles.yourClass}>
+<div className={styles.yourClass} />
 ```
