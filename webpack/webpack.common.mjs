@@ -1,6 +1,7 @@
+import path, { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import CopyPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { dirname, fileURLToPath, path } from 'node'
 import SvgSpritePlugin from '../spriteCreator/plugin.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
