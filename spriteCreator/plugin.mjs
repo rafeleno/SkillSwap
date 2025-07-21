@@ -1,10 +1,7 @@
 import { spawn } from 'node:child_process'
-import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import chokidar from 'chokidar'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default class SvgSpritePlugin {
   constructor(options = {}) {
@@ -30,8 +27,10 @@ export default class SvgSpritePlugin {
   }
 
   generateSprite() {
-    const scriptPath = new URL(`${__dirname}/generator.mjs`, import.meta.url).pathname
-    const child = spawn('node', [scriptPath], {
+    // Используем fileURLToPath для корректного преобразования пути
+    const scriptPath = new URL('./generator.mjs', import.meta.url)
+
+    const child = spawn('node', [fileURLToPath(scriptPath)], {
       stdio: 'inherit',
       env: { ...process.env, SVG_SPRITE_ONCE: 'true' },
     })
