@@ -1,7 +1,7 @@
-import path, { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import CopyPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { dirname, fileURLToPath, path } from 'node'
+import SvgSpritePlugin from '../spriteCreator/plugin.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -26,8 +26,8 @@ export default {
         __dirname,
         '../src/styles/_typography.scss',
       ),
-      '@images': path.resolve(__dirname, '../public/images'),
-      '@svg': path.resolve(__dirname, '../public/svg'),
+      '@images': path.resolve(__dirname, '../src/assets/images'),
+      '@svg': path.resolve(__dirname, '../src/assets/svg'),
     },
   },
   module: {
@@ -67,6 +67,10 @@ export default {
           },
         },
       ],
+    }),
+    new SvgSpritePlugin({
+      inputDir: path.join(__dirname, '../src/assets/svg'),
+      outputFile: path.join(__dirname, '../dist/sprite.svg'),
     }),
   ],
 }

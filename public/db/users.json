@@ -13,10 +13,10 @@
       "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
     },
     "images": [
-      "../images/skillsImages/playing_drums2.jpg",
-      "../images/skillsImages/playing_drums2.jpg",
-      "../images/skillsImages/playing_drums3.jpg",
-      "../images/skillsImages/playing_drums4.jpg"
+      "../../src/assets/images/skillsImages/playing_drums2.jpg",
+      "../../src/assets/images/skillsImages/playing_drums2.jpg",
+      "../../src/assets/images/skillsImages/playing_drums3.jpg",
+      "../../src/assets/images/skillsImages/playing_drums4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -50,10 +50,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
     },
     "images": [
-      "../images/skillsImages/english1.jpg",
-      "../images/skillsImages/english2.jpg",
-      "../images/skillsImages/english3.jpg",
-      "../images/skillsImages/english4.jpg"
+      "../../src/assets/images/skillsImages/english1.jpg",
+      "../../src/assets/images/skillsImages/english2.jpg",
+      "../../src/assets/images/skillsImages/english3.jpg",
+      "../../src/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -86,7 +86,12 @@
       "name": "Йога для начинающих",
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
     },
-    "images": ["../images/skillsImages/yoga1.jpg", "../images/skillsImages/yoga2.jpg", "../images/skillsImages/yoga3.jpg", "../images/skillsImages/yoga4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/yoga1.jpg",
+      "../../src/assets/images/skillsImages/yoga2.jpg",
+      "../../src/assets/images/skillsImages/yoga3.jpg",
+      "../../src/assets/images/skillsImages/yoga4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "business_and_career",
@@ -119,10 +124,10 @@
       "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
     },
     "images": [
-      "../images/skillsImages/photography1.jpg",
-      "../images/skillsImages/photography2.jpg",
-      "../images/skillsImages/photography3.jpg",
-      "../images/skillsImages/photography4.jpg"
+      "../../src/assets/images/skillsImages/photography1.jpg",
+      "../../src/assets/images/skillsImages/photography2.jpg",
+      "../../src/assets/images/skillsImages/photography3.jpg",
+      "../../src/assets/images/skillsImages/photography4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -156,10 +161,10 @@
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
     },
     "images": [
-      "../images/skillsImages/project_management1.jpg",
-      "../images/skillsImages/project_management2.jpg",
-      "../images/skillsImages/project_management3.jpg",
-      "../images/skillsImages/project_management4.jpg"
+      "../../src/assets/images/skillsImages/project_management1.jpg",
+      "../../src/assets/images/skillsImages/project_management2.jpg",
+      "../../src/assets/images/skillsImages/project_management3.jpg",
+      "../../src/assets/images/skillsImages/project_management4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -193,10 +198,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
     },
     "images": [
-      "../images/skillsImages/english1.jpg",
-      "../images/skillsImages/english2.jpg",
-      "../images/skillsImages/english3.jpg",
-      "../images/skillsImages/english4.jpg"
+      "../../src/assets/images/skillsImages/english1.jpg",
+      "../../src/assets/images/skillsImages/english2.jpg",
+      "../../src/assets/images/skillsImages/english3.jpg",
+      "../../src/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -229,7 +234,12 @@
       "name": "Организация пространства",
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
     },
-    "images": ["../images/skillsImages/home1.jpg", "../images/skillsImages/home2.jpg", "../images/skillsImages/home3.jpg", "../images/skillsImages/home4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/home1.jpg",
+      "../../src/assets/images/skillsImages/home2.jpg",
+      "../../src/assets/images/skillsImages/home3.jpg",
+      "../../src/assets/images/skillsImages/home4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "education_and_development",
@@ -261,7 +271,12 @@
       "name": "Психологическое здоровье",
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
     },
-    "images": ["../images/skillsImages/mental1.jpg", "../images/skillsImages/mental2.jpg", "../images/skillsImages/mental3.jpg", "../images/skillsImages/mental4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/mental1.jpg",
+      "../../src/assets/images/skillsImages/mental2.jpg",
+      "../../src/assets/images/skillsImages/mental3.jpg",
+      "../../src/assets/images/skillsImages/mental4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "foreign_languages",
@@ -294,10 +309,10 @@
       "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
     },
     "images": [
-      "../images/skillsImages/nutrition1.jpg",
-      "../images/skillsImages/nutrition2.jpg",
-      "../images/skillsImages/nutrition3.jpg",
-      "../images/skillsImages/nutrition4.jpg"
+      "../../src/assets/images/skillsImages/nutrition1.jpg",
+      "../../src/assets/images/skillsImages/nutrition2.jpg",
+      "../../src/assets/images/skillsImages/nutrition3.jpg",
+      "../../src/assets/images/skillsImages/nutrition4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -331,10 +346,10 @@
       "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
     },
     "images": [
-      "../images/skillsImages/drawing1.jpg",
-      "../images/skillsImages/drawing2.jpg",
-      "../images/skillsImages/drawing3.jpg",
-      "../images/skillsImages/drawing4.jpg"
+      "../../src/assets/images/skillsImages/drawing1.jpg",
+      "../../src/assets/images/skillsImages/drawing2.jpg",
+      "../../src/assets/images/skillsImages/drawing3.jpg",
+      "../../src/assets/images/skillsImages/drawing4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -373,10 +388,10 @@
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
     },
     "images": [
-      "../images/skillsImages/entrepreneurship1.jpg",
-      "../images/skillsImages/entrepreneurship2.jpg",
-      "../images/skillsImages/entrepreneurship3.jpg",
-      "../images/skillsImages/entrepreneurship4.jpg"
+      "../../src/assets/images/skillsImages/entrepreneurship1.jpg",
+      "../../src/assets/images/skillsImages/entrepreneurship2.jpg",
+      "../../src/assets/images/skillsImages/entrepreneurship3.jpg",
+      "../../src/assets/images/skillsImages/entrepreneurship4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -409,7 +424,12 @@
       "name": "Основы немецкого языка",
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
     },
-    "images": ["../images/skillsImages/german1.jpg", "../images/skillsImages/german2.jpg", "../images/skillsImages/german3.jpg", "../images/skillsImages/german4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/german1.jpg",
+      "../../src/assets/images/skillsImages/german2.jpg",
+      "../../src/assets/images/skillsImages/german3.jpg",
+      "../../src/assets/images/skillsImages/german4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "home_and_comfort",
@@ -442,10 +462,10 @@
       "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
     },
     "images": [
-      "../images/skillsImages/reading1.jpg",
-      "../images/skillsImages/reading2.jpg",
-      "../images/skillsImages/reading3.jpg",
-      "../images/skillsImages/reading4.jpg"
+      "../../src/assets/images/skillsImages/reading1.jpg",
+      "../../src/assets/images/skillsImages/reading2.jpg",
+      "../../src/assets/images/skillsImages/reading3.jpg",
+      "../../src/assets/images/skillsImages/reading4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -479,10 +499,10 @@
       "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
     },
     "images": [
-      "../images/skillsImages/houseplants1.jpg",
-      "../images/skillsImages/houseplants2.jpg",
-      "../images/skillsImages/houseplants3.jpg",
-      "../images/skillsImages/houseplants4.jpg"
+      "../../src/assets/images/skillsImages/houseplants1.jpg",
+      "../../src/assets/images/skillsImages/houseplants2.jpg",
+      "../../src/assets/images/skillsImages/houseplants3.jpg",
+      "../../src/assets/images/skillsImages/houseplants4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -515,7 +535,12 @@
       "name": "Видеомонтаж для начинающих",
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
     },
-    "images": ["../images/skillsImages/video1.jpg", "../images/skillsImages/video2.jpg", "../images/skillsImages/video3.jpg", "../images/skillsImages/video4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/video1.jpg",
+      "../../src/assets/images/skillsImages/video2.jpg",
+      "../../src/assets/images/skillsImages/video3.jpg",
+      "../../src/assets/images/skillsImages/video4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "health_and_lifestyle",
@@ -548,10 +573,10 @@
       "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
     },
     "images": [
-      "../images/skillsImages/playing_drums1.jpg",
-      "../images/skillsImages/playing_drums2.jpg",
-      "../images/skillsImages/playing_drums3.jpg",
-      "../images/skillsImages/playing_drums4.jpg"
+      "../../src/assets/images/skillsImages/playing_drums1.jpg",
+      "../../src/assets/images/skillsImages/playing_drums2.jpg",
+      "../../src/assets/images/skillsImages/playing_drums3.jpg",
+      "../../src/assets/images/skillsImages/playing_drums4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -580,10 +605,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
     },
     "images": [
-      "../images/skillsImages/english1.jpg",
-      "../images/skillsImages/english2.jpg",
-      "../images/skillsImages/english3.jpg",
-      "../images/skillsImages/english4.jpg"
+      "../../src/assets/images/skillsImages/english1.jpg",
+      "../../src/assets/images/skillsImages/english2.jpg",
+      "../../src/assets/images/skillsImages/english3.jpg",
+      "../../src/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -616,7 +641,12 @@
       "name": "Йога для начинающих",
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
     },
-    "images": ["../images/skillsImages/yoga1.jpg", "../images/skillsImages/yoga2.jpg", "../images/skillsImages/yoga3.jpg", "../images/skillsImages/yoga4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/yoga1.jpg",
+      "../../src/assets/images/skillsImages/yoga2.jpg",
+      "../../src/assets/images/skillsImages/yoga3.jpg",
+      "../../src/assets/images/skillsImages/yoga4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "business_and_career",
@@ -649,10 +679,10 @@
       "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
     },
     "images": [
-      "../images/skillsImages/photography1.jpg",
-      "../images/skillsImages/photography2.jpg",
-      "../images/skillsImages/photography3.jpg",
-      "../images/skillsImages/photography4.jpg"
+      "../../src/assets/images/skillsImages/photography1.jpg",
+      "../../src/assets/images/skillsImages/photography2.jpg",
+      "../../src/assets/images/skillsImages/photography3.jpg",
+      "../../src/assets/images/skillsImages/photography4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -686,10 +716,10 @@
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
     },
     "images": [
-      "../images/skillsImages/project_management1.jpg",
-      "../images/skillsImages/project_management2.jpg",
-      "../images/skillsImages/project_management3.jpg",
-      "../images/skillsImages/project_management4.jpg"
+      "../../src/assets/images/skillsImages/project_management1.jpg",
+      "../../src/assets/images/skillsImages/project_management2.jpg",
+      "../../src/assets/images/skillsImages/project_management3.jpg",
+      "../../src/assets/images/skillsImages/project_management4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -723,10 +753,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
     },
     "images": [
-      "../images/skillsImages/english1.jpg",
-      "../images/skillsImages/english2.jpg",
-      "../images/skillsImages/english3.jpg",
-      "../images/skillsImages/english4.jpg"
+      "../../src/assets/images/skillsImages/english1.jpg",
+      "../../src/assets/images/skillsImages/english2.jpg",
+      "../../src/assets/images/skillsImages/english3.jpg",
+      "../../src/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -759,7 +789,12 @@
       "name": "Организация пространства",
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
     },
-    "images": ["../images/skillsImages/home1.jpg", "../images/skillsImages/home2.jpg", "../images/skillsImages/home3.jpg", "../images/skillsImages/home4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/home1.jpg",
+      "../../src/assets/images/skillsImages/home2.jpg",
+      "../../src/assets/images/skillsImages/home3.jpg",
+      "../../src/assets/images/skillsImages/home4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "education_and_development",
@@ -791,7 +826,12 @@
       "name": "Психологическое здоровье",
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
     },
-    "images": ["../images/skillsImages/mental1.jpg", "../images/skillsImages/mental2.jpg", "../images/skillsImages/mental3.jpg", "../images/skillsImages/mental4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/mental1.jpg",
+      "../../src/assets/images/skillsImages/mental2.jpg",
+      "../../src/assets/images/skillsImages/mental3.jpg",
+      "../../src/assets/images/skillsImages/mental4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "foreign_languages",
@@ -824,10 +864,10 @@
       "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
     },
     "images": [
-      "../images/skillsImages/nutrition1.jpg",
-      "../images/skillsImages/nutrition2.jpg",
-      "../images/skillsImages/nutrition3.jpg",
-      "../images/skillsImages/nutrition4.jpg"
+      "../../src/assets/images/skillsImages/nutrition1.jpg",
+      "../../src/assets/images/skillsImages/nutrition2.jpg",
+      "../../src/assets/images/skillsImages/nutrition3.jpg",
+      "../../src/assets/images/skillsImages/nutrition4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -861,10 +901,10 @@
       "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
     },
     "images": [
-      "../images/skillsImages/drawing1.jpg",
-      "../images/skillsImages/drawing2.jpg",
-      "../images/skillsImages/drawing3.jpg",
-      "../images/skillsImages/drawing4.jpg"
+      "../../src/assets/images/skillsImages/drawing1.jpg",
+      "../../src/assets/images/skillsImages/drawing2.jpg",
+      "../../src/assets/images/skillsImages/drawing3.jpg",
+      "../../src/assets/images/skillsImages/drawing4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -903,10 +943,10 @@
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
     },
     "images": [
-      "../images/skillsImages/entrepreneurship1.jpg",
-      "../images/skillsImages/entrepreneurship2.jpg",
-      "../images/skillsImages/entrepreneurship3.jpg",
-      "../images/skillsImages/entrepreneurship4.jpg"
+      "../../src/assets/images/skillsImages/entrepreneurship1.jpg",
+      "../../src/assets/images/skillsImages/entrepreneurship2.jpg",
+      "../../src/assets/images/skillsImages/entrepreneurship3.jpg",
+      "../../src/assets/images/skillsImages/entrepreneurship4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -939,7 +979,12 @@
       "name": "Основы немецкого языка",
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
     },
-    "images": ["../images/skillsImages/german1.jpg", "../images/skillsImages/german2.jpg", "../images/skillsImages/german3.jpg", "../images/skillsImages/german4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/german1.jpg",
+      "../../src/assets/images/skillsImages/german2.jpg",
+      "../../src/assets/images/skillsImages/german3.jpg",
+      "../../src/assets/images/skillsImages/german4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "home_and_comfort",
@@ -972,10 +1017,10 @@
       "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
     },
     "images": [
-      "../images/skillsImages/reading1.jpg",
-      "../images/skillsImages/reading2.jpg",
-      "../images/skillsImages/reading3.jpg",
-      "../images/skillsImages/reading4.jpg"
+      "../../src/assets/images/skillsImages/reading1.jpg",
+      "../../src/assets/images/skillsImages/reading2.jpg",
+      "../../src/assets/images/skillsImages/reading3.jpg",
+      "../../src/assets/images/skillsImages/reading4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -1009,10 +1054,10 @@
       "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
     },
     "images": [
-      "../images/skillsImages/houseplants1.jpg",
-      "../images/skillsImages/houseplants2.jpg",
-      "../images/skillsImages/houseplants3.jpg",
-      "../images/skillsImages/houseplants4.jpg"
+      "../../src/assets/images/skillsImages/houseplants1.jpg",
+      "../../src/assets/images/skillsImages/houseplants2.jpg",
+      "../../src/assets/images/skillsImages/houseplants3.jpg",
+      "../../src/assets/images/skillsImages/houseplants4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -1045,7 +1090,12 @@
       "name": "Видеомонтаж для начинающих",
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
     },
-    "images": ["../images/skillsImages/video1.jpg", "../images/skillsImages/video2.jpg", "../images/skillsImages/video3.jpg", "../images/skillsImages/video4.jpg"],
+    "images": [
+      "../../src/assets/images/skillsImages/video1.jpg",
+      "../../src/assets/images/skillsImages/video2.jpg",
+      "../../src/assets/images/skillsImages/video3.jpg",
+      "../../src/assets/images/skillsImages/video4.jpg"
+    ],
     "subcategoriesWantToLearn": [
       {
         "skillId": "health_and_lifestyle",
