@@ -2,12 +2,13 @@
 @use '@typographyStyles' as t;
 
 .main-logo {
+    // font-weight: t.$font-weight-semibold;
     width: 159px;
     height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    row-gap: 12px;
+    column-gap: 12px;
 }
 
 .main-logo__container {

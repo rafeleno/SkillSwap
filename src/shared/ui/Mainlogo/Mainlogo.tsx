@@ -8,7 +8,7 @@ export const Mainlogo: React.FC<MainlogoProps> = () => {
     <div className={styles.mainLogo}>
       <div className={styles.mainLogoContainer}>
         <svg className={styles.icon}>
-          <use xlinkHref="#logo" />
+          <use xlinkHref="/sprites.svg#logo-star" />
         </svg>
       </div>
       <h2>SkillSwap</h2>
