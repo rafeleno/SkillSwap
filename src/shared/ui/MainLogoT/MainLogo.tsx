@@ -1,7 +1,6 @@
-import type { MainLogoProps } from './MainLogoTEM.types'
+import type { MainLogoProps } from './MainLogo.types'
 import React from 'react'
 import styles from './styles.module.scss'
-import '../../../assets/svg/sprites.svg'
 
 export const MainLogo: React.FC<MainLogoProps> = () => {
   return (

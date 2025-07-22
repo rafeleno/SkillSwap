@@ -1,1 +1,0 @@
-export { Mainlogo } from './Mainlogo'
