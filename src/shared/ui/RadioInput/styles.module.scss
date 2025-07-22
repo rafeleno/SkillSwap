@@ -1,0 +1,57 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: t.$font-h4-size;
+  line-height: t.$font-h4-line-height;
+  color: c.$color-text-primary;
+  gap: 10px;
+  user-select: none;
+
+  .input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked + .radioIcon {
+      border-color: c.$color-button-pressed;
+
+      &::after {
+        background-color: c.$color-button-pressed;
+      }
+    }
+  }
+
+  .radioIcon {
+    width: 20px;
+    height: 20px;
+    border: 2px solid c.$color-text-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+
+    &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .input:not(:checked) + .radioIcon {
+      border-color: c.$color-button-hover;
+
+      &::after {
+        background-color: c.$color-button-hover;
+      }
+    }
+  }
+}
