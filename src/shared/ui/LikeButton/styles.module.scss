@@ -1,0 +1,32 @@
+@import 'src/styles/colors';
+
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $color-button-hover;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: $color-text-disabled;
+  stroke: $color-text-disabled;
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.active {
+  fill: $color-accent;
+  stroke: $color-accent;
+}
+
