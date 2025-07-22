@@ -1,5 +1,5 @@
-export type LikeButtonProps = {
-  onClick: () => void;
-  isActive?: boolean;
-  className?: string;
-};
+export interface LikeButtonProps {
+  onClick: () => void
+  isActive?: boolean
+  className?: string
+}

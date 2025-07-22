@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './styles.module.scss';
-import { LikeButtonProps } from './LikeButton.types';
+import type { LikeButtonProps } from './LikeButton.types'
+import React from 'react'
+import styles from './styles.module.scss'
 
 export const LikeButton: React.FC<LikeButtonProps> = ({ onClick, isActive = false, className = '' }) => {
   return (
@@ -14,5 +14,5 @@ export const LikeButton: React.FC<LikeButtonProps> = ({ onClick, isActive = fals
         <use href={`/sprites.svg#${isActive ? 'like-active' : 'like'}`} />
       </svg>
     </button>
-  );
-};
+  )
+}

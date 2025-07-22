@@ -5,19 +5,39 @@
 @use './assets/fonts/fonts' as *;
 
 h1 {
-  @include m.heading(t.$font-weight-medium, t.$font-h1-size, t.$font-h1-line-height, t.$font-primary);
+  @include m.heading(
+    t.$font-weight-medium,
+    t.$font-h1-size,
+    t.$font-h1-line-height,
+    t.$font-primary
+  );
 }
 
 h2 {
-  @include m.heading(t.$font-weight-medium, t.$font-h2-size, t.$font-h2-line-height, t.$font-primary);
+  @include m.heading(
+    t.$font-weight-medium,
+    t.$font-h2-size,
+    t.$font-h2-line-height,
+    t.$font-primary
+  );
 }
 
 h3 {
-  @include m.heading(t.$font-weight-medium, t.$font-h3-size, t.$font-h3-line-height, t.$font-primary);
+  @include m.heading(
+    t.$font-weight-medium,
+    t.$font-h3-size,
+    t.$font-h3-line-height,
+    t.$font-primary
+  );
 }
 
 h4 {
-  @include m.heading(t.$font-weight-medium, t.$font-h4-size, t.$font-h4-line-height, t.$font-secondary);
+  @include m.heading(
+    t.$font-weight-medium,
+    t.$font-h4-size,
+    t.$font-h4-line-height,
+    t.$font-secondary
+  );
 }
 
 body {
@@ -33,5 +53,10 @@ body {
 }
 
 caption {
-  @include m.heading(t.$font-weight-regular, t.$font-caption-size, t.$font-caption-line-height, t.$font-secondary);
+  @include m.heading(
+    t.$font-weight-regular,
+    t.$font-caption-size,
+    t.$font-caption-line-height,
+    t.$font-secondary
+  );
 }
