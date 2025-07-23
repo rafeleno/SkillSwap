@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LikeButton } from '../shared/ui/LikeButton'
 
 export function App() {
-  return <LikeButton isActive={true} onClick={() => console.log('clicked')} />
+  const [liked, setLiked] = useState(false)
+
+  const toggleLike = () => setLiked(prev => !prev)
+
+  return (
+    <div style={{ padding: '40px' }}>
+      <LikeButton isActive={liked} onClick={toggleLike} />
+    </div>
+  )
 }

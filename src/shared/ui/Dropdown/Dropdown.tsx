@@ -1,29 +1,31 @@
-import clsx from 'clsx';
-import styles from './Dropdown.module.scss';
-import { DropdownOption, DropdownProps } from './Dropdown.types';
+import type { DropdownOption, DropdownProps } from './Dropdown.types'
+import clsx from 'clsx'
+import styles from './Dropdown.module.scss'
 
-const DropdownOptionItem = ({
+function DropdownOptionItem({
   option,
   isSelected,
   onSelect,
 }: {
-  option: DropdownOption;
-  isSelected: boolean;
-  onSelect: (value: string) => void;
-}) => (
-  <li
-    className={clsx(styles.option, {
-      [styles.selectedOption]: isSelected,
-    })}
-    onClick={() => onSelect(option.value)}
-    role="option"
-    aria-selected={isSelected}
-  >
-    {option.content || option.label}
-  </li>
-);
+  option: DropdownOption
+  isSelected: boolean
+  onSelect: (value: string) => void
+}) {
+  return (
+    <li
+      className={clsx(styles.option, {
+        [styles.selectedOption]: isSelected,
+      })}
+      onClick={() => onSelect(option.value)}
+      role="option"
+      aria-selected={isSelected}
+    >
+      {option.content || option.label}
+    </li>
+  )
+}
 
-export const Dropdown = ({
+export function Dropdown({
   id,
   options,
   selectedValue,
@@ -35,14 +37,14 @@ export const Dropdown = ({
   displayText,
   version = 'default',
   position = 'relative',
-}: DropdownProps) => {
+}: DropdownProps) {
   const handleOptionSelect = (value: string) => {
-    onSelect?.(value);
-    onExpandToggle();
-  };
+    onSelect?.(value)
+    onExpandToggle()
+  }
 
-  const currentDisplayText = displayText || placeholder;
-  const shouldShowPlaceholder = !selectedValue && !displayText;
+  const currentDisplayText = displayText || placeholder
+  const shouldShowPlaceholder = !selectedValue && !displayText
 
   return (
     <div className={styles.wrapper}>
@@ -86,7 +88,7 @@ export const Dropdown = ({
             role="listbox"
             aria-labelledby={id}
           >
-            {options.map((option) => (
+            {options.map(option => (
               <DropdownOptionItem
                 key={option.value}
                 option={option}
@@ -98,5 +100,5 @@ export const Dropdown = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
