@@ -1,13 +1,31 @@
 {
+  "scripts": {
+    "prepare": "husky",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "create": "plop",
+    "stylelint": "stylelint '*{.css,.scss}'",
+    "stylelint:fix": "stylelint '*{.css,.scss}' --fix",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
   "dependencies": {
     "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.8.2",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "svg-sprite-loader": "^6.0.9"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
@@ -23,15 +41,14 @@
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
     "babel-loader": "^10.0.0",
+    "chokidar": "^4.0.3",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
     "cypress": "^14.5.2",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -49,7 +66,9 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.21.1",
     "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^38.0.0",
     "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.12.1",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.37.0",
@@ -60,35 +79,30 @@
   "overrides": {
     "eslint": "^9.31.0"
   },
-  "scripts": {
-    "prepare": "husky",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "create": "plop",
-    "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "lint": "eslint",
-    "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
-    "test": "jest",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
+  "stylelint": {
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "rules": {
+      "at-rule-no-unknown": null,
+      "scss/at-rule-no-unknown": true
+    },
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-rational-order"
+    ]
+  },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
+    "**/*.{ts,js,tsx,jsx}": [
+      "npm run lint:fix"
     ],
-    "*.(css|scss)": [
-      "stylelint --fix"
-    ],
-    "*.{js,ts,tsx,css,scss,md,json}": [
-      "prettier --write"
+    "**/*.{css,scss}": [
+      "npm run stylelint:fix"
     ]
   }
 }

@@ -6,6 +6,5 @@ module.exports = {
   ],
   plugins: ['stylelint-order', 'stylelint-scss'],
   rules: {
-    // Дополнительные правила
   },
-};
+}

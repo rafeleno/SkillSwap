@@ -1,11 +1,11 @@
-import styles from './CheckboxInput.module.scss';
-import { CheckboxInputProps } from './Checkboxinput.types';
+import type { CheckboxInputProps } from './Checkboxinput.types'
+import styles from './CheckboxInput.module.scss'
 
 interface CheckboxSvgProps {
-  active: boolean;
+  active: boolean
 }
 
-const CheckboxSvg = ({ active }: CheckboxSvgProps) => {
+function CheckboxSvg({ active }: CheckboxSvgProps) {
   return (
     <svg
       width="24"
@@ -16,8 +16,10 @@ const CheckboxSvg = ({ active }: CheckboxSvgProps) => {
     >
       <rect
         className={styles['checkbox-outline']}
-        x="2" y="2"
-        width="20" height="20"
+        x="2"
+        y="2"
+        width="20"
+        height="20"
         rx="4"
       />
       <path
@@ -26,23 +28,25 @@ const CheckboxSvg = ({ active }: CheckboxSvgProps) => {
         style={{ opacity: active ? 1 : 0 }}
       />
     </svg>
-  );
-};
+  )
+}
 
-export const CheckboxInput = ({ 
+export function CheckboxInput({
   children,
   active = false,
-  onChange
-}: CheckboxInputProps) => (
-  <label className={styles.label}>
-    <input
-      type="checkbox"
-      checked={active}
-      onChange={onChange}
-      className={styles.input}
-      readOnly={!onChange}
-    />
-    <CheckboxSvg active={active} />
-    <span className={styles.text}>{children}</span>
-  </label>
-);
+  onChange,
+}: CheckboxInputProps) {
+  return (
+    <label className={styles.label}>
+      <input
+        type="checkbox"
+        checked={active}
+        onChange={onChange}
+        className={styles.input}
+        readOnly={!onChange}
+      />
+      <CheckboxSvg active={active} />
+      <span className={styles.text}>{children}</span>
+    </label>
+  )
+}

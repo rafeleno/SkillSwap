@@ -1,12 +1,14 @@
-import React from 'react';
-import styles from './styles.module.scss';
-import { MainButtonProps } from './MainButton.types';
+import type { MainButtonProps } from './MainButton.types'
+import React from 'react'
+import styles from './styles.module.scss'
 
 export const MainButton: React.FC<MainButtonProps> = ({
   type,
   children,
   disabled,
   onClick,
+  leftIconId,
+  rightIconId,
 }) => {
   return (
     <button
@@ -14,7 +16,17 @@ export const MainButton: React.FC<MainButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
     >
+      {leftIconId && (
+        <svg className={styles.icon}>
+          <use href={`/sprites.svg#${leftIconId}`} />
+        </svg>
+      )}
       {children}
+      {rightIconId && (
+        <svg className={styles.icon}>
+          <use href={`/sprites.svg#${rightIconId}`} />
+        </svg>
+      )}
     </button>
-  );
-};
+  )
+}

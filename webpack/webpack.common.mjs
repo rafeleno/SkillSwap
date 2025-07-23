@@ -1,12 +1,11 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
+import path, { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import CopyPlugin from 'copy-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import SvgSpritePlugin from '../spriteCreator/plugin.mjs'
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default {
   entry: './src/index.tsx',
@@ -28,8 +27,8 @@ export default {
         __dirname,
         '../src/styles/_typography.scss',
       ),
-      '@images': path.resolve(__dirname, '../public/images'),
-      '@svg': path.resolve(__dirname, '../public/svg'),
+      '@images': path.resolve(__dirname, '../src/assets/images'),
+      '@svg': path.resolve(__dirname, '../src/assets/svg'),
     },
   },
   module: {
@@ -70,5 +69,9 @@ export default {
         },
       ],
     }),
+    new SvgSpritePlugin({
+      inputDir: path.join(__dirname, '../src/assets/svg'),
+      outputFile: path.join(__dirname, '../dist/sprite.svg'),
+    }),
   ],
-};
+}
