@@ -1,9 +1,6 @@
 import React from 'react'
+import { LikeButton } from '../shared/ui/LikeButton'
 
 export function App() {
-  return (
-    <div>
-
-    </div>
-  )
+  return <LikeButton isActive={true} onClick={() => console.log('clicked')} />
 }
