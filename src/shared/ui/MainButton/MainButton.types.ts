@@ -1,10 +1,8 @@
-type IconId = `#${string}`
-
 export interface MainButtonProps {
   type: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   onClick: () => void
-  leftIconId?: IconId
-  rightIconId?: IconId
+  leftIconId?: string
+  rightIconId?: string
   disabled?: boolean
 }
