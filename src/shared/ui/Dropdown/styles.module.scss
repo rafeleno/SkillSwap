@@ -1,0 +1,146 @@
+.dropdownContainer {
+  font-family: $font-secondary;
+  width: 100%;
+
+  &.inactive {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.dropdownLabel {
+  align-items: center;
+  color: $color-text-primary;
+  display: flex;
+  font-size: 14px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownTrigger {
+  align-items: center;
+  background-color: $color-card-background;
+  border: 1px solid $color-caption;
+  border-radius: 12px;
+  color: $color-text-primary;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  padding: 10px 20px;
+  text-align: left;
+  transition: all 0.2s;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color-accent, 0.3);
+    outline: none;
+  }
+
+  &:hover {
+    border-color: $color-accent;
+  }
+
+  &.borderless {
+    background: transparent;
+    border: none;
+    height: 24px;
+    padding: 0;
+    width: 252px;
+
+    &:hover {
+      color: $color-text-link;
+    }
+  }
+}
+
+.dropdownText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.prompt {
+    color: $color-caption;
+  }
+}
+
+.dropdownIcon {
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 16px;
+  margin-left: 8px;
+  transition: transform 0.2s;
+  width: 16px;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.choiceList {
+  align-items: center;
+  background-color: $color-card-background;
+  border: 1px solid $color-caption;
+  border-radius: 0 0 12px 12px;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: -1px;
+  padding: 4px 0 8px;
+  position: relative;
+  width: 100%;
+  z-index: 4;
+
+  &.absolute {
+    position: absolute;
+  }
+}
+
+.choiceItem {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: $color-text-primary;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  padding: 0 20px;
+  transition: all 0.2s;
+  width: 100%;
+
+  &:hover {
+    background-color: $color-disabled;
+  }
+
+  &.selected {
+    color: $color-text-link;
+    font-weight: normal;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.borderless {
+  .choiceList {
+    border: none;
+    gap: 0;
+    padding: 12px 0;
+
+    .choiceItem {
+      height: auto;
+      padding: 0;
+    }
+  }
+  
+  &.absolute .choiceItem {
+    padding: 0;
+    width: 100%;
+  }
+}
