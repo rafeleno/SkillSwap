@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import styles from './Dropdown.module.scss';
-import PointerIcon from '../../../../public/svg/main/chevron-down.svg';
-import {DropdownOption, DropdownProps} from './Dropdown.types';
+import { DropdownOption, DropdownProps } from './Dropdown.types';
 
 const DropdownOptionItem = ({
   option,
@@ -67,14 +66,14 @@ export const Dropdown = ({
           <span className={clsx({ [styles.placeholder]: shouldShowPlaceholder })}>
             {currentDisplayText}
           </span>
-          <img
-            src={PointerIcon} 
+          <svg
             className={clsx(styles.pointer, {
               [styles.pointerExpanded]: isExpanded,
             })}
-            alt="Toggle dropdown"
             aria-hidden="true"
-          />
+          >
+            <use href="/svg/main/chevron-down.svg#icon" />
+          </svg>
         </button>
 
         {isExpanded && (
