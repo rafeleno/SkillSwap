@@ -5,7 +5,6 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// Рекурсивно получаем все SVG файлы в директории и поддиректориях
 async function getSVGFiles(dir) {
   const dirents = await fs.readdir(dir, { withFileTypes: true })
   const files = await Promise.all(dirents.map(async (dirent) => {
@@ -36,11 +35,10 @@ async function generateSprite() {
     for (const filePath of svgFiles) {
       const svgContent = await fs.readFile(filePath, 'utf8')
 
-      // Получаем относительный путь для ID символа
       const relativePath = path.relative(config.inputDir, filePath)
       const symbolId = relativePath
         .replace(/\.svg$/i, '')
-        .replace(/.+\\/g, '') // Заменяем обратные слеши
+        .replace(/.+\\/g, '')
         .replace(/\s+/g, '-')
         .toLowerCase()
 
@@ -49,16 +47,15 @@ async function generateSprite() {
         .replace(/<\/svg>/i, '')
         .trim()
 
-      sprite += `  <symbol id="${symbolId}" viewbox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n`
+      sprite += `  <symbol id="${symbolId}" viewbox="0 0 24 24" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n`
       sprite += `    ${innerContent}\n`
       sprite += `  </symbol>\n`
     }
 
     sprite += `</svg>`
 
-    // Создаем директорию, если она не существует
     await fs.mkdir(path.dirname(config.outputFile), { recursive: true })
-    await fs.writeFile(config.outputFile, sprite)
+    await fs.writeFile(config.outputFile, sprite.replace(/fill=".+"/g, 'fill="inferit"'))
   }
   catch (err) {
     console.error('SVG sprite generation error:', err)
@@ -66,13 +63,11 @@ async function generateSprite() {
   }
 }
 
-// Для интеграции с Webpack плагином
 if (process.env.SVG_SPRITE_ONCE) {
   generateSprite()
 }
 else {
   async function Chokidar() {
-    // Режим наблюдения (для standalone использования)
     const chokidar = await import('chokidar')
     const config = {
       inputDir: process.env.SVG_SPRITE_INPUT || path.join(__dirname, '../src/assets/svg'),
@@ -82,7 +77,7 @@ else {
       ignored: /(^|[/\\])\../,
       persistent: true,
       ignoreInitial: true,
-      depth: 99, // Рекурсивное наблюдение за поддиректориями
+      depth: 99,
     })
 
     watcher
