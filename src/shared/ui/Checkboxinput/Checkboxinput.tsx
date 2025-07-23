@@ -6,8 +6,6 @@ interface CheckboxSvgProps {
 }
 
 const CheckboxSvg = ({ active }: CheckboxSvgProps) => {
-  const iconName = active ? 'checkbox-remove' : 'checkbox-empty';
-
   return (
     <svg
       width="24"
@@ -16,7 +14,17 @@ const CheckboxSvg = ({ active }: CheckboxSvgProps) => {
       className={styles['checkbox-icon']}
       aria-hidden="true"
     >
-      <use href={`/${iconName}.svg#${iconName}`} />
+      <rect
+        className={styles['checkbox-outline']}
+        x="2" y="2"
+        width="20" height="20"
+        rx="4"
+      />
+      <path
+        className={styles['checkbox-mark']}
+        d="M8 12h8"
+        style={{ opacity: active ? 1 : 0 }}
+      />
     </svg>
   );
 };
