@@ -1,0 +1,41 @@
+@use '@colors' as c;
+
+.notification-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 556px;
+  margin: auto;
+  padding: 80px 60px;
+  background-color: c.$color-card-background;
+  border-radius: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    margin-top: 52px;
+}
+
+.description {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    text-align: center;
+}
