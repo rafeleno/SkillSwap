@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import styles from './Dropdown.module.scss';
 import { DropdownOption, DropdownProps } from './Dropdown.types';
 
@@ -12,9 +11,7 @@ const DropdownOptionItem = ({
   onSelect: (value: string) => void;
 }) => (
   <li
-    className={clsx(styles.option, {
-      [styles.selectedOption]: isSelected,
-    })}
+    className={`${styles.option} ${isSelected ? styles.selectedOption : ''}`}
     onClick={() => onSelect(option.value)}
     role="option"
     aria-selected={isSelected}
@@ -52,24 +49,20 @@ export const Dropdown = ({
         </label>
       )}
 
-      <div className={clsx(styles.dropdown, { [styles.expanded]: isExpanded })}>
+      <div className={`${styles.dropdown} ${isExpanded ? styles.expanded : ''}`}>
         <button
           id={id}
           type="button"
-          className={clsx(styles.trigger, {
-            [styles.borderlessTrigger]: version === 'no-border',
-          })}
+          className={`${styles.trigger} ${version === 'no-border' ? styles.borderlessTrigger : ''}`}
           onClick={onExpandToggle}
           aria-expanded={isExpanded}
           aria-haspopup="listbox"
         >
-          <span className={clsx({ [styles.placeholder]: shouldShowPlaceholder })}>
+          <span className={`${shouldShowPlaceholder ? styles.placeholder : ''}`}>
             {currentDisplayText}
           </span>
           <svg
-            className={clsx(styles.pointer, {
-              [styles.pointerExpanded]: isExpanded,
-            })}
+            className={`${styles.pointer} ${isExpanded ? styles.pointerExpanded : ''}`}
             aria-hidden="true"
           >
             <use href="/svg/main/chevron-down.svg#icon" />
@@ -79,10 +72,9 @@ export const Dropdown = ({
         {isExpanded && (
           <ul
             id={`${id}-listbox`}
-            className={clsx(styles.optionsList, {
-              [styles.borderlessOptions]: version === 'no-border',
-              [styles.absolutePosition]: position === 'absolute',
-            })}
+            className={`${styles.optionsList} ${
+              version === 'no-border' ? styles.borderlessOptions : ''
+            } ${position === 'absolute' ? styles.absolutePosition : ''}`}
             role="listbox"
             aria-labelledby={id}
           >
