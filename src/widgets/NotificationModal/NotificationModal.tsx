@@ -10,13 +10,12 @@ export const NotificationModal: React.FC<NotificationModalProps> = (
     <div className={styles.notificationModal}>
       <div className={styles.iconWrapper}>
         <svg className={styles.icon}>
-          <use xlinkHref={`/sprites.svg#${iconId}`} />
+          <use href={`/sprites.svg#${iconId}`} />
         </svg>
       </div>
       <h2 className={styles.title}>{title}</h2>
       <span className={styles.description}>{description}</span>
       <MainButton
-        // className={styles.button}
         type="primary"
         onClick={() => {}}
       >
