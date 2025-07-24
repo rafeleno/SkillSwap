@@ -55,7 +55,7 @@ async function generateSprite() {
     sprite += `</svg>`
 
     await fs.mkdir(path.dirname(config.outputFile), { recursive: true })
-    await fs.writeFile(config.outputFile, sprite.replace(/fill=".+"/g, 'fill="inferit"'))
+    await fs.writeFile(config.outputFile, sprite.replace(/fill=".+"/g, 'fill="inherit"'))
   }
   catch (err) {
     console.error('SVG sprite generation error:', err)
