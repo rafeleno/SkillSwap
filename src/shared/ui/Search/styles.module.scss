@@ -1,0 +1,56 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 527px;
+  padding: 12px;
+  background-color: c.$color-input-background;
+  border-radius: 4px;
+  padding-inline-end: 30px;
+}
+
+.search-input {
+  flex-grow: 1;
+  color: c.$color-text-primary;
+  font-weight: t.$font-weight-regular;
+  font-size: t.$font-h4-size;
+  font-family: t.$font-secondary;
+  line-height: t.$font-h4-line-height;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  caret-color: c.$color-text-link;
+}
+
+.search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.search-clear-button {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+    
+  &:hover {
+    opacity: 1;
+  }
+}
