@@ -29,7 +29,6 @@ const CheckboxSvg = ({ active }: CheckboxSvgProps) => {
   );
 };
 
-
 export const CheckboxInput = ({ 
   children,
   active = false,
