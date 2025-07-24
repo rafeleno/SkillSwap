@@ -29,7 +29,7 @@ async function generateSprite() {
     }
 
     let sprite = `<?xml version="1.0" encoding="UTF-8"?>
-<svg viewbox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 `
 
     for (const filePath of svgFiles) {
@@ -47,7 +47,7 @@ async function generateSprite() {
         .replace(/<\/svg>/i, '')
         .trim()
 
-      sprite += `  <symbol id="${symbolId}" viewbox="0 0 24 24" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n`
+      sprite += `  <symbol id="${symbolId}"  fill="inherit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n`
       sprite += `    ${innerContent}\n`
       sprite += `  </symbol>\n`
     }
@@ -55,7 +55,7 @@ async function generateSprite() {
     sprite += `</svg>`
 
     await fs.mkdir(path.dirname(config.outputFile), { recursive: true })
-    await fs.writeFile(config.outputFile, sprite.replace(/fill=".+"/g, 'fill="inferit"'))
+    await fs.writeFile(config.outputFile, sprite.replace(/fill=".+"/g, 'fill="inherit"'))
   }
   catch (err) {
     console.error('SVG sprite generation error:', err)
