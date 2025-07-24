@@ -3,7 +3,6 @@
 .icon {
   width: 24px;
   height: 24px;
-  stroke: red;
 }
 
 .button {
@@ -11,6 +10,7 @@
   flex-direction: row;
   gap: 8px;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 12px 24px;
   border-style: solid;
@@ -31,6 +31,10 @@
       color: c.$color-card-background;
       background-color: c.$color-text-link;
       border-color: c.$color-text-link;
+
+      .icon {
+        fill: c.$color-card-background;
+      }
     }
 
     &:disabled {
@@ -48,6 +52,10 @@
     &:hover {
       color: c.$color-caption;
       border-color: c.$color-button-hover;
+
+      .icon {
+        fill: c.$color-caption;
+      }
     }
 
     &:active {
@@ -75,6 +83,10 @@
       color: c.$color-card-background;
       background-color: c.$color-caption;
       border-color: c.$color-caption;
+
+      .icon {
+        fill: c.$color-card-background;
+      }
     }
   }
 }

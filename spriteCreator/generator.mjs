@@ -46,7 +46,6 @@ async function generateSprite() {
         .replace(/<svg[^>]*>/i, '')
         .replace(/<\/svg>/i, '')
         .trim()
-
       sprite += `  <symbol id="${symbolId}"  fill="inherit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n`
       sprite += `    ${innerContent}\n`
       sprite += `  </symbol>\n`
