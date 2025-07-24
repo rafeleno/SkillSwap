@@ -1,6 +1,7 @@
+import type { DatepickerProps } from './Datepicker.types'
 import { MainButton } from '@uiComponents/MainButton'
 import { ru } from 'date-fns/locale'
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import DatePicker, { registerLocale } from 'react-datepicker'
 
 import styles from './styles.module.scss'
@@ -8,18 +9,16 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 registerLocale('ru', ru)
 
-export const Datepicker: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
-  const [tempDate, setTempDate] = useState<Date | null>(null)
+export const Datepicker: React.FC<DatepickerProps> = ({ selectedDate, setSelectedDate }) => {
   const datePickerRef = useRef<any>(null)
 
   const handleCancel = () => {
-    setTempDate(selectedDate)
+    setSelectedDate(null)
     datePickerRef.current?.setOpen(false)
   }
 
   const handleConfirm = () => {
-    setSelectedDate(tempDate)
+    setSelectedDate(selectedDate)
     datePickerRef.current?.setOpen(false)
   }
 
@@ -32,7 +31,7 @@ export const Datepicker: React.FC = () => {
       <DatePicker
         ref={datePickerRef}
         selected={selectedDate}
-        onChange={(date: Date | null) => setTempDate(date)}
+        onChange={(date: Date | null) => setSelectedDate(date)}
         onChangeRaw={e => e.preventDefault()}
         locale="ru"
         maxDate={new Date()}
