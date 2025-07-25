@@ -1,0 +1,12 @@
+@use '@colors' as c;
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 324px;
+    max-height: 368px;
+    padding: 16px;
+    background-color: c.$color-card-background;
+    border-radius: 10px;
+}
