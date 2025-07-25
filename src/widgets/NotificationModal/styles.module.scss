@@ -1,0 +1,54 @@
+@use '@colors' as c;
+
+@keyframes fade-in-scale {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.notification-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 556px;
+  margin: auto;
+  padding: 80px 60px;
+  background-color: c.$color-card-background;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  animation: fade-in-scale 0.3s ease-out;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    fill:none;
+}
+
+.title {
+    margin-top: 52px;
+}
+
+.description {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+
