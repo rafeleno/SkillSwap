@@ -89,12 +89,15 @@ p {
   &__content {
     display: flex;
     gap: 77px;
+    justify-content: space-between;
   }
 
   &__text-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
     max-height: 324px;
 
     &__button-wrapper {
