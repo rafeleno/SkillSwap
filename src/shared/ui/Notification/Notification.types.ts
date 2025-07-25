@@ -3,5 +3,5 @@ export interface NotificationProps {
   notificationTitle: string
   notificationText: string
   notificationDate: string
-  onClick: () => void
+  onClick?: () => void
 }

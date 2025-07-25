@@ -8,7 +8,7 @@ export const Notification: React.FC<NotificationProps> = ({
   notificationTitle,
   notificationText,
   notificationDate,
-  onClick,
+  onClick = () => {},
 }) => {
   return (
     <>
