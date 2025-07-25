@@ -1,7 +1,7 @@
 import type { SkillCardProps } from './SkillCard.types'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
-import React from 'react'
+import React, { useState } from 'react'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './styles.module.scss'
@@ -11,6 +11,8 @@ import 'swiper/scss/pagination'
 import 'swiper/scss/scrollbar'
 
 export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, description, photos }) => {
+  const [activeIndex, setActiveIndex] = useState(0)
+
   return (
     <div className={styles['skill-card']}>
       {type === 'edit' && (
@@ -49,6 +51,8 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, des
         </div>
         <Swiper
           className={styles['skill-card__swiper']}
+          role="region"
+          aria-label="Слайдер изображений"
           modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={1}
@@ -58,10 +62,16 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, des
           }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
+          onSlideChange={swiper => setActiveIndex(swiper.activeIndex)}
         >
-          {photos.map((photo) => (
-            <SwiperSlide key={photo}>
-              <img className={styles['skill-card__swiper__image']} src={photo} alt="" />
+          {photos.map((photo, index) => (
+            <SwiperSlide key={index}>
+              <img
+                className={styles['skill-card__swiper__image']}
+                src={photo}
+                role="img"
+                aria-label={`Изображение ${index + 1} из ${photos.length}`}
+              />
             </SwiperSlide>
           ))}
           <nav>
@@ -69,6 +79,24 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, des
             <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-next']}`}></button>
           </nav>
         </Swiper>
+        <div
+          aria-live="polite"
+          style={{
+            position: 'absolute',
+            width: '1px',
+            height: '1px',
+            overflow: 'hidden',
+            clip: 'rect(1px, 1px, 1px, 1px)',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Слайд
+          {' '}
+          {activeIndex + 1}
+          {' '}
+          из
+          {photos.length}
+        </div>
       </div>
     </div>
   )
