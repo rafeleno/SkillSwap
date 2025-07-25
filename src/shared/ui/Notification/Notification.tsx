@@ -15,7 +15,7 @@ export const Notification: React.FC<NotificationProps> = ({
       <div className={styles.notificationContainer}>
         <div className={styles.notificationContent}>
           <div className={styles.notificationIconAndText}>
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <use href="/sprites.svg#idea" />
             </svg>
             <span>
@@ -30,7 +30,7 @@ export const Notification: React.FC<NotificationProps> = ({
             <span className={styles.notificationButton}>
               <MainButton
                 type="primary"
-                children="Перейти"
+                children={<p className={styles.notificationButtonText}>Перейти</p>}
                 onClick={onClick}
               />
             </span>
