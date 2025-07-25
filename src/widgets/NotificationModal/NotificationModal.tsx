@@ -25,7 +25,7 @@ export const NotificationModal: React.FC<NotificationModalProps> = (
         type="primary"
         onClick={onClose}
       >
-        Готово
+        <span> Готово </span>
       </MainButton>
     </div>
   )
