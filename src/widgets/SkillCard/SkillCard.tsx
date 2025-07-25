@@ -6,13 +6,13 @@ import drawing4 from '@images/skillsImages/drawing4.jpg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import React from 'react'
-import { A11y, Navigation } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './styles.module.scss'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
+import 'swiper/scss/scrollbar'
 
 export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
   return (
@@ -57,10 +57,13 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
         </div>
         <Swiper
           className={styles['skill-card__swiper']}
-          modules={[Navigation, A11y]}
+          modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={1}
-          navigation
+          navigation={{
+            nextEl: `.${styles['skill-card__swiper__button-next']}`,
+            prevEl: `.${styles['skill-card__swiper__button-prev']}`,
+          }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
         >
@@ -68,6 +71,10 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
           <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing2} alt="" /></SwiperSlide>
           <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing3} alt="" /></SwiperSlide>
           <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing4} alt="" /></SwiperSlide>
+          <nav>
+            <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-prev']}`}></button>
+            <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-next']}`}></button>
+          </nav>
         </Swiper>
       </div>
     </div>
