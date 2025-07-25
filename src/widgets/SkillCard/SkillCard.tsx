@@ -1,0 +1,75 @@
+import type { SkillCardProps } from './SkillCard.types'
+import { IconButton } from '@uiComponents/IconButton'
+import { MainButton } from '@uiComponents/MainButton'
+import React from 'react'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import styles from './styles.module.scss'
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
+import 'swiper/scss/scrollbar'
+
+export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, description, photos }) => {
+  return (
+    <div className={styles['skill-card']}>
+      {type === 'edit' && (
+        <>
+          <h2 className={styles['skill-card__title']}>Ваше предложение</h2>
+          <p className={styles['skill-card__attention']}>Пожалуйста, проверьте и подтвердите правильность данных</p>
+        </>
+      )}
+      {type === 'view' && (
+        <div className={styles['skill-card__options']}>
+          <IconButton onClick={() => {}} name="like"></IconButton>
+          <IconButton onClick={() => {}} name="share"></IconButton>
+          <IconButton onClick={() => {}} name="more-square"></IconButton>
+        </div>
+      )}
+      <div className={styles['skill-card__content']}>
+        <div className={styles['skill-card__text-content']}>
+          <div className={styles['skill-card__text-content__text-wrapper']}>
+            <h1 className={styles['skill-card__skill-title']}>{title}</h1>
+            <p className={styles['skill-card__category-title']}>{category}</p>
+            <p className={styles['skill-card__description']}>
+              {description}
+            </p>
+          </div>
+          {type === 'edit' && (
+            <div className={styles['skill-card__text-content__button-wrapper']}>
+              <MainButton type="secondary" onClick={() => {}} rightIconId="edit"><p>Редактировать</p></MainButton>
+              <MainButton type="primary" onClick={() => {}}><p>Готово</p></MainButton>
+            </div>
+          )}
+          {type === 'view' && (
+            <div className={styles['skill-card__text-content__button-wrapper']}>
+              <MainButton type="primary" onClick={() => {}}><p>Предложить обмен</p></MainButton>
+            </div>
+          )}
+        </div>
+        <Swiper
+          className={styles['skill-card__swiper']}
+          modules={[Navigation]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation={{
+            nextEl: `.${styles['skill-card__swiper__button-next']}`,
+            prevEl: `.${styles['skill-card__swiper__button-prev']}`,
+          }}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          {photos.map((photo) => (
+            <SwiperSlide key={photo}>
+              <img className={styles['skill-card__swiper__image']} src={photo} alt="" />
+            </SwiperSlide>
+          ))}
+          <nav>
+            <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-prev']}`}></button>
+            <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-next']}`}></button>
+          </nav>
+        </Swiper>
+      </div>
+    </div>
+  )
+}

@@ -48,8 +48,16 @@ export default {
         },
       },
       {
-        test: /\.(png|jpg|gif|woff2?|eot|ttf|otf|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 8 * 1024,
+          },
+        },
+        generator: {
+          filename: 'assets/images/[name][hash][ext]',
+        },
       },
     ],
   },

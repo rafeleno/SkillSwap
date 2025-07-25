@@ -19,9 +19,11 @@ export default merge(common, {
           {
             loader: 'css-loader',
             options: {
+
               esModule: false,
               modules: {
                 localIdentName: '[local]__[hash:base64:5]',
+                exportLocalsConvention: 'dashes',
               },
               sourceMap: true,
             },
