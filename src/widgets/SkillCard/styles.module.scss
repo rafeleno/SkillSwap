@@ -1,0 +1,28 @@
+@use '@colors' as c;
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 52px;
+
+  &__options {
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+  }
+
+  &__category-title {
+    margin-bottom: 20px;
+    color: c.$color-caption;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.test-image {
+  width: 440px;
+  height: 324px;
+  background-color: bisque;
+}

@@ -23,6 +23,7 @@ export default {
               esModule: false,
               modules: {
                 localIdentName: '[local]__[hash:base64:5]',
+                exportLocalsConvention: 'dashes',
               },
               sourceMap: true,
             },
