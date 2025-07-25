@@ -19,9 +19,12 @@
     "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.8.2",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "react": "^19.1.0",
+    "react-datepicker": "^8.4.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
+    "react-select": "^5.10.2",
     "svg-sprite-loader": "^6.0.9"
   },
   "devDependencies": {
