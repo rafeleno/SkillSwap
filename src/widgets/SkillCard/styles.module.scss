@@ -1,15 +1,29 @@
 @use '@colors' as c;
 
+p {
+  font-size: 16px;
+}
+
 .skill-card {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   padding: 32px 52px;
+
+  &__title {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &__attention {
+    margin-bottom: 40px;
+    text-align: center;
+  }
 
   &__options {
     display: flex;
     gap: 12px;
     justify-content: end;
+    margin-bottom: 24px;
   }
 
   &__category-title {
@@ -19,10 +33,27 @@
     font-size: 12px;
     line-height: 16px;
   }
-}
 
-.test-image {
-  width: 440px;
-  height: 324px;
-  background-color: bisque;
+  &__content {
+    display: flex;
+    gap: 77px;
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 324px;
+
+    &__button-wrapper {
+      display: flex;
+      gap: 12px;
+    }
+  }
+
+  .test-image {
+    width: 440px;
+    height: 324px;
+    background-color: bisque;
+  }
 }

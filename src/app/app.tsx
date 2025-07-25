@@ -5,7 +5,7 @@ export function App() {
   return (
     <>
       <div>
-        <SkillCard></SkillCard>
+        <SkillCard type="view"></SkillCard>
       </div>
     </>
   )
