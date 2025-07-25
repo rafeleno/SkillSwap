@@ -1,8 +1,18 @@
 import type { SkillCardProps } from './SkillCard.types'
+import drawing1 from '@images/skillsImages/drawing1.jpg'
+import drawing2 from '@images/skillsImages/drawing2.jpg'
+import drawing3 from '@images/skillsImages/drawing3.jpg'
+import drawing4 from '@images/skillsImages/drawing4.jpg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import React from 'react'
+import { A11y, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './styles.module.scss'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
   return (
@@ -45,9 +55,20 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
             </div>
           )}
         </div>
-        <div className={styles['skill-card__image-content']}>
-
-        </div>
+        <Swiper
+          className={styles['skill-card__swiper']}
+          modules={[Navigation, A11y]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing1} alt="" /></SwiperSlide>
+          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing2} alt="" /></SwiperSlide>
+          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing3} alt="" /></SwiperSlide>
+          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing4} alt="" /></SwiperSlide>
+        </Swiper>
       </div>
     </div>
   )
