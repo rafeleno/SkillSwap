@@ -1,8 +1,4 @@
 import type { SkillCardProps } from './SkillCard.types'
-import drawing1 from '@images/skillsImages/drawing1.jpg'
-import drawing2 from '@images/skillsImages/drawing2.jpg'
-import drawing3 from '@images/skillsImages/drawing3.jpg'
-import drawing4 from '@images/skillsImages/drawing4.jpg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import React from 'react'
@@ -14,7 +10,7 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/scrollbar'
 
-export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
+export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, description, photos }) => {
   return (
     <div className={styles['skill-card']}>
       {type === 'edit' && (
@@ -33,14 +29,10 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
       <div className={styles['skill-card__content']}>
         <div className={styles['skill-card__text-content']}>
           <div className={styles['skill-card__text-content__text-wrapper']}>
-            <h1 className={styles['skill-card__skill-title']}>Игра на барабанах</h1>
-            <p className={styles['skill-card__category-title']}>Творчество и искусство / Музыка и звук</p>
+            <h1 className={styles['skill-card__skill-title']}>{title}</h1>
+            <p className={styles['skill-card__category-title']}>{category}</p>
             <p className={styles['skill-card__description']}>
-              Привет! Я играю на барабанах уже больше 10 лет —
-              от репетиций в гараже до выступлений на сцене с живыми
-              группами. Научу основам техники (и как не отбить себе пальцы),
-              играть любимые ритмы и разбирать песни, импровизировать
-              и звучать уверенно даже без партитуры
+              {description}
             </p>
           </div>
           {type === 'edit' && (
@@ -67,10 +59,11 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type }) => {
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
         >
-          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing1} alt="" /></SwiperSlide>
-          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing2} alt="" /></SwiperSlide>
-          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing3} alt="" /></SwiperSlide>
-          <SwiperSlide><img className={styles['skill-card__swiper__image']} src={drawing4} alt="" /></SwiperSlide>
+          {photos.map((photo) => (
+            <SwiperSlide key={photo}>
+              <img className={styles['skill-card__swiper__image']} src={photo} alt="" />
+            </SwiperSlide>
+          ))}
           <nav>
             <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-prev']}`}></button>
             <button className={`${styles['skill-card__swiper__button']} ${styles['skill-card__swiper__button-next']}`}></button>
