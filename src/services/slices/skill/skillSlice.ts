@@ -25,7 +25,7 @@ const initialState: SkillsState = {
   error: null,
 };
 
-const skillsSlice = createSlice({
+export const skillSlice = createSlice({
   name: 'skills',
   initialState,
   reducers: {
@@ -78,5 +78,5 @@ export const selectSkillById = (skillId: string) =>
     return null;
   });
 
-export const { clearSkills } = skillsSlice.actions;
-export default skillsSlice.reducer;
+export const { clearSkills } = skillSlice.actions;
+export default skillSlice;
