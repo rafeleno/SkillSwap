@@ -29,7 +29,7 @@ async function generateSprite() {
     }
 
     let sprite = `<?xml version="1.0" encoding="UTF-8"?>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 `
 
     for (const filePath of svgFiles) {
@@ -47,15 +47,19 @@ async function generateSprite() {
         .replace(/<\/svg>/i, '')
         .trim()
 
-      sprite += `  <symbol id="${symbolId}" viewBox="0 0 24 24" >\n`
+      sprite += `  <symbol id="icon-${symbolId}" viewBox="0 0 24 24" >\n`
       sprite += `    ${innerContent}\n`
       sprite += `  </symbol>\n`
     }
 
-    sprite += `</svg>`
+    sprite += `</svg>`;
+
+    sprite = sprite
+      .replace(/fill=".+"/g, 'fill="inherit"')
+      .replace(/stroke=".+"/g, 'stroke="currentColor"');
 
     await fs.mkdir(path.dirname(config.outputFile), { recursive: true })
-    await fs.writeFile(config.outputFile, sprite.replace(/fill=".+"/g, 'fill="inherit"'))
+    await fs.writeFile(config.outputFile, sprite);
   }
   catch (err) {
     console.error('SVG sprite generation error:', err)
@@ -86,5 +90,5 @@ else {
       .on('error', error => console.error('SVG watcher error:', error))
   }
 
-  Chokidar()
+  Chokidar();
 }

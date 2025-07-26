@@ -7,7 +7,7 @@ export default class SvgSpritePlugin {
   constructor(options = {}) {
     this.options = {
       inputDir: './src/assets/svg',
-      outputFile: './dist/sprite.svg',
+      outputFile: './dist/sprites.svg',
       watch: true,
       ...options,
     }
@@ -15,15 +15,17 @@ export default class SvgSpritePlugin {
   }
 
   apply(compiler) {
-    this.generateSprite()
+    compiler.hooks.done.tap('SvgSpritePlugin', () => {
+      this.generateSprite();
+    });
 
     if (this.options.watch && compiler.options.mode === 'development') {
       this.startWatching(compiler)
+      compiler.hooks.watchClose.tap('SvgSpritePlugin', () => {
+        this.stopWatching()
+      })
     }
 
-    compiler.hooks.watchClose.tap('SvgSpritePlugin', () => {
-      this.stopWatching()
-    })
   }
 
   generateSprite() {
