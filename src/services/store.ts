@@ -7,9 +7,10 @@ import {
   useDispatch as dispatchHook,
   useSelector as selectorHook,
 } from 'react-redux'
-import { notificationsSlice } from './slices/notifications/notificationsSlice'
+import { usersSlice } from './slices/users/usersSlice'; 
+import { notificationsSlice } from './slices/notifications/notificationsSlice';
 
-const rootReducer = combineSlices(notificationsSlice)
+const rootReducer = combineSlices(notificationsSlice, usersSlice)
 
 const store = configureStore({
   reducer: rootReducer,
