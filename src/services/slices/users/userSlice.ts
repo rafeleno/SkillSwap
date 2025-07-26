@@ -72,9 +72,10 @@ export const userSlice = createSlice({
         state.status = 'loading';
         state.error = null;
       })
-      .addCase(fetchUserData.fulfilled, (state, action) => {
+      .addCase(fetchUserData.fulfilled, (state, action: PayloadAction<User>) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        localStorage.setItem('user', JSON.stringify(action.payload));
       })
       .addCase(fetchUserData.rejected, (state, action) => {
         state.status = 'failed';
@@ -84,9 +85,10 @@ export const userSlice = createSlice({
         state.status = 'loading';
         state.error = null;
       })
-      .addCase(saveUserData.fulfilled, (state, action) => {
+      .addCase(saveUserData.fulfilled, (state, action: PayloadAction<User>) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        localStorage.setItem('user', JSON.stringify(action.payload));
       })
       .addCase(saveUserData.rejected, (state, action) => {
         state.status = 'failed';
@@ -107,4 +109,4 @@ export const {
   resetUser
 } = userSlice.actions;
 
-export default userSlice;
+export default userSlice.reducer;
