@@ -1,8 +1,10 @@
+import type { useState } from 'react'
+
 export type InputType = 'password' | 'email' | 'edit' | 'regular'
 
 export interface InputProps {
   type: InputType
-  state: [string, React.Dispatch<React.SetStateAction<string>>]
+  state: ReturnType<typeof useState<string>>
   placeholder?: string
   label?: string
 }

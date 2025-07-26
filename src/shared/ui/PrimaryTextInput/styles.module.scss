@@ -27,18 +27,18 @@
   right: 12px;
   z-index: 1;
   transform: translateY(-50%);
-}
 
-.icon-container.inactive {
-  cursor: default;
-  pointer-events: none;
-}
+  &.inactive {
+    cursor: default;
+    pointer-events: none;
+  }
 
-.icon-container.active {
-  cursor: pointer;
+  &.active {
+    cursor: pointer;
 
-  &:hover {
-    opacity: 0.8;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
