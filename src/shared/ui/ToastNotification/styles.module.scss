@@ -11,8 +11,13 @@
 
 .toast-notification-cross {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 7px;
+    right: 5px;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .toast-notification-content {
@@ -48,6 +53,7 @@
     border-style: solid;
     border-width: 1px;
     border-radius: 20px;
+    cursor: pointer;
 
     &:hover {
       color: c.$color-caption;
