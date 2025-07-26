@@ -8,8 +8,9 @@ import {
   useSelector as selectorHook,
 } from 'react-redux'
 import { notificationsSlice } from './slices/notifications/notificationsSlice'
+import { swapsSlice } from './slices/swaps/swapsSlice'
 
-const rootReducer = combineSlices(notificationsSlice)
+const rootReducer = combineSlices(notificationsSlice, swapsSlice)
 
 const store = configureStore({
   reducer: rootReducer,
