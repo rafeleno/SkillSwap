@@ -13,7 +13,7 @@ export const Search: React.FC<SearchProps> = ({
       <div className={styles.searchContainer}>
         <span className={styles.searchIcon}>
           <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="/sprites.svg#search" />
+            <use href="#icon-search" />
           </svg>
         </span>
         <input
@@ -31,7 +31,7 @@ export const Search: React.FC<SearchProps> = ({
             aria-label="Очистить поле ввода"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use href="/sprites.svg#cross" />
+              <use href="#icon-cross" />
             </svg>
           </button>
         )}

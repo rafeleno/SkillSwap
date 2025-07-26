@@ -14,81 +14,52 @@ async function getSVGFiles(dir) {
   return files.flat().filter(file => path.extname(file).toLowerCase() === '.svg')
 }
 
-async function generateSprite() {
+export async function generateSprite() {
   const config = {
     inputDir: process.env.SVG_SPRITE_INPUT || path.join(__dirname, '../src/assets/svg'),
-    outputFile: process.env.SVG_SPRITE_OUTPUT || path.join(__dirname, '../dist/sprites.svg'),
   }
+  let svgFiles;
 
   try {
-    const svgFiles = await getSVGFiles(config.inputDir)
-
-    if (svgFiles.length === 0) {
-      console.warn('No SVG files found in', config.inputDir)
-      return
-    }
-
-    let sprite = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-`
-
-    for (const filePath of svgFiles) {
-      const svgContent = await fs.readFile(filePath, 'utf8')
-
-      const relativePath = path.relative(config.inputDir, filePath)
-      const symbolId = relativePath
-        .replace(/\.svg$/i, '')
-        .replace(/.+\\/g, '')
-        .replace(/\s+/g, '-')
-        .toLowerCase()
-
-      const innerContent = svgContent
-        .replace(/<svg[^>]*>/i, '')
-        .replace(/<\/svg>/i, '')
-        .trim()
-
-      sprite += `  <symbol id="icon-${symbolId}" viewBox="0 0 24 24" >\n`
-      sprite += `    ${innerContent}\n`
-      sprite += `  </symbol>\n`
-    }
-
-    sprite += `</svg>`;
-
-    sprite = sprite
-      .replace(/fill=".+"/g, 'fill="inherit"')
-      .replace(/stroke=".+"/g, 'stroke="currentColor"');
-
-    await fs.mkdir(path.dirname(config.outputFile), { recursive: true })
-    await fs.writeFile(config.outputFile, sprite);
+    svgFiles = await getSVGFiles(config.inputDir);
   }
   catch (err) {
     console.error('SVG sprite generation error:', err)
     process.exitCode = 1
   }
-}
 
-if (process.env.SVG_SPRITE_ONCE) {
-  generateSprite()
-}
-else {
-  async function Chokidar() {
-    const chokidar = await import('chokidar')
-    const config = {
-      inputDir: process.env.SVG_SPRITE_INPUT || path.join(__dirname, '../src/assets/svg'),
-    }
-
-    const watcher = chokidar.default(config.inputDir, {
-      ignored: /(^|[/\\])\../,
-      persistent: true,
-      ignoreInitial: true,
-      depth: 99,
-    })
-
-    watcher
-      .on('add', generateSprite)
-      .on('unlink', generateSprite)
-      .on('error', error => console.error('SVG watcher error:', error))
+  if (svgFiles.length === 0) {
+    console.warn('No SVG files found in', config.inputDir)
+    return
   }
 
-  Chokidar();
+  let sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n`;
+
+  for (const filePath of svgFiles) {
+    const svgContent = await fs.readFile(filePath, 'utf8')
+
+    const relativePath = path.relative(config.inputDir, filePath)
+    const symbolId = relativePath
+      .replace(/\.svg$/i, '')
+      .replace(/.+\\/g, '')
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+
+    const innerContent = svgContent
+      .replace(/<svg[^>]*>/i, '')
+      .replace(/<\/svg>/i, '')
+      .trim()
+
+    sprite += `  <symbol id="icon-${symbolId}" viewBox="0 0 24 24" >\n`
+    sprite += `    ${innerContent}\n`
+    sprite += `  </symbol>\n`
+  }
+
+  sprite += `</svg>`;
+
+  sprite = sprite
+    .replace(/fill=".+"/g, 'fill="inherit"')
+    .replace(/stroke=".+"/g, 'stroke="currentColor"');
+
+  return sprite;
 }
