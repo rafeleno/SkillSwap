@@ -1,5 +1,6 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../../store';
+import { selectAllCategories } from './skillsSlice';
 
 type User = {
   id: string;
@@ -14,17 +15,19 @@ type User = {
   favourites: string[];
   skillsToStudy: string[];
   skillsToLearn: string[];
-  userSwap: unknown; // чуть позже поменяю
+  userSwap?: unknown;
 };
 
 type UsersState = {
   users: User[];
+  currentUser: string | null;
 };
 
 const initialState: UsersState = {
   users: localStorage.getItem('users') 
     ? JSON.parse(localStorage.getItem('users')!) 
     : [],
+  currentUser: localStorage.getItem('currentUser') || null,
 };
 
 export const usersSlice = createSlice({
@@ -35,64 +38,64 @@ export const usersSlice = createSlice({
       state.users.push(action.payload);
       localStorage.setItem('users', JSON.stringify(state.users));
     },
-
-    updateUserData: (state, action: PayloadAction<Partial<Omit<User, 
-      'skillsToStudy' | 'skillsToLearn'>> & { id: string }>) => {
-      const { id, ...updatedData } = action.payload;
+    setCurrentUser: (state, action: PayloadAction<string>) => {
+      state.currentUser = action.payload;
+      localStorage.setItem('currentUser', action.payload);
+    },
+    updateUser: (state, action: PayloadAction<Partial<Omit<User, 'id'>> & { id: string }>) => {
+      const { id, ...updates } = action.payload;
       const userIndex = state.users.findIndex(user => user.id === id);
       if (userIndex >= 0) {
         state.users[userIndex] = { 
           ...state.users[userIndex], 
-          ...updatedData 
+          ...updates 
         };
         localStorage.setItem('users', JSON.stringify(state.users));
       }
     },
-
-    addToFavourites: (state, action: PayloadAction<{ userId: string; favouriteId: string }>) => {
-      const { userId, favouriteId } = action.payload;
+    addToFavourites: (state, action: PayloadAction<{ userId: string; skillId: string }>) => {
+      const { userId, skillId } = action.payload;
       const user = state.users.find(user => user.id === userId);
-      if (user && !user.favourites.includes(favouriteId)) {
-        user.favourites.push(favouriteId);
+      if (user && !user.favourites.includes(skillId)) {
+        user.favourites.push(skillId);
         localStorage.setItem('users', JSON.stringify(state.users));
       }
     },
-
-    removeFromFavourites: (state, action: PayloadAction<{ userId: string; favouriteId: string }>) => {
-      const { userId, favouriteId } = action.payload;
+    removeFromFavourites: (state, action: PayloadAction<{ userId: string; skillId: string }>) => {
+      const { userId, skillId } = action.payload;
       const user = state.users.find(user => user.id === userId);
       if (user) {
-        user.favourites = user.favourites.filter(id => id !== favouriteId);
+        user.favourites = user.favourites.filter(id => id !== skillId);
         localStorage.setItem('users', JSON.stringify(state.users));
       }
     },
-
-    replaceSkillsToStudy: (state, action: PayloadAction<{ userId: string; skillIds: string[] }>) => {
-      const { userId, skillIds } = action.payload;
+    updateSkillsToStudy: (state, action: PayloadAction<{ userId: string; skills: string[] }>) => {
+      const { userId, skills } = action.payload;
       const user = state.users.find(user => user.id === userId);
       if (user) {
-        user.skillsToStudy = skillIds;
+        user.skillsToStudy = skills;
         localStorage.setItem('users', JSON.stringify(state.users));
       }
     },
-
-    replaceSkillsToLearn: (state, action: PayloadAction<{ userId: string; skillIds: string[] }>) => {
-      const { userId, skillIds } = action.payload;
+    updateSkillsToLearn: (state, action: PayloadAction<{ userId: string; skills: string[] }>) => {
+      const { userId, skills } = action.payload;
       const user = state.users.find(user => user.id === userId);
       if (user) {
-        user.skillsToLearn = skillIds;
+        user.skillsToLearn = skills;
         localStorage.setItem('users', JSON.stringify(state.users));
       }
     },
-
     clearUsers: (state) => {
       state.users = [];
+      state.currentUser = null;
       localStorage.removeItem('users');
+      localStorage.removeItem('currentUser');
     }
   }
 });
 
 export const selectAllUsers = (state: RootState) => state.users.users;
+export const selectCurrentUser = (state: RootState) => state.users.currentUser;
 
 export const selectUserById = (userId: string) => 
   createSelector([selectAllUsers], users => 
@@ -101,28 +104,34 @@ export const selectUserById = (userId: string) =>
 
 export const selectUserSkills = (userId: string) => 
   createSelector(
-    [selectUserById(userId), (state: RootState) => state.skills.skills], //скоро добавлю slice skill
-    (user, skills) => {
-      if (!user || !skills) return { skillsToStudy: [], skillsToLearn: [] };
+    [selectUserById(userId), selectAllCategories],
+    (user, categories) => {
+      if (!user || !categories) return { skillsToStudy: [], skillsToLearn: [], favourites: [] };
+
+      const findSkill = (id: string) => {
+        for (const category of categories) {
+          const skill = category.subcategory.find(skill => skill.id === id);
+          if (skill) return skill;
+        }
+        return null;
+      };
 
       return {
-        skillsToStudy: user.skillsToStudy
-          .map(skillId => skills.find(skill => skill.id === skillId))
-          .filter(Boolean),
-        skillsToLearn: user.skillsToLearn
-          .map(skillId => skills.find(skill => skill.id === skillId))
-          .filter(Boolean),
+        skillsToStudy: user.skillsToStudy.map(findSkill).filter(Boolean),
+        skillsToLearn: user.skillsToLearn.map(findSkill).filter(Boolean),
+        favourites: user.favourites.map(findSkill).filter(Boolean)
       };
     }
   );
 
 export const { 
-  addUser, 
-  updateUserData, 
-  addToFavourites, 
+  addUser,
+  setCurrentUser,
+  updateUser,
+  addToFavourites,
   removeFromFavourites,
-  replaceSkillsToStudy,
-  replaceSkillsToLearn,
+  updateSkillsToStudy,
+  updateSkillsToLearn,
   clearUsers
 } = usersSlice.actions;
 
