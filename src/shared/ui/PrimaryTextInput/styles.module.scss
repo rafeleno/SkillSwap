@@ -1,0 +1,77 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  margin: 0;
+  color: c.$color-text-primary;
+  font-weight: t.$font-weight-regular;
+  font-size: t.$font-h4-size;
+  line-height: t.$font-h4-line-height;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.icon-container {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  &.inactive {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.active {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  color: c.$color-text-primary;
+  background-color: c.$color-input-background;
+  border: 1px solid c.$color-disabled;
+  border-radius: 12px;
+  outline: none;
+
+  &::placeholder {
+    color: c.$color-caption;
+    font-weight: t.$font-weight-regular;
+    font-size: t.$font-h4-size;
+  }
+}
+
+.input.focused {
+  border-color: c.$color-accent;
+}
+
+.input.error {
+  border-color: c.$color-error;
+}
+
+.input.with-icon {
+  padding-right: 48px;
+}
+
+.error-message {
+  color: c.$color-error;
+  font-size: 12px;
+}
