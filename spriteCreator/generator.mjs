@@ -36,7 +36,8 @@ export async function generateSprite() {
   let sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n`;
 
   for (const filePath of svgFiles) {
-    const svgContent = await fs.readFile(filePath, 'utf8')
+    let svgContent = await fs.readFile(filePath, 'utf8');
+    let stroke = '';
 
     const relativePath = path.relative(config.inputDir, filePath)
     const symbolId = relativePath
@@ -52,16 +53,24 @@ export async function generateSprite() {
 
     const viewBox = svgContent.match(/viewBox=".+"/)[0];
 
-    sprite += `  <symbol id="icon-${symbolId}" fill="none" ${viewBox} >\n`
+    if (!svgContent.includes('ignore fill')) {
+      svgContent = svgContent
+        .replace(/^[fill="none"]fill=".+"/g, 'fill="inherit"')
+    }
+
+    if (!svgContent.includes('ignore stroke')) {
+      svgContent = svgContent
+        .replace(/stroke=".+"/g, 'stroke="currentColor"');
+    } else {
+      stroke += 'stroke="none"';
+    }
+
+    sprite += `  <symbol id="icon-${symbolId}" ${stroke} fill="none" ${viewBox} >\n`
     sprite += `    ${innerContent}\n`
     sprite += `  </symbol>\n`
   }
 
   sprite += `</svg>`;
-
-  sprite = sprite
-    .replace(/^[fill="none"]fill=".+"/g, 'fill="inherit"')
-    .replace(/stroke=".+"/g, 'stroke="currentColor"');
 
   return sprite;
 }
