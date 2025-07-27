@@ -65,7 +65,7 @@ export const selectSkillsStatus = (state: RootState) => state.skills.status;
 export const selectSkillsError = (state: RootState) => state.skills.error;
 
 export const selectCategoryById = (categoryId: string) => 
-  createSelector([selectAllCategories], categories =>
+  createSelector(selectAllCategories, categories =>
     categories.find(category => category.id === categoryId)
   );
 
