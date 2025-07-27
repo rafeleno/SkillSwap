@@ -1,0 +1,54 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.footer {
+  background-color: c.$color-card-background;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  height: 232px;
+  padding: 32px 36px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  margin-block: 60px 48px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 324px;
+  height: 60px;
+}
+
+.menu-list:first-child {
+  padding-inline-start: 24px;
+}
+
+.menu-list:last-child,
+.menu-list:nth-last-child(2) {
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.copyright {
+  color: c.$color-caption;
+  font-size: t.$font-caption-size;
+  line-height: t.$font-caption-line-height;
+}
