@@ -24,23 +24,23 @@
   display: flex;
   gap: 24px;
   margin-block: 60px 48px;
-}
 
-.menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 324px;
-  height: 60px;
-}
+  &list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 324px;
+    height: 60px;
 
-.menu-list:first-child {
-  padding-inline-start: 24px;
-}
+    &:first-child {
+      padding-inline-start: 24px;
+    }
 
-.menu-list:last-child,
-.menu-list:nth-last-child(2) {
-  list-style-type: none;
+    &:last-child,
+    &:nth-last-child(2) {
+      list-style-type: none;
+    }
+  }
 }
 
 .link {
