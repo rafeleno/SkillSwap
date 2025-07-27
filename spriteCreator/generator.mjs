@@ -50,7 +50,7 @@ export async function generateSprite() {
       .replace(/<\/svg>/i, '')
       .trim()
 
-    sprite += `  <symbol id="icon-${symbolId}" viewBox="0 0 24 24" >\n`
+    sprite += `  <symbol id="icon-${symbolId}" fill="none" viewBox="0 0 24 24" >\n`
     sprite += `    ${innerContent}\n`
     sprite += `  </symbol>\n`
   }
@@ -58,7 +58,7 @@ export async function generateSprite() {
   sprite += `</svg>`;
 
   sprite = sprite
-    .replace(/fill=".+"/g, 'fill="inherit"')
+    .replace(/^[fill="none"]fill=".+"/g, 'fill="inherit"')
     .replace(/stroke=".+"/g, 'stroke="currentColor"');
 
   return sprite;
