@@ -9,8 +9,9 @@ import {
 } from 'react-redux'
 import { notificationsSlice } from './slices/notifications/notificationsSlice'
 import { swapsSlice } from './slices/swaps/swapsSlice'
+import { userSlice } from './slices/users/userSlice'
 
-const rootReducer = combineSlices(notificationsSlice, swapsSlice)
+const rootReducer = combineSlices(notificationsSlice, swapsSlice, userSlice)
 
 const store = configureStore({
   reducer: rootReducer,
