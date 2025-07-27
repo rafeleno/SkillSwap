@@ -50,7 +50,9 @@ export async function generateSprite() {
       .replace(/<\/svg>/i, '')
       .trim()
 
-    sprite += `  <symbol id="icon-${symbolId}" fill="none" viewBox="0 0 24 24" >\n`
+    const viewBox = svgContent.match(/viewBox=".+"/)[0];
+
+    sprite += `  <symbol id="icon-${symbolId}" fill="none" ${viewBox} >\n`
     sprite += `    ${innerContent}\n`
     sprite += `  </symbol>\n`
   }
