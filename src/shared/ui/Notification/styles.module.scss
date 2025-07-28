@@ -1,0 +1,53 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.notification-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    height: fit-content;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: c.$color-text-primary;
+    font-weight: t.$font-weight-regular;
+    font-family: t.$font-secondary;
+}
+
+.notification-icon-and-text {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    letter-spacing: 0.25px;
+}
+
+.notification-title {
+    font-size: t.$font-h4-size;
+    line-height: t.$font-h4-line-height;
+}
+
+.notification-text {
+    font-size: t.$font-caption-size;
+    line-height: t.$font-caption-line-height;
+    text-wrap: wrap;
+}
+
+.notification-date {
+    color: c.$color-caption;
+    font-size: t.$font-h4-size;
+    line-height: t.$font-h4-line-height;
+}
+
+.notification-button {
+    width: 114px;
+    height: 48px;
+}
+
+.notification-button-text {
+    font-size: t.$font-h4-size;
+    line-height: t.$font-h4-line-height;
+}
