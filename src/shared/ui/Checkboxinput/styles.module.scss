@@ -6,36 +6,64 @@
 }
 
 .input {
-  display: none; 
+  display: none;
 }
 
-.checkbox-icon {
-  display: inline-block;
-  width: 24px;       
+.checkbox {
+  &-icon {
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    margin-right: 10px;
+  }
+
+  &-outline {
+    fill: none;
+    stroke: currentcolor;
+  }
+
+  &-mark {
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    stroke: currentcolor;
+    stroke-linecap: round;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    width: min-content;
+  }
+}
+
+.options {
+  margin-top: 12px;
+  margin-left: 32px;
+  list-style: none;
+}
+
+.option {
+  margin-bottom: 12px;
+}
+
+.arrow {
+  width: 24px;
   height: 24px;
-  color: var(--color-text-primary);     
-  vertical-align: middle;
-  background-color: transparent;
-  border-radius: 25%;
-  pointer-events: none;
-}
 
-.checkbox-outline {
-  fill: none;
-  stroke: currentcolor;
-}
-
-.checkbox-mark {
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-  stroke: currentcolor;
-  stroke-linecap: round;
+  &-closed {
+    transform: rotate(180deg);
+  }
 }
 
 .text {
   display: inline-block;
-  margin-left: 8px;
   color: var(--color-text-primary);
   vertical-align: middle;
   user-select: none;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    width: 284px;
+  }
 }
