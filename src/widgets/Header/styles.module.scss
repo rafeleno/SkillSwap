@@ -1,0 +1,158 @@
+@use '../../styles/colors' as c;
+@use '../../styles/typography' as t;
+
+.header {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 36px 36px 20px;
+  background-color: c.$color-background;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.link {
+  color: c.$color-text-primary;
+  font-weight: t.$font-weight-regular;
+  font-size: t.$font-h4-size;
+  font-family: t.$font-secondary;
+  line-height: t.$font-h4-line-height;
+  letter-spacing: 2%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  @extend .link;
+
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  background-color: c.$color-input-background;
+  border-radius: 12px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 0 16px 0 32px;
+  color: c.$color-caption;
+  font-weight: t.$font-weight-regular;
+  font-size: t.$font-h4-size;
+  font-family: t.$font-secondary;
+  line-height: t.$font-h4-line-height;
+  background-color: transparent;
+  border: none;
+  border-radius: 12px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 10px;
+  color: c.$color-text-disabled;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.login-btn {
+  gap: 8px;
+  width: 92px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  opacity: 1;
+
+  & button {
+    font-weight: t.$font-weight-regular;
+    font-size: 16px;
+    font-family: t.$font-secondary;
+    line-height: 24px;
+    letter-spacing: 2%;
+  }
+}
+
+.register-btn {
+  gap: 8px;
+  width: 208px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  opacity: 1;
+
+  & button {
+    font-weight: t.$font-weight-regular;
+    font-size: 16px;
+    font-family: t.$font-secondary;
+    line-height: 24px;
+    letter-spacing: 2%;
+  }
+}
+
+.icons-and-user {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  min-width: 112px;
+  height: 24px;
+}
+
+.user-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 24px;
+}
+
+.user-name {
+  color: c.$color-text-primary;
+  font-weight: t.$font-weight-regular;
+  font-size: 16px;
+  font-family: t.$font-secondary;
+  line-height: 24px;
+  letter-spacing: 2%;
+  vertical-align: middle;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
