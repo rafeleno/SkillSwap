@@ -1,10 +1,12 @@
-import { IconButton } from '@uiComponents/IconButton'
 import React from 'react'
 
 export function App() {
   return (
     <>
-      <IconButton onClick={() => { }} name="palette" />
+      {/* передать из слайса */}
+      <header user={null}></header>
+      <main className="skill-swap-main"></main>
+      <footer></footer>
     </>
   )
 }
