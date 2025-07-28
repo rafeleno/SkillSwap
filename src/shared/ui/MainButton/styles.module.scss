@@ -13,7 +13,6 @@
   justify-content: center;
   width: 100%;
   padding: 12px 24px;
-  color: c.$color-text-primary;
   border-style: solid;
   border-width: 1px;
   border-radius: 12px;
@@ -62,7 +61,6 @@
     }
 
     &:active {
-      color: c.$color-text-primary;
       border-color: c.$color-text-link;
 
       .icon {
