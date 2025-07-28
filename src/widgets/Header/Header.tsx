@@ -1,11 +1,11 @@
+import userAvatar from '@images/avatars/user1.jpg'
+import chevronDown from '@svg/main/chevron-down.svg'
+import { IconButton } from '@uiComponents/IconButton'
+import { MainButton } from '@uiComponents/MainButton'
+import { MainLogo } from '@uiComponents/MainLogo'
+import { NotificationBell } from '@uiComponents/NotificationBell'
+import { Search } from '@uiComponents/Search'
 import React, { useState } from 'react'
-import userAvatar from '../../assets/images/avatars/user1.jpg'
-import chevronDown from '../../assets/svg/main/chevron-down.svg'
-import { IconButton } from '../../shared/ui/IconButton'
-import { MainButton } from '../../shared/ui/MainButton'
-import { MainLogo } from '../../shared/ui/MainLogo'
-import { NotificationBell } from '../../shared/ui/NotificationBell'
-import { Search } from '../../shared/ui/Search'
 import styles from './styles.module.scss'
 
 interface HeaderProps {
