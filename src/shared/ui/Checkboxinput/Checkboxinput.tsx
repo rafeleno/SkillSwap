@@ -1,52 +1,66 @@
-import type { CheckboxInputProps } from './Checkboxinput.types'
-import styles from './CheckboxInput.module.scss'
-
-interface CheckboxSvgProps {
-  active: boolean
-}
-
-function CheckboxSvg({ active }: CheckboxSvgProps) {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      className={styles['checkbox-icon']}
-      aria-hidden="true"
-    >
-      <rect
-        className={styles['checkbox-outline']}
-        x="2"
-        y="2"
-        width="20"
-        height="20"
-        rx="4"
-      />
-      <path
-        className={styles['checkbox-mark']}
-        d="M8 12h8"
-        style={{ opacity: active ? 1 : 0 }}
-      />
-    </svg>
-  )
-}
+import type { CheckboxInputProps } from './CheckboxInput.types'
+import React, { useState } from 'react'
+import styles from './styles.module.scss'
 
 export function CheckboxInput({
   children,
+  options,
   active = false,
   onChange,
 }: CheckboxInputProps) {
+  const [states, setStates] = useState<Record<string, boolean>>(() =>
+    options?.reduce((acc, option) => {
+      acc[option] = false
+      return acc
+    }, {} as Record<string, boolean>),
+  )
+
   return (
-    <label className={styles.label}>
-      <input
-        type="checkbox"
-        checked={active}
-        onChange={onChange}
-        className={styles.input}
-        readOnly={!onChange}
-      />
-      <CheckboxSvg active={active} />
-      <span className={styles.text}>{children}</span>
-    </label>
+    <>
+      <label className={styles.label}>
+        <div className={styles['checkbox-container']}>
+          <input
+            type="checkbox"
+            checked={active}
+            onChange={onChange}
+            className={styles.input}
+            disabled={!onChange}
+          />
+          <svg className={styles['checkbox-icon']}>
+            <use href={`#icon-${active ? 'checkbox-done' : 'checkbox-empty'}`} />
+          </svg>
+          <div className={styles['text-container']}>
+            <span className={styles.text}>{children}</span>
+            <svg className={`${styles.arrow} ${!active && styles['arrow-closed']}`}>
+              <use href="#icon-arrow" />
+            </svg>
+          </div>
+        </div>
+      </label>
+
+      {options && active && (
+        <ul className={styles.options}>
+          {options.map(option => (
+            <li key={option} className={styles.option}>
+              <label className={styles.label}>
+                <div className={styles['checkbox-container']}>
+                  <input
+                    type="checkbox"
+                    checked={states[option]}
+                    onChange={() => setStates(prev => ({ ...prev, [option]: !prev[option] }))}
+                    className={styles.input}
+                    disabled={!onChange}
+                  />
+                  <svg className={styles['checkbox-icon']}>
+                    <use href={`#icon-${states[option] ? 'checkbox-done' : 'checkbox-empty'}`} />
+                  </svg>
+                  <span className={styles.text}>{option}</span>
+                </div>
+              </label>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   )
 }
