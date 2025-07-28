@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import userAvatar from '../../assets/images/avatars/user1.jpg'
 import chevronDown from '../../assets/svg/main/chevron-down.svg'
-// import likeIcon from '../../assets/svg/main/like.svg'
-// import moonIcon from '../../assets/svg/main/moon.svg'
-import searchIcon from '../../assets/svg/main/search.svg'
 import { IconButton } from '../../shared/ui/IconButton'
 import { MainButton } from '../../shared/ui/MainButton'
 import { MainLogo } from '../../shared/ui/MainLogo'
 import { NotificationBell } from '../../shared/ui/NotificationBell'
+import { Search } from '../../shared/ui/Search'
 import styles from './styles.module.scss'
 
 interface HeaderProps {
@@ -24,30 +22,20 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
     <header className={styles.header}>
       <MainLogo />
 
-      {user && (
-        <>
-          <nav className={styles.nav}>
-            <button className={styles.link}>О проекте</button>
-            <button className={styles.dropdown}>
-              Все навыки
-              <img src={chevronDown} alt="Открыть список" className={styles['dropdown-icon']} />
-            </button>
-          </nav>
-        </>
-      )}
+      <nav className={styles.nav}>
+        <button className={styles.link}>О проекте</button>
+        <button className={styles.dropdown}>
+          Все навыки
+          <img src={chevronDown} alt="Открыть список" className={styles['dropdown-icon']} />
+        </button>
+      </nav>
 
-      <div className={styles['search-wrapper']}>
-        <img src={searchIcon} alt="Поиск" className={styles['search-icon']} />
-        <input
-          type="text"
-          placeholder="Искать навык"
-          value={searchValue}
-          onChange={e => setSearchValue(e.target.value)}
-        />
-        {searchValue && (
-          <button onClick={() => setSearchValue('')} className={styles['clear-btn']}>×</button>
-        )}
-      </div>
+      <Search
+        value={searchValue}
+        onChange={e => setSearchValue(e.target.value)}
+        onClear={() => setSearchValue('')}
+        placeholder="Искать навык"
+      />
 
       <div className={styles['icons-and-user']}>
         <IconButton name="moon" onClick={() => {}} />
