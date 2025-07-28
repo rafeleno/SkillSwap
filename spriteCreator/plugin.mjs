@@ -1,63 +1,95 @@
-import { spawn } from 'node:child_process'
-import process from 'node:process'
-import { fileURLToPath } from 'node:url'
-import chokidar from 'chokidar'
+import chokidar from 'chokidar';
+import { generateSprite } from './generator.mjs';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default class SvgSpritePlugin {
   constructor(options = {}) {
     this.options = {
-      inputDir: './src/assets/svg',
-      outputFile: './dist/sprite.svg',
       watch: true,
+      svgDir: './src/assets/svg',
+      spriteId: 'svg-sprite-container',
       ...options,
-    }
-    this.watcher = null
+    };
+    this.watcher = null;
+    this.currentSprite = null;
+    this.compiler = null;
   }
 
   apply(compiler) {
-    this.generateSprite()
+    this.compiler = compiler;
+
+    compiler.hooks.beforeRun.tapPromise('SvgSpritePlugin', async () => {
+      this.currentSprite = await generateSprite();
+    });
+
+    compiler.hooks.compilation.tap('SvgSpritePlugin', (compilation) => {
+      HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapPromise(
+        'SvgSpritePlugin',
+        async (data) => {
+          if (!this.currentSprite) {
+            this.currentSprite = await generateSprite();
+          }
+          data.html = this.injectSprite(data.html);
+          return data;
+        }
+      );
+    });
 
     if (this.options.watch && compiler.options.mode === 'development') {
-      this.startWatching(compiler)
+      this.setupWatcher();
+    }
+  }
+
+  injectSprite(html) {
+    const spriteContainer = `<div id="${this.options.spriteId}" style="display: none;">${this.currentSprite}</div>`;
+
+    if (html.includes(`id="${this.options.spriteId}"`)) {
+      return html.replace(
+        new RegExp(`<div id="${this.options.spriteId}".*?<\/div>`, 's'),
+        spriteContainer
+      );
     }
 
-    compiler.hooks.watchClose.tap('SvgSpritePlugin', () => {
-      this.stopWatching()
-    })
+    return html.replace('</body>', `${spriteContainer}</body>`);
   }
 
-  generateSprite() {
-    // Используем fileURLToPath для корректного преобразования пути
-    const scriptPath = new URL('./generator.mjs', import.meta.url)
-
-    const child = spawn('node', [fileURLToPath(scriptPath)], {
-      stdio: 'inherit',
-      env: { ...process.env, SVG_SPRITE_ONCE: 'true' },
-    })
-
-    child.on('close', (code) => {
-      if (code !== 0) {
-        console.error(`SVG sprite generation failed with code ${code}`)
-      }
-    })
+  async updateSprite() {
+    try {
+      this.currentSprite = await generateSprite();
+      console.log('SVG sprite updated');
+      this.triggerRebuild();
+    } catch (error) {
+      console.error('Error updating SVG sprite:', error);
+    }
   }
 
-  startWatching() {
-    this.watcher = chokidar.watch(this.options.inputDir, {
-      ignored: /(^|[/\\])\../,
+  triggerRebuild() {
+    if (!this.compiler) return;
+
+    if (this.compiler.watching) {
+      this.compiler.watching.invalidate();
+    }
+  }
+
+  setupWatcher() {
+    this.watcher = chokidar.watch(this.options.svgDir, {
       persistent: true,
       ignoreInitial: true,
-    })
+    });
+
+    const handleChange = async () => {
+      console.log('SVG files changed, updating sprite...');
+      await this.updateSprite();
+    };
 
     this.watcher
-      .on('add', () => this.generateSprite())
-      .on('unlink', () => this.generateSprite())
-      .on('error', error => console.error('SVG watcher error:', error))
+      .on('add', handleChange)
+      .on('change', handleChange)
+      .on('unlink', handleChange)
+      .on('error', error => console.error('Watcher error:', error));
   }
 
-  stopWatching() {
-    if (this.watcher) {
-      this.watcher.close()
-    }
+  closeWatcher() {
+    this.watcher?.close();
   }
 }
