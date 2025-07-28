@@ -1,3 +1,5 @@
+@use '@colors' as c;
+
 .button {
     display: grid;
     padding: 0;
@@ -6,4 +8,9 @@
     cursor: pointer;
     inline-size: fit-content;
     block-size: fit-content;
+}
+
+.svg {
+    fill: none;
+    stroke: c.$color-black;
 }

@@ -1,0 +1,61 @@
+@use '@colors' as c;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  justify-self: center;
+  inline-size: 78.8%;
+}
+
+.form,
+.info {
+  background-color: c.$color-card-background;
+  padding-inline: 60px;
+  border-radius: 12px;
+}
+
+.additional-buttons {
+  display: grid;
+  gap: 16px;
+}
+
+.form {
+  padding-block: 121px;
+  display: grid;
+  gap: 32px;
+  align-items: baseline;
+}
+
+.fieldset {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  border: none;
+  border-block-start: 1px solid c.$color-disabled;
+  padding-block-start: 24px;
+}
+
+.legend {
+  text-align: center;
+}
+
+.info {
+  display: grid;
+  gap: 40px;
+  justify-items: center;
+  padding-block: 132px;
+}
+
+.info-image {
+  width: 300px;
+  height: 300px;
+}
+
+.info-text {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  text-align: center;
+  padding-inline: 20px;
+}

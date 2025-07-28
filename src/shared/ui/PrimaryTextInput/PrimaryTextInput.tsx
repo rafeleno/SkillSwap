@@ -49,7 +49,7 @@ export const PrimaryTextInput: React.FC<InputProps> = ({
         : type === 'email'
           ? 'Email'
           : label || '') && (
-        <label className={styles.label} htmlFor={`input-${type}`}>
+        <label htmlFor={`input-${type}`}>
           {type === 'password'
             ? 'Пароль'
             : type === 'email'

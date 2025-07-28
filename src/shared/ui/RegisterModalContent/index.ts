@@ -1,0 +1,1 @@
+export { RegisterModalContent } from './RegisterModalContent'

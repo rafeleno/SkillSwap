@@ -15,7 +15,7 @@ export const LikeButton: React.FC<LikeButtonProps> = ({
       aria-label="Поставить лайк"
     >
       <svg className={`${styles.icon} ${isActive ? styles.active : ''}`} aria-hidden="true">
-        <use href="/sprites.svg#like" />
+        <use href="#icon-like" />
       </svg>
     </button>
   )
