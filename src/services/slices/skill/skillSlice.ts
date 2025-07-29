@@ -25,7 +25,7 @@ const initialState: SkillsState = {
   error: null,
 }
 
-const skillsSlice = createSlice({
+export const skillSlice = createSlice({
   name: 'skills',
   initialState,
   reducers: {
