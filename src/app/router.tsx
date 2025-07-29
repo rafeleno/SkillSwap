@@ -11,7 +11,6 @@ export function AppRouter() {
         <Route path="/" element={<Pages.Catalog />} />
         <Route path="/skill/:id" element={<Pages.Skill />} />
         <Route path="/login" element={<Pages.Login />} />
-        <Route path="/favorites" element={<Pages.Favorites />} />
         <Route path="/create" element={<Pages.Onboarding />} />
         <Route
           path="/profile"
@@ -22,11 +21,14 @@ export function AppRouter() {
           )}
         />
         <Route
-          path="/create"
-          element={
-            <Pages.Onboarding />
-          }
+          path="/favorites"
+          element={(
+            <ProtectedRoute>
+              <Pages.Favorites />
+            </ProtectedRoute>
+          )}
         />
+
         <Route path="*" element={<Pages.NotFound />} />
       </Routes>
     </Suspense>
