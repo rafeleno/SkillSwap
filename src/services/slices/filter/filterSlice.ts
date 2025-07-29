@@ -64,7 +64,7 @@ export const filterSlice = createSlice({
       if (isNowSelected) {
         // добавить всех
         state.selectedIds = Array.from(new Set([
-          ...state.selectedIds,
+          ...state.selectedIds, // TODO: кажется это лишняя строка
           ...allAffected,
         ]))
       }

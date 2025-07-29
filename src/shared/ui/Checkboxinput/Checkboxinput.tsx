@@ -8,6 +8,7 @@ export function FiltersPanel() {
   const filters = useSelector(selectFiltersList)
   const selectedIds = useSelector(selectSelectedFilters)
 
+  // TODO: Тут можно сделать отдельно для фильров родителей
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(() =>
     filters?.reduce((acc, filter) => {
       acc[filter.id] = false
