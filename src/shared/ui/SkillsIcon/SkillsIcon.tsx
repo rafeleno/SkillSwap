@@ -17,7 +17,7 @@ export const SkillsIcon: React.FC<SkillsIconProps> = ({ name }) => {
   return (
     <div className={styles.skillsIcon} style={{ backgroundColor }}>
       <svg>
-        <use href={`/sprites.svg#${name}`} />
+        <use href={`#icon-${name}`} />
       </svg>
     </div>
   )

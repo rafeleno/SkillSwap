@@ -1,0 +1,67 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.icon-container {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  &.inactive {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.active {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  padding: 12px 20px;
+  background-color: c.$color-input-background;
+  border: 1px solid c.$color-disabled;
+  border-radius: 12px;
+  outline: none;
+
+  &::placeholder {
+    color: c.$color-caption;
+  }
+}
+
+.input.focused {
+  border-color: c.$color-accent;
+}
+
+.input.error {
+  border-color: c.$color-error;
+}
+
+.input.with-icon {
+  padding-right: 48px;
+}
+
+.error-message {
+  color: c.$color-error;
+  font-size: 12px;
+}

@@ -1,0 +1,63 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.toast-notification-container {
+  position: relative;
+  width: 340px;
+  height: 72px;
+  background-color: c.$color-button-hover;
+  border-radius: 12px;
+}
+
+.toast-notification-cross {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.toast-notification-content {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 24px;
+}
+
+.toast-notification-text {
+  overflow: hidden;
+  font-weight: t.$font-weight-medium;
+  font-size: t.$font-h3-size;
+  font-family: t.$font-primary;
+  line-height: t.$font-h3-line-height;
+  letter-spacing: -0.25px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toast-notification-button {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 74px;
+  height: 32px;
+  font-size: t.$font-caption-size;
+  line-height: t.$font-caption-line-height;
+  border-color: c.$color-accent;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    color: c.$color-caption;
+    border-color: c.$color-button-hover;
+  }
+
+  &:active {
+    border-color: c.$color-text-link;
+  }
+}

@@ -18,13 +18,13 @@ export const MainButton: React.FC<MainButtonProps> = ({
     >
       {leftIconId && (
         <svg className={styles.icon}>
-          <use href={`/sprites.svg#${leftIconId}`} />
+          <use href={`#icon-${leftIconId}`} />
         </svg>
       )}
       {children}
       {rightIconId && (
         <svg className={styles.icon}>
-          <use href={`/sprites.svg#${rightIconId}`} />
+          <use href={`#icon-${rightIconId}`} />
         </svg>
       )}
     </button>
