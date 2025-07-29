@@ -9,7 +9,7 @@ import {
 } from 'react-redux'
 import { notificationsSlice } from './slices/notifications/notificationsSlice'
 import { swapsSlice } from './slices/swaps/swapsSlice'
-import { userSlice } from './slices/users/userSlice'
+import { userSlice } from './slices/user/userSlice'
 
 const rootReducer = combineSlices(notificationsSlice, swapsSlice, userSlice)
 

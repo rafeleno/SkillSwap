@@ -6,7 +6,9 @@ export function CheckboxInput({
   children,
   options,
   active = false,
+  opened = false,
   onChange,
+  onOpen,
 }: CheckboxInputProps) {
   const [states, setStates] = useState<Record<string, boolean>>(() =>
     options?.reduce((acc, option) => {
@@ -17,8 +19,8 @@ export function CheckboxInput({
 
   return (
     <>
-      <label className={styles.label}>
-        <div className={styles['checkbox-container']}>
+      <div className={styles['checkbox-container']}>
+        <label className={styles.label}>
           <input
             type="checkbox"
             checked={active}
@@ -27,18 +29,18 @@ export function CheckboxInput({
             disabled={!onChange}
           />
           <svg className={styles['checkbox-icon']}>
-            <use href={`#icon-${active ? 'checkbox-done' : 'checkbox-empty'}`} />
+            <use href={`#icon-${active ? 'checkbox-remove' : 'checkbox-empty'}`} />
           </svg>
-          <div className={styles['text-container']}>
-            <span className={styles.text}>{children}</span>
-            <svg className={`${styles.arrow} ${!active && styles['arrow-closed']}`}>
-              <use href="#icon-arrow" />
-            </svg>
-          </div>
-        </div>
-      </label>
+          <span className={styles.text}>{children}</span>
+        </label>
+        <button onClick={() => { onOpen(), console.log(opened) }} className={styles['arrow-button']}>
+          <svg className={`${styles.arrow} ${!opened && styles['arrow-closed']}`}>
+            <use href="#icon-arrow" />
+          </svg>
+        </button>
+      </div>
 
-      {options && active && (
+      {options && opened && (
         <ul className={styles.options}>
           {options.map(option => (
             <li key={option} className={styles.option}>
