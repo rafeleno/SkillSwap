@@ -7,11 +7,13 @@ import {
   useDispatch as dispatchHook,
   useSelector as selectorHook,
 } from 'react-redux'
+import { filterSlice } from './slices/filter/filterSlice'
 import { notificationsSlice } from './slices/notifications/notificationsSlice'
+import { skillsSlice } from './slices/skill/skillSlice'
 import { swapsSlice } from './slices/swaps/swapsSlice'
 import { userSlice } from './slices/user/userSlice'
 
-const rootReducer = combineSlices(notificationsSlice, swapsSlice, userSlice)
+const rootReducer = combineSlices(notificationsSlice, skillsSlice, userSlice, filterSlice, swapsSlice)
 
 const store = configureStore({
   reducer: rootReducer,

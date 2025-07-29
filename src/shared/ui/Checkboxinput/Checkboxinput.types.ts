@@ -5,6 +5,6 @@ export interface CheckboxInputProps {
   opened?: boolean
   active?: boolean
   options?: string[]
-  onOpen?: (opened: boolean) => void
-  onChange?: (active: boolean) => void
+  onOpen?: () => void
+  onChange?: () => void
 }
