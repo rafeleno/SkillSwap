@@ -1,12 +1,103 @@
 @use '@colors' as c;
+@use '@typographyStyles' as t;
+
 
 .user-card {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 324px;
-    max-height: 368px;
-    padding: 16px;
-    background-color: c.$color-card-background;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 324px;
+  height: 368px;
+  padding: 20px;
+  background-color: c.$color-card-background;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: t.$font-weight-semibold;
+  font-family: OpenSans, sans-serif;
+}
+
+.meta {
+  font-size: t.$font-caption-size;
+}
+
+.favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sections, .section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  gap: 8px;
+}
+
+.label {
+  font-weight: t.$font-weight-medium;
+}
+
+.teach-tag, .want-tag, .more-tag {
+  width: fit-content;
+  padding: 5px 12px;
+  font-size: t.$font-caption-size;
+  border-radius: 20px;
+}
+
+.want-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.business-and-career {
+    background: c.$color-tag-business;
+}
+
+.health-and-lifestyle {
+    background: c.$color-tag-health;
+}
+
+.creativity-and-art {
+    background: c.$color-tag-arts;
+}
+
+.education-and-development {
+    background: c.$color-tag-education;
+}
+
+.foreign-languages{
+    background: c.$color-tag-languages;
+}
+
+.home-and-comfort {
+    background: c.$color-tag-home;
+}
+
+.default-skill {
+  background: c.$color-disabled;
+}
+
+.more-tag {
+  background: c.$color-tag-additional;
 }
