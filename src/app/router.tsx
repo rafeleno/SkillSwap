@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-
 import { Pages } from '../pages'
+
+import { ProtectedRoute } from '../shared/lib/components/ProtectedRoute'
 
 export function AppRouter() {
   return (
@@ -10,9 +11,22 @@ export function AppRouter() {
         <Route path="/" element={<Pages.Catalog />} />
         <Route path="/skill/:id" element={<Pages.Skill />} />
         <Route path="/login" element={<Pages.Login />} />
-        <Route path="/profile" element={<Pages.Profile />} />
-        <Route path="/create" element={<Pages.Onboarding />} />
         <Route path="/favorites" element={<Pages.Favorites />} />
+        <Route path="/create" element={<Pages.Onboarding />} />
+        <Route
+          path="/profile"
+          element={(
+            <ProtectedRoute>
+              <Pages.Profile />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/create"
+          element={
+            <Pages.Onboarding />
+          }
+        />
         <Route path="*" element={<Pages.NotFound />} />
       </Routes>
     </Suspense>
