@@ -1,10 +1,10 @@
-import { IconButton } from '@uiComponents/IconButton'
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 export function App() {
   return (
-    <>
-      <IconButton onClick={() => { }} name="palette" />
-    </>
+    <BrowserRouter>
+      <div>qwe</div>
+    </BrowserRouter>
   )
 }

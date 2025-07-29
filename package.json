@@ -24,6 +24,7 @@
     "react-datepicker": "^8.4.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
+    "react-router-dom": "^7.7.1",
     "react-select": "^5.10.2",
     "svg-sprite-loader": "^6.0.9",
     "swiper": "^11.2.10"
