@@ -1,3 +1,5 @@
+@use '@colors' as c;
+
 .button {
   padding: 0;
   background: transparent;
@@ -8,12 +10,14 @@
 .icon {
   width: 24px;
   height: 24px;
-  transition: fill 0.3s ease, stroke 0.3s ease;
-  fill: none;
-  stroke: $color-text-primary;
+  transition: fill 0.3s ease;
 
-  &.active {
-    fill: $color-accent;
-    stroke: $color-accent;
+  use {
+    transition: fill 0.3s ease;
+    fill: c.$color-text-primary;
+  }
+
+  use.active {
+    fill: c.$color-accent;
   }
 }

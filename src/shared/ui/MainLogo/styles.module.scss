@@ -1,0 +1,32 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 159px;
+  height: 40px;
+  font-weight: t.$font-weight-semibold;
+  text-decoration: none;
+  column-gap: 12px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: c.$color-accent;
+  border-radius: 50%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  clip-path: path(
+    'M10 0C10 0 10.5518 5.14994 12.7009 7.29909C14.8501 9.44825 20 10 20 10C20 10 14.8501 10.5518 12.7009 12.7009C10.5518 14.8501 10 20 10 20C10 20 9.44825 14.8501 7.29909 12.7009C5.14994 10.5518 0 10 0 10C0 10 5.14994 9.44825 7.29909 7.29909C9.44825 5.14994 10 0 10 0Z'
+  );
+}
