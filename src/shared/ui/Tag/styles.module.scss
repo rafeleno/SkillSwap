@@ -5,13 +5,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 12px;
+  width: fit-content;
+  padding: 5px 12px;
   font-size: t.$font-caption-size;
   font-family: t.$font-secondary;
-  line-height: t.$font-caption-line-height;
   white-space: nowrap;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 .tag-languages {
@@ -38,6 +38,6 @@
   background-color: c.$color-tag-education;
 }
 
-.tag-additional {
+.tag-more {
   background-color: c.$color-tag-additional;
 }

@@ -52,8 +52,12 @@ export type TagVariant
     | 'physical_training'
     | 'sleep_and_recovery'
     | 'work_life_balance'
+  // hidden skills
+    | 'more'
 
 export interface TagProps {
   variant: TagVariant
   className?: string
+  // Используется, когда variant === 'more
+  count?: number
 }
