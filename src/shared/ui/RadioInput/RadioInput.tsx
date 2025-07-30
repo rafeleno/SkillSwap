@@ -1,16 +1,15 @@
-import React from 'react';
-import styles from './styles.module.scss';
-import { RadioInputProps } from './RadioInput.types';
-
+import type { RadioInputProps } from './RadioInput.types'
+import React from 'react'
+import styles from './styles.module.scss'
 
 export const RadioInput: React.FC<RadioInputProps> = ({
   name,
   value,
   checked,
   children,
-  onChange
+  onChange,
 }) => {
-  const id = `${name}-${value}`;
+  const id = `${name}-${value}`
   return (
     <label htmlFor={id} className={styles.label}>
       <input
@@ -19,13 +18,13 @@ export const RadioInput: React.FC<RadioInputProps> = ({
         name={name}
         value={value}
         checked={checked}
-        onChange={(e) => onChange?.(e.target.value)}
+        onChange={e => onChange?.(e.target.value)}
         className={styles.input}
       />
       <span className={styles.radioIcon} />
       {children}
     </label>
-  );
-};
+  )
+}
 
-export default RadioInput;
+export default RadioInput

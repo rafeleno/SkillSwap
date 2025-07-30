@@ -1,1 +1,1 @@
-export {MainLogo} from './MainLogo.js'
+export { MainLogo } from './MainLogo.js'
