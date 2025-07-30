@@ -5,9 +5,9 @@
 .user-card {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   max-width: 324px;
-  height: 368px;
+  min-height: 368px;
   padding: 20px;
   background-color: c.$color-card-background;
   border-radius: 12px;
@@ -57,47 +57,8 @@
   font-weight: t.$font-weight-medium;
 }
 
-.teach-tag, .want-tag, .more-tag {
-  width: fit-content;
-  padding: 5px 12px;
-  font-size: t.$font-caption-size;
-  border-radius: 20px;
-}
-
 .want-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-}
-
-.business-and-career {
-    background: c.$color-tag-business;
-}
-
-.health-and-lifestyle {
-    background: c.$color-tag-health;
-}
-
-.creativity-and-art {
-    background: c.$color-tag-arts;
-}
-
-.education-and-development {
-    background: c.$color-tag-education;
-}
-
-.foreign-languages{
-    background: c.$color-tag-languages;
-}
-
-.home-and-comfort {
-    background: c.$color-tag-home;
-}
-
-.default-skill {
-  background: c.$color-disabled;
-}
-
-.more-tag {
-  background: c.$color-tag-additional;
+  gap: 4px;
 }
