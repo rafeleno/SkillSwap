@@ -10,8 +10,26 @@ export function AppRouter() {
       <Routes>
         <Route path="/" element={<Pages.Catalog />} />
         <Route path="/skill/:id" element={<Pages.Skill />} />
-        <Route path="/login" element={<Pages.Login />} />
-        <Route path="/create" element={<Pages.Onboarding />} />
+
+        {/* Только для неавторизованных */}
+        <Route
+          path="/login"
+          element={(
+            <ProtectedRoute onlyUnAuth>
+              <Pages.Login />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/create"
+          element={(
+            <ProtectedRoute onlyUnAuth>
+              <Pages.Onboarding />
+            </ProtectedRoute>
+          )}
+        />
+
+        {/* Только для авторизованных */}
         <Route
           path="/profile"
           element={(

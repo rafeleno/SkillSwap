@@ -3,19 +3,24 @@ import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 
 interface ProtectedRouteProps {
+  onlyUnAuth?: boolean
   children: React.ReactElement
 }
 
-export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const { isAuthenticated, isLoading } = useAuth()
+export function ProtectedRoute({
+  onlyUnAuth,
+  children,
+}: ProtectedRouteProps) {
+  const { isAuthenticated } = useAuth()
   const location = useLocation()
 
-  if (isLoading) {
-    return <div>Проверка авторизации...</div>
+  if (!onlyUnAuth && !isAuthenticated) {
+    return <Navigate replace to="/login" state={{ from: location }} />
   }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} replace />
+  if (onlyUnAuth && isAuthenticated) {
+    const from = location.state?.from?.pathname || '/'
+    return <Navigate replace to={from} />
   }
 
   return children
