@@ -1,15 +1,12 @@
 @use '@colors' as c;
 
 .button {
-  padding: 0;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
   transition: fill 0.3s ease;
 
   use {
