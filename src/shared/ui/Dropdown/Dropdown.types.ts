@@ -9,7 +9,7 @@ export interface DropdownProps {
   onChange: (option: IOption) => void
   label: string
   searchable: boolean
-  width?: number
+  width?: number | string
   height?: number
   bordered?: boolean
 }

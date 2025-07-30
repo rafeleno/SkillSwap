@@ -84,6 +84,15 @@
   }
 }
 
+.clear-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
 .icon {
   width: 24px;
   height: 24px;

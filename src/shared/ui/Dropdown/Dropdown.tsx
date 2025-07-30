@@ -1,7 +1,7 @@
 import type { DropdownProps } from './Dropdown.types'
 import React, { useMemo, useRef, useState } from 'react'
+import { useClickOutside } from '../../hooks/useClickOutside'
 import styles from './styles.module.scss'
-import { useClickOutside } from './useClickOutside'
 
 export const Dropdown: React.FC<DropdownProps> = ({
   options,
@@ -9,7 +9,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   onChange,
   label,
   height = 48,
-  width = 208,
+  width = '100%',
   bordered = true,
   searchable,
 }) => {
@@ -26,17 +26,27 @@ export const Dropdown: React.FC<DropdownProps> = ({
 
   useClickOutside(containerRef, () => setIsOpen(false))
 
+  const containerWidth = typeof width === 'number' ? `${width}px` : width
+
   return (
     <div
       ref={containerRef}
       className={`${styles.container} ${bordered ? styles.bordered : ''}`}
-      style={{ width: `${width}px` }}
+      style={{ width: containerWidth }}
       tabIndex={-1}
     >
       <div
         className={`${styles.button} ${selectedOption ? styles.selected : ''}`}
         style={{ height: `${height}px` }}
-        onClick={() => setIsOpen(prev => !prev)}
+        onClick={() => {
+          setIsOpen((prev) => {
+            const newIsOpen = !prev
+            if (newIsOpen) {
+              setSearchTerm('')
+            }
+            return newIsOpen
+          })
+        }}
       >
         {searchable
           ? (
@@ -53,9 +63,29 @@ export const Dropdown: React.FC<DropdownProps> = ({
           : (
               selectedOption ? selectedOption.value : label
             )}
-        <svg className={styles.icon} aria-hidden="true">
-          <use href={`/sprites.svg#${isOpen ? 'chevron-up' : 'chevron-down'}`} />
-        </svg>
+
+        {searchable && searchTerm
+          ? (
+              <button
+                type="button"
+                className={styles['clear-button']}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setSearchTerm('')
+                  setIsOpen(true)
+                }}
+                aria-label="Clear input"
+              >
+                <svg className={styles.icon} aria-hidden="true">
+                  <use href="/sprites.svg#cross" />
+                </svg>
+              </button>
+            )
+          : (
+              <svg className={styles.icon} aria-hidden="true">
+                <use href={`/sprites.svg#${isOpen ? 'chevron-up' : 'chevron-down'}`} />
+              </svg>
+            )}
       </div>
 
       {isOpen && (
