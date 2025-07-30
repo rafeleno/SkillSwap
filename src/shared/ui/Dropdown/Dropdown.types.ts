@@ -6,7 +6,7 @@ export interface IOption {
 export interface DropdownProps {
   options: IOption[]
   selectedOption: IOption | null
-  onChange: (option: IOption) => void
+  onChange?: (option: IOption) => void
   label: string
   searchable: boolean
   width?: number
