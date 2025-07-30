@@ -34,7 +34,7 @@ export function App() {
   const [currentOption, setCurrentOption] = React.useState(dropdownProps[0])
   return (
     <>
-      <Dropdown options={dropdownProps} selectedOption={currentOption} label="666" onChange={setCurrentOption} searchable={true} bordered={false} />
+      <Dropdown options={dropdownProps} selectedOption={currentOption} label="Не будешь в спб проездом?" width={280} onChange={setCurrentOption} searchable={true} bordered={false} />
     </>
   )
 }
