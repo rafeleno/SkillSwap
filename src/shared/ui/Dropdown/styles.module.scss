@@ -1,146 +1,125 @@
-.dropdown-container {
-  width: 100%;
-  font-family: $font-secondary;
+@use '@colors' as c;
 
-  &.inactive {
-    opacity: 0.6;
-    pointer-events: none;
-  }
-}
-
-.dropdown-label {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  margin-bottom: 4px;
-  color: $color-text-primary;
-  font-size: 14px;
-}
-
-.dropdown-wrapper {
+.wrapper {
   position: relative;
+  width: 436px;
+  font-family: $font-secondary;
 }
 
-.dropdown-trigger {
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: c.$color-text-primary;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 48px;
-  padding: 10px 20px;
-  color: $color-text-primary;
+  padding: 12px 16px;
+  color: c.$color-text-primary;
   text-align: left;
-  background-color: $color-card-background;
+  background-color: c.$color-card-background;
   border: 1px solid c.$color-caption;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    border-color: c.$color-accent;
+  }
 
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(c.$color-accent, 0.3);
   }
 
-  &:hover {
-    border-color: c.$color-accent;
-  }
-
-  &.borderless {
-    width: 252px;
-    height: 24px;
+  &.borderless-trigger {
+    height: auto;
+    min-height: 24px;
     padding: 0;
     background: transparent;
     border: none;
-
-    &:hover {
-      color: c.$color-text-link;
-    }
   }
 }
 
-.dropdown-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-  &.prompt {
-    color: $color-caption;
-  }
+.placeholder {
+  color: c.$color-caption;
 }
 
-.dropdown-icon {
-  width: 16px;
-  height: 16px;
+.pointer {
   margin-left: 8px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.2s;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  &.expanded {
+  &.pointer-expanded {
     transform: rotate(180deg);
   }
 }
 
-.choice-list {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: center;
+.options-list {
+  position: absolute;
+  left: 0;
+  z-index: 10;
   width: 100%;
+  max-height: 0;
   margin-top: -1px;
-  padding: 4px 0 8px;
+  overflow: hidden;
   background-color: c.$color-card-background;
   border: 1px solid c.$color-caption;
   border-top: none;
   border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.2s ease, padding 0.3s ease;
 
-  &.absolute {
+  &.expanded {
+    max-height: 300px;
+    padding: 8px 0;
+    opacity: 1;
+  }
+
+  &.borderless {
+    border: none;
+    box-shadow: none;
+  }
+
+  &.absolute-position {
     position: absolute;
+    top: 100%;
   }
 }
 
-.choice-item {
+.option {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 32px;
-  padding: 0 20px;
-  color: $color-text-primary;
-  background-color: transparent;
-  border: none;
+  min-height: 40px;
+  padding: 12px 16px;
+  color: c.$color-text-primary;
+  outline: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
-  &:hover {
-    background-color: $color-disabled;
+  &:hover,
+  &.focused-option {
+    background-color: c.$color-disabled;
   }
 
-  &.selected {
-    color: $color-text-link;
-    font-weight: normal;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
+  &.selected-option {
+    color: c.$color-text-link;
+    font-weight: 500;
   }
 }
 
-.borderless {
-  .choice-list {
-    gap: 0;
-    padding: 12px 0;
-    border: none;
-
-    .choice-item {
-      height: auto;
-      padding: 0;
-    }
-  }
-
-  &.absolute .choice-item {
-    width: 100%;
-    padding: 0;
-  }
+.empty {
+  padding: 12px 16px;
+  color: c.$color-caption;
 }
