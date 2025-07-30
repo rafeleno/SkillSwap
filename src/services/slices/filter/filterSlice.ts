@@ -1,24 +1,40 @@
+import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from 'services/store'
 import { createSelector, createSlice } from '@reduxjs/toolkit'
 
-type FilterType = 'Могу научить' | 'Хочу научиться' | 'Всё'
-type Gender = 'male' | 'female' | 'Не указан'
+type FilterTypesMap = Record<string, FilterTypeItem>
+type GendersMap = Record<string, MaleItem>
+type FiltersMap = Record<string, SkillItem>
+type CitiesMap = Record<string, CityItem>
 
-interface FilterItem {
+interface CityItem {
+  id: string
+  name: string
+}
+interface SkillItem {
   id: string
   name: string
   parent: string | null
   children: { id: string, name: string }[]
 }
-
-type FiltersMap = Record<string, FilterItem>
+interface MaleItem {
+  id: string
+  name: string
+}
+interface FilterTypeItem {
+  id: string
+  name: string
+}
 
 interface FilterSettings {
-  filterType: FilterType
-  gender: Gender
-  cities: any
+  filterTypes: FilterTypesMap
+  genders: GendersMap
+  locations: CitiesMap
   skills: FiltersMap
-  selectedIds: any
+  selectedSkillIds: string[]
+  selectedLocationIds: string[]
+  selectedGenderId: string[]
+  selectedFilterTypeId: string[]
 }
 
 // TODO: надо получать при инициализации из базы данных
@@ -30,51 +46,101 @@ const skillsData: FiltersMap = {
   football: { id: 'football', name: 'Футбол', parent: 'sports', children: [] },
   tennis: { id: 'tennis', name: 'Теннис', parent: 'sports', children: [] },
 }
+const LocationsData: CitiesMap = {
+  moscow: { name: 'Москва', id: 'msk' },
+  saintPetersburg: { name: 'Санкт-Петербург', id: 'spb' },
+  novosibirsk: { name: 'Новосибирск', id: 'nvsbrk' },
+}
+const gendersData: GendersMap = { male: { name: 'Мужской', id: 'male' }, female: { name: 'Женский', id: 'female' }, notSpecified: { name: 'Не имеет значения', id: 'notSpecified' } }
+const filterData: FilterTypesMap = { wantToTeach: { name: 'Могу научить', id: 'wantToTeach' }, wantToLearn: { name: 'Хочу научиться', id: 'wantToLearn' }, all: { name: 'Всё', id: 'all' } }
 
 const initialSettings: FilterSettings = {
-  filterType: 'Всё',
-  gender: 'Не указан',
-  cities: [],
+  filterTypes: filterData,
+  genders: gendersData,
+  locations: LocationsData,
   skills: skillsData,
-  selectedIds: [],
+  selectedSkillIds: [],
+  selectedLocationIds: [],
+  selectedGenderId: ['Не имеет значения'],
+  selectedFilterTypeId: ['Всё'],
+
+}
+
+interface ToggleFilterPayload {
+  id: string
+  type: 'skill' | 'gender' | 'location' | 'filterType'
 }
 
 export const filterSlice = createSlice({
   name: 'filterSettings',
   initialState: initialSettings,
   reducers: {
-    toggleFilter(state, action) {
-      const id = action.payload
-      const isNowSelected = !state.selectedIds.includes(id)
+    toggleFilter(state, action: PayloadAction<ToggleFilterPayload>) {
+      const { id, type } = action.payload
 
-      // рекурсивно собираем всех потомков
-      function collectDescendants(nodeId: string): string[] {
-        const node = state.skills[nodeId]
+      // Определяем, какие поля менять
+      let selectedIdsRef: string[] | undefined
+
+      if (type === 'skill') {
+        selectedIdsRef = state.selectedSkillIds
+      }
+      else if (type === 'location') {
+        selectedIdsRef = state.selectedLocationIds
+      }
+      else if (type === 'gender') {
+        selectedIdsRef = state.selectedGenderId
+      }
+      else if (type === 'filterType') {
+        selectedIdsRef = state.selectedFilterTypeId
+      }
+      else {
+        console.warn('Неизвестный тип фильтра:', type)
+        return
+      }
+
+      const isNowSelected = !selectedIdsRef.includes(id)
+
+      // Только для навыков: рекурсивный сбор потомков
+      const allAffected
+        = type === 'skill'
+          ? [id, ...collectDescendants(id, state.skills)]
+          : [id]
+
+      // Добавить
+      if (isNowSelected) {
+        // Если это Radio
+        if (type === 'filterType' || type === 'gender') {
+          selectedIdsRef.length = 0
+          selectedIdsRef.push(...allAffected.filter(i => !selectedIdsRef.includes(i)))
+        }
+        else {
+          selectedIdsRef.push(...allAffected.filter(i => !selectedIdsRef.includes(i)))
+        }
+      }
+      else {
+        // Удалить
+        const filtered = selectedIdsRef.filter(selId => !allAffected.includes(selId))
+        if (type === 'gender')
+          state.selectedGenderId = filtered
+        if (type === 'skill')
+          state.selectedSkillIds = filtered
+        if (type === 'location')
+          state.selectedLocationIds = filtered
+        if (type === 'filterType')
+          state.selectedFilterTypeId = filtered
+      }
+
+      function collectDescendants(nodeId: string, skills: FiltersMap): string[] {
+        const node = skills[nodeId]
         if (!node)
           return []
-
         return node.children.reduce(
-          (all, child) => all.concat(child.id, collectDescendants(child.id)),
+          (all, child) => all.concat(child.id, collectDescendants(child.id, skills)),
           [],
         )
       }
-
-      const allAffected = [id, ...collectDescendants(id)]
-
-      if (isNowSelected) {
-        // добавить всех
-        state.selectedIds = Array.from(new Set([
-          ...state.selectedIds, // TODO: кажется это лишняя строка
-          ...allAffected,
-        ]))
-      }
-      else {
-        // убрать всех
-        state.selectedIds = state.selectedIds.filter(
-          selId => !allAffected.includes(selId),
-        )
-      }
     },
+
     ///////////////////////////////////////////
     // updateFilterType: (state, { payload }: PayloadAction<FilterType>) => {
     //   state.filterType = payload
@@ -107,17 +173,42 @@ export const filterSlice = createSlice({
 
 export const selectFiltersList = createSelector(
   (state: RootState) => state.filterSettings.skills,
-  (state: RootState) => state.filterSettings.selectedIds,
-  (skills, selectedIds) =>
+  (state: RootState) => state.filterSettings.selectedSkillIds,
+  (skills, selectedSkillsIds) =>
     Object.values(skills).map(f => ({
       ...f,
-      checked: selectedIds.includes(f.id),
+      checked: selectedSkillsIds.includes(f.id),
+    })),
+)
+
+export const selectGenders = createSelector(
+  (state: RootState) => state.filterSettings.genders,
+  (state: RootState) => state.filterSettings.selectedGenderId,
+  (genders, selectedGenderId) =>
+    Object.values(genders).map(f => ({
+      ...f,
+      checked: selectedGenderId.includes(f.id),
+    })),
+)
+
+export const selectSelectedGenders = createSelector(
+  (state: RootState) => state.filterSettings.selectedGenderId,
+  selectedGenderId => selectedGenderId,
+)
+
+export const selectLocations = createSelector(
+  (state: RootState) => state.filterSettings.locations,
+  (state: RootState) => state.filterSettings.selectedLocationIds,
+  (locations, selectedLocationsIds) =>
+    Object.values(locations).map(f => ({
+      ...f,
+      checked: selectedLocationsIds.includes(f.id),
     })),
 )
 
 export const selectSelectedFilters = createSelector(
-  (state: RootState) => state.filterSettings.selectedIds,
-  selectedIds => selectedIds,
+  (state: RootState) => state.filterSettings.selectedSkillIds,
+  selectedSkillIds => selectedSkillIds,
 )
 
 export const {
