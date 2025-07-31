@@ -1,0 +1,106 @@
+@use '../../styles/colors' as c;
+@use '../../styles/typography' as t;
+
+.header {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 36px 36px 20px;
+  background-color: c.$color-background;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.link {
+  color: c.$color-text-primary;
+  font-weight: t.$font-weight-regular;
+  letter-spacing: 2%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  @extend .link;
+
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  &-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.login-btn {
+  gap: 8px;
+  width: 92px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  opacity: 1;
+
+  & button {
+    font-weight: t.$font-weight-regular;
+    letter-spacing: 2%;
+  }
+}
+
+.register-btn {
+  gap: 8px;
+  width: 208px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  opacity: 1;
+
+  & button {
+    font-weight: t.$font-weight-regular;
+    letter-spacing: 2%;
+  }
+}
+
+.icons-and-user {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  min-width: 112px;
+  height: 24px;
+}
+
+.user {
+  &-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 24px;
+  }
+
+  &-name {
+    color: c.$color-text-primary;
+    font-weight: t.$font-weight-regular;
+    letter-spacing: 2%;
+    vertical-align: middle;
+  }
+
+  &-avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
