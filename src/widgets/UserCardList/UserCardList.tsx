@@ -24,109 +24,129 @@ export const UserCardList: React.FC<UserCardListProps> = ({
   onLike,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0)
-  if (!users.length) {
-    return null
-  }
-  const cards = (
-    <ul className={styles.grid} role="list">
-      {users.map(user => (
-        <li key={user.id} className={styles.gridItem}>
-          <UserCard
-            User={user}
-            onClick={() => onCardClick?.(user.id)}
-            onLike={onLike}
-          />
-        </li>
-      ))}
-    </ul>
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
+
+  const renderCards = () =>
+    users.length
+      ? (
+          <ul className={styles.cardGrid} role="list">
+            {users.map(user => (
+              <li key={user.id} className={styles.cardItem}>
+                <UserCard
+                  user={user}
+                  onClick={() => onCardClick?.(user.id)}
+                  onLike={onLike}
+                />
+              </li>
+            ))}
+          </ul>
+        )
+      : (
+          <p className={styles.userCardListEmpty}>Нет пользователей для отображения</p>
+        )
+  const renderButton = () =>
+    buttonText && (
+      <MainButton
+        type="tertiary"
+        aria-label={buttonText}
+        onClick={onButtonClick}
+        {...(type === 'sorted'
+          ? { leftIconId: buttonIconId }
+          : { rightIconId: buttonIconId })}
+      >
+        {buttonText}
+      </MainButton>
+    )
+  const renderSection = (headerContent: React.ReactNode, bodyContent: React.ReactNode) => (
+    <section className={`${styles.userCardList} ${className || ''}`} aria-label={title}>
+      <header className={styles.header}>{headerContent}</header>
+      {bodyContent}
+    </section>
   )
-  const button = (
-    <MainButton
-      type="tertiary"
-      aria-label={buttonText}
-      onClick={onButtonClick}
-      {...(type === 'sorted'
-        ? { leftIconId: buttonIconId }
-        : { rightIconId: buttonIconId })}
-    >
-      {buttonText}
-    </MainButton>
-  )
+
   return (
     <>
-      {type === 'regular' && (
-        <section className={`${styles.userCardList} ${className}`} aria-label={title}>
-          <header className={styles.header}>
-            <h1 className={styles.title}>{title}</h1>
-            {buttonText && button}
-          </header>
-          {cards}
-        </section>
-      )}
-
-      {type === 'sorted' && (
-        <section className={`${styles.userCardList} ${className}`} aria-label={title}>
-          <header className={styles.header}>
+      { (type === 'regular' || type === 'sorted')
+        && renderSection(
+          <>
             <h1 className={styles.title}>
-              {' '}
-              {`${title}: ${counter}`}
-              {' '}
+              {type === 'sorted' && counter ? `${title}: ${counter}` : title}
             </h1>
-            {button}
-          </header>
-          {cards}
-        </section>
-      )}
+            {renderButton()}
+          </>,
+          renderCards(),
+        )}
       {type === 'slider' && (
         <section className={`${styles.userCardListSlider} ${className}`} aria-label={title}>
           <h2 className={styles.title}>{title}</h2>
-          <Swiper
-            className={styles.swiper}
-            role="region"
-            aria-label="Слайдер изображений"
-            modules={[Navigation]}
-            spaceBetween={24}
-            slidesPerView={4}
-            navigation={{
-              nextEl: `.${styles['swiper__button-next']}`,
-              prevEl: `.${styles['swiper__button-prev']}`,
-            }}
-            pagination={{ clickable: true }}
-            onSlideChange={swiper => setActiveIndex(swiper.activeIndex)}
-          >
-            {users.map((user, index) => (
-              <SwiperSlide key={index}>
-                <UserCard
-                  User={user}
-                  onClick={() => onCardClick?.(user.id)}
-                  onLike={onLike}
-                  aria-label={`Профиль ${index + 1} из ${users.length}`}
-                />
-              </SwiperSlide>
-            ))}
-            <nav>
-              <button className={`${styles.swiper__button} ${styles['swiper__button-prev']}`}></button>
-              <button className={`${styles.swiper__button} ${styles['swiper__button-next']}`}></button>
-            </nav>
-          </Swiper>
-          <div
-            aria-live="polite"
-            style={{
-              position: 'absolute',
-              width: '1px',
-              height: '1px',
-              overflow: 'hidden',
-              clip: 'rect(1px, 1px, 1px, 1px)',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Слайд
-            {' '}
-            {activeIndex + 1}
-            {' '}
-            из
-            {users.length}
-          </div>
+          {!users.length
+            ? (
+                <p className={styles.userCardListEmpty}>Нет пользователей для отображения</p>
+              )
+            : (
+                <>
+                  <Swiper
+                    className={styles.swiper}
+                    role="region"
+                    aria-label="Слайдер изображений"
+                    modules={[Navigation]}
+                    spaceBetween={24}
+                    slidesPerView={4}
+                    navigation={{
+                      nextEl: `.${styles.swiperButtonNext}`,
+                      prevEl: `.${styles.swiperButtonPrev}`,
+                    }}
+                    pagination={{ clickable: true }}
+                    onSlideChange={(swiper) => {
+                      setActiveIndex(swiper.activeIndex)
+                      setIsBeginning(swiper.isBeginning)
+                      setIsEnd(swiper.isEnd)
+                    }}
+                  >
+                    {users.map((user, index) => (
+                      <SwiperSlide key={user.id}>
+                        <UserCard
+                          user={user}
+                          onClick={() => onCardClick?.(user.id)}
+                          onLike={onLike}
+                          aria-label={`Профиль ${index + 1} из ${users.length}`}
+                        />
+                      </SwiperSlide>
+                    ))}
+                    <nav>
+                      <button
+                        className={`${styles.swiperButton} ${styles.swiperButtonPrev} ${isBeginning ? styles.swiperButtonHidden : ''}`}
+                        aria-label="Предыдущий слайд"
+                        aria-disabled={isBeginning}
+                      />
+                      <button
+                        className={`${styles.swiperButton} ${styles.swiperButtonNext} ${isEnd ? styles.swiperButtonHidden : ''}`}
+                        aria-label="Следующий слайд"
+                        aria-disabled={isEnd}
+                      />
+                    </nav>
+                  </Swiper>
+                  <div
+                    aria-live="polite"
+                    style={{
+                      position: 'absolute',
+                      width: '1px',
+                      height: '1px',
+                      overflow: 'hidden',
+                      clip: 'rect(1px, 1px, 1px, 1px)',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    Слайд
+                    {' '}
+                    {activeIndex + 1}
+                    {' '}
+                    из
+                    {users.length}
+                  </div>
+                </>
+              )}
         </section>
       )}
     </>
