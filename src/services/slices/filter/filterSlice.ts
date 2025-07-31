@@ -106,19 +106,16 @@ export const filterSlice = createSlice({
           ? [id, ...collectDescendants(id, state.skills)]
           : [id]
 
-      // Добавить
+      // Добавить в выбранные
       if (isNowSelected) {
-        // Если это Radio
+        // Если это Radio(избегаем )
         if (type === 'filterType' || type === 'gender') {
           selectedIdsRef.length = 0
-          selectedIdsRef.push(...allAffected.filter(i => !selectedIdsRef.includes(i)))
         }
-        else {
-          selectedIdsRef.push(...allAffected.filter(i => !selectedIdsRef.includes(i)))
-        }
+        selectedIdsRef.push(...allAffected.filter(i => !selectedIdsRef.includes(i)))
       }
       else {
-        // Удалить
+        // Удалить из выбранных
         const filtered = selectedIdsRef.filter(selId => !allAffected.includes(selId))
         if (type === 'gender')
           state.selectedGenderId = filtered
@@ -140,34 +137,6 @@ export const filterSlice = createSlice({
         )
       }
     },
-
-    ///////////////////////////////////////////
-    // updateFilterType: (state, { payload }: PayloadAction<FilterType>) => {
-    //   state.filterType = payload
-    // },
-    // updateGenderFilter: (state, { payload }: PayloadAction<Gender>) => {
-    //   state.gender = payload
-    // },
-    // toggleCitySelection: (state, { payload }: PayloadAction<string>) => {
-    //   state.cities = state.cities.includes(payload)
-    //     ? state.cities.filter(city => city !== payload)
-    //     : [...state.cities, payload]
-    // },
-    // toggleSkillSelection: (state, { payload }: PayloadAction<string>) => {
-    //   state.skills = state.skills.includes(payload)
-    //     ? state.skills.filter(skill => skill !== payload)
-    //     : [...state.skills, payload]
-    // },
-    // setSearchTerm: (state, { payload }: PayloadAction<string>) => {
-    //   state.searchTerm = payload
-    // },
-    // resetAllFilters: () => initialSettings,
-    // addMultipleSkills: (state, { payload }: PayloadAction<string[]>) => {
-    //   state.skills = [...new Set([...state.skills, ...payload])]
-    // },
-    // removeMultipleSkills: (state, { payload }: PayloadAction<string[]>) => {
-    //   state.skills = state.skills.filter(skill => !payload.includes(skill))
-    // },
   },
 })
 
@@ -181,6 +150,11 @@ export const selectFiltersList = createSelector(
     })),
 )
 
+export const selectSelectedFilters = createSelector(
+  (state: RootState) => state.filterSettings.selectedSkillIds,
+  selectedSkillIds => selectedSkillIds,
+)
+
 export const selectGenders = createSelector(
   (state: RootState) => state.filterSettings.genders,
   (state: RootState) => state.filterSettings.selectedGenderId,
@@ -189,11 +163,6 @@ export const selectGenders = createSelector(
       ...f,
       checked: selectedGenderId.includes(f.id),
     })),
-)
-
-export const selectSelectedGenders = createSelector(
-  (state: RootState) => state.filterSettings.selectedGenderId,
-  selectedGenderId => selectedGenderId,
 )
 
 export const selectLocations = createSelector(
@@ -206,9 +175,14 @@ export const selectLocations = createSelector(
     })),
 )
 
-export const selectSelectedFilters = createSelector(
-  (state: RootState) => state.filterSettings.selectedSkillIds,
-  selectedSkillIds => selectedSkillIds,
+export const selectFilterTypes = createSelector(
+  (state: RootState) => state.filterSettings.filterTypes,
+  (state: RootState) => state.filterSettings.selectedFilterTypeId,
+  (filterTypes, selectedFilterTypeId) =>
+    Object.values(filterTypes).map(f => ({
+      ...f,
+      checked: selectedFilterTypeId.includes(f.id),
+    })),
 )
 
 export const {

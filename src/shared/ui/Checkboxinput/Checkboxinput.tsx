@@ -1,7 +1,7 @@
 import { RadioInput } from '@uiComponents/RadioInput'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectFiltersList, selectGenders, selectLocations, selectSelectedFilters, toggleFilter } from '../../../services/slices/filter/filterSlice'
+import { selectFiltersList, selectFilterTypes, selectGenders, selectLocations, selectSelectedFilters, toggleFilter } from '../../../services/slices/filter/filterSlice'
 import styles from './styles.module.scss'
 
 // TODO: вынести отсюда
@@ -72,6 +72,7 @@ export function FiltersPanel() {
   const dispatch = useDispatch()
   const skills = useSelector(selectFiltersList)
   const locations = useSelector(selectLocations)
+  const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
   const selectedSkillsIds = useSelector(selectSelectedFilters)
 
@@ -88,7 +89,17 @@ export function FiltersPanel() {
 
       <h2 className={styles.title}>Фильтры</h2>
       <ul className={styles['filter-radio-tab']}>
-        {/* фильтры */}
+        {filterTypes.map(filterType => (
+          <li key={filterType.id} className={styles.option}>
+            <RadioInput
+              checked={filterType.checked}
+              name={filterType.name}
+              onChange={() => dispatch(toggleFilter({ id: filterType.id, type: 'filterType' }))}
+            >
+              {filterType.name}
+            </RadioInput>
+          </li>
+        ))}
       </ul>
 
       <h3 className={styles['sub-title']}>Навыки</h3>
