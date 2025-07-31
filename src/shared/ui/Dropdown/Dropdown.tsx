@@ -1,95 +1,116 @@
-import type { DropdownOption, DropdownProps } from './Dropdown.types'
-import styles from './Dropdown.module.scss'
+import type { DropdownProps } from './Dropdown.types'
+import React, { useMemo, useRef, useState } from 'react'
+import { useClickOutside } from '../../hooks/useClickOutside'
+import styles from './styles.module.scss'
 
-function DropdownOptionItem({
-  option,
-  isSelected,
-  onSelect,
-}: {
-  option: DropdownOption
-  isSelected: boolean
-  onSelect: (value: string) => void
-}) {
-  return (
-    <li
-      className={`${styles.option} ${isSelected ? styles.selectedOption : ''}`}
-      onClick={() => onSelect(option.value)}
-      role="option"
-      aria-selected={isSelected}
-    >
-      {option.content || option.label}
-    </li>
-  )
-}
-
-export function Dropdown({
-  id,
+export const Dropdown: React.FC<DropdownProps> = ({
   options,
-  selectedValue,
-  onSelect,
+  selectedOption,
+  onChange,
   label,
-  placeholder,
-  isExpanded,
-  onExpandToggle,
-  displayText,
-  version = 'default',
-  position = 'relative',
-}: DropdownProps) {
-  const handleOptionSelect = (value: string) => {
-    onSelect?.(value)
-    onExpandToggle()
-  }
+  height = 48,
+  width = '100%',
+  bordered = true,
+  searchable,
+}) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const currentDisplayText = displayText || placeholder
-  const shouldShowPlaceholder = !selectedValue && !displayText
+  const filteredOptions = useMemo(() => {
+    const normalized = searchTerm.toLowerCase().trim()
+    return options.filter(option =>
+      option.value.toLowerCase().includes(normalized),
+    )
+  }, [options, searchTerm])
+
+  useClickOutside(containerRef, () => setIsOpen(false))
+
+  const containerWidth = typeof width === 'number' ? `${width}px` : width
 
   return (
-    <div className={styles.wrapper}>
-      {label && (
-        <label htmlFor={id} className={styles.label}>
-          {label}
-        </label>
-      )}
-
-      <div className={`${styles.dropdown} ${isExpanded ? styles.expanded : ''}`}>
-        <button
-          id={id}
-          type="button"
-          className={`${styles.trigger} ${version === 'no-border' ? styles.borderlessTrigger : ''}`}
-          onClick={onExpandToggle}
-          aria-expanded={isExpanded}
-          aria-haspopup="listbox"
-        >
-          <span className={`${shouldShowPlaceholder ? styles.placeholder : ''}`}>
-            {currentDisplayText}
-          </span>
-          <svg
-            className={`${styles.pointer} ${isExpanded ? styles.pointerExpanded : ''}`}
-            aria-hidden="true"
-          >
-            <use href="#icon-chevron-down" />
-          </svg>
-        </button>
-
-        {isExpanded && (
-          <ul
-            id={`${id}-listbox`}
-            className={`${styles.optionsList} ${version === 'no-border' ? styles.borderlessOptions : ''
-            } ${position === 'absolute' ? styles.absolutePosition : ''}`}
-            role="listbox"
-            aria-labelledby={id}
-          >
-            {options.map(option => (
-              <DropdownOptionItem
-                key={option.value}
-                option={option}
-                isSelected={option.value === selectedValue}
-                onSelect={handleOptionSelect}
+    <div
+      ref={containerRef}
+      className={`${styles.container} ${bordered ? styles.bordered : ''}`}
+      style={{ width: containerWidth }}
+      tabIndex={-1}
+    >
+      <div
+        className={`${styles.button} ${selectedOption ? styles.selected : ''}`}
+        style={{ height: `${height}px` }}
+        onClick={() => {
+          setIsOpen((prev) => {
+            const newIsOpen = !prev
+            if (newIsOpen) {
+              setSearchTerm('')
+            }
+            return newIsOpen
+          })
+        }}
+      >
+        {searchable
+          ? (
+              <input
+                type="text"
+                className={styles.input}
+                onChange={e => setSearchTerm(e.target.value)}
+                value={searchTerm}
+                placeholder={label}
+                onFocus={() => setIsOpen(true)}
+                onClick={e => e.stopPropagation()}
               />
-            ))}
-          </ul>
-        )}
+            )
+          : (
+              selectedOption ? selectedOption.value : label
+            )}
+
+        {searchable && searchTerm
+          ? (
+              <button
+                type="button"
+                className={styles['clear-button']}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setSearchTerm('')
+                  setIsOpen(true)
+                }}
+                aria-label="Clear input"
+              >
+                <svg className={styles.icon} aria-hidden="true">
+                  <use href="/sprites.svg#cross" />
+                </svg>
+              </button>
+            )
+          : (
+              <svg className={styles.icon} aria-hidden="true">
+                <use href={`/sprites.svg#${isOpen ? 'chevron-up' : 'chevron-down'}`} />
+              </svg>
+            )}
       </div>
+
+      {isOpen && (
+        <ul className={`${styles['dropdown-list']} ${bordered ? styles.bordered : ''}`}>
+          {filteredOptions.length > 0
+            ? (
+                filteredOptions.map(option => (
+                  <li
+                    key={option.id}
+                    onClick={() => {
+                      onChange(option)
+                      setIsOpen(false)
+                      setSearchTerm(option.value)
+                    }}
+                    className={styles.option}
+                  >
+                    {option.value}
+                  </li>
+                ))
+              )
+            : (
+                <li className={styles.option}>Ничего не найдено</li>
+              )}
+        </ul>
+      )}
     </div>
   )
 }

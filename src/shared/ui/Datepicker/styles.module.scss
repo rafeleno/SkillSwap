@@ -30,45 +30,24 @@
   }
 }
 
-/*  Кастомные селекты, потом заменить на дропдаун */
-
-.test {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 24px 8px 16px;
-  font-size: 16px;
-  min-width: 85px;
-  position: relative;
-  background-image: url('../../../assets/svg/main/chevron-down.svg');
-  background-repeat: no-repeat;
-  background-position: right 0px center;
-  cursor: pointer;
-  color: c.$color-text-primary;
-}
-
 /*  Календарь  */
 
-.customHeader {
+.custom-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 8px;
-  background-color: transparent;
   border: none;
 }
 
-.calendarContainer {
+.calendar-container {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(105, 115, 93, 1);
-  background-color: transparent;
+  background-color: c.$color-card-background;
 }
 
 .footer {
@@ -76,7 +55,6 @@
   justify-content: space-between;
   gap: 8px;
   padding: 16px;
-  border-top: 1px solid #eee;
 }
 
 /*  Глобальные стили react-datepicker  */
@@ -84,7 +62,7 @@
 :global {
   /* Позиционирование */
   .react-datepicker-popper {
-    transform: translate(32px, 115px) !important;
+    transform: translate(20px, 130px) !important;
     z-index: 1000;
   }
 

@@ -1,10 +1,44 @@
 @use '@colors' as c;
 @use '@typographyStyles' as t;
 
+.radio-icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid c.$color-text-primary;
+  border-radius: 50%;
+  transition: border-color 0.3s ease;
+
+  &::after {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    content: '';
+  }
+}
+
+&:hover {
+  .input:not(:checked) + .radio-icon {
+    border-color: c.$color-button-hover;
+
+    &::after {
+      background-color: c.$color-button-hover;
+    }
+  }
+}
+
 .label {
   display: flex;
   gap: 10px;
   align-items: center;
+  color: c.$color-text-primary;
+  font-size: t.$font-h4-size;
+  line-height: t.$font-h4-line-height;
   cursor: pointer;
   user-select: none;
 
@@ -13,41 +47,11 @@
     opacity: 0;
     pointer-events: none;
 
-    &:checked + .radioIcon {
+    &:checked + .radio-icon {
       border-color: c.$color-button-pressed;
 
       &::after {
         background-color: c.$color-button-pressed;
-      }
-    }
-  }
-
-  .radioIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border: 2px solid c.$color-text-primary;
-    border-radius: 50%;
-    transition: border-color 0.3s ease;
-
-    &::after {
-      width: 10px;
-      height: 10px;
-      background-color: transparent;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-      content: '';
-    }
-  }
-
-  &:hover {
-    .input:not(:checked) + .radioIcon {
-      border-color: c.$color-button-hover;
-
-      &::after {
-        background-color: c.$color-button-hover;
       }
     }
   }

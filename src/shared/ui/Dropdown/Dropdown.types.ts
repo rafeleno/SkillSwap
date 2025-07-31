@@ -1,21 +1,15 @@
-import React from 'react';
-
-export interface DropdownOption {
-  value: string;
-  label: string;
-  content?: React.ReactNode;
+export interface IOption {
+  id: string
+  value: string
 }
 
 export interface DropdownProps {
-  id: string;
-  options: DropdownOption[];
-  selectedValue?: string;
-  onSelect?: (value: string) => void;
-  label?: string;
-  placeholder?: string;
-  isExpanded: boolean;
-  onExpandToggle: () => void;
-  displayText?: string;
-  version?: 'default' | 'no-border';
-  position?: 'absolute' | 'relative';
+  options: IOption[]
+  selectedOption: IOption | null
+  onChange: (option: IOption) => void
+  label: string
+  searchable: boolean
+  width?: number | string
+  height?: number
+  bordered?: boolean
 }
