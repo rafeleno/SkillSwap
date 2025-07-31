@@ -18,7 +18,7 @@ export const RadioInput: React.FC<RadioInputProps> = ({
         name={name}
         value={value}
         checked={checked}
-        onChange={e => onChange?.(e.target.value)}
+        onChange={onChange}
         className={styles.input}
       />
       <span className={styles.radioIcon} />

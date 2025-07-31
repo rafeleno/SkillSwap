@@ -1,4 +1,4 @@
-import { FiltersPanel } from '@uiComponents/CheckboxInput/CheckboxInput'
+import { FiltersPanel } from '@uiComponents/CheckboxInput/Checkboxinput'
 import React from 'react'
 
 export function App() {
@@ -10,6 +10,13 @@ export function App() {
   //   '455',
   //   'трубы',
   // ]
+
+  const [_, setFilters] = React.useState({
+    skill: [],
+    gender: [],
+    location: [],
+    filterType: [],
+  })
 
   return (
   // <>
@@ -23,7 +30,7 @@ export function App() {
   //     Творчество и искусство
   //   </CheckboxInput>
 
-    <FiltersPanel />
+    <FiltersPanel onFiltersChange={setFilters} />
 
   )
 }

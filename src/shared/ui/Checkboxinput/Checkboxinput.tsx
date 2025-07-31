@@ -1,7 +1,8 @@
 import { RadioInput } from '@uiComponents/RadioInput'
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectFiltersList, selectFilterTypes, selectGenders, selectLocations, selectSelectedFilters, toggleFilter } from '../../../services/slices/filter/filterSlice'
+import { useSelector } from 'react-redux'
+import { selectFiltersList, selectFilterTypes, selectGenders, selectLocations, selectSelectedFilters } from '../../../services/slices/filter/filterSlice'
+import { useFilters } from '../../../shared/hooks/useFilters'
 import styles from './styles.module.scss'
 
 // TODO: вынести отсюда
@@ -68,13 +69,21 @@ const Checkbox: React.FC<CheckboxProps> = ({ checked, name, onChange, children }
   )
 }
 
-export function FiltersPanel() {
-  const dispatch = useDispatch()
+// /////////////////////////// Это внешенее состояние родителя
+export function FiltersPanel({ onFiltersChange }) {
   const skills = useSelector(selectFiltersList)
   const locations = useSelector(selectLocations)
   const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
-  const selectedSkillsIds = useSelector(selectSelectedFilters)
+  // const selectedSkillsIds = useSelector(selectSelectedFilters)
+
+
+  console.log(skills);
+  
+  const {
+    filters,
+    toggleFilter,
+  } = useFilters({ onChange: onFiltersChange, skillsMap: skills })
 
   // TODO: Тут можно сделать отдельно для фильров родителей
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(() =>
@@ -92,9 +101,9 @@ export function FiltersPanel() {
         {filterTypes.map(filterType => (
           <li key={filterType.id} className={styles.option}>
             <RadioInput
-              checked={filterType.checked}
+              checked={filters.filterType?.includes(filterType.id)}
               name={filterType.name}
-              onChange={() => dispatch(toggleFilter({ id: filterType.id, type: 'filterType' }))}
+              onChange={() => toggleFilter({ type: 'filterType', id: filterType.id })}
             >
               {filterType.name}
             </RadioInput>
@@ -108,9 +117,9 @@ export function FiltersPanel() {
           <>
             <CheckboxParent
               id={category.id}
-              checked={category.checked}
+              checked={filters.skill?.includes(category.id)}
               name={category.name}
-              onChange={() => dispatch(toggleFilter({ id: category.id, type: 'skill' }))}
+              onChange={() => toggleFilter({ type: 'skill', id: category.id })}
               openState={openStates[category.id]}
               setOpenState={setOpenStates}
             >
@@ -122,9 +131,9 @@ export function FiltersPanel() {
                 {category.children.map(subCategory => (
                   <li key={subCategory.id} className={styles.option}>
                     <Checkbox
-                      checked={selectedSkillsIds.includes(subCategory.id)} // Костыль
+                      checked={filters.skill?.includes(subCategory.id)} // Костыль
                       name={subCategory.name}
-                      onChange={() => dispatch(toggleFilter({ id: subCategory.id, type: 'skill' }))}
+                      onChange={() => toggleFilter({ type: 'skill', id: subCategory.id })}
                     >
                       {subCategory.name}
                     </Checkbox>
@@ -141,9 +150,9 @@ export function FiltersPanel() {
         {genders.map(gender => (
           <li key={gender.id} className={styles.option}>
             <RadioInput
-              checked={gender.checked}
+              checked={filters.gender?.includes(gender.id)}
               name={gender.name}
-              onChange={() => dispatch(toggleFilter({ id: gender.id, type: 'gender' }))}
+              onChange={() => toggleFilter({ type: 'gender', id: gender.id })}
             >
               {gender.name}
             </RadioInput>
@@ -156,9 +165,9 @@ export function FiltersPanel() {
         {locations.map(location => (
           <li key={location.id} className={styles.option}>
             <Checkbox
-              checked={location.checked}
+              checked={filters.location?.includes(location.id)}
               name={location.name}
-              onChange={() => dispatch(toggleFilter({ id: location.id, type: 'location' }))}
+              onChange={() => toggleFilter({ type: 'location', id: location.id })}
             >
               {location.name}
             </Checkbox>

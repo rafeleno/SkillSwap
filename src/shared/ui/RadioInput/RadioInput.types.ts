@@ -3,5 +3,5 @@ export interface RadioInputProps {
   checked: boolean
   children: React.ReactNode
   value?: string
-  onChange: (value: string) => void
+  onChange: () => void
 }

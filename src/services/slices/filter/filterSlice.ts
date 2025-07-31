@@ -146,7 +146,6 @@ export const selectFiltersList = createSelector(
   (skills, selectedSkillsIds) =>
     Object.values(skills).map(f => ({
       ...f,
-      checked: selectedSkillsIds.includes(f.id),
     })),
 )
 
