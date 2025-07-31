@@ -1,0 +1,40 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 36px 0;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-bar {
+  display: flex;
+  gap: 15px;
+  width: 212px;
+  padding-top: 7px;
+}
+
+.progress-segment {
+  flex: 1;
+  height: 4px;
+  background: c.$color-disabled;
+  border-radius: 3px;
+
+  &.active {
+    background: c.$color-accent;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+}
