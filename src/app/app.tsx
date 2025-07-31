@@ -1,4 +1,4 @@
-import { FiltersPanel } from '@uiComponents/CheckboxInput/Checkboxinput'
+import { FilterTab } from '@widgetComponents/FilterTab'
 import React from 'react'
 
 export function App() {
@@ -30,7 +30,7 @@ export function App() {
   //     Творчество и искусство
   //   </CheckboxInput>
 
-    <FiltersPanel onFiltersChange={setFilters} />
+    <FilterTab onFiltersChange={setFilters} />
 
   )
 }

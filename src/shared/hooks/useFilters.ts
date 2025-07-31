@@ -1,15 +1,22 @@
 import React, { useCallback, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { selectSkills } from '../../services/slices/filter/filterSlice'
 
 type FiltersState = Record<string, string[]>
 
 interface SkillItem {
   id: string
   name: string
-  parent: string | null
+  parent: string
   children: { id: string, name: string }[]
 }
 
-type FiltersMap = Record<string, SkillItem>
+type FiltersMap = SkillItem[]
+
+// interface CallbackProps {
+//   type: 'skill' | 'gender' | 'location' | 'filterType'
+//   id: string
+// }
 
 interface UseFiltersOptions {
   /**
@@ -20,32 +27,33 @@ interface UseFiltersOptions {
   /**
    * Начальное состояние фильтров (по умолчанию пустой объект).
    */
-  skillsMap: FiltersMap
   initialFilters?: FiltersState
-}
-
-interface CallbackProps {
-  type: 'skill' | 'gender' | 'location' | 'filterType'
-  id: string
+  skillsMap: FiltersMap
 }
 
 /**
- * Хук для управления выбором фильтров.
+ * Кастомный хук для управления выбором фильтров.
  */
 export function useFilters({
   onChange,
+  initialFilters = {},
   skillsMap,
 }: UseFiltersOptions) {
-  const [filters, setFilters] = useState<FiltersState>({})
+  const [filters, setFilters] = useState<FiltersState>(initialFilters)
 
+  /**
+   * toggleFilter аналогичен вашему action в слайсе:
+   *   payload = { type, id }
+   * Если id уже есть в массиве filters[type] — удаляет, иначе — добавляет.
+   */
   const toggleFilter = useCallback(
-    ({ type, id }: CallbackProps) => {
+    (type: string, id: string) => {
       setFilters((prev) => {
         const prevArray = prev[type] || []
         const exists = prevArray.includes(id)
 
         function collectDescendants(nodeId: string, skills: FiltersMap): string[] {
-          const node = skills[nodeId]
+          const node = skills[skills.findIndex(skill => skill.id === nodeId)]
           if (!node)
             return []
           return node.children.reduce(
@@ -55,16 +63,27 @@ export function useFilters({
         }
 
         // создаём новый массив для данного типа
+        // const newArray = exists
+        //   ? prevArray.filter(item => item !== id)
+        //   : [...prevArray, id]
+
         const newArray = (() => {
           if (exists) {
+            if (type === 'skill') {
+              return prevArray.filter(item => item !== id && !collectDescendants(id, skillsMap).includes(item))
+            }
             return prevArray.filter(item => item !== id)
           }
+          else {
+            if (type === 'gender' || type === 'filterType') {
+              return [id]
+            }
+            if (type === 'skill') {
+              return [id, ...collectDescendants(id, skillsMap)]
+            }
 
-          if (type === 'skill') {
-            return [...prevArray, id, ...collectDescendants(id, skillsMap)]
+            return [...prevArray, id]
           }
-
-          return [...prevArray, id]
         })()
 
         const newFilters = {
@@ -83,8 +102,17 @@ export function useFilters({
     [onChange],
   )
 
+  /** Полностью сбросить все фильтры */
+  const clearAllFilters = useCallback(() => {
+    setFilters({})
+    if (onChange) {
+      onChange({})
+    }
+  }, [onChange])
+
   return {
     filters,
     toggleFilter,
+    clearAllFilters,
   }
 }

@@ -1,10 +1,8 @@
 import type React from 'react'
 
 export interface CheckboxInputProps {
+  checked: boolean
+  name: string
+  onChange: () => void
   children: React.ReactNode
-  opened?: boolean
-  active?: boolean
-  options?: string[]
-  onOpen?: () => void
-  onChange?: () => void
 }
