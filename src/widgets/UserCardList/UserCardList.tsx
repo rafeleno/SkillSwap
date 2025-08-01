@@ -27,24 +27,29 @@ export const UserCardList: React.FC<UserCardListProps> = ({
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
 
+  const renderEmptyState = () => (
+    <p className={styles.userCardListEmpty} aria-label="Нет пользователей для отображения">
+      Нет пользователей для отображения
+    </p>
+  )
+
   const renderCards = () =>
     users.length
       ? (
-          <ul className={styles.cardGrid} role="list">
+          <ul className={styles.cardGrid} role="list" aria-label="Список пользователей">
             {users.map(user => (
-              <li key={user.id} className={styles.cardItem}>
+              <li key={user.id} className={styles.cardItem} aria-label={`Карточка пользователя ${user.name}`}>
                 <UserCard
+                  type="preview"
                   user={user}
-                  onClick={() => onCardClick?.(user.id)}
+                  onClick={onCardClick}
                   onLike={onLike}
                 />
               </li>
             ))}
           </ul>
         )
-      : (
-          <p className={styles.userCardListEmpty}>Нет пользователей для отображения</p>
-        )
+      : renderEmptyState()
   const renderButton = () =>
     buttonText && (
       <MainButton
@@ -60,7 +65,7 @@ export const UserCardList: React.FC<UserCardListProps> = ({
     )
   const renderSection = (headerContent: React.ReactNode, bodyContent: React.ReactNode) => (
     <section className={`${styles.userCardList} ${className || ''}`} aria-label={title}>
-      <header className={styles.header}>{headerContent}</header>
+      <header className={styles.header} aria-label={title}>{headerContent}</header>
       {bodyContent}
     </section>
   )
@@ -78,18 +83,16 @@ export const UserCardList: React.FC<UserCardListProps> = ({
           renderCards(),
         )}
       {type === 'slider' && (
-        <section className={`${styles.userCardListSlider} ${className}`} aria-label={title}>
+        <section className={`${styles.userCardListSlider} ${className || ''}`} aria-label={title}>
           <h2 className={styles.title}>{title}</h2>
           {!users.length
-            ? (
-                <p className={styles.userCardListEmpty}>Нет пользователей для отображения</p>
-              )
+            ? renderEmptyState()
             : (
                 <>
                   <Swiper
                     className={styles.swiper}
                     role="region"
-                    aria-label="Слайдер изображений"
+                    aria-label="Слайдер профилей пользователей"
                     modules={[Navigation]}
                     spaceBetween={24}
                     slidesPerView={4}
@@ -107,8 +110,9 @@ export const UserCardList: React.FC<UserCardListProps> = ({
                     {users.map((user, index) => (
                       <SwiperSlide key={user.id}>
                         <UserCard
+                          type="preview"
                           user={user}
-                          onClick={() => onCardClick?.(user.id)}
+                          onClick={onCardClick}
                           onLike={onLike}
                           aria-label={`Профиль ${index + 1} из ${users.length}`}
                         />
@@ -138,12 +142,7 @@ export const UserCardList: React.FC<UserCardListProps> = ({
                       whiteSpace: 'nowrap',
                     }}
                   >
-                    Слайд
-                    {' '}
-                    {activeIndex + 1}
-                    {' '}
-                    из
-                    {users.length}
+                    {`Слайды ${activeIndex + 4} из ${users.length}`}
                   </div>
                 </>
               )}
