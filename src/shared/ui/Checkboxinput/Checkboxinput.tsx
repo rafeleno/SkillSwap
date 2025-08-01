@@ -5,7 +5,6 @@ import styles from './styles.module.scss'
 export const CheckboxInput: React.FC<CheckboxInputProps> = ({ checked, name, onChange, children }) => {
   return (
     <div className={styles['checkbox-container']}>
-
       <label className={styles.label}>
         <input
           type="checkbox"

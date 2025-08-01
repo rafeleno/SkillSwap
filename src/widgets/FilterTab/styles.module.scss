@@ -1,5 +1,26 @@
 @use '@colors' as c;
 
-.filter-tab {
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
 
+.sub-title {
+  margin-bottom: 20px;
+}
+
+.options {
+  margin-left: 32px;
+  list-style: none;
+}
+
+.option {
+  margin-bottom: 6px;
+}
+
+.filters-tab {
+  max-height: 300px;
+  overflow-y: auto;
 }

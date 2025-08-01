@@ -1,36 +1,22 @@
+import type { FiltersState } from 'shared/hooks/useFilters'
 import { FilterTab } from '@widgetComponents/FilterTab'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export function App() {
-  // const [active, setActive] = React.useState(true)
-  // const [opened, setOpened] = React.useState(true)
-
-  // const options = [
-  //   'вертолет',
-  //   '455',
-  //   'трубы',
-  // ]
-
-  const [_, setFilters] = React.useState({
+  // Удалить
+  const [filters, setFilters] = React.useState<FiltersState>({
     skill: [],
     gender: [],
     location: [],
     filterType: [],
   })
 
+  // Удалить
+  useEffect(() => {
+    console.log(filters)
+  }, [filters])
+
   return (
-  // <>
-  //   <CheckboxInput
-  //     active={active}
-  //     opened={opened}
-  //     onChange={() => setActive(!active)}
-  //     onOpen={() => setOpened(!opened)}
-  //     options={options}
-  //   >
-  //     Творчество и искусство
-  //   </CheckboxInput>
-
     <FilterTab onFiltersChange={setFilters} />
-
   )
 }

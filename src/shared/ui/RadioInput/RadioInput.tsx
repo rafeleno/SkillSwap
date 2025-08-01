@@ -22,7 +22,7 @@ export const RadioInput: React.FC<RadioInputProps> = ({
         className={styles.input}
       />
       <span className={styles.radioIcon} />
-      {children}
+      <span className={styles.text}>{children}</span>
     </label>
   )
 }

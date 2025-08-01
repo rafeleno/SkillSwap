@@ -1,3 +1,5 @@
+import type React from 'react'
+
 export interface FilterTabProps {
-  onFiltersChange: (filters: any) => void
+  onFiltersChange: React.Dispatch<React.SetStateAction<any>>
 }

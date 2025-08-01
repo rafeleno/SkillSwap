@@ -1,5 +1,55 @@
 @use '@colors' as c;
 
-.checkbox-parent {
+.input {
+  display: none;
+}
 
+//  TODO: Сделать плавным как radio
+.checkbox {
+  &-icon {
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    margin-right: 10px;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &-content {
+    display: flex;
+  }
+
+  &-open {
+    margin-bottom: 12px;
+  }
+}
+
+.label {
+  display: flex;
+  cursor: pointer;
+}
+
+.text {
+  line-height: 200%;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  &-button {
+    width: 35px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &-closed {
+    transform: rotate(180deg);
+  }
 }

@@ -1,8 +1,7 @@
 import React, { useCallback, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { selectSkills } from '../../services/slices/filter/filterSlice'
 
-type FiltersState = Record<string, string[]>
+// TODO: Вынести в общие типы
+export type FiltersState = Record<string, string[]> // Мб тут Record<string, SkillItem[]>
 
 interface SkillItem {
   id: string
@@ -40,12 +39,6 @@ export function useFilters({
   skillsMap,
 }: UseFiltersOptions) {
   const [filters, setFilters] = useState<FiltersState>(initialFilters)
-
-  /**
-   * toggleFilter аналогичен вашему action в слайсе:
-   *   payload = { type, id }
-   * Если id уже есть в массиве filters[type] — удаляет, иначе — добавляет.
-   */
   const toggleFilter = useCallback(
     (type: string, id: string) => {
       setFilters((prev) => {
@@ -61,12 +54,6 @@ export function useFilters({
             [],
           )
         }
-
-        // создаём новый массив для данного типа
-        // const newArray = exists
-        //   ? prevArray.filter(item => item !== id)
-        //   : [...prevArray, id]
-
         const newArray = (() => {
           if (exists) {
             if (type === 'skill') {
@@ -79,7 +66,9 @@ export function useFilters({
               return [id]
             }
             if (type === 'skill') {
-              return [id, ...collectDescendants(id, skillsMap)]
+              const newArray = [...prevArray, id, ...collectDescendants(id, skillsMap)]
+              const uniqueArray = Array.from(new Set(newArray))
+              return uniqueArray
             }
 
             return [...prevArray, id]
@@ -91,7 +80,6 @@ export function useFilters({
           [type]: newArray,
         }
 
-        // сообщаем наверх
         if (onChange) {
           onChange(newFilters)
         }
@@ -102,7 +90,6 @@ export function useFilters({
     [onChange],
   )
 
-  /** Полностью сбросить все фильтры */
   const clearAllFilters = useCallback(() => {
     setFilters({})
     if (onChange) {
