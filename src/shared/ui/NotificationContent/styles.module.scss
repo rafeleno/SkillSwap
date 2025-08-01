@@ -1,0 +1,44 @@
+@use '@colors' as c;
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper {
+  width: auto;
+  height: 300px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    fill:none;
+}
+
+.title {
+    margin-top: 52px;
+}
+
+.description {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 24px;
+  width: 460px;
+}
+
+
