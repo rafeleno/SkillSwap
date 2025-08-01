@@ -1,0 +1,22 @@
+@use '@colors' as c;
+
+.modal {
+  width: 100%;
+  max-width: 600px;
+  padding: 80px 60px;
+  background: c.$color-card-background;
+  border-radius: 12px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(142 142 142 / 60%);
+}
