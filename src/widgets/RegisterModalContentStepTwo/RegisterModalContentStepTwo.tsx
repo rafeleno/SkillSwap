@@ -23,7 +23,7 @@ export const RegisterModalContentStepTwo: React.FC<RegisterModalContentStepTwoPr
   const subcategories = skillsData.flatMap(item => item.subcategory)
 
   const toValidate = () => {
-    return nameValue.current !== null
+    return nameValue.current !== null && dateValue.current !== null
       && genderValue.current !== null && locationValue.current !== null
       && toLearnValue.current.length > 0 && toSubLearnValue.current.length > 0
   }
