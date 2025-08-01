@@ -3,9 +3,25 @@
 .notification-content {
     display: flex;
     flex-direction: column;
+    gap: 52px;
     align-items: center;
     width: 100%;
     background: transparent;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
 
 .icon-wrapper {
@@ -23,16 +39,6 @@
     width: 100px;
     height: 100px;
     fill:none;
-}
-
-.title {
-    margin-top: 52px;
-}
-
-.description {
-    margin-top: 12px;
-    margin-bottom: 32px;
-    text-align: center;
 }
 
 .buttons-wrapper {

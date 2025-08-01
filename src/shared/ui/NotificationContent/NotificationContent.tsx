@@ -18,32 +18,36 @@ export const NotificationContent: React.FC<NotificationContentProps> = ({ title,
           <img src={image} alt="error image" />
         </div>
       )}
-      <h2 id="notification-modal-title" className={styles.title}>{title}</h2>
-      <span id="notification-modal-description" className={styles.description}>{description}</span>
-      {isOneButton && (
-        <MainButton
-          type="primary"
-          onClick={onClose}
-        >
-          <span> Готово </span>
-        </MainButton>
-      )}
-      {isTwoButtons && (
-        <div className={styles['buttons-wrapper']}>
-          <MainButton
-            type="secondary"
-            onClick={() => {}}
-          >
-            <span> Сообщить об ошибке</span>
-          </MainButton>
+      <div className={styles['content-wrapper']}>
+        <div className={styles['text-wrapper']}>
+          <h2 id="notification-modal-title">{title}</h2>
+          <span id="notification-modal-description">{description}</span>
+        </div>
+        {isOneButton && (
           <MainButton
             type="primary"
             onClick={onClose}
           >
-            <span> На главную </span>
+            <span> Готово </span>
           </MainButton>
-        </div>
-      )}
+        )}
+        {isTwoButtons && (
+          <div className={styles['buttons-wrapper']}>
+            <MainButton
+              type="secondary"
+              onClick={() => {}}
+            >
+              <span> Сообщить об ошибке</span>
+            </MainButton>
+            <MainButton
+              type="primary"
+              onClick={onClose}
+            >
+              <span> На главную </span>
+            </MainButton>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
