@@ -29,6 +29,7 @@ export default {
       ),
       '@images': path.resolve(__dirname, '../src/assets/images'),
       '@svg': path.resolve(__dirname, '../src/assets/svg'),
+      '@databases': path.resolve(__dirname, '../public/db'),
     },
   },
   module: {
