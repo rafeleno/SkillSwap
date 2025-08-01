@@ -1,5 +1,5 @@
 export interface MainButtonProps {
-  type: 'primary' | 'secondary' | 'tertiary'
+  type: 'primary' | 'secondary' | 'tertiary' | 'compact'
   children: React.ReactNode
   onClick: () => void
   leftIconId?: string
