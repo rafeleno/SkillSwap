@@ -21,7 +21,7 @@ type FiltersMap = SkillItem[]
 interface UseFiltersOptions {
   /**
    * Опциональный коллбэк, который будет вызван при любом изменении filters.
-   * Можно использовать, чтобы "поднимать" состояние выше в родителя.
+   * Чтобы "поднимать" состояние выше в родителя.
    */
   onChange?: (filters: FiltersState) => void
   /**

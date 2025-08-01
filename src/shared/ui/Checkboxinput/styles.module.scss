@@ -1,14 +1,6 @@
 @use '@colors' as c;
 
-.label {
-  display: block;
-  cursor: pointer;
-}
-
-.input {
-  display: none;
-}
-
+//  TODO: Сделать плавным как radio
 .checkbox {
   &-icon {
     width: 24px;
@@ -17,49 +9,24 @@
     margin-right: 10px;
   }
 
-  &-outline {
-    fill: none;
-    stroke: currentcolor;
-  }
-
-  &-mark {
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
-    stroke: currentcolor;
-    stroke-linecap: round;
-  }
-
   &-container {
     display: flex;
-    justify-content: center;
-    width: min-content;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
-.options {
-  margin-top: 12px;
-  margin-left: 32px;
-  list-style: none;
+.input {
+  display: none;
 }
 
-.option {
-  margin-bottom: 12px;
-}
-
-.arrow {
-  width: 24px;
-  height: 24px;
-
-  &-closed {
-    transform: rotate(180deg);
-  }
+.label {
+  display: flex;
+  cursor: pointer;
 }
 
 .text {
-  display: inline-block;
-  color: var(--color-text-primary);
-  vertical-align: middle;
-  user-select: none;
+  line-height: 200%;
 
   &-container {
     display: flex;
