@@ -49,25 +49,38 @@ const TAG_CONFIG: Record<TagVariant, { text: string, colorClass: string }> = {
   coaching: { text: 'Коучинг', colorClass: styles['tag-education'] },
 
   // health_and_lifestyle - зеленый
-  yoga_and_meditation: { text: 'Йога и медитация', colorClass: styles['tag-health'] },
+  yoga_and_meditation: { text: 'Медитация', colorClass: styles['tag-health'] },
   nutrition_and_health: { text: 'Питание и ЗОЖ', colorClass: styles['tag-health'] },
   mental_health: { text: 'Ментальное здоровье', colorClass: styles['tag-health'] },
   mindfulness: { text: 'Осознанность', colorClass: styles['tag-health'] },
   physical_training: { text: 'Физические тренировки', colorClass: styles['tag-health'] },
   sleep_and_recovery: { text: 'Сон и восстановление', colorClass: styles['tag-health'] },
   work_life_balance: { text: 'Баланс жизни и работы', colorClass: styles['tag-health'] },
+  // счетчик скрытых элементов
+  more: { text: '', colorClass: styles['tag-more'] },
 }
 
-export const Tag: React.FC<TagProps> = ({ variant, className = '' }) => {
+export const Tag: React.FC<TagProps> = ({ variant, count, className = '' }) => {
   const config = TAG_CONFIG[variant]
 
   if (!config) {
     return null
   }
 
+  const isCounter = variant === 'more'
+  const content = isCounter ? `+${count}` : config.text
+
+  if (isCounter && !count) {
+    return null
+  }
+
   return (
-    <span className={`${styles.tag} ${config.colorClass} ${className}`}>
-      {config.text}
+    <span
+      className={`${styles.tag} ${config.colorClass} ${className}`}
+      aria-label={isCounter ? `Ещё ${count} навыков` : config.text}
+      title={isCounter ? `Ещё ${count} навыков` : config.text}
+    >
+      {content}
     </span>
   )
 }

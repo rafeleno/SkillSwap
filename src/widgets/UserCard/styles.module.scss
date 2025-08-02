@@ -1,0 +1,64 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+
+.user-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 324px;
+  min-height: 368px;
+  padding: 20px;
+  background-color: c.$color-card-background;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: t.$font-weight-semibold;
+  font-family: OpenSans, sans-serif;
+}
+
+.meta {
+  font-size: t.$font-caption-size;
+}
+
+.favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sections, .section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  gap: 8px;
+}
+
+.label {
+  font-weight: t.$font-weight-medium;
+}
+
+.want-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

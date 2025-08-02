@@ -108,4 +108,37 @@
       }
     }
   }
+
+  &.fixed {
+    gap: 12px;
+    justify-content: start;
+    width: 100%;
+    background-color: c.$color-card-background;
+    border-color: c.$color-card-background;
+
+    &:hover {
+      background-color: c.$color-disabled;
+      border-color: c.$color-disabled;
+    }
+
+    &:active {
+      color: c.$color-card-background;
+      background-color: c.$color-caption;
+      border-color: c.$color-caption;
+
+      .icon {
+        fill: c.$color-card-background;
+      }
+    }
+
+    &:disabled {
+      color: c.$color-caption;
+      background-color: c.$color-disabled;
+      border: 1px solid c.$color-disabled;
+
+      .icon {
+        fill: c.$color-caption;
+      }
+    }
+  }
 }
