@@ -29,26 +29,28 @@
     margin-bottom: 16px;
 }
 
-.icon-container {
-    position: relative;
-    width: 72px;
-    height: 72px;
-}
+.icon {
+    &-container {
+        position: relative;
+        width: 72px;
+        height: 72px;
+    }
 
-.icon-user {
-    position: absolute;
-    right: 9px;
-    bottom: 9px;
-    stroke: #FFF;
-}
+    &-user {
+        position: absolute;
+        right: 9px;
+        bottom: 9px;
+        stroke: #FFF;
+    }
 
-.icon-add {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    color: #FFF;
-    background-color: c.$color-accent;
-    border-radius: 8px;
+    &-add {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        color: #FFF;
+        background-color: c.$color-accent;
+        border-radius: 8px;
+    }
 }
 
 .flex-row {
