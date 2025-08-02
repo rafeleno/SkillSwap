@@ -37,7 +37,7 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
   }, [filters])
 
   return (
-    <div className={styles['filters-panel']}>
+    <div className={styles.filters}>
       <div className={styles['filters-header']}>
         <h2 className={styles.title}>
           Фильтры
