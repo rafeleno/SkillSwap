@@ -5,13 +5,18 @@
 .user-card {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  justify-content: space-between;
   max-width: 324px;
   min-height: 368px;
   padding: 20px;
   background-color: c.$color-card-background;
   border-radius: 12px;
   user-select: none;
+
+    &-detailed {
+      height: 444px;
+      padding: 32px;
+    }
 }
 
 .header {
@@ -43,14 +48,26 @@
   right: 0;
 }
 
+.description {
+  margin-top: 20px;
+}
+
 .sections, .section {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+    &-detailed {
+    gap: 24px;
+  }
 }
 
 .section {
   gap: 8px;
+  
+    &-detailed {
+      gap: 14px;
+    }
 }
 
 .label {
