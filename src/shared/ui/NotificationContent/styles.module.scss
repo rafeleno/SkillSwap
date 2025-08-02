@@ -1,0 +1,50 @@
+@use '@colors' as c;
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper {
+  width: auto;
+  height: 300px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    fill:none;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 24px;
+  width: 460px;
+}
+
+

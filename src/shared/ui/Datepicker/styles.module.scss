@@ -14,6 +14,7 @@
 }
 
 .input {
+  position: relative;
   height: 48px;
   width: 208px;
   padding: 8px;
@@ -41,7 +42,6 @@
 }
 
 .calendar-container {
-  position: relative;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -54,7 +54,8 @@
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  padding: 16px;
+  margin: 0 16px 16px;
+  height: 48px;
 }
 
 /*  Глобальные стили react-datepicker  */
@@ -62,7 +63,8 @@
 :global {
   /* Позиционирование */
   .react-datepicker-popper {
-    transform: translate(20px, 130px) !important;
+    left: 18px !important;
+    top: -4px !important;
     z-index: 1000;
   }
 
