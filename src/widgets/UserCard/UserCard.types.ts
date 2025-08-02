@@ -1,22 +1,24 @@
-interface Skill {
+export interface Skill {
   skillId: string
   subcategoryId: string
   name: string
   description?: string
 }
-interface TUser {
+export interface TUser {
   id: number
   avatar: string
   name: string
   location: string
   age: string // строка, типа "34 года"
   gender: 'Мужской' | 'Женский'
+  description: string
   skillCanTeach: Skill
   images: string[]
   subcategoriesWantToLearn: Skill[]
 }
 export interface UserCardProps {
-  User: TUser
-  onClick: () => void
+  type: 'preview' | 'detailed'
+  user: TUser
+  onClick?: (userId: number) => void
   onLike: (userId: number) => void
 }

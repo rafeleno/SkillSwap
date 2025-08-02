@@ -21,7 +21,7 @@
   font-family: t.$font-secondary;
   background: c.$color-card-background;
   border: none;
-  border-radius: 0;
+  border-radius: 12px;
 }
 
 .selected {
@@ -40,18 +40,21 @@
 
 .dropdown-list {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: calc(100% + 1px);
+  left: -1px;
+  right: -1px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  width: 100%;
-  min-height: 100px;
+  width: calc(100% + 2px);
   max-height: 120px;
-  padding: 8px 0;
+  padding: 8px 8px;
+  margin-top: -12px;
   overflow-y: auto;
   background: c.$color-card-background;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -77,7 +80,7 @@
 .option {
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 12px;
   color: c.$color-text-primary;  
   font-size: t.$font-h4-size;
   font-family: t.$font-secondary;

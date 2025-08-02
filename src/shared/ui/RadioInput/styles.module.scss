@@ -3,11 +3,11 @@
 
 .radio-icon {
   display: flex;
-  gap: 10px;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
+  margin: 2px;
   border: 2px solid c.$color-text-primary;
   border-radius: 50%;
   transition: border-color 0.3s ease;
@@ -19,16 +19,6 @@
     border-radius: 50%;
     transition: background-color 0.3s ease;
     content: '';
-  }
-}
-
-&:hover {
-  .input:not(:checked) + .radio-icon {
-    border-color: c.$color-button-hover;
-
-    &::after {
-      background-color: c.$color-button-hover;
-    }
   }
 }
 
@@ -55,4 +45,18 @@
       }
     }
   }
+
+  &:hover {
+    .input:not(:checked) + .radio-icon {
+      border-color: c.$color-button-hover;
+
+      &::after {
+        background-color: c.$color-button-hover;
+      }
+    }
+  }
+}
+
+.text {
+  line-height: 200%;
 }

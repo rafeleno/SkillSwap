@@ -14,15 +14,16 @@
 }
 
 .input {
-  height: 48px;
+  position: relative;
   width: 208px;
+  height: 48px;
   padding: 8px;
-  border-radius: 8px;
   font-family: t.$font-secondary;
-  border: 1px solid c.$color-caption;
   background-image: url('../../../assets/svg/main/calendar.svg');
   background-repeat: no-repeat;
   background-position: right 20px center;
+  border: 1px solid c.$color-caption;
+  border-radius: 8px;
   caret-color: c.$color-text-link;
 
   &:focus {
@@ -30,53 +31,31 @@
   }
 }
 
-/*  Кастомные селекты, потом заменить на дропдаун */
-
-.test {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 24px 8px 16px;
-  font-size: 16px;
-  min-width: 85px;
-  position: relative;
-  background-image: url('../../../assets/svg/main/chevron-down.svg');
-  background-repeat: no-repeat;
-  background-position: right 0px center;
-  cursor: pointer;
-  color: c.$color-text-primary;
-}
-
 /*  Календарь  */
 
-.customHeader {
+.custom-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 8px;
-  background-color: transparent;
   border: none;
 }
 
-.calendarContainer {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
+.calendar-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(105, 115, 93, 1);
-  background-color: transparent;
+  overflow: hidden;
+  background-color: c.$color-card-background;
+  border: 1px solid rgb(105 115 93 / 100%);
+  border-radius: 12px;
 }
 
 .footer {
   display: flex;
-  justify-content: space-between;
   gap: 8px;
-  padding: 16px;
-  border-top: 1px solid #eee;
+  justify-content: space-between;
+  height: 48px;
+  margin: 0 16px 16px;
 }
 
 /*  Глобальные стили react-datepicker  */
@@ -84,7 +63,8 @@
 :global {
   /* Позиционирование */
   .react-datepicker-popper {
-    transform: translate(32px, 115px) !important;
+    top: -4px !important;
+    left: 18px !important;
     z-index: 1000;
   }
 
@@ -95,17 +75,17 @@
   /* Основной контейнер */
   .react-datepicker__month-container {
     float: left;
-    padding: 16px 32px 0 32px;
+    padding: 16px 32px 0;
   }
 
   .calendarContainer__brBSh {
     position: relative;
-    border-radius: 12px;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    border: 1px solid c.$color-caption;
+    overflow: hidden;
     background-color: c.$color-card-background;
+    border: 1px solid c.$color-caption;
+    border-radius: 12px;
   }
 
   .react-datepicker__header {
@@ -129,14 +109,14 @@
   /* Состояния дней */
   .react-datepicker__day--outside-month {
     color: c.$color-text-disabled !important;
-    pointer-events: none;
     cursor: default;
+    pointer-events: none;
   }
 
   .react-datepicker__day--disabled {
     color: c.$color-text-disabled !important;
-    pointer-events: none;
     cursor: default;
+    pointer-events: none;
   }
 
   .react-datepicker__day--today {
@@ -145,16 +125,18 @@
 
   .react-datepicker__day--selected,
   .react-datepicker__day--keyboard-selected {
-    border-radius: 90px !important;
-    background-color: c.$color-accent !important;
     color: c.$color-text-primary !important;
     font-weight: t.$font-weight-regular !important;
+    background-color: c.$color-accent !important;
+    border-radius: 90px !important;
   }
 
   /* Наведение */
-  .react-datepicker__day:not([aria-disabled='true']):not(
-      .react-datepicker__day--selected
-    ):not(.react-datepicker__day--keyboard-selected):hover {
+  .react-datepicker__day:not(
+      [aria-disabled='true'],
+      .react-datepicker__day--selected,
+      .react-datepicker__day--keyboard-selected
+    ):hover {
     background-color: transparent !important;
   }
 }

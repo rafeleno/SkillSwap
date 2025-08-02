@@ -89,7 +89,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
       </div>
 
       {isOpen && (
-        <ul className={styles['dropdown-list']}>
+        <ul className={`${styles['dropdown-list']} ${bordered ? styles.bordered : ''}`}>
           {filteredOptions.length > 0
             ? (
                 filteredOptions.map(option => (

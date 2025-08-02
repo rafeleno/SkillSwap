@@ -24,67 +24,94 @@ const imagesByType = {
     image: light,
     alt: 'Лампочка',
   },
+  // Заглушки
+  stepTwo: {
+    image: light,
+    alt: 'Шаг 2',
+  },
+  stepThree: {
+    image: light,
+    alt: 'Шаг 3',
+  },
 }
 
 export const RegisterModalContent: React.FC<RegisterModalContentProps> = ({
   type,
   onSubmit,
-  emailState,
+  // onPrev,
+  user,
+  // categories,
+  onUpdateUser,
   passwordState,
-}: RegisterModalContentProps) => {
+}) => {
+  const [password, setPassword] = passwordState
+
   let inputs: InputProps[] = []
-  const stepOneStates = [emailState, passwordState]
 
   switch (type) {
     case 'stepOne':
-      inputs = stepOneInputs.map((input, index) => ({ ...input, state: stepOneStates[index] }))
+      inputs = stepOneInputs.map((input) => {
+        if (input.type === 'email') {
+          return {
+            ...input,
+            state: [user?.email || '', (value: string) => onUpdateUser('email', value)],
+          }
+        }
+        if (input.type === 'password') {
+          return {
+            ...input,
+            state: [password, setPassword],
+          }
+        }
+        return {
+          ...input,
+          state: [password, setPassword],
+        }
+      })
       break
   }
 
   return (
     <div className={styles.container}>
       <form className={styles.form}>
-        {type === 'stepOne'
-          && (
+        {/* Контент шага 1 */}
+        {type === 'stepOne' && (
+          <>
             <div className={styles.additionalButtons}>
-              <MainButton
-                type="secondary"
-                onClick={() => { }}
-                leftIconId="google"
-              >
+              <MainButton type="secondary" onClick={() => {}} leftIconId="google">
                 Продолжить с Google
               </MainButton>
-              <MainButton
-                type="secondary"
-                onClick={() => { }}
-                leftIconId="apple"
-              >
+              <MainButton type="secondary" onClick={() => {}} leftIconId="apple">
                 Продолжить с Apple
               </MainButton>
             </div>
-          )}
-        <fieldset className={styles.fieldset}>
-          {type === 'stepOne' && <legend className={styles.legend}>или</legend>}
-          {
-            inputs.map(input => (
-              <PrimaryTextInput {...input} />
-            ))
-          }
-        </fieldset>
-        {type === 'stepOne' && (
-          <MainButton type="primary" onClick={onSubmit}>
-            Далее
-          </MainButton>
+
+            <fieldset className={styles.fieldset}>
+              <legend className={styles.legend}>или</legend>
+              {inputs.map((input, index) => (
+                <PrimaryTextInput key={index} {...input} />
+              ))}
+            </fieldset>
+
+            <MainButton type="primary" onClick={onSubmit}>
+              Далее
+            </MainButton>
+          </>
         )}
+
+        {/* Заглушки для других шагов */}
+        {type === 'stepTwo' && <div>Контент 2го шага</div>}
+        {type === 'stepThree' && <div>Контент 3го шага</div>}
       </form>
+
       <div className={styles.info}>
         <img src={imagesByType[type].image} alt={imagesByType[type].alt} className={styles.infoImage} />
         <div className={styles.infoText}>
           <h3>
-            {type === 'stepOne' && 'Добро пожаловать в SkillSwap!'}
+            {type === 'stepOne' && 'Добро пожаловать в SkillSwap!'}
           </h3>
           <p>
-            {type === 'stepOne' && 'Присоединяйтесь к SkillSwap и обменивайтесь знаниями и навыками с другими людьми'}
+            {type === 'stepOne' && 'Присоединяйтесь к SkillSwap и обменивайтесь знаниями и навыками с другими людьми'}
           </p>
         </div>
       </div>
