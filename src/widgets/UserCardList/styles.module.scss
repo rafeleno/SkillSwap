@@ -1,0 +1,77 @@
+@use '@colors' as c;
+
+.user-card-list {
+  max-width: 1020px;
+  
+  &-empty{
+    opacity: 0.7;
+  }
+
+  &-slider{
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+      max-width: 1368px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  list-style: none;
+}
+
+.swiper {
+    max-width: 1368px;
+    max-height: 368px;
+    border-radius: 12px;
+
+    &-button {
+      position: absolute;
+      top: 50%;
+      z-index: 666;
+      width: 40px;
+      height: 40px;
+      background-color: c.$color-disabled;
+      background-image: url('@svg/main/arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      border-width: 0;
+      border-radius: 50%;
+      filter: opacity(0.8);
+      transition: 0.2s ease;
+
+      &-hidden {
+        display: none;
+      }
+
+      &-prev {
+        left: 16px;
+        transform: translateY(-50%);
+      }
+
+      &-next {
+        right: 16px;
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      &:hover {
+        cursor: pointer;
+        filter: opacity(1);
+      }
+
+      &:active {
+        filter: opacity(1) brightness(0.9);
+      }
+    }
+  }
+
+  
