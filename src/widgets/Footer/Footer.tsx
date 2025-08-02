@@ -1,4 +1,5 @@
 import { MainLogo } from '@uiComponents/MainLogo'
+import React from 'react'
 import styles from './styles.module.scss'
 
 export function Footer() {

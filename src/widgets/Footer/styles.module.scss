@@ -2,6 +2,9 @@
 @use '@typographyStyles' as t;
 
 .footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   background-color: c.$color-card-background;
 }
 
@@ -22,24 +25,18 @@
 
 .menu {
   display: flex;
-  gap: 24px;
-  margin-block: 60px 48px;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
 
-  &list {
+  &-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 324px;
-    height: 60px;
-
-    &:first-child {
-      padding-inline-start: 24px;
-    }
-
-    &:last-child,
-    &:nth-last-child(2) {
-      list-style-type: none;
-    }
+    list-style-type: none;
   }
 }
 
