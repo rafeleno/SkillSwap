@@ -3,9 +3,9 @@ import chevronDown from '@svg/main/chevron-down.svg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { MainLogo } from '@uiComponents/MainLogo'
-import { NotificationBell } from '@uiComponents/NotificationBell'
 import { Search } from '@uiComponents/Search'
 import React, { useState } from 'react'
+import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
 
 interface HeaderProps {
@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
         {user
           ? (
               <>
-                <NotificationBell isActive={false} onClick={() => {}} />
+                <NotificationDropdown />
                 <IconButton name="like" onClick={() => {}} />
 
                 <div className={styles['user-info']}>
