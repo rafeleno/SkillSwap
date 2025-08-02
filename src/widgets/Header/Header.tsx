@@ -17,6 +17,15 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchValue, setSearchValue] = useState('')
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false)
+
+  const toggleNotification = () => {
+    setIsNotificationOpen(prev => !prev)
+  }
+
+  const closeNotification = () => {
+    setIsNotificationOpen(false)
+  }
 
   return (
     <header className={styles.header}>
@@ -39,11 +48,14 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
 
       <div className={styles['icons-and-user']}>
         <IconButton name="moon" onClick={() => {}} />
-
         {user
           ? (
               <>
-                <NotificationDropdown />
+                <NotificationDropdown
+                  isOpen={isNotificationOpen}
+                  onClose={closeNotification}
+                  onClick={toggleNotification}
+                />
                 <IconButton name="like" onClick={() => {}} />
 
                 <div className={styles['user-info']}>
