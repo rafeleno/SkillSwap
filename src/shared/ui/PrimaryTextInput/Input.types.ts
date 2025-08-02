@@ -8,3 +8,9 @@ export interface InputProps {
   placeholder?: string
   label?: string
 }
+
+export interface TInitialInputs {
+  type: InputType
+  placeholder: string
+  label: string
+}

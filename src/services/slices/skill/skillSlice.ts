@@ -65,7 +65,6 @@ export const selectAllCategories = (state: RootState) => state.skills.categories
 export const selectSkillsStatus = (state: RootState) => state.skills.status
 export const selectSkillsError = (state: RootState) => state.skills.error
 
-
 export function selectCategoryById(categoryId: string) {
   return createSelector(selectAllCategories, categories =>
     categories.find(category => category.id === categoryId))
@@ -82,6 +81,5 @@ export function selectSkillById(skillId: string) {
   })
 }
 
-
-export const { clearSkills } = skillsSlice.actions
-export default skillsSlice.reducer
+export const { clearSkills } = skillSlice.actions
+export default skillSlice.reducer
