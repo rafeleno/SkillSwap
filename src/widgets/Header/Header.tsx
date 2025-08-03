@@ -1,3 +1,4 @@
+import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import userAvatar from '@images/avatars/user1.jpg'
 import chevronDown from '@svg/main/chevron-down.svg'
 import { IconButton } from '@uiComponents/IconButton'
@@ -9,10 +10,7 @@ import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
 
 interface HeaderProps {
-  user: null | {
-    name: string
-    avatar: string
-  }
+  user: null | TUser
 }
 
 export const Header: React.FC<HeaderProps> = ({ user }) => {

@@ -5,7 +5,7 @@
     "name": "Иван",
     "location": "Санкт-Петербург",
     "age": "34 года",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "music_and_sound",
@@ -42,7 +42,7 @@
     "name": "Анна",
     "location": "Казань",
     "age": "26 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -79,7 +79,7 @@
     "name": "Максим",
     "location": "Москва",
     "age": "23 года",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "yoga_and_meditation",
@@ -116,7 +116,7 @@
     "name": "Илона",
     "location": "Екатеринбург",
     "age": "33 года",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "photography",
@@ -153,7 +153,7 @@
     "name": "Михаил",
     "location": "Новосибирск",
     "age": "29 лет",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "project_management",
@@ -190,7 +190,7 @@
     "name": "Мария",
     "location": "Краснодар",
     "age": "21 год",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -227,7 +227,7 @@
     "name": "Виктория",
     "location": "Кемерово",
     "age": "30 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "cleaning_and_organization",
@@ -264,7 +264,7 @@
     "name": "Елизавета",
     "location": "Владивосток",
     "age": "25 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "mental_health",
@@ -301,7 +301,7 @@
     "name": "Виктория",
     "location": "Сочи",
     "age": "31 год",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "nutrition_and_health",
@@ -338,7 +338,7 @@
     "name": "Елена",
     "location": "Красноярск",
     "age": "28 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "drawing_and_illustration",
@@ -380,7 +380,7 @@
     "name": "Константин",
     "location": "Иркутск",
     "age": "36 лет",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "entrepreneurship",
@@ -417,7 +417,7 @@
     "name": "София",
     "location": "Абакан",
     "age": "24 года",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "german",
@@ -454,7 +454,7 @@
     "name": "Екатерина",
     "location": "Пермь",
     "age": "33 года",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "education_and_development",
       "subcategoryId": "speed_reading",
@@ -491,7 +491,7 @@
     "name": "Дарья",
     "location": "Ярославль",
     "age": "26 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "houseplants",
@@ -528,7 +528,7 @@
     "name": "Алла",
     "location": "Архангельск",
     "age": "22 года",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "video_editing",
@@ -565,7 +565,7 @@
     "name": "Максим",
     "location": "Иркутск",
     "age": "35 лет",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "music_and_sound",
@@ -597,7 +597,7 @@
     "name": "Виктория",
     "location": "Москва",
     "age": "30 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -634,7 +634,7 @@
     "name": "Анатолий",
     "location": "Киров",
     "age": "32 года",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "yoga_and_meditation",
@@ -671,7 +671,7 @@
     "name": "Любовь",
     "location": "Уфа",
     "age": "24 года",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "photography",
@@ -708,7 +708,7 @@
     "name": "Андрей",
     "location": "Владивосток",
     "age": "35 лет",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "project_management",
@@ -745,7 +745,7 @@
     "name": "Влада",
     "location": "Йошкар-Ола",
     "age": "21 год",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -782,7 +782,7 @@
     "name": "Дарья",
     "location": "Самара",
     "age": "28 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "cleaning_and_organization",
@@ -819,7 +819,7 @@
     "name": "Наталья",
     "location": "Ростов-на-Дону",
     "age": "35 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "mental_health",
@@ -856,7 +856,7 @@
     "name": "Ольга",
     "location": "Челябинск",
     "age": "31 год",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "nutrition_and_health",
@@ -893,7 +893,7 @@
     "name": "Мария",
     "location": "Красноярск",
     "age": "28 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "drawing_and_illustration",
@@ -935,7 +935,7 @@
     "name": "Алексей",
     "location": "Иркутск",
     "age": "36 лет",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "entrepreneurship",
@@ -972,7 +972,7 @@
     "name": "Ольга",
     "location": "Нижний Новгород",
     "age": "30 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "german",
@@ -1009,7 +1009,7 @@
     "name": "Казань",
     "location": "Пермь",
     "age": "25 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "education_and_development",
       "subcategoryId": "speed_reading",
@@ -1046,7 +1046,7 @@
     "name": "Юлия",
     "location": "Ярославль",
     "age": "26 лет",
-    "gender": "Женский",
+    "gender": "female",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "houseplants",
@@ -1083,7 +1083,7 @@
     "name": "Константин",
     "location": "Архангельск",
     "age": "22 года",
-    "gender": "Мужской",
+    "gender": "male",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "video_editing",

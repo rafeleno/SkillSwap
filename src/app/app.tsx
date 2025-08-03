@@ -13,7 +13,6 @@ export function App() {
         <Header user={null} />
         <AppRouter />
         <Footer />
-
       </BrowserRouter>
     </Provider>
   )
