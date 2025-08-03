@@ -19,13 +19,6 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
   const onForgetPassword = () => {}
 
   return (
-    <>
-      <header className={styles.loginHeader}>
-        <a href="/">
-          <MainLogo />
-        </a>
-      </header>
-
       <Login
         onSubmit={onSubmit}
         onRegister={onRegister}
@@ -33,7 +26,5 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         emailState={[emailValue, setEmailValue] as ReturnType<typeof useState<string>>}
         passwordState={[passwordValue, setPasswordValue] as ReturnType<typeof useState<string>>}
       />
-      <Footer />
-    </>
   )
 }
