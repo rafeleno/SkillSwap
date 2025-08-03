@@ -1,17 +1,20 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
+import { selectCurrentUser } from 'services/slices/users/userSlice'
 
 interface ProtectedRouteProps {
   onlyUnAuth?: boolean
   children: React.ReactElement
 }
 
+const user = useSelector(selectCurrentUser)
+
 export function ProtectedRoute({
   onlyUnAuth,
   children,
 }: ProtectedRouteProps) {
-  const { isAuthenticated } = useAuth()
+  const isAuthenticated = user
   const location = useLocation()
 
   if (!onlyUnAuth && !isAuthenticated) {
