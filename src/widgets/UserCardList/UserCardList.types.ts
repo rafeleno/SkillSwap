@@ -9,6 +9,6 @@ export interface UserCardListProps {
   buttonText?: string
   buttonIconId?: string
   onButtonClick?: () => void
-  onCardClick?: (userId: number) => void
-  onLike?: (userId: number) => void
+  onCardClick?: (userId: string) => void
+  onLike?: (userId: string) => void
 }

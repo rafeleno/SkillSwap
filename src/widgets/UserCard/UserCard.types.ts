@@ -13,15 +13,17 @@ export interface TUser {
   location: string
   age: string // строка, типа "34 года"
   gender: string
-  // TODO: Допитсать в базу данных description
-  description?: string
+  likes: number
+  description: string
   skillCanTeach: Skill
   images: string[]
   subcategoriesWantToLearn: Skill[]
+  favourites?: string[]
 }
+
 export interface UserCardProps {
   type: 'preview' | 'detailed'
   user: TUser
-  onClick?: (userId: number) => void
-  onLike: (userId: number) => void
+  onClick?: (userId: string) => void
+  onLike: (userId: string) => void
 }
