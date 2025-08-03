@@ -1,11 +1,13 @@
 [
   {
     "id": "482",
-    "avatar": "../images/user1.jpg",
+    "avatar": "/avatars/user1.jpg",
     "name": "Иван",
     "location": "Санкт-Петербург",
     "age": "34 года",
     "gender": "Мужской",
+    "likes": 15,
+    "description": "Привет! Люблю ритм, кофе по утрам и людей, которые не боятся пробовать новое",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "music_and_sound",
@@ -38,11 +40,13 @@
   },
   {
     "id": "739",
-    "avatar": "../images/avatars/user2.jpg",
+    "avatar": "/avatars/user2.jpg",
     "name": "Анна",
     "location": "Казань",
     "age": "26 лет",
     "gender": "Женский",
+    "likes": 20,
+    "description": "Танцую в душе, верю в чудеса и обожаю неожиданные повороты",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -75,11 +79,13 @@
   },
   {
     "id": "215",
-    "avatar": "../images/avatars/user3.jpg",
+    "avatar": "/avatars/user3.jpg",
     "name": "Максим",
     "location": "Москва",
     "age": "23 года",
     "gender": "Мужской",
+    "likes": 22,
+    "description": "Люблю запах новых книг, длинные прогулки и искренние разговоры",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "yoga_and_meditation",
@@ -112,11 +118,13 @@
   },
   {
     "id": "604",
-    "avatar": "../images/avatars/user4.jpg",
+    "avatar": "/avatars/user4.jpg",
     "name": "Илона",
     "location": "Екатеринбург",
     "age": "33 года",
     "gender": "Женский",
+    "likes": 35,
+    "description": "Завариваю мечты вместе с утренним кофе",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "photography",
@@ -149,11 +157,13 @@
   },
   {
     "id": "918",
-    "avatar": "../images/avatars/user5.jpg",
+    "avatar": "/avatars/user5.jpg",
     "name": "Михаил",
     "location": "Новосибирск",
     "age": "29 лет",
     "gender": "Мужской",
+    "likes": 39,
+    "description": "Кофе в руке, идеи в голове, смелость в сердце",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "project_management",
@@ -186,11 +196,13 @@
   },
   {
     "id": "357",
-    "avatar": "../images/avatars/user6.jpg",
+    "avatar": "/avatars/user6.jpg",
     "name": "Мария",
     "location": "Краснодар",
     "age": "21 год",
     "gender": "Женский",
+    "likes": 37,
+    "description": "Привет! Слушаю музыку, ловлю вдохновение и не боюсь мечтать",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -223,11 +235,13 @@
   },
   {
     "id": "846",
-    "avatar": "../images/avatars/user7.jpg",
+    "avatar": "/avatars/user7.jpg",
     "name": "Виктория",
     "location": "Кемерово",
     "age": "30 лет",
     "gender": "Женский",
+    "likes": 7,
+    "description": "Привет! Живу ярко, дышу глубоко и не теряю себя",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "cleaning_and_organization",
@@ -260,11 +274,13 @@
   },
   {
     "id": "102",
-    "avatar": "../images/avatars/user8.jpg",
+    "avatar": "/avatars/user8.jpg",
     "name": "Елизавета",
     "location": "Владивосток",
     "age": "25 лет",
     "gender": "Женский",
+    "likes": 3,
+    "description": "Люблю закаты, разговоры по душам и лёгкость бытия",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "mental_health",
@@ -297,11 +313,13 @@
   },
   {
     "id": "573",
-    "avatar": "../images/avatars/user9.jpg",
+    "avatar": "/avatars/user9.jpg",
     "name": "Виктория",
     "location": "Сочи",
     "age": "31 год",
     "gender": "Женский",
+    "likes": 47,
+    "description": "Пью кофе, строю планы и иду туда, где свет",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "nutrition_and_health",
@@ -334,11 +352,13 @@
   },
   {
     "id": "294",
-    "avatar": "../images/avatars/user10.jpg",
+    "avatar": "/avatars/user10.jpg",
     "name": "Елена",
     "location": "Красноярск",
     "age": "28 лет",
     "gender": "Женский",
+    "likes": 48,
+    "description": "Танцую, пишу, мечтаю — всё это про меня",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "drawing_and_illustration",
@@ -376,11 +396,13 @@
   },
   {
     "id": "680",
-    "avatar": "../images/avatars/user11.jpg",
+    "avatar": "/avatars/user11.jpg",
     "name": "Константин",
     "location": "Иркутск",
     "age": "36 лет",
     "gender": "Мужской",
+    "likes": 4,
+    "description": "Верю в добро, людей и силу спонтанных решений",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "entrepreneurship",
@@ -413,11 +435,13 @@
   },
   {
     "id": "431",
-    "avatar": "../images/avatars/user12.jpg",
+    "avatar": "/avatars/user12.jpg",
     "name": "София",
     "location": "Абакан",
     "age": "24 года",
     "gender": "Женский",
+    "likes": 41,
+    "description": "Люблю утренний свет, свежий ветер и искренние взгляды",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "german",
@@ -450,11 +474,13 @@
   },
   {
     "id": "758",
-    "avatar": "../images/avatars/user13.jpg",
+    "avatar": "/avatars/user13.jpg",
     "name": "Екатерина",
     "location": "Пермь",
     "age": "33 года",
     "gender": "Женский",
+    "likes": 43,
+    "description": "Мечтаю в большом, живу в моменте, двигаюсь вперёд",
     "skillCanTeach": {
       "skillId": "education_and_development",
       "subcategoryId": "speed_reading",
@@ -487,11 +513,13 @@
   },
   {
     "id": "019",
-    "avatar": "../images/avatars/user14.jpg",
+    "avatar": "/avatars/user14.jpg",
     "name": "Дарья",
     "location": "Ярославль",
     "age": "26 лет",
     "gender": "Женский",
+    "likes": 48,
+    "description": "Завариваю чай и запускаю новые идеи",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "houseplants",
@@ -524,11 +552,13 @@
   },
   {
     "id": "365",
-    "avatar": "../images/avatars/user15.jpg",
+    "avatar": "/avatars/user15.jpg",
     "name": "Алла",
     "location": "Архангельск",
     "age": "22 года",
     "gender": "Женский",
+    "likes": 26,
+    "description": "Ритм в наушниках, энергия в душе, шаг в будущее",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "video_editing",
@@ -561,11 +591,13 @@
   },
   {
     "id": "827",
-    "avatar": "../images/avatars/user16.jpg",
+    "avatar": "/avatars/user16.jpg",
     "name": "Максим",
     "location": "Иркутск",
     "age": "35 лет",
     "gender": "Мужской",
+    "likes": 51,
+    "description": "Ценю людей с огнём внутри и лёгким сердцем",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "music_and_sound",
@@ -593,11 +625,13 @@
   },
   {
     "id": "540",
-    "avatar": "../images/avatars/user17.jpg",
+    "avatar": "/avatars/user17.jpg",
     "name": "Виктория",
     "location": "Москва",
     "age": "30 лет",
     "gender": "Женский",
+    "likes": 52,
+    "description": "Люблю движение, простые радости и свежие старты",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -630,11 +664,13 @@
   },
   {
     "id": "693",
-    "avatar": "../images/avatars/user18.jpg",
+    "avatar": "/avatars/user18.jpg",
     "name": "Анатолий",
     "location": "Киров",
     "age": "32 года",
     "gender": "Мужской",
+    "likes": 53,
+    "description": "Слушаю тишину, когда она говорит важное",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "yoga_and_meditation",
@@ -667,11 +703,13 @@
   },
   {
     "id": "204",
-    "avatar": "../images/avatars/user19.jpg",
+    "avatar": "/avatars/user19.jpg",
     "name": "Любовь",
     "location": "Уфа",
     "age": "24 года",
     "gender": "Женский",
+    "likes": 54,
+    "description": "Кофе, идеи и немного безумства — мой идеальный рецепт",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "photography",
@@ -704,11 +742,13 @@
   },
   {
     "id": "871",
-    "avatar": "../images/avatars/user20.jpg",
+    "avatar": "/avatars/user20.jpg",
     "name": "Андрей",
     "location": "Владивосток",
     "age": "35 лет",
     "gender": "Мужской",
+    "likes": 55,
+    "description": "Открыт миру, идеям и новым маршрутам",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "project_management",
@@ -741,11 +781,13 @@
   },
   {
     "id": "156",
-    "avatar": "../images/avatars/user21.jpg",
+    "avatar": "/avatars/user21.jpg",
     "name": "Влада",
     "location": "Йошкар-Ола",
     "age": "21 год",
     "gender": "Женский",
+    "likes": 56,
+    "description": "Люблю тёплые слова, холодный воздух и живые чувства",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "english",
@@ -778,11 +820,13 @@
   },
   {
     "id": "308",
-    "avatar": "../images/avatars/user22.jpg",
+    "avatar": "/avatars/user22.jpg",
     "name": "Дарья",
     "location": "Самара",
     "age": "28 лет",
     "gender": "Женский",
+    "likes": 57,
+    "description": "Пишу жизнь в настоящем времени и с эмоцией",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "cleaning_and_organization",
@@ -815,11 +859,13 @@
   },
   {
     "id": "942",
-    "avatar": "../images/avatars/user23.jpg",
+    "avatar": "/avatars/user23.jpg",
     "name": "Наталья",
     "location": "Ростов-на-Дону",
     "age": "35 лет",
     "gender": "Женский",
+    "likes": 58,
+    "description": "Ценю честность, вдохновение и лёгкую иронию",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "mental_health",
@@ -852,11 +898,13 @@
   },
   {
     "id": "617",
-    "avatar": "../images/avatars/user24.jpg",
+    "avatar": "/avatars/user24.jpg",
     "name": "Ольга",
     "location": "Челябинск",
     "age": "31 год",
     "gender": "Женский",
+    "likes": 59,
+    "description": "Живу в ритме сердца и верю в неожиданные встречи",
     "skillCanTeach": {
       "skillId": "health_and_lifestyle",
       "subcategoryId": "nutrition_and_health",
@@ -889,11 +937,13 @@
   },
   {
     "id": "485",
-    "avatar": "../images/avatars/user25.jpg",
+    "avatar": "/avatars/user25.jpg",
     "name": "Мария",
     "location": "Красноярск",
     "age": "28 лет",
     "gender": "Женский",
+    "likes": 61,
+    "description": "Пью латте и планирую что-то дерзкое",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "drawing_and_illustration",
@@ -931,11 +981,13 @@
   },
   {
     "id": "230",
-    "avatar": "../images/avatars/user26.jpg",
+    "avatar": "/avatars/user26.jpg",
     "name": "Алексей",
     "location": "Иркутск",
     "age": "36 лет",
     "gender": "Мужской",
+    "likes": 62,
+    "description": "Влюбляюсь в новое и не боюсь перемен",
     "skillCanTeach": {
       "skillId": "business_and_career",
       "subcategoryId": "entrepreneurship",
@@ -968,11 +1020,13 @@
   },
   {
     "id": "759",
-    "avatar": "../images/avatars/user27.jpg",
+    "avatar": "/avatars/user27.jpg",
     "name": "Ольга",
     "location": "Нижний Новгород",
     "age": "30 лет",
     "gender": "Женский",
+    "likes": 63,
+    "description": "Иду вперёд, даже если маршрут неизвестен",
     "skillCanTeach": {
       "skillId": "foreign_languages",
       "subcategoryId": "german",
@@ -1005,11 +1059,13 @@
   },
   {
     "id": "804",
-    "avatar": "../images/avatars/user28.jpg",
+    "avatar": "/avatars/user28.jpg",
     "name": "Казань",
     "location": "Пермь",
     "age": "25 лет",
     "gender": "Женский",
+    "likes": 64,
+    "description": "Люблю запах свежих страниц и ярких идей",
     "skillCanTeach": {
       "skillId": "education_and_development",
       "subcategoryId": "speed_reading",
@@ -1042,11 +1098,13 @@
   },
   {
     "id": "312",
-    "avatar": "../images/avatars/user29.jpg",
+    "avatar": "/avatars/user29.jpg",
     "name": "Юлия",
     "location": "Ярославль",
     "age": "26 лет",
     "gender": "Женский",
+    "likes": 65,
+    "description": "Мечтаю, иду, ошибаюсь, снова мечтаю",
     "skillCanTeach": {
       "skillId": "home_and_comfort",
       "subcategoryId": "houseplants",
@@ -1079,11 +1137,13 @@
   },
   {
     "id": "678",
-    "avatar": "../images/avatars/user30.jpg",
+    "avatar": "/avatars/user30.jpg",
     "name": "Константин",
     "location": "Архангельск",
     "age": "22 года",
     "gender": "Мужской",
+    "likes": 66,
+    "description": "Пью эспрессо и верю в хорошее",
     "skillCanTeach": {
       "skillId": "creativity_and_art",
       "subcategoryId": "video_editing",

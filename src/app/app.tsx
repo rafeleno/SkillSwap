@@ -1,20 +1,23 @@
 import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
-import React from 'react'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
-import store from '../services/store'
+import React, { useEffect } from 'react'
+import { fetchUsers } from '../services/slices/user/thunks'
+import { selectUsers } from '../services/slices/user/userSlice'
+import { useDispatch, useSelector } from '../services/store'
 import { AppRouter } from './router'
 
 export function App() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [])
+  const users = useSelector(selectUsers)
+  console.error('users', users)
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Header user={null} />
-        <AppRouter />
-        <Footer />
-
-      </BrowserRouter>
-    </Provider>
+    <>
+      <Header user={null} />
+      <AppRouter />
+      <Footer />
+    </>
   )
 }
