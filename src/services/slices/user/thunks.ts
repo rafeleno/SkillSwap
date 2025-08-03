@@ -34,13 +34,13 @@ export const saveUserData = createAsyncThunk(
       return rejectWithValue(error.message)
     }
   },
-) // переписать
+) // удалить
 
 export const fetchUsers = createAsyncThunk(
   'user/fetchUsers',
   async (_, thunkAPI) => {
     try {
-      const response = await fetch('/db/users.json')
+      const response = await fetch('/db/users.json') // получаем TUser[]
       const data = await response.json()
       return data
     }

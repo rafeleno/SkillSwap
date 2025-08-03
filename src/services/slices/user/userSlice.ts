@@ -89,18 +89,18 @@ export const userSlice = createSlice({
     //     localStorage.setItem('user', JSON.stringify(state.user))
     //   }
     // },
-    // addToFavourites: (state, action: PayloadAction<string>) => {
-    //   if (state.user && !state.user.favourites.includes(action.payload)) {
-    //     state.user.favourites.push(action.payload)
-    //     localStorage.setItem('user', JSON.stringify(state.user))
-    //   }
-    // },
-    // removeFromFavourites: (state, action: PayloadAction<string>) => {
-    //   if (state.user) {
-    //     state.user.favourites = state.user.favourites.filter(id => id !== action.payload)
-    //     localStorage.setItem('user', JSON.stringify(state.user))
-    //   }
-    // },
+    addToFavourites: (state, action: PayloadAction<string>) => {
+      if (state.user && !state.user.favourites.includes(action.payload)) {
+        state.user.favourites.push(action.payload)
+        localStorage.setItem('user', JSON.stringify(state.user))
+      }
+    },
+    removeFromFavourites: (state, action: PayloadAction<string>) => {
+      if (state.user) {
+        state.user.favourites = state.user.favourites.filter(favourite => favourite !== action.payload)
+        localStorage.setItem('user', JSON.stringify(state.user))
+      }
+    },
     resetUser: (state) => {
       state.user = null
       localStorage.removeItem('user')

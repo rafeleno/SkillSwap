@@ -18,7 +18,9 @@ export interface TUser {
   skillCanTeach: Skill
   images: string[]
   subcategoriesWantToLearn: Skill[]
+  favourites?: string[]
 }
+
 export interface UserCardProps {
   type: 'preview' | 'detailed'
   user: TUser

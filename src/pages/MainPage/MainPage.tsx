@@ -39,7 +39,7 @@ export const MainPage: React.FC = () => {
     })
   }
 
-  const currentUser = users[0]
+  const currentUser = users[0] // TODO: изменить на текущего пользователя
   const recommendedUsers = getRecommendedUsers(currentUser, users).slice(0, 9)
   console.error('recommendedUsers', currentUser, recommendedUsers)
 
