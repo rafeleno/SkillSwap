@@ -1,22 +1,25 @@
-import type { DropdownProps } from './Dropdown.types'
+import type { DropdownProps, IOption } from './Dropdown.types'
+import { CheckboxInput } from '@uiComponents/Checkboxinput/Checkboxinput'
 import React, { useMemo, useRef, useState } from 'react'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import styles from './styles.module.scss'
 
 export const Dropdown: React.FC<DropdownProps> = ({
-  options,
-  selectedOption,
-  onChange,
-  label,
-  height = 48,
-  width = '100%',
-  bordered = true,
-  searchable,
+  options, // список опций для отображения
+  selectedOption, // текущий выбранный элемент или массив выбранных (если isCheckbox)
+  onChange, // callback при изменении выбора
+  label, // метка по умолчанию / placeholder
+  height = 48, // высота дропдауна
+  width = '100%', // ширина дропдауна
+  bordered = true, // отображать ли рамку
+  searchable, // включён ли режим поиска
+  isCheckbox, // активен ли режим множественного выбора
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const containerRef = useRef<HTMLDivElement>(null)
 
+  // Отфильтрованные опции по введённому поисковому запросу
   const filteredOptions = useMemo(() => {
     const normalized = searchTerm.toLowerCase().trim()
     return options.filter(option =>
@@ -24,9 +27,27 @@ export const Dropdown: React.FC<DropdownProps> = ({
     )
   }, [options, searchTerm])
 
+  // Закрытие дропдауна при клике вне его области
   useClickOutside(containerRef, () => setIsOpen(false))
 
   const containerWidth = typeof width === 'number' ? `${width}px` : width
+
+  const handleCheckboxToggle = (option: IOption) => {
+    let newSelection: IOption[] = []
+
+    if (Array.isArray(selectedOption)) {
+      const exists = selectedOption.find(o => o.id === option.id)
+      newSelection = exists
+        ? selectedOption.filter(o => o.id !== option.id)
+        : [...selectedOption, option]
+    }
+    else {
+    // если selectedOption был null или не массив
+      newSelection = [option]
+    }
+
+    onChange(newSelection)
+  }
 
   return (
     <div
@@ -61,7 +82,13 @@ export const Dropdown: React.FC<DropdownProps> = ({
               />
             )
           : (
-              selectedOption ? selectedOption.value : label
+              isCheckbox && Array.isArray(selectedOption)
+                ? selectedOption.length > 0
+                  ? selectedOption.map(o => o.value).join(', ')
+                  : label
+                : selectedOption
+                  ? (selectedOption as IOption).value
+                  : label
             )}
 
         {searchable && searchTerm
@@ -96,13 +123,31 @@ export const Dropdown: React.FC<DropdownProps> = ({
                   <li
                     key={option.id}
                     onClick={() => {
-                      onChange(option)
-                      setIsOpen(false)
-                      setSearchTerm(option.value)
+                      if (isCheckbox) {
+                        handleCheckboxToggle(option)
+                      }
+                      else {
+                        onChange(option)
+                        setIsOpen(false)
+                        setSearchTerm(option.value)
+                      }
                     }}
                     className={styles.option}
                   >
-                    {option.value}
+                    {isCheckbox
+                      ? (
+                          <CheckboxInput
+                            name={`checkbox-${option.id}`}
+                            checked={Array.isArray(selectedOption) && selectedOption.some(o => o.id === option.id)}
+                            onChange={() => handleCheckboxToggle(option)}
+                          >
+                            {option.value}
+                          </CheckboxInput>
+
+                        )
+                      : (
+                          option.value
+                        )}
                   </li>
                 ))
               )

@@ -41,16 +41,16 @@
 .dropdown-list {
   position: absolute;
   top: calc(100% + 1px);
-  left: -1px;
   right: -1px;
+  left: -1px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 4px;
   width: calc(100% + 2px);
   max-height: 120px;
-  padding: 8px 8px;
   margin-top: -12px;
+  padding: 8px;
   overflow-y: auto;
   background: c.$color-card-background;
   border-top: none;
@@ -89,7 +89,11 @@
   border-radius: 12px;
 
   &:hover {
-    background: c.$color-accent;
+    background: rgba(c.$color-accent, 0.3);
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
