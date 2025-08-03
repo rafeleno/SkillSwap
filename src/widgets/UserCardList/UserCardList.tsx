@@ -76,7 +76,7 @@ export const UserCardList: React.FC<UserCardListProps> = ({
         && renderSection(
           <>
             <h1 className={styles.title}>
-              {type === 'sorted' && counter ? `${title}: ${counter}` : title}
+              {type === 'sorted' && counter ? `${title}: ${counter}` : title + 0}
             </h1>
             {renderButton()}
           </>,

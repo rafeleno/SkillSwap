@@ -1,17 +1,20 @@
+// TODO: Вынести в общие
 export interface Skill {
   skillId: string
   subcategoryId: string
   name: string
   description?: string
 }
+// TODO: Вынести в общие
 export interface TUser {
-  id: number
+  id: string
   avatar: string
   name: string
   location: string
   age: string // строка, типа "34 года"
-  gender: 'Мужской' | 'Женский'
-  description: string
+  gender: string
+  // TODO: Допитсать в базу данных description
+  description?: string
   skillCanTeach: Skill
   images: string[]
   subcategoriesWantToLearn: Skill[]
