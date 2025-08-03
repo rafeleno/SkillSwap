@@ -1,8 +1,8 @@
 import { lazy } from 'react'
 
 export const Pages = {
-  Catalog: lazy(() => import('./CatalogPage').then(module => ({
-    default: module.CatalogPage,
+  Catalog: lazy(() => import('./MainPage').then(module => ({
+    default: module.MainPage,
   }))),
   Favorites: lazy(() => import('./FavoritesPage').then(module => ({
     default: module.FavoritesPage,

@@ -8,20 +8,18 @@ interface ProtectedRouteProps {
   children: React.ReactElement
 }
 
-const user = useSelector(selectCurrentUser)
-
 export function ProtectedRoute({
   onlyUnAuth,
   children,
 }: ProtectedRouteProps) {
-  const isAuthenticated = user
+  const user = useSelector(selectCurrentUser)
   const location = useLocation()
 
-  if (!onlyUnAuth && !isAuthenticated) {
+  if (!onlyUnAuth && !user) {
     return <Navigate replace to="/login" state={{ from: location }} />
   }
 
-  if (onlyUnAuth && isAuthenticated) {
+  if (onlyUnAuth && user) {
     const from = location.state?.from?.pathname || '/'
     return <Navigate replace to={from} />
   }
