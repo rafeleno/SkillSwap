@@ -1,0 +1,93 @@
+@use '@colors' as c;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  justify-self: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  inline-size: 78.8%;
+}
+
+.form,
+.onboarding {
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: c.$color-card-background;
+  border-radius: 12px;
+}
+
+.additional-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form {
+  padding-block: 121px;
+  display: grid;
+  gap: 32px;
+  align-items: baseline;
+
+  &-submit {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    color: c.$color-text-link;
+    
+    &-button {
+        width: fit-content;
+        background-color: c.$color-card-background;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            color: c.$color-accent;
+        }
+    }
+  }
+}
+
+.fieldset {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  border: none;
+  border-block-start: 1px solid c.$color-disabled;
+  padding-block-start: 24px;
+
+  &::before{
+    position: absolute;
+    top: -0.75em;
+    left: calc(50% - 1em);
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: c.$color-card-background;
+    content: "или";
+  }
+}
+
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding-top: 132px;
+  padding-bottom: 132px;
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

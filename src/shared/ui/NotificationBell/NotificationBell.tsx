@@ -11,7 +11,10 @@ export const NotificationBell: React.FC<NotificationBellProps> = ({ onClick, isA
       aria-label="Уведомления"
     >
       <svg className={styles.icon} aria-hidden="true">
-        <use href="/sprites.svg#notification" />
+        <use
+          href="/sprites.svg#notification"
+          className={isActive ? styles.active : ''}
+        />
       </svg>
     </button>
   )
