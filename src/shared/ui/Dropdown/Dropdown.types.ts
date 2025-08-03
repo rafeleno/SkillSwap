@@ -5,11 +5,12 @@ export interface IOption {
 
 export interface DropdownProps {
   options: IOption[]
-  selectedOption: IOption | null
-  onChange: (option: IOption) => void
+  selectedOption: IOption | IOption[] | null // может содержать массив в случае работы с массивами
+  onChange: (option: IOption | IOption[]) => void
   label: string
   searchable: boolean
   width?: number | string
   height?: number
   bordered?: boolean
+  isCheckbox?: boolean
 }
