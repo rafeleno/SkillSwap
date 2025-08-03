@@ -49,10 +49,10 @@ export function useFilters({
           const node = skills[skills.findIndex(skill => skill.id === nodeId)]
           if (!node)
             return []
-          return node.children.reduce(
+          return node.children?.reduce(
             (all, child) => all.concat(child.id, collectDescendants(child.id, skills)),
             [],
-          )
+          ) || []
         }
         const newArray = (() => {
           if (exists) {

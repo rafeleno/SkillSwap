@@ -5,14 +5,15 @@ import { MainButton } from '@uiComponents/MainButton'
 import { RadioInput } from '@uiComponents/RadioInput'
 import React, { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { selectFilterTypes, selectGenders, selectLocations, selectSkills } from '../../services/slices/filter/filterSlice'
+import { selectFilterTypes, selectGenders, selectLocations } from '../../services/slices/filter/filterSlice'
+import { selectAllCategories } from '../../services/slices/skill/skillSlice'
 import { useFilters } from '../../shared/hooks/useFilters'
 import styles from './styles.module.scss'
 
 // TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
 
 export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
-  const skills = useSelector(selectSkills)
+  const skills = useSelector(selectAllCategories)
   const locations = useSelector(selectLocations)
   const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
@@ -22,6 +23,8 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
     toggleFilter,
     clearAllFilters,
   } = useFilters({ onChange: onFiltersChange, skillsMap: skills })
+
+  console.log(skills)
 
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(() =>
     skills?.reduce((acc, filter) => {

@@ -1,17 +1,17 @@
-import type { Category } from './skillSlice'
+import type { ICategory } from './skillSlice'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-export const fetchSkills = createAsyncThunk<Category[], void>(
+export const fetchSkills = createAsyncThunk<ICategory[], void>(
   'skills/fetchSkills',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('/api/skills')
+      const response = await fetch('/db/skills.json')
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const data: Category[] = await response.json()
+      const data: ICategory[] = await response.json()
       return data
     }
     catch (error) {

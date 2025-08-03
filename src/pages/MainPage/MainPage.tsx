@@ -1,9 +1,9 @@
 import type { FiltersState } from 'shared/hooks/useFilters'
-import { MainButton } from '@uiComponents/MainButton'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
 import React, { useMemo } from 'react'
 
+// Должен отдавать слайс
 import users from '../../../public/db/users.json'
 import styles from './styles.module.scss'
 

@@ -4,18 +4,11 @@ import { createSelector, createSlice } from '@reduxjs/toolkit'
 
 type FilterTypesMap = Record<string, FilterTypeItem>
 type GendersMap = Record<string, MaleItem>
-type FiltersMap = Record<string, SkillItem>
 type CitiesMap = Record<string, CityItem>
 
 interface CityItem {
   id: string
   name: string
-}
-interface SkillItem {
-  id: string
-  name: string
-  parent: string | null
-  children: { id: string, name: string }[]
 }
 interface MaleItem {
   id: string
@@ -29,8 +22,7 @@ interface FilterTypeItem {
 interface FilterSettings {
   filterTypes: FilterTypesMap
   genders: GendersMap
-  locations: CitiesMap | null
-  skills: FiltersMap
+  locations: CitiesMap | []
 }
 
 /// //////////////////////////////////////////////---МОКИ---//////////////////////////////////////////////////////////////
@@ -78,7 +70,7 @@ interface FilterSettings {
 //       { id: 'german', name: 'Немецкий' },
 //       { id: 'chinese', name: 'Китайский' },
 //       { id: 'japanese', name: 'Японский' },
-//       { id: '', name: 'Подготовка к экзаменам (IELTS, TOEFL)' },
+//       { id: '', name: 'Подготовка к экзаменам (IELTS, TOEFL)' },
 //     ],
 //   },
 //   health: {
@@ -395,8 +387,7 @@ const filterData: FilterTypesMap = { wantToTeach: { name: 'Могу научит
 const initialSettings: FilterSettings = {
   filterTypes: filterData,
   genders: gendersData,
-  locations: null,
-  skills: skillsData,
+  locations: [],
 
 }
 export const filterSlice = createSlice({
@@ -411,14 +402,6 @@ export const filterSlice = createSlice({
     },
   },
 })
-
-export const selectSkills = createSelector(
-  (state: RootState) => state.filterSettings.skills,
-  skills =>
-    Object.values(skills).map(f => ({
-      ...f,
-    })),
-)
 
 export const selectGenders = createSelector(
   (state: RootState) => state.filterSettings.genders,
