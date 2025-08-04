@@ -1,161 +1,148 @@
 @use '@colors' as c;
 @use '@typographyStyles' as t;
 
-.skillsPopup {
+.skills-popup {
   position: absolute;
-  left: 36px;
   top: 96px;
+  left: 36px;
   z-index: 1000;
-  background: c.$color-card-background;
   width: 1136px;
   padding: 60px;
+  background: c.$color-card-background;
   border: 1px solid c.$color-caption;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(c.$color-black, 0.15);
-}
 
-.skillsPopup__content {
-  position: relative;
-}
-
-.skillsPopup__categories {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: min-content;
-  gap: 40px 30px;
-  align-items: start;
-}
-
-.skillsPopup__category {
-  &.skillsPopup__category--business {
-    grid-row: 1;
-    grid-column: 1;
+  &__content {
+    position: relative;
   }
-  
-  &.skillsPopup__category--languages {
-    grid-row: 2;
-    grid-column: 1;
-  }
-  
-  &.skillsPopup__category--home {
-    grid-row: 3;
-    grid-column: 1;
-  }
-  
-  &.skillsPopup__category--creativity {
-    grid-row: 1;
-    grid-column: 2;
-  }
-  
-  &.skillsPopup__category--education {
-    grid-row: 2;
-    grid-column: 2;
-  }
-  
-  &.skillsPopup__category--health {
-    grid-row: 3;
-    grid-column: 2;
-  }
-}
 
-.skillsPopup__categoryHeader {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.skillsPopup__iconWrapper {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  &[data-category="business_and_career"] { background: c.$color-tag-business; }
-  &[data-category="foreign_languages"] { background: c.$color-tag-languages; }
-  &[data-category="home_and_comfort"] { background: c.$color-tag-home; }
-  &[data-category="creativity_and_art"] { background: c.$color-tag-arts; }
-  &[data-category="education_and_development"] { background: c.$color-tag-education; }
-  &[data-category="health_and_lifestyle"] { background: c.$color-tag-health; }
-}
-
-.skillsPopup__icon {
-  width: 24px; 
-  height: 24px;
-  object-fit: contain;
-}
-
-.skillsPopup__categoryTitle {
-  font-family: t.$font-primary;
-  font-weight: t.$font-weight-regular; 
-  font-size: t.$font-h2-size;
-  line-height: t.$font-h2-line-height;
-  color: c.$color-text-primary;
-  margin: 0;
-}
-
-.skillsPopup__skillsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.skillsPopup__skillItem {
-  padding: 8px 12px;
-  font-family: t.$font-secondary;
-  font-weight: t.$font-weight-regular;
-  font-size: t.$font-h4-size;
-  line-height: t.$font-h4-line-height;
-  color: c.$color-text-primary;
-  cursor: pointer; 
-  border-radius: 4px;
-  
-  &:hover {
-    background: transparent;
-    color: c.$color-text-primary;
+  &__categories {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+    align-items: start;
   }
-  
-  &.skillsPopup__skillItem--active {
-    background: c.$color-card-background;
-  }
-}
 
-.skillsPopup__loading {
-  padding: 20px;
-  text-align: center;
-  color: c.$color-text-primary;
-}
-
-@media (max-width: 1200px) {
-  .skillsPopup {
-    width: calc(100% - 72px);
-    padding: 40px;
-  }
-  
-  .skillsPopup__categories {
-    gap: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .skillsPopup {
-    left: 16px;
-    right: 16px;
-    width: auto;
-    max-width: calc(100vw - 32px);
-    padding: 24px 16px;
-  }
-  
-  .skillsPopup__categories {
-    grid-template-columns: 1fr;
-    
-    .skillsPopup__category {
-      grid-row: auto !important;
-      grid-column: auto !important;
+  &__category {
+    &-business {
+      grid-row: 1;
+      grid-column: 1;
     }
+
+    &-languages {
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+    &-home {
+      grid-row: 3;
+      grid-column: 1;
+    }
+
+    &-creativity {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    &-education {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
+    &-health {
+      grid-row: 3;
+      grid-column: 2;
+    }
+  }
+
+  &__categoryHeader {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    &[data-category='business_and_career'] {
+      background: c.$color-tag-business;
+    }
+
+    &[data-category='foreign_languages'] {
+      background: c.$color-tag-languages;
+    }
+
+    &[data-category='home_and_comfort'] {
+      background: c.$color-tag-home;
+    }
+
+    &[data-category='creativity_and_art'] {
+      background: c.$color-tag-arts;
+    }
+
+    &[data-category='education_and_development'] {
+      background: c.$color-tag-education;
+    }
+
+    &[data-category='health_and_lifestyle'] {
+      background: c.$color-tag-health;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &__categoryTitle {
+    margin: 0;
+    color: c.$color-text-primary;
+    font-weight: t.$font-weight-regular;
+    font-size: t.$font-h2-size;
+    font-family: t.$font-primary;
+    line-height: t.$font-h2-line-height;
+  }
+
+  &__skillsList {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__skillItem {
+    padding: 8px 12px;
+    color: c.$color-text-primary;
+    font-weight: t.$font-weight-regular;
+    font-size: t.$font-h4-size;
+    font-family: t.$font-secondary;
+    line-height: t.$font-h4-line-height;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      color: c.$color-text-primary;
+      background: transparent;
+    }
+
+    &-active {
+      background: c.$color-card-background;
+    }
+  }
+
+  &__loading {
+    padding: 20px;
+    color: c.$color-text-primary;
+    text-align: center;
   }
 }

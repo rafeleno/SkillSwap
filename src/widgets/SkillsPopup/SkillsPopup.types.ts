@@ -17,7 +17,6 @@ export interface SkillItem {
 }
 
 export interface SkillsPopupProps {
-  categories: Category[];
   onClose: () => void;
   skillsMap: SkillItem[];
   onChangeFilters?: (filters: Record<string, string[]>) => void;
