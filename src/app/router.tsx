@@ -47,7 +47,7 @@ export function AppRouter() {
           )}
         />
 
-        <Route path="*" element={<Pages.NotFound />} />
+        <Route path="*" element={<Pages.NotFound404 />} />
       </Routes>
     </Suspense>
   )

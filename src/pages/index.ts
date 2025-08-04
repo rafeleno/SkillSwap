@@ -1,6 +1,12 @@
 import { lazy } from 'react'
 
 export const Pages = {
+  NotFound404: lazy(() => import('./NotFound404').then(module => ({
+    default: module.NotFound404,
+  }))),
+  NotFound500: lazy(() => import('./NotFound500').then(module => ({
+    default: module.NotFound500,
+  }))),
   Catalog: lazy(() => import('./MainPage').then(module => ({
     default: module.MainPage,
   }))),
@@ -18,8 +24,5 @@ export const Pages = {
   }))),
   Skill: lazy(() => import('./SkillPage').then(module => ({
     default: module.SkillPage,
-  }))),
-  NotFound: lazy(() => import('./NotFoundPage').then(module => ({
-    default: module.NotFoundPage,
   }))),
 }
