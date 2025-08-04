@@ -25,13 +25,12 @@ export const MainPage: React.FC = () => {
       if (filters.locations.length !== 0 && !filters.locations.includes(user.location.trim())) {
         return false
       }
-      if (filters.filterType[0] === 'wantToLearn') {
-        return user.subcategoriesWantToLearn.some(sub =>
-          filters.skillIds.includes(sub.skillId),
-        )
+      if (filters.filterType[0] === 'wantToLearn' && !filters.skill.includes(user.skillCanTeach.skillId)) {
+        return false
       }
-      if (filters.filterType[0] === 'wantToTeach') {
-        return filters.skillIds.includes(user.skillCanTeach.skillId)
+      const subcategoriesWantToLearnIds = user.subcategoriesWantToLearn.map(sub => sub.skillId)
+      if (filters.filterType[0] === 'wantToTeach' && !filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))) {
+        return false
       }
       return true // если режим "всё"
     })
