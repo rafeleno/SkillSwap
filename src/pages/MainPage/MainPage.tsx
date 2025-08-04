@@ -2,7 +2,7 @@ import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { FiltersState } from 'shared/hooks/useFilters'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
-import React, { useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 // Должен отдавать слайс
 import users from '../../../public/db/users.json'
 
@@ -10,16 +10,12 @@ import styles from './styles.module.scss'
 
 export const initialFilters: FiltersState = {
   skill: [],
-  gender: ['all'],
+  gender: ['notSpecified'],
   locations: [],
-  filterType: ["notSpecified"],
+  filterType: ['all'],
 }
 export const MainPage: React.FC = () => {
   const [filters, setFilters] = React.useState<FiltersState>(initialFilters)
-  useEffect(() => {
-    console.log('Filters changed:', filters)
-
-  }, [filters])
 
   const filteredUsers = useMemo(() => {
     return users.filter((user) => {
@@ -41,7 +37,6 @@ export const MainPage: React.FC = () => {
     })
   }, [users, filters])
 
-  
   const handleFiltersChange = (filters: FiltersState) => {
     setFilters(prev => ({ ...prev, ...filters }))
   }
@@ -69,7 +64,7 @@ export const MainPage: React.FC = () => {
 
   return (
     <div className={styles.mainPage}>
-      <FilterTab onFiltersChange={handleFiltersChange}></FilterTab>
+      <FilterTab onFiltersChange={handleFiltersChange} filters={filters} setFilters={setFilters}></FilterTab>
       {(filters.skill.length !== 0 || filters.locations.length !== 0 || filters.gender.length !== 0 || filters.filterType.length !== 0) && (
         <UserCardList type="sorted" title="Подходящих предложений: " buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers}></UserCardList>
       )}

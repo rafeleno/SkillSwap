@@ -1,5 +1,6 @@
+import type React from 'react'
 import { initialFilters } from '@pageComponents/MainPage/MainPage'
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback } from 'react'
 
 // TODO: Вынести в общие типы
 export type FiltersState = Record<string, string[]>
@@ -29,6 +30,8 @@ interface UseFiltersOptions {
    */
   initialFilters?: FiltersState
   skillsMap: FiltersMap
+  filters: FiltersState
+  setFilters: React.Dispatch<React.SetStateAction<FiltersState>>
 }
 
 /**
@@ -37,14 +40,16 @@ interface UseFiltersOptions {
 export function useFilters({
   onChange,
   skillsMap,
+  filters,
+  setFilters,
 }: UseFiltersOptions) {
-  const [filters, setFilters] = useState<FiltersState>(initialFilters)
+  // const [filters, setFilters] = useState<FiltersState>(initialFilters)
 
-  useEffect(() => {
-    if (onChange) {
-      onChange(filters)
-    }
-  }, [filters])
+  // useEffect(() => {
+  //   if (onChange) {
+  //     onChange(filters)
+  //   }
+  // }, [filters])
 
   const toggleFilter = useCallback(
     (type: string, id: string) => {

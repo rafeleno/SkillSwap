@@ -3,7 +3,7 @@ import { CheckboxInput } from '@uiComponents/CheckboxInput/Checkboxinput'
 import { CheckboxParentInput } from '@uiComponents/CheckboxParentInput'
 import { MainButton } from '@uiComponents/MainButton'
 import { RadioInput } from '@uiComponents/RadioInput'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectFilterTypes, selectGenders, selectLocations } from '../../services/slices/filter/filterSlice'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
@@ -12,17 +12,16 @@ import styles from './styles.module.scss'
 
 // TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
 
-export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
+export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, setFilters }) => {
   const skills = useSelector(selectAllCategories)
   const locations = useSelector(selectLocations)
   const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
 
   const {
-    filters,
     toggleFilter,
     clearAllFilters,
-  } = useFilters({ onChange: onFiltersChange, skillsMap: skills })
+  } = useFilters({ onChange: onFiltersChange, skillsMap: skills, filters, setFilters })
 
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(() =>
     skills?.reduce((acc, filter) => {
