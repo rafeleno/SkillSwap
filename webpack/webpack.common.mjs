@@ -16,6 +16,13 @@ export default {
     clean: true,
     publicPath: '/',
   },
+
+  devServer: {
+    port: 8080,
+    hot: true,
+    historyApiFallback: true,
+  },
+
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {

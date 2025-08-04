@@ -5,23 +5,23 @@ import { MainButton } from '@uiComponents/MainButton'
 import { RadioInput } from '@uiComponents/RadioInput'
 import React, { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { selectFilterTypes, selectGenders, selectLocations, selectSkills } from '../../services/slices/filter/filterSlice'
+import { selectFilterTypes, selectGenders, selectLocations } from '../../services/slices/filter/filterSlice'
+import { selectAllCategories } from '../../services/slices/skill/skillSlice'
 import { useFilters } from '../../shared/hooks/useFilters'
 import styles from './styles.module.scss'
 
 // TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
 
-export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
-  const skills = useSelector(selectSkills)
+export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, setFilters }) => {
+  const skills = useSelector(selectAllCategories)
   const locations = useSelector(selectLocations)
   const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
 
   const {
-    filters,
     toggleFilter,
     clearAllFilters,
-  } = useFilters({ onChange: onFiltersChange, skillsMap: skills })
+  } = useFilters({ onChange: onFiltersChange, skillsMap: skills, filters, setFilters })
 
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(() =>
     skills?.reduce((acc, filter) => {
@@ -37,7 +37,7 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
   }, [filters])
 
   return (
-    <div className={styles['filters-panel']}>
+    <div className={styles.filters}>
       <div className={styles['filters-header']}>
         <h2 className={styles.title}>
           Фильтры
@@ -127,9 +127,9 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
           {locations.map(location => (
             <li key={location.id} className={styles.option}>
               <CheckboxInput
-                checked={filters.location?.includes(location.id) ?? false}
+                checked={filters.locations?.includes(location.id) ?? false}
                 name={location.name}
-                onChange={() => toggleFilter('location', location.id)}
+                onChange={() => toggleFilter('locations', location.id)}
               >
                 {location.name}
               </CheckboxInput>

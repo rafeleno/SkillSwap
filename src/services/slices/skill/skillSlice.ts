@@ -2,19 +2,20 @@ import type { RootState } from '../../store'
 import { createSelector, createSlice } from '@reduxjs/toolkit'
 import { fetchSkills, updateSkill } from './thunks'
 
-interface Skill {
+interface ISkill {
   id: string
   name: string
 }
 
-export interface Category {
+export interface ICategory {
   id: string
   name: string
-  subcategory: Skill[]
+  parent: string | null
+  children: ISkill[]
 }
 
 interface SkillsState {
-  categories: Category[]
+  categories: ICategory[]
   status: 'idle' | 'loading' | 'succeeded' | 'failed'
   error: string | null
 }
@@ -37,13 +38,13 @@ export const skillsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchSkills.pending, (state) => {
-        state.status = 'loading'
-        state.error = null
-      })
       .addCase(fetchSkills.fulfilled, (state, action) => {
         state.status = 'succeeded'
         state.categories = action.payload
+      })
+      .addCase(fetchSkills.pending, (state) => {
+        state.status = 'loading'
+        state.error = null
       })
       .addCase(fetchSkills.rejected, (state, action) => {
         state.status = 'failed'
@@ -53,7 +54,7 @@ export const skillsSlice = createSlice({
         const { categoryId, skillId, newName } = action.payload
         const category = state.categories.find(c => c.id === categoryId)
         if (category) {
-          const skill = category.subcategory.find(s => s.id === skillId)
+          const skill = category.children.find(s => s.id === skillId)
           if (skill)
             skill.name = newName
         }
@@ -73,7 +74,7 @@ export function selectCategoryById(categoryId: string) {
 export function selectSkillById(skillId: string) {
   return createSelector(selectAllCategories, (categories) => {
     for (const category of categories) {
-      const skill = category.subcategory.find(s => s.id === skillId)
+      const skill = category.children.find(s => s.id === skillId)
       if (skill)
         return skill
     }

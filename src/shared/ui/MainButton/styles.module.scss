@@ -10,7 +10,7 @@
   flex-direction: row;
   gap: 8px;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   width: 100%;
   padding: 12px 24px;
   border-style: solid;
@@ -129,36 +129,36 @@
       .icon {
         fill: c.$color-card-background;
       }
+    }
+  }
 
-      &.compact {
-        height: 24px;
-        padding: 0;
-        color: c.$color-text-link;
-        background-color: transparent;
-        border: none;
+  &.compact {
+    height: 24px;
+    padding: 0;
+    color: c.$color-text-link;
+    background-color: transparent;
+    border: none;
 
-        &.icon {
-          fill: c.$color-text-link;
-        }
+    &.icon {
+      fill: c.$color-text-link;
+    }
 
-        &:hover {
-          opacity: 0.7;
-        }
+    &:hover {
+      opacity: 0.7;
+    }
 
-        &:active {
-          opacity: 1;
-          filter: brightness(0.7);
-        }
+    &:active {
+      opacity: 1;
+      filter: brightness(0.7);
+    }
 
-        &:disabled {
-          color: c.$color-caption;
-          background-color: c.$color-disabled;
-          border: 1px solid c.$color-disabled;
+    &:disabled {
+      color: c.$color-caption;
+      background-color: c.$color-disabled;
+      border: 1px solid c.$color-disabled;
 
-          .icon {
-            fill: c.$color-caption;
-          }
-        }
+      .icon {
+        fill: c.$color-caption;
       }
     }
   }

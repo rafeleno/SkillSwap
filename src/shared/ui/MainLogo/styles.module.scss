@@ -1,6 +1,11 @@
 @use '@colors' as c;
 @use '@typographyStyles' as t;
 
+* {
+  color: c.$color-text-primary;
+  text-decoration: none;
+}
+
 .main-logo {
   display: flex;
   align-items: center;

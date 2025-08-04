@@ -4,7 +4,7 @@ import { MainLogo } from '@uiComponents/MainLogo'
 import { RegisterModalContent } from '@uiComponents/RegisterModalContent'
 import React, { useState } from 'react'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
-import { selectCurrentUser, updateUserField } from '../../services/slices/users/userSlice'
+import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice'
 import { useDispatch, useSelector } from '../../services/store'
 import styles from './styles.module.scss'
 

@@ -1,54 +1,28 @@
 [
   {
-    "id": "business_and_career",
-    "name": "Бизнес и карьера",
-    "subcategory": [
+    "id": "bussiness",
+    "name": "Бизнес",
+    "parent": null,
+    "children": [
       { "id": "team_management", "name": "Управление командой" },
-      { "id": "marketing_and_advertising", "name": "Маркетинг и реклама" },
-      { "id": "sales_and_negotiation", "name": "Продажи и переговоры" },
-      { "id": "personal_brand", "name": "Личный бренд" },
-      { "id": "resume_and_interview", "name": "Резюме и собеседование" },
+      { "id": "marketing", "name": "Маркетинг и реклама" },
+      { "id": "sales", "name": "Продажи и переговоры" },
+      { "id": "personal_branding", "name": "Личный бренд" },
+      { "id": "resume_interview", "name": "Резюме и собеседование" },
       { "id": "time_management", "name": "Тайм-менеджмент" },
       { "id": "project_management", "name": "Проектное управление" },
       { "id": "entrepreneurship", "name": "Предпринимательство" }
     ]
   },
   {
-    "id": "foreign_languages",
-    "name": "Иностранные языки",
-    "subcategory": [
-      { "id": "english", "name": "Английский" },
-      { "id": "french", "name": "Французский" },
-      { "id": "spanish", "name": "Испанский" },
-      { "id": "german", "name": "Немецкий" },
-      { "id": "chinese", "name": "Китайский" },
-      { "id": "japanese", "name": "Японский" },
-      {
-        "id": "exam_preparation",
-        "name": "Подготовка к экзаменам (IELTS, TOEFL)"
-      }
-    ]
-  },
-  {
-    "id": "home_and_comfort",
-    "name": "Дом и уют",
-    "subcategory": [
-      { "id": "cleaning_and_organization", "name": "Уборка и организация" },
-      { "id": "home_finances", "name": "Домашние финансы" },
-      { "id": "cooking", "name": "Приготовление еды" },
-      { "id": "houseplants", "name": "Домашние растения" },
-      { "id": "repair", "name": "Ремонт" },
-      { "id": "storage", "name": "Хранение вещей" }
-    ]
-  },
-  {
-    "id": "creativity_and_art",
+    "id": "art",
     "name": "Творчество и искусство",
-    "subcategory": [
-      { "id": "drawing_and_illustration", "name": "Рисование и иллюстрация" },
+    "parent": null,
+    "children": [
+      { "id": "drawing", "name": "Рисование и иллюстрация" },
       { "id": "photography", "name": "Фотография" },
       { "id": "video_editing", "name": "Видеомонтаж" },
-      { "id": "music_and_sound", "name": "Музыка и звук" },
+      { "id": "music", "name": "Музыка и звук" },
       { "id": "acting", "name": "Актёрское мастерство" },
       { "id": "creative_writing", "name": "Креативное письмо" },
       { "id": "art_therapy", "name": "Арт-терапия" },
@@ -56,9 +30,51 @@
     ]
   },
   {
-    "id": "education_and_development",
+    "id": "languages",
+    "name": "Иностранные языки",
+    "parent": null,
+    "children": [
+      { "id": "english", "name": "Английский" },
+      { "id": "french", "name": "Французский" },
+      { "id": "spanish", "name": "Испанский" },
+      { "id": "german", "name": "Немецкий" },
+      { "id": "chinese", "name": "Китайский" },
+      { "id": "japanese", "name": "Японский" },
+      { "id": "", "name": "Подготовка к экзаменам (IELTS, TOEFL)" }
+    ]
+  },
+  {
+    "id": "health",
+    "name": "Здоровье и лайфстайл",
+    "parent": null,
+    "children": [
+      { "id": "yoga", "name": "Йога и медитация" },
+      { "id": "nutrition", "name": "Питание и ЗОЖ" },
+      { "id": "mental_health", "name": "Ментальное здоровье" },
+      { "id": "mindfulness", "name": "Осознанность" },
+      { "id": "physical_training", "name": "Физические тренировки" },
+      { "id": "sleep_recovery", "name": "Сон и восстановление" },
+      { "id": "work_life_balance", "name": "Баланс жизни и работы" }
+    ]
+  },
+  {
+    "id": "home",
+    "name": "Дом и уют",
+    "parent": null,
+    "children": [
+      { "id": "cleaning", "name": "Уборка и организация" },
+      { "id": "pets", "name": "Домашние финансы" },
+      { "id": "cooking", "name": "Приготовление еды" },
+      { "id": "plants", "name": "Домашние растения" },
+      { "id": "repair", "name": "Ремонт" },
+      { "id": "storage", "name": "Хранение вещей" }
+    ]
+  },
+  {
+    "id": "education",
     "name": "Образование и развитие",
-    "subcategory": [
+    "parent": null,
+    "children": [
       { "id": "personal_development", "name": "Личностное развитие" },
       { "id": "learning_skills", "name": "Навыки обучения" },
       { "id": "cognitive_techniques", "name": "Когнитивные техники" },
@@ -68,16 +84,267 @@
     ]
   },
   {
-    "id": "health_and_lifestyle",
-    "name": "Здоровье и лайфстайл",
-    "subcategory": [
-      { "id": "yoga_and_meditation", "name": "Йога и медитация" },
-      { "id": "nutrition_and_health", "name": "Питание и ЗОЖ" },
-      { "id": "mental_health", "name": "Ментальное здоровье" },
-      { "id": "mindfulness", "name": "Осознанность" },
-      { "id": "physical_training", "name": "Физические тренировки" },
-      { "id": "sleep_and_recovery", "name": "Сон и восстановление" },
-      { "id": "work_life_balance", "name": "Баланс жизни и работы" }
-    ]
+    "id": "team_management",
+    "name": "Управление командой",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "marketing",
+    "name": "Маркетинг и реклама",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "sales",
+    "name": "Продажи и переговоры",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "personal_branding",
+    "name": "Личный бренд",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "resume_interview",
+    "name": "Резюме и собеседование",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "time_management",
+    "name": "Тайм-менеджмент",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "project_management",
+    "name": "Проектное управление",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "entrepreneurship",
+    "name": "Предпринимательство",
+    "parent": "business",
+    "children": null
+  },
+  {
+    "id": "drawing",
+    "name": "Рисование и иллюстрация",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "photography",
+    "name": "Фотография",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "video_editing",
+    "name": "Видеомонтаж",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "music_and_sound",
+    "name": "Музыка и звук",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "acting",
+    "name": "Актёрское мастерство",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "creative_writing",
+    "name": "Креативное письмо",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "art_therapy",
+    "name": "Арт-терапия",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "diy",
+    "name": "Декор и DIY",
+    "parent": "art",
+    "children": null
+  },
+  {
+    "id": "english",
+    "name": "Английский",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "french",
+    "name": "Французский",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "spanish",
+    "name": "Испанский",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "german",
+    "name": "Немецкий",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "chinese",
+    "name": "Китайский",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "japanese",
+    "name": "Японский",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "exam_preparation",
+    "name": "Подготовка к экзаменам (IELTS, TOEFL)",
+    "parent": "languages",
+    "children": null
+  },
+  {
+    "id": "yoga_and_meditation",
+    "name": "Йога и медитация",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "nutrition_and_health",
+    "name": "Питание и ЗОЖ",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "mental_health",
+    "name": "Ментальное здоровье",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "mindfulness",
+    "name": "Осознанность",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "physical_training",
+    "name": "Физические тренировки",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "physical_training",
+    "name": "Физические тренировки",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "sleep_and_recovery",
+    "name": "Сон и восстановление",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "work_life_balance",
+    "name": "Баланс жизни и работы",
+    "parent": "health_and_lifestyle",
+    "children": null
+  },
+  {
+    "id": "cleaning_and_organization",
+    "name": "Уборка и организация",
+    "parent": "home_and_comfort",
+    "children": null
+  },
+  {
+    "id": "home_finances",
+    "name": "Домашние финансы",
+    "parent": "home_and_comfort",
+    "children": null
+  },
+  {
+    "id": "cooking",
+    "name": "Приготовление еды",
+    "parent": "home_and_comfort",
+    "children": null
+  },
+  {
+    "id": "houseplants",
+    "name": "Домашние растения",
+    "parent": "home_and_comfort",
+    "children": null
+  },
+  {
+    "id": "repair",
+    "name": "Ремонт",
+    "parent": "home_and_comfort",
+    "children": null
+  },
+  {
+    "id": "storage",
+    "name": "Хранение вещей",
+    "parent": "home_and_comfort",
+    "children": null
+  },
+  {
+    "id": "personal_development",
+    "name": "Личностное развитие",
+    "parent": "education_and_development",
+    "children": null
+  },
+  {
+    "id": "learning_skills",
+    "name": "Навыки обучения",
+    "parent": "education_and_development",
+    "children": null
+  },
+  {
+    "id": "cognitive_techniques",
+    "name": "Когнитивные техники",
+    "parent": "education_and_development",
+    "children": null
+  },
+  {
+    "id": "speed_reading",
+    "name": "Скорочтение",
+    "parent": "education_and_development",
+    "children": null
+  },
+  {
+    "id": "speed_reading",
+    "name": "Скорочтение",
+    "parent": "education_and_development",
+    "children": null
+  },
+  {
+    "id": "teaching_skills",
+    "name": "Навыки преподавания",
+    "parent": "education_and_development",
+    "children": null
+  },
+  {
+    "id": "coaching",
+    "name": "Коучинг",
+    "parent": "education_and_development",
+    "children": null
   }
 ]

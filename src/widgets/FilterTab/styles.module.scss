@@ -1,10 +1,18 @@
 @use '@colors' as c;
 
-.filters-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
+.filters {
+  width: 324px;
+  height: min-content;
+  padding: 20px;
+  background-color: c.$color-card-background;
+  border-radius: 8px;
+
+  &-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
 }
 
 .sub-title {
@@ -21,6 +29,11 @@
 }
 
 .filters-tab {
-  max-height: 300px;
   overflow-y: auto;
+}
+
+//TODO: вынести; list-style: none в глобал;
+
+.filter-radio-tab {
+  list-style: none;
 }
