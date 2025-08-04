@@ -1,20 +1,23 @@
 import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
 import React from 'react'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
+import { fetchSkills } from '../services/slices/skill/thunks'
 import store from '../services/store'
 import { AppRouter } from './router'
+import { initFilterSettings } from '../services/slices/filter/filterSlice'
+import users from '../../public/db/users.json'
+
 
 export function App() {
-  return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Header user={null} />
-        <AppRouter />
-        <Footer />
 
-      </BrowserRouter>
-    </Provider>
+  store.dispatch(fetchSkills())
+  store.dispatch(initFilterSettings(users));
+
+  return (
+    <>
+      <Header user={null} />
+      <AppRouter />
+      <Footer />
+    </>
   )
 }
