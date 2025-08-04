@@ -25,4 +25,10 @@ export const Pages = {
   Skill: lazy(() => import('./SkillPage').then(module => ({
     default: module.SkillPage,
   }))),
+  NotFound: lazy(() => import('./NotFoundPage').then(module => ({
+    default: module.NotFoundPage,
+  }))),
+  Register: lazy(() => import('./RegisterPage').then(module => ({
+    default: module.Register,
+  }))),
 }

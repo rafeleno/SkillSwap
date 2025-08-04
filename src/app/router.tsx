@@ -21,6 +21,14 @@ export function AppRouter() {
           )}
         />
         <Route
+          path="/register"
+          element={(
+            <ProtectedRoute onlyUnAuth>
+              <Pages.Register />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
           path="/create"
           element={(
             <ProtectedRoute onlyUnAuth>
