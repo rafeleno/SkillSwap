@@ -5,6 +5,7 @@ import { MainButton } from '@uiComponents/MainButton'
 import { MainLogo } from '@uiComponents/MainLogo'
 import { Search } from '@uiComponents/Search'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
 
@@ -18,6 +19,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchValue, setSearchValue] = useState('')
   const [isNotificationOpen, setIsNotificationOpen] = useState(false)
+  const navigate = useNavigate()
 
   const toggleNotification = () => {
     setIsNotificationOpen(prev => !prev)
@@ -66,10 +68,10 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
             )
           : (
               <div className={styles['auth-buttons']}>
-                <MainButton type="secondary" onClick={() => {}}>
+                <MainButton type="secondary" onClick={() => navigate('/login')}>
                   Войти
                 </MainButton>
-                <MainButton type="primary" onClick={() => {}}>
+                <MainButton type="primary" onClick={() => navigate('/register')}>
                   Зарегистрироваться
                 </MainButton>
               </div>

@@ -22,4 +22,7 @@ export const Pages = {
   NotFound: lazy(() => import('./NotFoundPage').then(module => ({
     default: module.NotFoundPage,
   }))),
+  Register: lazy(() => import('./RegisterPage').then(module => ({
+    default: module.Register,
+  }))),
 }
