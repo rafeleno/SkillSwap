@@ -1,5 +1,5 @@
-import type { Category } from '../../services/slices/skill/skillSlice'
-import type { User } from '../../services/slices/users/userSlice'
+import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
+import type { ICategory } from '../../services/slices/skill/skillSlice'
 import React, { useState } from 'react'
 import { RegisterModalContent } from '../../shared/ui/RegisterModalContent'
 
@@ -8,7 +8,7 @@ export const RegisterPage: React.FC = () => {
   const [password, setPassword] = useState('')
 
   // Заглушка пользователя
-  const user: User = {
+  const user: TUser = {
     id: '',
     email,
     name: '',
@@ -19,9 +19,9 @@ export const RegisterPage: React.FC = () => {
   }
 
   // Заглушка категорий
-  const categories: Category[] = []
+  const categories: ICategory[] = []
 
-  const handleUpdateUser = (field: keyof User, value: any) => {
+  const handleUpdateUser = (field: keyof TUser, value: any) => {
     if (field === 'email')
       setEmail(value)
   }
