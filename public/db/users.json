@@ -9,7 +9,7 @@
     "likes": 15,
     "description": "Привет! Люблю ритм, кофе по утрам и людей, которые не боятся пробовать новое",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "music_and_sound",
       "name": "Игра на барабанах",
       "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
@@ -27,12 +27,12 @@
         "name": "Тайм-менеджмент"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "yoga_and_meditation",
         "name": "Медитация"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "video_editing",
         "name": "Видеомонтаж"
       }
@@ -48,7 +48,7 @@
     "likes": 20,
     "description": "Танцую в душе, верю в чудеса и обожаю неожиданные повороты",
     "skillCanTeach": {
-      "skillId": "foreign_languages",
+      "skillId": "languages",
       "subcategoryId": "english",
       "name": "Разговорный английский",
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
@@ -61,17 +61,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "drawing_and_illustration",
         "name": "Рисование"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "nutrition_and_health",
         "name": "Здоровое питание"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       }
@@ -87,7 +87,7 @@
     "likes": 22,
     "description": "Люблю запах новых книг, длинные прогулки и искренние разговоры",
     "skillCanTeach": {
-      "skillId": "health_and_lifestyle",
+      "skillId": "health",
       "subcategoryId": "yoga_and_meditation",
       "name": "Йога для начинающих",
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
@@ -100,17 +100,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "photography",
         "name": "Фотография"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
@@ -126,7 +126,7 @@
     "likes": 35,
     "description": "Завариваю мечты вместе с утренним кофе",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "photography",
       "name": "Основы фотографии",
       "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
@@ -139,17 +139,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "french",
         "name": "Французский"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "team_management",
         "name": "Управление командой"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "mindfulness",
         "name": "Осознанность"
       }
@@ -165,7 +165,7 @@
     "likes": 39,
     "description": "Кофе в руке, идеи в голове, смелость в сердце",
     "skillCanTeach": {
-      "skillId": "business_and_career",
+      "skillId": "bussiness",
       "subcategoryId": "project_management",
       "name": "Управление проектами",
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
@@ -178,17 +178,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "music_and_sound",
         "name": "Фортепиано"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "speed_reading",
         "name": "Скорочтение"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "nutrition_and_health",
         "name": "Здоровое питание"
       }
@@ -204,7 +204,7 @@
     "likes": 37,
     "description": "Привет! Слушаю музыку, ловлю вдохновение и не боюсь мечтать",
     "skillCanTeach": {
-      "skillId": "foreign_languages",
+      "skillId": "languages",
       "subcategoryId": "english",
       "name": "Разговорный английский",
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
@@ -217,17 +217,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "drawing_and_illustration",
         "name": "Рисование"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "yoga_and_meditation",
         "name": "Йога"
       }
@@ -243,7 +243,7 @@
     "likes": 7,
     "description": "Привет! Живу ярко, дышу глубоко и не теряю себя",
     "skillCanTeach": {
-      "skillId": "home_and_comfort",
+      "skillId": "home",
       "subcategoryId": "cleaning_and_organization",
       "name": "Организация пространства",
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
@@ -256,17 +256,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "learning_skills",
         "name": "Навыки обучения"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "video_editing",
         "name": "Видеомонтаж"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "personal_brand",
         "name": "Личный бренд"
       }
@@ -282,7 +282,7 @@
     "likes": 3,
     "description": "Люблю закаты, разговоры по душам и лёгкость бытия",
     "skillCanTeach": {
-      "skillId": "health_and_lifestyle",
+      "skillId": "health",
       "subcategoryId": "mental_health",
       "name": "Психологическое здоровье",
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
@@ -295,17 +295,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "japanese",
         "name": "Японский"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "coaching",
         "name": "Коучинг"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
@@ -321,7 +321,7 @@
     "likes": 47,
     "description": "Пью кофе, строю планы и иду туда, где свет",
     "skillCanTeach": {
-      "skillId": "health_and_lifestyle",
+      "skillId": "health",
       "subcategoryId": "nutrition_and_health",
       "name": "Основы здорового питания",
       "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
@@ -334,17 +334,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "english",
         "name": "Английский"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "photography",
         "name": "Фотография"
       }
@@ -360,7 +360,7 @@
     "likes": 48,
     "description": "Танцую, пишу, мечтаю — всё это про меня",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "drawing_and_illustration",
       "name": "Основы рисования",
       "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
@@ -373,22 +373,22 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "spanish",
         "name": "Испанский"
       },
       {
-        "skillId": "home_and_comfort",
+        "skillId": "home",
         "subcategoryId": "repair",
         "name": "Ремонт"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
@@ -404,7 +404,7 @@
     "likes": 4,
     "description": "Верю в добро, людей и силу спонтанных решений",
     "skillCanTeach": {
-      "skillId": "business_and_career",
+      "skillId": "bussiness",
       "subcategoryId": "entrepreneurship",
       "name": "Основы предпринимательства",
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
@@ -417,17 +417,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "physical_training",
         "name": "Тренировки"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "teaching_skills",
         "name": "Преподавание"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
@@ -443,7 +443,7 @@
     "likes": 41,
     "description": "Люблю утренний свет, свежий ветер и искренние взгляды",
     "skillCanTeach": {
-      "skillId": "foreign_languages",
+      "skillId": "languages",
       "subcategoryId": "german",
       "name": "Основы немецкого языка",
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
@@ -456,17 +456,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "home_and_comfort",
+        "skillId": "home",
         "subcategoryId": "cleaning_and_organization",
         "name": "Уборка"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "music_and_sound",
         "name": "Музыка"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "resume_and_interview",
         "name": "Резюме и собеседование"
       }
@@ -482,7 +482,7 @@
     "likes": 43,
     "description": "Мечтаю в большом, живу в моменте, двигаюсь вперёд",
     "skillCanTeach": {
-      "skillId": "education_and_development",
+      "skillId": "education",
       "subcategoryId": "speed_reading",
       "name": "Скорочтение",
       "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
@@ -495,17 +495,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "mental_health",
         "name": "Здоровье"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "video_editing",
         "name": "Видеомонтаж"
       },
       {
-        "skillId": "home_and_comfort",
+        "skillId": "home",
         "subcategoryId": "repair",
         "name": "Ремонт"
       }
@@ -521,7 +521,7 @@
     "likes": 48,
     "description": "Завариваю чай и запускаю новые идеи",
     "skillCanTeach": {
-      "skillId": "home_and_comfort",
+      "skillId": "home",
       "subcategoryId": "houseplants",
       "name": "Уход за домашними растениями",
       "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
@@ -534,17 +534,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "decor_and_diy",
         "name": "Декор"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "team_management",
         "name": "Управление"
       },
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "french",
         "name": "Французский"
       }
@@ -560,7 +560,7 @@
     "likes": 26,
     "description": "Ритм в наушниках, энергия в душе, шаг в будущее",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "video_editing",
       "name": "Видеомонтаж для начинающих",
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
@@ -573,17 +573,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "nutrition_and_health",
         "name": "Питание"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "learning_skills",
         "name": "Навыки обучения"
       }
@@ -599,7 +599,7 @@
     "likes": 51,
     "description": "Ценю людей с огнём внутри и лёгким сердцем",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "music_and_sound",
       "name": "Игра на барабанах",
       "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
@@ -612,12 +612,12 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "time_management",
         "name": "Тайм-менеджмент"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "yoga_and_meditation",
         "name": "Медитация"
       }
@@ -633,7 +633,7 @@
     "likes": 52,
     "description": "Люблю движение, простые радости и свежие старты",
     "skillCanTeach": {
-      "skillId": "foreign_languages",
+      "skillId": "languages",
       "subcategoryId": "english",
       "name": "Разговорный английский",
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
@@ -646,17 +646,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "drawing_and_illustration",
         "name": "Рисование"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "nutrition_and_health",
         "name": "Здоровое питание"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       }
@@ -672,7 +672,7 @@
     "likes": 53,
     "description": "Слушаю тишину, когда она говорит важное",
     "skillCanTeach": {
-      "skillId": "health_and_lifestyle",
+      "skillId": "health",
       "subcategoryId": "yoga_and_meditation",
       "name": "Йога для начинающих",
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
@@ -685,17 +685,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "photography",
         "name": "Фотография"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
@@ -711,7 +711,7 @@
     "likes": 54,
     "description": "Кофе, идеи и немного безумства — мой идеальный рецепт",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "photography",
       "name": "Основы фотографии",
       "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
@@ -724,17 +724,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "french",
         "name": "Французский"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "team_management",
         "name": "Управление командой"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "mindfulness",
         "name": "Осознанность"
       }
@@ -750,7 +750,7 @@
     "likes": 55,
     "description": "Открыт миру, идеям и новым маршрутам",
     "skillCanTeach": {
-      "skillId": "business_and_career",
+      "skillId": "bussiness",
       "subcategoryId": "project_management",
       "name": "Управление проектами",
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
@@ -763,17 +763,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "music_and_sound",
         "name": "Фортепиано"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "speed_reading",
         "name": "Скорочтение"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "nutrition_and_health",
         "name": "Здоровое питание"
       }
@@ -789,7 +789,7 @@
     "likes": 56,
     "description": "Люблю тёплые слова, холодный воздух и живые чувства",
     "skillCanTeach": {
-      "skillId": "foreign_languages",
+      "skillId": "languages",
       "subcategoryId": "english",
       "name": "Разговорный английский",
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
@@ -802,17 +802,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "drawing_and_illustration",
         "name": "Рисование"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "yoga_and_meditation",
         "name": "Йога"
       }
@@ -828,7 +828,7 @@
     "likes": 57,
     "description": "Пишу жизнь в настоящем времени и с эмоцией",
     "skillCanTeach": {
-      "skillId": "home_and_comfort",
+      "skillId": "home",
       "subcategoryId": "cleaning_and_organization",
       "name": "Организация пространства",
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
@@ -841,17 +841,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "learning_skills",
         "name": "Навыки обучения"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "video_editing",
         "name": "Видеомонтаж"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "personal_brand",
         "name": "Личный бренд"
       }
@@ -867,7 +867,7 @@
     "likes": 58,
     "description": "Ценю честность, вдохновение и лёгкую иронию",
     "skillCanTeach": {
-      "skillId": "health_and_lifestyle",
+      "skillId": "health",
       "subcategoryId": "mental_health",
       "name": "Психологическое здоровье",
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
@@ -880,17 +880,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "japanese",
         "name": "Японский"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "coaching",
         "name": "Коучинг"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
@@ -906,7 +906,7 @@
     "likes": 59,
     "description": "Живу в ритме сердца и верю в неожиданные встречи",
     "skillCanTeach": {
-      "skillId": "health_and_lifestyle",
+      "skillId": "health",
       "subcategoryId": "nutrition_and_health",
       "name": "Основы здорового питания",
       "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
@@ -919,17 +919,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "english",
         "name": "Английский"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "photography",
         "name": "Фотография"
       }
@@ -945,7 +945,7 @@
     "likes": 61,
     "description": "Пью латте и планирую что-то дерзкое",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "drawing_and_illustration",
       "name": "Основы рисования",
       "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
@@ -958,22 +958,22 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "spanish",
         "name": "Испанский"
       },
       {
-        "skillId": "home_and_comfort",
+        "skillId": "home",
         "subcategoryId": "repair",
         "name": "Ремонт"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
@@ -989,7 +989,7 @@
     "likes": 62,
     "description": "Влюбляюсь в новое и не боюсь перемен",
     "skillCanTeach": {
-      "skillId": "business_and_career",
+      "skillId": "bussiness",
       "subcategoryId": "entrepreneurship",
       "name": "Основы предпринимательства",
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
@@ -1002,17 +1002,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "physical_training",
         "name": "Тренировки"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "teaching_skills",
         "name": "Преподавание"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
@@ -1028,7 +1028,7 @@
     "likes": 63,
     "description": "Иду вперёд, даже если маршрут неизвестен",
     "skillCanTeach": {
-      "skillId": "foreign_languages",
+      "skillId": "languages",
       "subcategoryId": "german",
       "name": "Основы немецкого языка",
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
@@ -1041,17 +1041,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "home_and_comfort",
+        "skillId": "home",
         "subcategoryId": "cleaning_and_organization",
         "name": "Уборка"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "music_and_sound",
         "name": "Музыка"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "resume_and_interview",
         "name": "Резюме и собеседование"
       }
@@ -1067,7 +1067,7 @@
     "likes": 64,
     "description": "Люблю запах свежих страниц и ярких идей",
     "skillCanTeach": {
-      "skillId": "education_and_development",
+      "skillId": "education",
       "subcategoryId": "speed_reading",
       "name": "Скорочтение",
       "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
@@ -1080,17 +1080,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "mental_health",
         "name": "Здоровье"
       },
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "video_editing",
         "name": "Видеомонтаж"
       },
       {
-        "skillId": "home_and_comfort",
+        "skillId": "home",
         "subcategoryId": "repair",
         "name": "Ремонт"
       }
@@ -1106,7 +1106,7 @@
     "likes": 65,
     "description": "Мечтаю, иду, ошибаюсь, снова мечтаю",
     "skillCanTeach": {
-      "skillId": "home_and_comfort",
+      "skillId": "home",
       "subcategoryId": "houseplants",
       "name": "Уход за домашними растениями",
       "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
@@ -1119,17 +1119,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "creativity_and_art",
+        "skillId": "art",
         "subcategoryId": "decor_and_diy",
         "name": "Декор"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "team_management",
         "name": "Управление"
       },
       {
-        "skillId": "foreign_languages",
+        "skillId": "languages",
         "subcategoryId": "french",
         "name": "Французский"
       }
@@ -1145,7 +1145,7 @@
     "likes": 66,
     "description": "Пью эспрессо и верю в хорошее",
     "skillCanTeach": {
-      "skillId": "creativity_and_art",
+      "skillId": "art",
       "subcategoryId": "video_editing",
       "name": "Видеомонтаж для начинающих",
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
@@ -1158,17 +1158,17 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "health_and_lifestyle",
+        "skillId": "health",
         "subcategoryId": "nutrition_and_health",
         "name": "Питание"
       },
       {
-        "skillId": "business_and_career",
+        "skillId": "bussiness",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
       {
-        "skillId": "education_and_development",
+        "skillId": "education",
         "subcategoryId": "learning_skills",
         "name": "Навыки обучения"
       }
