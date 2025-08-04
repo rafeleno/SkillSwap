@@ -32,6 +32,7 @@ export const MainPage: React.FC = () => {
       if (filters.filterType[0] === 'wantToTeach' && !filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))) {
         return false
       }
+      // TODO: Возможно не работает
       return true // если режим "всё"
     })
   }, [users, filters])
