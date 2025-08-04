@@ -1,17 +1,13 @@
 import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
-import React, { useEffect } from 'react'
-import { fetchUsers } from '../services/slices/user/thunks'
-import { useDispatch, useSelector } from '../services/store'
+import React from 'react'
+import { fetchSkills } from '../services/slices/skill/thunks'
+import store from '../services/store'
 import { AppRouter } from './router'
 
 export function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchUsers()).then((res) => {
-      console.log(res)
-    })
-  }, [])
+  store.dispatch(fetchSkills())
+
   return (
     <>
       <Header user={null} />

@@ -3,8 +3,8 @@ import type { FiltersState } from 'shared/hooks/useFilters'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
 import React, { useEffect, useMemo } from 'react'
-import users from '../../../public/db/users.json'
 // Должен отдавать слайс
+import users from '../../../public/db/users.json'
 
 import styles from './styles.module.scss'
 
