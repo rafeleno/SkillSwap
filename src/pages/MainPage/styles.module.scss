@@ -2,8 +2,12 @@
 
 .main-page {
   display: flex;
-  flex-direction: column;
   gap: 24px;
   justify-content: space-between;
   padding: 20px 36px;
+}
+
+.user-card-list__container {
+  display: flex;
+  flex-direction: column;
 }

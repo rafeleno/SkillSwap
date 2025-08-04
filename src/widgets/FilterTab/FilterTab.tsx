@@ -3,7 +3,7 @@ import { CheckboxInput } from '@uiComponents/CheckboxInput/Checkboxinput'
 import { CheckboxParentInput } from '@uiComponents/CheckboxParentInput'
 import { MainButton } from '@uiComponents/MainButton'
 import { RadioInput } from '@uiComponents/RadioInput'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectFilterTypes, selectGenders, selectLocations } from '../../services/slices/filter/filterSlice'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
@@ -18,13 +18,15 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
   const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
 
+  useEffect(() => {
+    console.log('Skills changed:', skills)
+  }, [skills])
+
   const {
     filters,
     toggleFilter,
     clearAllFilters,
   } = useFilters({ onChange: onFiltersChange, skillsMap: skills })
-
-  console.log(skills)
 
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(() =>
     skills?.reduce((acc, filter) => {

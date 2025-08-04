@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react'
+import { initialFilters } from '@pageComponents/MainPage/MainPage'
+import React, { useCallback, useEffect, useState } from 'react'
 
 // TODO: Вынести в общие типы
-export type FiltersState = Record<string, string[]> // Мб тут Record<string, SkillItem[]>
+export type FiltersState = Record<string, string[]>
 
 interface SkillItem {
   id: string
@@ -35,10 +36,16 @@ interface UseFiltersOptions {
  */
 export function useFilters({
   onChange,
-  initialFilters = {},
   skillsMap,
 }: UseFiltersOptions) {
-  const [filters, setFilters] = useState<FiltersState>(initialFilters)
+  const [filters, setFilters] = useState<FiltersState>({})
+
+  useEffect(() => {
+    if (onChange) {
+      onChange(filters)
+    }
+  }, [filters])
+
   const toggleFilter = useCallback(
     (type: string, id: string) => {
       setFilters((prev) => {
@@ -79,11 +86,6 @@ export function useFilters({
           ...prev,
           [type]: newArray,
         }
-
-        if (onChange) {
-          onChange(newFilters)
-        }
-
         return newFilters
       })
     },
@@ -91,10 +93,10 @@ export function useFilters({
   )
 
   const clearAllFilters = useCallback(() => {
-    setFilters({})
-    if (onChange) {
-      onChange({})
-    }
+    setFilters(initialFilters)
+    // if (onChange) {
+    //   onChange(initialFilters)
+    // }
   }, [onChange])
 
   return {
