@@ -1,6 +1,8 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { RootState } from 'services/store'
 import { createSelector, createSlice } from '@reduxjs/toolkit'
+import { fetchSkills } from '../skill/thunks'
+import { fetchUsers } from '../user/thunks'
 
 type FilterTypesMap = Record<string, FilterTypeItem>
 type GendersMap = Record<string, MaleItem>
@@ -394,6 +396,7 @@ export const filterSlice = createSlice({
   name: 'filterSettings',
   initialState: initialSettings,
   reducers: {
+    // TODO: Это надо будет удалить
     initFilterSettings(state, action: { payload: TUser[] }) {
       state.locations = action.payload.reduce((acc, user) => {
         acc[user.location] = { id: user.location, name: user.location }
@@ -401,6 +404,16 @@ export const filterSlice = createSlice({
       }, {} as CitiesMap)
     },
   },
+  // Набросок версии под юзеров из слайса а не из базы данных
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(fetchUsers.fulfilled, (state, action) => {
+  //       state.locations = action.payload.reduce((acc, user) => {
+  //         acc[user.location] = { id: user.location, name: user.location }
+  //         return acc
+  //       }, {} as CitiesMap)
+  //     })
+  // },
 })
 
 export const selectGenders = createSelector(
@@ -426,5 +439,9 @@ export const selectFilterTypes = createSelector(
       ...f,
     })),
 )
+
+export const {
+  initFilterSettings,
+} = filterSlice.actions
 
 export default filterSlice.reducer // странное поведение при импорте

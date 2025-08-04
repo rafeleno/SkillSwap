@@ -18,10 +18,6 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
   const filterTypes = useSelector(selectFilterTypes)
   const genders = useSelector(selectGenders)
 
-  useEffect(() => {
-    console.log('Skills changed:', skills)
-  }, [skills])
-
   const {
     filters,
     toggleFilter,
@@ -132,9 +128,9 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange }) => {
           {locations.map(location => (
             <li key={location.id} className={styles.option}>
               <CheckboxInput
-                checked={filters.location?.includes(location.id) ?? false}
+                checked={filters.locations?.includes(location.id) ?? false}
                 name={location.name}
-                onChange={() => toggleFilter('location', location.id)}
+                onChange={() => toggleFilter('locations', location.id)}
               >
                 {location.name}
               </CheckboxInput>

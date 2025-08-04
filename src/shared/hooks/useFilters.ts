@@ -38,7 +38,7 @@ export function useFilters({
   onChange,
   skillsMap,
 }: UseFiltersOptions) {
-  const [filters, setFilters] = useState<FiltersState>({})
+  const [filters, setFilters] = useState<FiltersState>(initialFilters)
 
   useEffect(() => {
     if (onChange) {

@@ -10,41 +10,38 @@ import styles from './styles.module.scss'
 
 export const initialFilters: FiltersState = {
   skill: [],
-  gender: [],
-  location: [],
-  filterType: [],
+  gender: ['all'],
+  locations: [],
+  filterType: ["notSpecified"],
 }
 export const MainPage: React.FC = () => {
   const [filters, setFilters] = React.useState<FiltersState>(initialFilters)
-  console.error('filters', filters)
-
   useEffect(() => {
     console.log('Filters changed:', filters)
+
   }, [filters])
 
   const filteredUsers = useMemo(() => {
     return users.filter((user) => {
-      if (filters.gender && user.gender !== filters.gender[0]) {
+      if (filters.gender[0] !== 'notSpecified' && user.gender !== filters.gender[0]) {
         return false
       }
-      if (filters.location && !filters.locations?.includes(user.location)) {
+      if (filters.locations.length !== 0 && !filters.locations.includes(user.location.trim())) {
         return false
       }
-
-      if (filters.filterType && filters.filterType[0] === 'wantToLearn') {
+      if (filters.filterType[0] === 'wantToLearn') {
         return user.subcategoriesWantToLearn.some(sub =>
           filters.skillIds.includes(sub.skillId),
         )
       }
-
-      if (filters.filterType && filters.filterType[0] === 'wantToTeach') {
+      if (filters.filterType[0] === 'wantToTeach') {
         return filters.skillIds.includes(user.skillCanTeach.skillId)
       }
-
       return true // если режим "всё"
     })
   }, [users, filters])
 
+  
   const handleFiltersChange = (filters: FiltersState) => {
     setFilters(prev => ({ ...prev, ...filters }))
   }
@@ -73,10 +70,10 @@ export const MainPage: React.FC = () => {
   return (
     <div className={styles.mainPage}>
       <FilterTab onFiltersChange={handleFiltersChange}></FilterTab>
-      {(filters.skill.length !== 0 || filters.location.length !== 0 || filters.gender.length !== 0 || filters.filterType.length !== 0) && (
+      {(filters.skill.length !== 0 || filters.locations.length !== 0 || filters.gender.length !== 0 || filters.filterType.length !== 0) && (
         <UserCardList type="sorted" title="Подходящих предложений: " buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers}></UserCardList>
       )}
-      {(filters.skill.length === 0 && filters.location.length === 0 && filters.gender.length === 0 && filters.filterType.length === 0) && (
+      {(filters.skill.length === 0 && filters.locations.length === 0 && filters.gender.length === 0 && filters.filterType.length === 0) && (
         <div className={styles['user-card-list__container']}>
           <UserCardList type="regular" title="Популярное" buttonText="Смотреть все" buttonIconId="chevron-right" users={popularUsers}></UserCardList>
           <UserCardList type="regular" title="Новое" buttonText="Смотреть все" buttonIconId="chevron-right" users={newUsers}></UserCardList>
