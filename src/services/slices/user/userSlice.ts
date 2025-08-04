@@ -83,12 +83,12 @@ export const userSlice = createSlice({
       }
     },
 
-    // updateUserField: <K extends keyof User>(state: UserState, action: PayloadAction<{ field: K, value: User[K] }>) => {
-    //   if (state.user) {
-    //     state.user[action.payload.field] = action.payload.value
-    //     localStorage.setItem('user', JSON.stringify(state.user))
-    //   }
-    // },
+    updateUserField: <K extends keyof TUser>(state: UserState, action: PayloadAction<{ field: K, value: TUser[K] }>) => {
+      if (state.user) {
+        state.user[action.payload.field] = action.payload.value
+        localStorage.setItem('user', JSON.stringify(state.user))
+      }
+    },
     addToFavourites: (state, action: PayloadAction<string>) => {
       if (state.user && !state.user.favourites.includes(action.payload)) {
         state.user.favourites.push(action.payload)
@@ -163,6 +163,7 @@ export const {
   login,
   logout,
   checkAuthStatus,
+  updateUserField,
 } = userSlice.actions
 
 export default userSlice
