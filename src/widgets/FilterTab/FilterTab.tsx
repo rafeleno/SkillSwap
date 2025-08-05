@@ -12,6 +12,10 @@ import styles from './styles.module.scss'
 
 // TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
 
+// TODO: Вынести базовые значения в глобал
+// Парметры типа "Все", которые не должны влиять на "наличее фильтров"
+export const essentialFiltersOptions = ['all', 'notSpecified']
+
 export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, setFilters }) => {
   const skills = useSelector(selectAllCategories)
   const locations = useSelector(selectLocations)
@@ -29,9 +33,15 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
       return acc
     }, {} as Record<string, boolean>),
   )
+  // const optionalFilters =
   // useMemo - Излишество
+
   const filtersCount = useMemo(() => {
     return Object.keys(filters).reduce((acc, key) => {
+      // Обработка "дефолтных" значений
+      if (filters[key].some(id => essentialFiltersOptions.includes(id))) {
+        return acc + 0
+      }
       return acc + filters[key].length
     }, 0)
   }, [filters])
