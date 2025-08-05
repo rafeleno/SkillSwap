@@ -1,19 +1,20 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
+import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchSwaps } from './actions'
 
-export interface TSwap {
-  id: string
-  name: string
-  location: string
-  age: string
-  avatar: string
-  canTeach: string
-  wantToLearn: string[]
-}
+// export interface TSwap {
+//   id: string
+//   name: string
+//   location: string
+//   age: string
+//   avatar: string
+//   canTeach: string
+//   wantToLearn: string[]
+// }
 
 interface TSwapsState {
-  swaps: TSwap[]
+  swaps: TUser[]
   loading: boolean
   error: string | null
 }
@@ -28,7 +29,7 @@ export const swapsSlice = createSlice({
   name: 'swaps',
   initialState,
   reducers: {
-    addSwap: (state, action: PayloadAction<TSwap>) => {
+    addSwap: (state, action: PayloadAction<TUser>) => {
       state.swaps.push(action.payload)
     },
   },
@@ -38,7 +39,7 @@ export const swapsSlice = createSlice({
         state.loading = true
         state.error = null
       })
-      .addCase(fetchSwaps.fulfilled, (state, action: PayloadAction<TSwap[]>) => {
+      .addCase(fetchSwaps.fulfilled, (state, action: PayloadAction<TUser[]>) => {
         state.swaps = action.payload
         state.loading = false
       })

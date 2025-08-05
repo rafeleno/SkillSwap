@@ -2,7 +2,7 @@ import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { FiltersState } from 'shared/hooks/useFilters'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 // Должен отдавать слайс
 import users from '../../../public/db/users.json'
 
@@ -15,7 +15,7 @@ export const initialFilters: FiltersState = {
   filterType: ['all'],
 }
 export const MainPage: React.FC = () => {
-  const [filters, setFilters] = React.useState<FiltersState>(initialFilters)
+  const [filters, setFilters] = useState<FiltersState>(initialFilters)
 
   const filteredUsers = useMemo(() => {
     return users.filter((user) => {
@@ -66,7 +66,7 @@ export const MainPage: React.FC = () => {
     <div className={styles.mainPage}>
       <FilterTab onFiltersChange={handleFiltersChange} filters={filters} setFilters={setFilters}></FilterTab>
       {(filters.skill.length !== 0 || filters.locations.length !== 0 || filters.gender.length !== 0 || filters.filterType.length !== 0) && (
-        <UserCardList type="sorted" title="Подходящих предложений: " buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers}></UserCardList>
+        <UserCardList type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={filteredUsers.length}></UserCardList>
       )}
       {(filters.skill.length === 0 && filters.locations.length === 0 && filters.gender.length === 0 && filters.filterType.length === 0) && (
         <div className={styles['user-card-list__container']}>
