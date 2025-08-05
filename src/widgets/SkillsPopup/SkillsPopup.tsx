@@ -1,31 +1,33 @@
-import React, { useRef, useEffect } from 'react';
-import { CATEGORY_ICONS, CategoryId } from './CategoryIcons';
-import styles from './styles.module.scss';
-import { useFilters } from '../../shared/hooks/useFilters';
-import { useClickOutside } from '../../shared/hooks/useClickOutside';
-import type { SkillsPopupProps } from './SkillsPopup.types';
-import { fetchSkills } from '../../services/slices/skill/thunks';
-import { useDispatch, useSelector } from '../../services/store';
+import type { CategoryId } from './CategoryIcons'
+import type { SkillsPopupProps } from './SkillsPopup.types'
+import { initialFilters } from '@pageComponents/MainPage/MainPage'
+import React, { useEffect, useRef } from 'react'
+import { selectAllCategories } from '../../services/slices/skill/skillSlice'
+import { fetchSkills } from '../../services/slices/skill/thunks'
+import { useDispatch, useSelector } from '../../services/store'
+import { useClickOutside } from '../../shared/hooks/useClickOutside'
+import { useFilters } from '../../shared/hooks/useFilters'
+import { CATEGORY_ICONS } from './CategoryIcons'
+import styles from './styles.module.scss'
 
 const CATEGORY_ORDER: CategoryId[] = [
-  'business_and_career',
-  'foreign_languages',
-  'home_and_comfort',
-  'creativity_and_art',
-  'education_and_development',
-  'health_and_lifestyle',
+  'business',
+  'languages',
+  'home',
+  'art',
+  'education',
+  'health',
 ]
 
 const SkillsPopup: React.FC<SkillsPopupProps> = ({
   onClose,
   skillsMap = [],
-  onChangeFilters,
+  // onChangeFilters,
 }) => {
   const dispatch = useDispatch()
-  const categories = useSelector(state => state.skills.categories)
+  const categories = useSelector(selectAllCategories)
   const status = useSelector(state => state.skills.status)
   const error = useSelector(state => state.skills.error)
-
   const normalizedSkillsMap = React.useMemo(() => {
     return skillsMap.map(skill => ({
       ...skill,
@@ -33,10 +35,12 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
     }))
   }, [skillsMap])
 
-  // const { filters, toggleFilter } = useFilters({
-  //   skillsMap: normalizedSkillsMap,
-  //   onChange: onChangeFilters,
-  // })
+  const { filters, toggleFilter } = useFilters({
+    skillsMap: normalizedSkillsMap,
+    onChange: () => {},
+    filters: initialFilters,
+    setFilters: () => {},
+  })
 
   const popupRef = useRef<HTMLDivElement>(null)
   useClickOutside(popupRef, onClose)
@@ -103,7 +107,7 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SkillsPopup;
+export default SkillsPopup

@@ -2,13 +2,12 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { RootState } from '../../store'
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchUserData, fetchUsers, saveUserData } from './thunks'
 
 interface UserState {
   user: TUser | null
   status: 'idle' | 'loading' | 'succeeded' | 'failed'
   error: string | null
-  isAuthenticated: boolean
+  // isAuthenticated: boolean
   token: string | null
 }
 
@@ -16,7 +15,7 @@ const initialState: UserState = {
   user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null,
   status: 'idle',
   error: null,
-  isAuthenticated: !!localStorage.getItem('authToken'),
+  // isAuthenticated: !!localStorage.getItem('authToken'),
   token: localStorage.getItem('authToken'),
 }
 
@@ -24,6 +23,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    // Для удаления пользователя, можно вызвать без аргументов
     setUser: (state, action: PayloadAction<TUser | null>) => {
       state.user = action.payload
       if (action.payload) {
@@ -33,51 +33,50 @@ export const userSlice = createSlice({
         localStorage.removeItem('user')
       }
     },
-
     // Авторизация пользователя с сохранением в localStorage
-    login: (state, action: PayloadAction<{ user: TUser, token: string }>) => {
-      state.user = action.payload.user
-      state.token = action.payload.token
-      state.isAuthenticated = true
-      state.status = 'succeeded'
-      state.error = null
+    // login: (state, action: PayloadAction<{ user: TUser, token: string }>) => {
+    //   state.user = action.payload.user
+    //   state.token = action.payload.token
+    //   state.isAuthenticated = true
+    //   state.status = 'succeeded'
+    //   state.error = null
 
-      // Сохраняем в localStorage
-      localStorage.setItem('user', JSON.stringify(action.payload.user))
-      localStorage.setItem('authToken', action.payload.token)
-    },
+    //   // Сохраняем в localStorage
+    //   localStorage.setItem('user', JSON.stringify(action.payload.user))
+    //   localStorage.setItem('authToken', action.payload.token)
+    // },
 
     // // Выход пользователя с очисткой данных
-    logout: (state) => {
-      state.user = null
-      state.token = null
-      state.isAuthenticated = false
-      state.status = 'idle'
+    // logout: (state) => {
+    //   state.user = null
+    //   state.token = null
+    //   state.isAuthenticated = false
+    //   state.status = 'idle'
 
-      // Очищаем localStorage
-      localStorage.removeItem('user')
-      localStorage.removeItem('authToken')
-    },
+    //   // Очищаем localStorage
+    //   localStorage.removeItem('user')
+    //   localStorage.removeItem('authToken')
+    // },
 
     // Проверка статуса авторизации при загрузке приложения
     checkAuthStatus: (state) => {
-      const token = localStorage.getItem('authToken')
+      // const token = localStorage.getItem('authToken')
       const user = localStorage.getItem('user')
 
-      if (token && user) {
+      if (user) {
         try {
           state.user = JSON.parse(user)
-          state.token = token
-          state.isAuthenticated = true
+          // state.token = token
+          // state.isAuthenticated = true
         }
         catch {
           localStorage.removeItem('user')
-          localStorage.removeItem('authToken')
-          state.isAuthenticated = false
+          // localStorage.removeItem('authToken')
+          // state.isAuthenticated = false
         }
       }
       else {
-        state.isAuthenticated = false
+        // state.isAuthenticated = false
       }
     },
 
@@ -87,16 +86,16 @@ export const userSlice = createSlice({
         localStorage.setItem('user', JSON.stringify(state.user))
       }
     },
-    addToFavourites: (state, action: PayloadAction<string>) => {
-      if (state.user && !state.user.favourites.includes(action.payload)) {
-        state.user.favourites.push(action.payload)
-        localStorage.setItem('user', JSON.stringify(state.user))
-      }
-    },
-    removeFromFavourites: (state, action: PayloadAction<string>) => {
+    toggleFavourites: (state, action: PayloadAction<string>) => {
       if (state.user) {
-        state.user.favourites = state.user.favourites.filter(favourite => favourite !== action.payload)
-        localStorage.setItem('user', JSON.stringify(state.user))
+        if (!state.user.favourites.includes(action.payload)) {
+          state.user.favourites.push(action.payload)
+          localStorage.setItem('user', JSON.stringify(state.user))
+        }
+        else {
+          state.user.favourites = state.user.favourites.filter(favourite => favourite !== action.payload)
+          localStorage.setItem('user', JSON.stringify(state.user))
+        }
       }
     },
     resetUser: (state) => {
@@ -104,55 +103,58 @@ export const userSlice = createSlice({
       localStorage.removeItem('user')
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchUserData.pending, (state) => {
-        state.status = 'loading'
-        state.error = null
-      })
-      .addCase(fetchUserData.fulfilled, (state, action: PayloadAction<TUser>) => {
-        state.status = 'succeeded'
-        state.user = action.payload
-        localStorage.setItem('user', JSON.stringify(action.payload))
-      })
-      .addCase(fetchUserData.rejected, (state, action) => {
-        state.status = 'failed'
-        state.error = action.payload as string
-      })
-      .addCase(saveUserData.pending, (state) => {
-        state.status = 'loading'
-        state.error = null
-      })
-      // Исправлено: добавлена проверка payload и приведение типа для совместимости с thunk
-      .addCase(saveUserData.fulfilled, (state, action) => {
-        state.status = 'succeeded'
-        if (action.payload) {
-          state.user = action.payload as any as TUser
-          localStorage.setItem('user', JSON.stringify(action.payload))
-        }
-      })
-      .addCase(saveUserData.rejected, (state, action) => {
-        state.status = 'failed'
-        state.error = action.payload as string
-      })
-      .addCase(fetchUsers.rejected, (state, action) => {
-        state.error = action.payload as string
-      })
-  },
 })
+
+// extraReducers: (builder) => {
+//   builder
+//     .addCase(fetchUserData.pending, (state) => {
+//       state.status = 'loading'
+//       state.error = null
+//     })
+//     .addCase(fetchUserData.fulfilled, (state, action: PayloadAction<TUser>) => {
+//       state.status = 'succeeded'
+//       state.user = action.payload
+//       localStorage.setItem('user', JSON.stringify(action.payload))
+//     })
+//     .addCase(fetchUserData.rejected, (state, action) => {
+//       state.status = 'failed'
+//       state.error = action.payload as string
+//     })
+//     .addCase(saveUserData.pending, (state) => {
+//       state.status = 'loading'
+//       state.error = null
+//     })
+//     // Исправлено: добавлена проверка payload и приведение типа для совместимости с thunk
+//     .addCase(saveUserData.fulfilled, (state, action) => {
+//       state.status = 'succeeded'
+//       if (action.payload) {
+//         state.user = action.payload as any as TUser
+//         localStorage.setItem('user', JSON.stringify(action.payload))
+//       }
+//     })
+//     .addCase(saveUserData.rejected, (state, action) => {
+//       state.status = 'failed'
+//       state.error = action.payload as string
+//     })
+//     .addCase(fetchUsers.rejected, (state, action) => {
+//       state.error = action.payload as string
+//     })
+// },
+// })
 
 export const selectCurrentUser = (state: RootState) => state.user.user
 export const selectUserStatus = (state: RootState) => state.user.status
 export const selectUserError = (state: RootState) => state.user.error
-export const selectIsAuthenticated = (state: RootState) => state.user.isAuthenticated
+// export const selectIsAuthenticated = (state: RootState) => state.user.isAuthenticated
 export const selectAuthToken = (state: RootState) => state.user.token
 
 export const {
   setUser,
   resetUser,
-  login,
-  logout,
+  // login,
+  // logout,
   checkAuthStatus,
+  toggleFavourites,
   updateUserField,
 } = userSlice.actions
 

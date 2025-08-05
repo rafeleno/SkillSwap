@@ -3,9 +3,9 @@ import type { FiltersState } from 'shared/hooks/useFilters'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
 import React, { useMemo, useState } from 'react'
+
 // Должен отдавать слайс
 import users from '../../../public/db/users.json'
-
 import styles from './styles.module.scss'
 
 export const initialFilters: FiltersState = {
@@ -33,7 +33,11 @@ export const MainPage: React.FC = () => {
         return false
       }
       // TODO: Возможно не работает
-      return true // если режим "всё"
+      // Режим фильтрации по типу "всё"
+      if (filters.skill.includes(user.skillCanTeach.subcategoryId) || filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))) {
+        return true
+      }
+      return false
     })
   }, [users, filters])
 
@@ -65,16 +69,22 @@ export const MainPage: React.FC = () => {
   return (
     <div className={styles.mainPage}>
       <FilterTab onFiltersChange={handleFiltersChange} filters={filters} setFilters={setFilters}></FilterTab>
-      {(filters.skill.length !== 0 || filters.locations.length !== 0 || filters.gender.length !== 0 || filters.filterType.length !== 0) && (
-        <UserCardList type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={filteredUsers.length}></UserCardList>
-      )}
-      {(filters.skill.length === 0 && filters.locations.length === 0 && filters.gender.length === 0 && filters.filterType.length === 0) && (
-        <div className={styles['user-card-list__container']}>
-          <UserCardList type="regular" title="Популярное" buttonText="Смотреть все" buttonIconId="chevron-right" users={popularUsers}></UserCardList>
-          <UserCardList type="regular" title="Новое" buttonText="Смотреть все" buttonIconId="chevron-right" users={newUsers}></UserCardList>
-          <UserCardList type="regular" title="Рекомендуем" buttonText="Смотреть все" buttonIconId="chevron-right" users={recommendedUsers}></UserCardList>
-        </div>
-      )}
+      {
+        (filters.skill.length !== 0 || filters.locations.length !== 0)
+        && (
+          <UserCardList type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={filteredUsers.length}></UserCardList>
+        )
+      }
+      {
+        (filters.skill.length === 0 && filters.locations.length === 0)
+        && (
+          <div className={styles['user-card-list__container']}>
+            <UserCardList type="regular" title="Популярное" buttonText="Смотреть все" buttonIconId="chevron-right" users={popularUsers}></UserCardList>
+            <UserCardList type="regular" title="Новое" buttonText="Смотреть все" buttonIconId="chevron-right" users={newUsers}></UserCardList>
+            <UserCardList type="regular" title="Рекомендуем" buttonText="Смотреть все" buttonIconId="chevron-right" users={recommendedUsers}></UserCardList>
+          </div>
+        )
+      }
     </div>
   )
 }
