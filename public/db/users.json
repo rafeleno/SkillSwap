@@ -22,7 +22,7 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "time_management",
         "name": "Тайм-менеджмент"
       },
@@ -71,7 +71,7 @@
         "name": "Здоровое питание"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       }
@@ -100,7 +100,7 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
@@ -144,7 +144,7 @@
         "name": "Французский"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "team_management",
         "name": "Управление командой"
       },
@@ -165,7 +165,7 @@
     "likes": 39,
     "description": "Кофе в руке, идеи в голове, смелость в сердце",
     "skillCanTeach": {
-      "skillId": "bussiness",
+      "skillId": "business",
       "subcategoryId": "project_management",
       "name": "Управление проектами",
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
@@ -222,7 +222,7 @@
         "name": "Рисование"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
@@ -266,7 +266,7 @@
         "name": "Видеомонтаж"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "personal_brand",
         "name": "Личный бренд"
       }
@@ -334,7 +334,7 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
@@ -383,7 +383,7 @@
         "name": "Ремонт"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       },
@@ -404,7 +404,7 @@
     "likes": 4,
     "description": "Верю в добро, людей и силу спонтанных решений",
     "skillCanTeach": {
-      "skillId": "bussiness",
+      "skillId": "business",
       "subcategoryId": "entrepreneurship",
       "name": "Основы предпринимательства",
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
@@ -466,7 +466,7 @@
         "name": "Музыка"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "resume_and_interview",
         "name": "Резюме и собеседование"
       }
@@ -539,7 +539,7 @@
         "name": "Декор"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "team_management",
         "name": "Управление"
       },
@@ -578,7 +578,7 @@
         "name": "Питание"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
@@ -612,7 +612,7 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "time_management",
         "name": "Тайм-менеджмент"
       },
@@ -656,7 +656,7 @@
         "name": "Здоровое питание"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       }
@@ -685,7 +685,7 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
@@ -729,7 +729,7 @@
         "name": "Французский"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "team_management",
         "name": "Управление командой"
       },
@@ -750,7 +750,7 @@
     "likes": 55,
     "description": "Открыт миру, идеям и новым маршрутам",
     "skillCanTeach": {
-      "skillId": "bussiness",
+      "skillId": "business",
       "subcategoryId": "project_management",
       "name": "Управление проектами",
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
@@ -807,7 +807,7 @@
         "name": "Рисование"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
@@ -851,7 +851,7 @@
         "name": "Видеомонтаж"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "personal_brand",
         "name": "Личный бренд"
       }
@@ -919,7 +919,7 @@
     ],
     "subcategoriesWantToLearn": [
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "sales_and_negotiation",
         "name": "Навыки продаж"
       },
@@ -968,7 +968,7 @@
         "name": "Ремонт"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       },
@@ -989,7 +989,7 @@
     "likes": 62,
     "description": "Влюбляюсь в новое и не боюсь перемен",
     "skillCanTeach": {
-      "skillId": "bussiness",
+      "skillId": "business",
       "subcategoryId": "entrepreneurship",
       "name": "Основы предпринимательства",
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
@@ -1051,7 +1051,7 @@
         "name": "Музыка"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "resume_and_interview",
         "name": "Резюме и собеседование"
       }
@@ -1124,7 +1124,7 @@
         "name": "Декор"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "team_management",
         "name": "Управление"
       },
@@ -1163,7 +1163,7 @@
         "name": "Питание"
       },
       {
-        "skillId": "bussiness",
+        "skillId": "business",
         "subcategoryId": "marketing_and_advertising",
         "name": "Маркетинг"
       },
