@@ -2,12 +2,9 @@ import { MainButton } from '@uiComponents/MainButton'
 import { MainLogo } from '@uiComponents/MainLogo'
 import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
-import { SkillsPopup } from '@widgetComponents/SkillsPopup'
 import React, { Suspense } from 'react'
-import { useSelector } from 'react-redux'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { Pages } from '../pages'
-import { selectAllCategories } from '../services/slices/skill/skillSlice'
 import { ProtectedRoute } from '../shared/lib/components/ProtectedRoute'
 import styles from './styles.module.scss'
 
@@ -28,16 +25,11 @@ function HeaderCompact() {
 }
 
 export function DefaultLayout() {
-  const selectSkills = useSelector(selectAllCategories)
   return (
     <>
       {/* TODO: вытяннуть из слайса */}
       <Header user={666} />
-      <SkillsPopup
-        onClose={() => {}}
-        skillsMap={selectSkills}
-        onChangeFilters={() => {}}
-      />
+      <Outlet />
       <Footer />
     </>
   )
