@@ -25,5 +25,5 @@ export interface UserCardProps {
   type: 'preview' | 'detailed'
   user: TUser
   onClick?: (userId: string) => void
-  onLike: (userId: string) => void
+  onLike?: (userId: string) => void
 }
