@@ -2,6 +2,7 @@
 @use '../../styles/typography' as t;
 
 .header {
+  position: relative;
   display: flex;
   gap: 32px;
   align-items: center;
@@ -37,8 +38,11 @@
   align-items: center;
 
   &-icon {
-    width: 16px;
-    height: 16px;
+    transition: 500ms;
+
+    &-open {
+      transform: rotate(180deg);
+    }
   }
 }
 

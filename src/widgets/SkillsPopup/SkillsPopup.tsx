@@ -33,15 +33,15 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
     }))
   }, [skillsMap])
 
-  const { filters, toggleFilter } = useFilters({
-    skillsMap: normalizedSkillsMap,
-    onChange: onChangeFilters,
-  })
+  // const { filters, toggleFilter } = useFilters({
+  //   skillsMap: normalizedSkillsMap,
+  //   onChange: onChangeFilters,
+  // })
 
   const popupRef = useRef<HTMLDivElement>(null)
   useClickOutside(popupRef, onClose)
 
-  const activeSkills = filters.skill || []
+  // const activeSkills = filters.skill || []
 
   useEffect(() => {
     if (status === 'idle') {
@@ -71,7 +71,7 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
     <div className={styles['skills-popup']}>
       <div ref={popupRef} className={styles['skills-popup__content']}>
         <div className={styles['skills-popup__categories']}>
-          {filteredCategories.map(({ id, name, subcategory }) => (
+          {filteredCategories.map(({ id, name, children }) => (
             <div
               key={id}
               className={`${styles['skills-popup__category']} ${styles[`skills-popup__category-${id.split('_')[0]}`]}`}
@@ -87,11 +87,12 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
                 <h3 className={styles['skills-popup__categoryTitle']}>{name}</h3>
               </div>
               <ul className={styles['skills-popup__skillsList']}>
-                {subcategory.map(({ id: subId, name: subName }) => (
+                {children.map(({ id: subId, name: subName }) => (
                   <li
                     key={subId}
-                    className={`${styles['skills-popup__skillItem']} ${activeSkills.includes(subId) ? styles['skills-popup__skillItem-active'] : ''}`}
-                    onClick={() => toggleFilter('skill', subId)}
+                    // className={`${styles['skills-popup__skillItem']} ${activeSkills.includes(subId) ? styles['skills-popup__skillItem-active'] : ''}`}
+                    // onClick={() => toggleFilter('skill', subId)}
+                    className={`${styles['skills-popup__skillItem']}`}
                   >
                     {subName}
                   </li>

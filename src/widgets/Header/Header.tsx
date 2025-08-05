@@ -9,6 +9,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
+import { SkillsPopup } from '@widgetComponents/SkillsPopup'
+import skillsData from '@databases/skills.json'
 
 interface HeaderProps {
   user: null | TUser
@@ -17,6 +19,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchValue, setSearchValue] = useState('')
   const [isNotificationOpen, setIsNotificationOpen] = useState(false)
+  const [isSkillsPopupOpen, setIsSkillsPopupOpen] = useState<boolean>(false);
   const navigate = useNavigate()
 
   const toggleNotification = () => {
@@ -27,15 +30,43 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
     setIsNotificationOpen(false)
   }
 
+  const toggleSkillsPopup = () => {
+    setIsSkillsPopupOpen(prev => !prev)
+  }
+
+  const closeSkillsPopup = () => {
+    setIsSkillsPopupOpen(false)
+  }
+
   return (
     <header className={styles.header}>
       <MainLogo />
 
       <nav className={styles.nav}>
         <button className={styles.link}>О проекте</button>
-        <button className={styles.dropdown}>
+        <button
+          className={styles.dropdown}
+          onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
+            e.stopPropagation();
+            toggleSkillsPopup();
+          }}
+          >
           Все навыки
-          <img src={chevronDown} alt="Открыть список" className={styles['dropdown-icon']} />
+          <svg
+            className={`${styles.dropdownIcon} ${isSkillsPopupOpen && styles.dropdownIconOpen}`}
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use href="#icon-chevron-down" />
+          </svg>
+          {isSkillsPopupOpen &&
+          <SkillsPopup
+            onClose={closeSkillsPopup}
+            skillsMap={skillsData}
+          />}
         </button>
       </nav>
 
