@@ -57,7 +57,7 @@
     }
   }
 
-  &__categoryHeader {
+  &__category-header {
     display: flex;
     gap: 12px;
     align-items: center;
@@ -122,21 +122,13 @@
 
   &__skillItem {
     padding: 8px 12px;
-    color: c.$color-text-primary;
-    font-weight: t.$font-weight-regular;
-    font-size: t.$font-h4-size;
-    font-family: t.$font-secondary;
-    line-height: t.$font-h4-line-height;
+    text-align: left;
     border-radius: 4px;
     cursor: pointer;
 
     &:hover {
       color: c.$color-text-primary;
       background: transparent;
-    }
-
-    &-active {
-      background: c.$color-card-background;
     }
   }
 

@@ -1,12 +1,10 @@
 import type { CategoryId } from './CategoryIcons'
 import type { SkillsPopupProps } from './SkillsPopup.types'
-import { initialFilters } from '@pageComponents/MainPage/MainPage'
 import React, { useEffect, useRef } from 'react'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
 import { fetchSkills } from '../../services/slices/skill/thunks'
 import { useDispatch, useSelector } from '../../services/store'
 import { useClickOutside } from '../../shared/hooks/useClickOutside'
-import { useFilters } from '../../shared/hooks/useFilters'
 import { CATEGORY_ICONS } from './CategoryIcons'
 import styles from './styles.module.scss'
 
@@ -21,26 +19,25 @@ const CATEGORY_ORDER: CategoryId[] = [
 
 const SkillsPopup: React.FC<SkillsPopupProps> = ({
   onClose,
-  skillsMap = [],
   // onChangeFilters,
 }) => {
   const dispatch = useDispatch()
   const categories = useSelector(selectAllCategories)
   const status = useSelector(state => state.skills.status)
   const error = useSelector(state => state.skills.error)
-  const normalizedSkillsMap = React.useMemo(() => {
-    return skillsMap.map(skill => ({
-      ...skill,
-      children: skill.children || [],
-    }))
-  }, [skillsMap])
+  // const normalizedSkillsMap = React.useMemo(() => {
+  //   return skillsMap.map(skill => ({
+  //     ...skill,
+  //     children: skill.children || [],
+  //   }))
+  // }, [skillsMap])
 
-  const { filters, toggleFilter } = useFilters({
-    skillsMap: normalizedSkillsMap,
-    onChange: () => {},
-    filters: initialFilters,
-    setFilters: () => {},
-  })
+  // const { filters, toggleFilter } = useFilters({
+  //   skillsMap: normalizedSkillsMap,
+  //   onChange: () => {},
+  //   filters: initialFilters,
+  //   setFilters: () => {},
+  // })
 
   const popupRef = useRef<HTMLDivElement>(null)
   useClickOutside(popupRef, onClose)
@@ -80,7 +77,7 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
               key={id}
               className={`${styles['skills-popup__category']} ${styles[`skills-popup__category-${id.split('_')[0]}`]}`}
             >
-              <div className={styles['skills-popup__categoryHeader']}>
+              <div className={styles['skills-popup__category-header']}>
                 <div className={styles['skills-popup__iconWrapper']} data-category={id}>
                   <img
                     src={CATEGORY_ICONS[id as CategoryId]}
@@ -88,7 +85,7 @@ const SkillsPopup: React.FC<SkillsPopupProps> = ({
                     className={styles['skills-popup__icon']}
                   />
                 </div>
-                <h3 className={styles['skills-popup__categoryTitle']}>{name}</h3>
+                <h2 className={styles['skills-popup__categoryTitle']}>{name}</h2>
               </div>
               <ul className={styles['skills-popup__skillsList']}>
                 {children.map(({ id: subId, name: subName }) => (

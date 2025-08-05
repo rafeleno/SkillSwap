@@ -1,16 +1,16 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
+import skillsData from '@databases/skills.json'
 import userAvatar from '@images/avatars/user1.jpg'
 import chevronDown from '@svg/main/chevron-down.svg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { MainLogo } from '@uiComponents/MainLogo'
 import { Search } from '@uiComponents/Search'
+import { SkillsPopup } from '@widgetComponents/SkillsPopup'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
-import { SkillsPopup } from '@widgetComponents/SkillsPopup'
-import skillsData from '@databases/skills.json'
 
 interface HeaderProps {
   user: null | TUser
@@ -19,7 +19,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchValue, setSearchValue] = useState('')
   const [isNotificationOpen, setIsNotificationOpen] = useState(false)
-  const [isSkillsPopupOpen, setIsSkillsPopupOpen] = useState<boolean>(false);
+  const [isSkillsPopupOpen, setIsSkillsPopupOpen] = useState<boolean>(false)
   const navigate = useNavigate()
 
   const toggleNotification = () => {
@@ -47,10 +47,10 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
         <button
           className={styles.dropdown}
           onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
-            e.stopPropagation();
-            toggleSkillsPopup();
+            e.stopPropagation()
+            toggleSkillsPopup()
           }}
-          >
+        >
           Все навыки
           <svg
             className={`${styles.dropdownIcon} ${isSkillsPopupOpen && styles.dropdownIconOpen}`}
@@ -62,11 +62,12 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
           >
             <use href="#icon-chevron-down" />
           </svg>
-          {isSkillsPopupOpen &&
-          <SkillsPopup
-            onClose={closeSkillsPopup}
-            skillsMap={skillsData}
-          />}
+          {isSkillsPopupOpen
+            && (
+              <SkillsPopup
+                onClose={closeSkillsPopup}
+              />
+            )}
         </button>
       </nav>
 
