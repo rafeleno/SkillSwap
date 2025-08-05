@@ -72,27 +72,27 @@
     height: 40px;
     border-radius: 50%;
 
-    &[data-category='business_and_career'] {
+    &[data-category='business'] {
       background: c.$color-tag-business;
     }
 
-    &[data-category='foreign_languages'] {
+    &[data-category='languages'] {
       background: c.$color-tag-languages;
     }
 
-    &[data-category='home_and_comfort'] {
+    &[data-category='home'] {
       background: c.$color-tag-home;
     }
 
-    &[data-category='creativity_and_art'] {
+    &[data-category='art'] {
       background: c.$color-tag-arts;
     }
 
-    &[data-category='education_and_development'] {
+    &[data-category='education'] {
       background: c.$color-tag-education;
     }
 
-    &[data-category='health_and_lifestyle'] {
+    &[data-category='health'] {
       background: c.$color-tag-health;
     }
   }
