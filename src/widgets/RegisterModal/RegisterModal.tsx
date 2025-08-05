@@ -1,6 +1,4 @@
 import type { RegisterModalProps } from './RegisterModal.types'
-import { MainButton } from '@uiComponents/MainButton'
-import { MainLogo } from '@uiComponents/MainLogo'
 import { RegisterModalContent } from '@uiComponents/RegisterModalContent'
 import React, { useState } from 'react'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
@@ -8,7 +6,7 @@ import { selectCurrentUser, updateUserField } from '../../services/slices/user/u
 import { useDispatch, useSelector } from '../../services/store'
 import styles from './styles.module.scss'
 
-export const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, totalSteps = 3 }) => {
+export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) => {
   const [currentStep, setCurrentStep] = useState(1)
   const [password, setPassword] = useState('') // Только для pass
   const user = useSelector(selectCurrentUser)
