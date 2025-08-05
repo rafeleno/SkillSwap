@@ -28,7 +28,7 @@ export function DefaultLayout() {
   return (
     <>
       {/* TODO: вытяннуть из слайса */}
-      <Header user={null} />
+      <Header user={666} />
       <Outlet />
       <Footer />
     </>
