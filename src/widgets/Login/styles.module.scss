@@ -5,9 +5,9 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   justify-self: center;
+  width: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  inline-size: 78.8%;
 }
 
 .form,
@@ -42,16 +42,16 @@
     gap: 3px;
     align-items: center;
     color: c.$color-text-link;
-    
-    &-button {
-        width: fit-content;
-        background-color: c.$color-card-background;
-        border: none;
-        cursor: pointer;
 
-        &:hover {
-            color: c.$color-accent;
-        }
+    &-button {
+      width: fit-content;
+      background-color: c.$color-card-background;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: c.$color-accent;
+      }
     }
   }
 }
@@ -65,14 +65,14 @@
   border-block-start: 1px solid c.$color-disabled;
   padding-block-start: 24px;
 
-  &::before{
+  &::before {
     position: absolute;
     top: -0.75em;
     left: calc(50% - 1em);
     padding-right: 5px;
     padding-left: 5px;
     background-color: c.$color-card-background;
-    content: "или";
+    content: 'или';
   }
 }
 

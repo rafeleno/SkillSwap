@@ -2,11 +2,13 @@ import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { ICategory } from '../../services/slices/skill/skillSlice'
 import React, { useState } from 'react'
 import { RegisterModalContent } from '../../shared/ui/RegisterModalContent'
+import styles from './styles.module.scss'
 
 export const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  // TODO: Получить из слайса
   // Заглушка пользователя
   const user: TUser = {
     id: '',
@@ -29,13 +31,15 @@ export const RegisterPage: React.FC = () => {
   const handleSubmit = () => {}
 
   return (
-    <RegisterModalContent
-      type="stepOne"
-      user={user}
-      onUpdateUser={handleUpdateUser}
-      passwordState={[password, setPassword]}
-      onSubmit={handleSubmit}
-      categories={categories}
-    />
+    <div className={styles.container}>
+      <RegisterModalContent
+        type="stepOne"
+        user={user}
+        onUpdateUser={handleUpdateUser}
+        passwordState={[password, setPassword]}
+        onSubmit={handleSubmit}
+        categories={categories}
+      />
+    </div>
   )
 }

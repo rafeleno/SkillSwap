@@ -32,7 +32,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, totalStep
 
   return (
     <div>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <MainLogo />
         <MainButton
           type="tertiary"
@@ -41,7 +41,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, totalStep
         >
           Закрыть
         </MainButton>
-      </header>
+      </header> */}
 
       <div className={styles.progress}>
         <h2 className={styles.progressText}>

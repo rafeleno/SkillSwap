@@ -1,13 +1,6 @@
 @use '@colors' as c;
 @use '@typographyStyles' as t;
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 36px 36px 0;
-}
-
 .progress {
   display: flex;
   flex-direction: column;

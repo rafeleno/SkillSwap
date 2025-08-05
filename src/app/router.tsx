@@ -1,10 +1,28 @@
+import { MainButton } from '@uiComponents/MainButton'
+import { MainLogo } from '@uiComponents/MainLogo'
 import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
 import React, { Suspense } from 'react'
-
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { Pages } from '../pages'
 import { ProtectedRoute } from '../shared/lib/components/ProtectedRoute'
+import styles from './styles.module.scss'
+
+// TODO: Вынести компонент
+function HeaderCompact() {
+  return (
+    <header className={styles.header}>
+      <MainLogo />
+      <MainButton
+        type="tertiary"
+        rightIconId="cross"
+        onClick={() => {}}
+      >
+        Закрыть
+      </MainButton>
+    </header>
+  )
+}
 
 export function DefaultLayout() {
   return (
@@ -20,9 +38,10 @@ export function DefaultLayout() {
 // routes/CustomLayout.tsx
 export function CustomLayout() {
   return (
-    <>
+    <div className={styles.customLayout}>
+      <HeaderCompact />
       <Outlet />
-    </>
+    </div>
   )
 }
 

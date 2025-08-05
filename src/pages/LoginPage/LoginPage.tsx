@@ -2,6 +2,7 @@ import type { LoginPageProps } from './LoginPage.types'
 import { Login } from '@widgetComponents/Login'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styles from './styles.module.scss'
 
 export const LoginPage: React.FC<LoginPageProps> = () => {
   const [emailValue, setEmailValue] = useState<string | null>(null)
@@ -20,12 +21,14 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
   const onForgetPassword = () => {}
 
   return (
-    <Login
-      onSubmit={onSubmit}
-      onRegister={onRegister}
-      onForgetPassword={onForgetPassword}
-      emailState={[emailValue, setEmailValue] as ReturnType<typeof useState<string>>}
-      passwordState={[passwordValue, setPasswordValue] as ReturnType<typeof useState<string>>}
-    />
+    <div className={styles.container}>
+      <Login
+        onSubmit={onSubmit}
+        onRegister={onRegister}
+        onForgetPassword={onForgetPassword}
+        emailState={[emailValue, setEmailValue] as ReturnType<typeof useState<string>>}
+        passwordState={[passwordValue, setPasswordValue] as ReturnType<typeof useState<string>>}
+      />
+    </div>
   )
 }

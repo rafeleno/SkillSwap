@@ -5,7 +5,6 @@ import { createSlice } from '@reduxjs/toolkit'
 import { fetchUserData, fetchUsers, saveUserData } from './thunks'
 
 interface UserState {
-  users: TUser[]
   user: TUser | null
   status: 'idle' | 'loading' | 'succeeded' | 'failed'
   error: string | null
@@ -14,7 +13,6 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  users: [],
   user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null,
   status: 'idle',
   error: null,
@@ -137,19 +135,11 @@ export const userSlice = createSlice({
         state.status = 'failed'
         state.error = action.payload as string
       })
-      .addCase(fetchUsers.pending, (state, action) => {
-        state.users = action.payload
-      })
-      .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.users = action.payload
-      })
       .addCase(fetchUsers.rejected, (state, action) => {
         state.error = action.payload as string
       })
   },
 })
-
-export const selectUsers = (state: RootState) => state.user.users
 
 export const selectCurrentUser = (state: RootState) => state.user.user
 export const selectUserStatus = (state: RootState) => state.user.status
