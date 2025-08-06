@@ -1,1 +1,11 @@
 @use '@colors' as c;
+
+.wrapper {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.container {
+    padding: 0 36px 60px;
+}

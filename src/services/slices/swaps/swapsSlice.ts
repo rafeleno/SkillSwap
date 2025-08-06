@@ -1,17 +1,9 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
-import { createSlice } from '@reduxjs/toolkit'
-import { fetchSwaps } from './actions'
+import type { RootState } from 'services/store'
+import { createSelector, createSlice } from '@reduxjs/toolkit'
 
-// export interface TSwap {
-//   id: string
-//   name: string
-//   location: string
-//   age: string
-//   avatar: string
-//   canTeach: string
-//   wantToLearn: string[]
-// }
+import { fetchSwaps } from './actions'
 
 interface TSwapsState {
   swaps: TUser[]
@@ -48,12 +40,14 @@ export const swapsSlice = createSlice({
         state.error = action.payload
       })
   },
-  selectors: {
-    getAllSwaps: state => state.swaps,
-    getSwapById: (state, id) => state.swaps.find(swap => swap.id === id),
-  },
+
 })
 
 export const { addSwap } = swapsSlice.actions
-export const { getAllSwaps, getSwapById } = swapsSlice.selectors
+
+export const getAllSwaps = (state: RootState): TUser[] => state.swaps.swaps
+export function selectSwapById(id: string) {
+  return createSelector([getAllSwaps], allSwaps =>
+    allSwaps.find(swap => swap.id === id))
+}
 export default swapsSlice.reducer

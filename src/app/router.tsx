@@ -5,6 +5,7 @@ import { Header } from '@widgetComponents/Header'
 import React, { Suspense } from 'react'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { Pages } from '../pages'
+import { SkillPage } from '../pages/SkillPage/SkillPage'
 import { ProtectedRoute } from '../shared/lib/components/ProtectedRoute'
 import styles from './styles.module.scss'
 
@@ -53,7 +54,7 @@ export function AppRouter() {
           <Route path="/" element={<Pages.Catalog />} />
         </Route>
         <Route element={<DefaultLayout />}>
-          <Route path="/skill/:id" element={<Pages.Skill />} />
+          <Route path="/skill/:id" element={<SkillPage />} />
         </Route>
 
         {/* Только для неавторизованных */}
