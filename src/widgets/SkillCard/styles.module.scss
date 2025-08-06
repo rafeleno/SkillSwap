@@ -9,6 +9,7 @@ p {
   flex-direction: column;
   padding: 32px 52px;
   background-color: c.$color-card-background;
+  border-radius: 12px;
 
   &__swiper {
     max-width: 440px;
@@ -24,8 +25,8 @@ p {
       position: absolute;
       top: 50%;
       z-index: 666;
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       background-color: c.$color-disabled;
       background-image: url('@svg/main/arrow.svg');
       background-repeat: no-repeat;
@@ -37,12 +38,12 @@ p {
 
       &-prev {
         left: 16px;
-        transform: translateY(-50%) rotate(270deg);
+        transform: translateY(-50%) rotate(180deg);
       }
 
       &-next {
         right: 16px;
-        transform: translateY(-50%) rotate(90deg);
+        transform: translateY(-50%);
       }
 
       &:hover {

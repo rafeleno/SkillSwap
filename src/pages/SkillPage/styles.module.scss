@@ -1,13 +1,21 @@
 @use '@colors' as c;
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1400px;
+}
+
 .wrapper {
   display: flex;
   gap: 24px;
   margin-bottom: 60px;
 }
 
-// TODO: вынести;TODOTODO   display: flex;display justify-content: center; margin-top: 136px; в отдельный .page-wrapper как глобальный стиль для всех страниц
- .skill-page {
+// TODO: вынести;TODOTODO   display: flex;displaydisplaydisplaydisplaydisplaydisplay justify-content: center;justify-contentjustify-contentjustify-contentjustify-contentjustify-contentjustify-contentjustify-content margin-top: 136px;margin-topmargin-topmargin-topmargin-topmargin-topmargin-top
+// в отдельный .page-wrapper как глобальный стиль для всех страниц
+.skill-page {
   display: flex;
   justify-content: center;
   margin-top: 136px;

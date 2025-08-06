@@ -11,7 +11,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 32px;
-    max-width: 1368px;
   }
 }
 
@@ -30,16 +29,17 @@
 }
 
 .swiper {
-  max-width: 1368px;
+  max-width: 1400px;
   max-height: 368px;
+  padding: 0 16px;
   border-radius: 12px;
 
   &-button {
     position: absolute;
     top: 50%;
     z-index: 666;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background-color: c.$color-disabled;
     background-image: url('@svg/main/arrow.svg');
     background-repeat: no-repeat;
@@ -49,18 +49,14 @@
     filter: opacity(0.8);
     transition: 0.2s ease;
 
-    &-hidden {
-      display: none;
-    }
-
     &-prev {
-      left: 16px;
-      transform: translateY(-50%);
+      left: 0;
+      transform: translateY(-50%) rotate(180deg);
     }
 
     &-next {
-      right: 16px;
-      transform: translateY(-50%) rotate(180deg);
+      right: 0;
+      transform: translateY(-50%);
     }
 
     &:hover {
@@ -70,6 +66,12 @@
 
     &:active {
       filter: opacity(1) brightness(0.9);
+    }
+
+    &:disabled {
+      background-color: c.$color-disabled;
+      cursor: not-allowed;
+      filter: opacity(0.5);
     }
   }
 }
