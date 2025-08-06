@@ -54,7 +54,7 @@ export function AppRouter() {
           <Route path="/" element={<Pages.Catalog />} />
         </Route>
         <Route element={<DefaultLayout />}>
-          <Route path="/skill/:id" element={<SkillPage />} />
+          <Route path="/:id" element={<SkillPage />} />
         </Route>
 
         {/* Только для неавторизованных */}
