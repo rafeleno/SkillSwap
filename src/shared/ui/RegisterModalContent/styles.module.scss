@@ -59,3 +59,9 @@
   text-align: center;
   padding-inline: 20px;
 }
+
+.doubleInput {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}

@@ -3,115 +3,71 @@ import type { RegisterModalContentProps, TInitialInputs } from './RegisterModalC
 import light from '@images/modalImages/light-bulb.png'
 import { MainButton } from '@uiComponents/MainButton'
 import { PrimaryTextInput } from '@uiComponents/PrimaryTextInput'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './styles.module.scss'
+import { useValidation } from '../../hooks/useValidation'
+import { RegisterContext } from '../../contexts/RegisterContext/RegisterContext'
 
-const stepOneInputs: TInitialInputs[] = [
-  {
-    type: 'email',
-    placeholder: 'Введите Email',
-    label: 'Email',
-  },
-  {
-    type: 'password',
-    placeholder: 'Придумайте надёжный пароль',
-    label: 'Пароль',
-  },
-]
-
-const imagesByType = {
-  stepOne: {
-    image: light,
-    alt: 'Лампочка',
-  },
-  // Заглушки
-  stepTwo: {
-    image: light,
-    alt: 'Шаг 2',
-  },
-  stepThree: {
-    image: light,
-    alt: 'Шаг 3',
-  },
-}
 
 export const RegisterModalContent: React.FC<RegisterModalContentProps> = ({
-  type,
-  onSubmit,
-  // onPrev,
-  user,
-  // categories,
-  onUpdateUser,
-  passwordState,
+  onNext,
 }) => {
-  const [password, setPassword] = passwordState
+  const { stepOneStates } = useContext(RegisterContext);
 
-  let inputs: InputProps[] = []
+  const [password] = stepOneStates.passwordState;
+  const [email] = stepOneStates.emailState;
+  const isValid = useValidation([
+    password.length > 8,
+    /.+@.+\..+/.test(email)
+  ]);
 
-  switch (type) {
-    case 'stepOne':
-      inputs = stepOneInputs.map((input) => {
-        if (input.type === 'email') {
-          return {
-            ...input,
-            state: [user?.email || '', (value: string) => onUpdateUser('email', value)],
-          }
-        }
-        if (input.type === 'password') {
-          return {
-            ...input,
-            state: [password, setPassword],
-          }
-        }
-        return {
-          ...input,
-          state: [password, setPassword],
-        }
-      })
-      break
-  }
+  const inputs: InputProps[] = [
+    {
+      type: 'email',
+      placeholder: 'Введите Email',
+      label: 'Email',
+      state: stepOneStates.emailState,
+    },
+    {
+      type: 'password',
+      placeholder: 'Придумайте надёжный пароль',
+      label: 'Пароль',
+      state: stepOneStates.passwordState,
+    },
+  ];
 
   return (
     <div className={styles.container}>
       <form className={styles.form}>
-        {/* Контент шага 1 */}
-        {type === 'stepOne' && (
-          <>
-            <div className={styles.additionalButtons}>
-              <MainButton type="secondary" onClick={() => {}} leftIconId="google">
-                Продолжить с Google
-              </MainButton>
-              <MainButton type="secondary" onClick={() => {}} leftIconId="apple">
-                Продолжить с Apple
-              </MainButton>
-            </div>
+        <div className={styles.additionalButtons}>
+          <MainButton type="secondary" onClick={() => { }} leftIconId="google">
+            Продолжить с Google
+          </MainButton>
+          <MainButton type="secondary" onClick={() => { }} leftIconId="apple">
+            Продолжить с Apple
+          </MainButton>
+        </div>
 
-            <fieldset className={styles.fieldset}>
-              <legend className={styles.legend}>или</legend>
-              {inputs.map((input, index) => (
-                <PrimaryTextInput key={index} {...input} />
-              ))}
-            </fieldset>
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.legend}>или</legend>
+          {inputs.map((input, index) => (
+            <PrimaryTextInput key={index} {...input} />
+          ))}
+        </fieldset>
 
-            <MainButton type="primary" onClick={onSubmit}>
-              Далее
-            </MainButton>
-          </>
-        )}
-
-        {/* Заглушки для других шагов */}
-        {type === 'stepTwo' && <div>Контент 2го шага</div>}
-        {type === 'stepThree' && <div>Контент 3го шага</div>}
+        <MainButton type="primary" onClick={onNext} disabled={!isValid}>
+          Далее
+        </MainButton>
       </form>
 
       <div className={styles.info}>
-        <img src={imagesByType[type].image} alt={imagesByType[type].alt} className={styles.infoImage} />
+        <img src={light} alt={'Лампочка'} className={styles.infoImage} />
         <div className={styles.infoText}>
           <h3>
-            {type === 'stepOne' && 'Добро пожаловать в SkillSwap!'}
+            Добро пожаловать в SkillSwap!
           </h3>
           <p>
-            {type === 'stepOne' && 'Присоединяйтесь к SkillSwap и обменивайтесь знаниями и навыками с другими людьми'}
+            Присоединяйтесь к SkillSwap и обменивайтесь знаниями и навыками с другими людьми
           </p>
         </div>
       </div>

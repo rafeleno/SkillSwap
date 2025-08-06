@@ -1,32 +1,38 @@
-import type { RegisterModalProps } from './RegisterModal.types'
-import { RegisterModalContent } from '@uiComponents/RegisterModalContent'
-import React, { useState } from 'react'
-import { selectAllCategories } from '../../services/slices/skill/skillSlice'
-import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice'
-import { useDispatch, useSelector } from '../../services/store'
-import styles from './styles.module.scss'
+import type { RegisterModalProps } from './RegisterModal.types';
+import { RegisterModalContent } from '@uiComponents/RegisterModalContent';
+import React, { FormEventHandler, useCallback, useContext, useState } from 'react';
+import { selectAllCategories } from '../../services/slices/skill/skillSlice';
+import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice';
+import { useDispatch, useSelector } from '../../services/store';
+import styles from './styles.module.scss';
+import { RegisterModalContentStepTwo } from '@widgetComponents/RegisterModalContentStepTwo';
+import { RegisterStepThree } from '@uiComponents/RegisterStepThree';
+import { useValidation } from '../../shared/hooks/useValidation';
+import { RegisterContext } from '../../shared/contexts/RegisterContext/RegisterContext';
 
 export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) => {
-  const [currentStep, setCurrentStep] = useState(1)
-  const [password, setPassword] = useState('') // Только для pass
-  const user = useSelector(selectCurrentUser)
-  const categories = useSelector(selectAllCategories)
-  const dispatch = useDispatch()
+  const [currentStep, setCurrentStep] = useState(1);
+  const {
+    stepOneStates,
+    stepTwoStates,
+    stepThreeStates
+  } = useContext(RegisterContext);
 
-  const updateField = (field: keyof typeof user, value: any) => {
-    dispatch(updateUserField({ field, value }))
+  const dispatch = useDispatch();
+
+  const nextStep = () => setCurrentStep(prev => prev + 1);
+  const prevStep = () => setCurrentStep(prev => prev - 1);
+
+  const onSubmit: FormEventHandler = (event) => {
+    event.preventDefault();
+
+    // Пример отправки регистрации
+    // dispatch(registerUserThunk({
+    // ...stepOneStates,
+    // ...stepTwoStates,
+    // ...stepThreeStates
+    // }))
   }
-
-  const nextStep = () => setCurrentStep(prev => prev + 1)
-  const prevStep = () => setCurrentStep(prev => prev - 1)
-
-  const stepTypeMap = {
-    1: 'stepOne',
-    2: 'stepTwo',
-    3: 'stepThree',
-  } as const
-
-  const getStepType = () => stepTypeMap[currentStep as keyof typeof stepTypeMap] || 'stepOne'
 
   return (
     <div>
@@ -62,20 +68,24 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) 
       </div>
 
       <main className={styles.content}>
-        <RegisterModalContent
-          type={getStepType()}
-          onSubmit={nextStep}
-          onPrev={prevStep}
-
-          // Данные из Redux
-          user={user}
-          categories={categories}
-          onUpdateUser={updateField}
-
-          // Локальные данные
-          passwordState={[password, setPassword]}
-        />
+        {currentStep === 1 &&
+          <RegisterModalContent
+            onNext={nextStep}
+          />
+        }
+        {currentStep === 2 &&
+          <RegisterModalContentStepTwo
+            onNext={nextStep}
+            onPrev={prevStep}
+          />
+        }
+        {currentStep === 3 &&
+          <RegisterStepThree
+            onSubmit={onSubmit}
+            onPrev={prevStep}
+          />
+        }
       </main>
     </div>
-  )
+  );
 }

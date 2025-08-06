@@ -1,5 +1,5 @@
 import type { DropdownProps, IOption } from './Dropdown.types'
-import { CheckboxInput } from '@uiComponents/CheckboxInput/Checkboxinput'
+import { CheckboxInput } from '../Checkboxinput/Checkboxinput'
 import React, { useMemo, useRef, useState } from 'react'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import styles from './styles.module.scss'
@@ -42,7 +42,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
         : [...selectedOption, option]
     }
     else {
-    // если selectedOption был null или не массив
+      // если selectedOption был null или не массив
       newSelection = [option]
     }
 
@@ -71,97 +71,97 @@ export const Dropdown: React.FC<DropdownProps> = ({
       >
         {searchable
           ? (
-              <input
-                type="text"
-                className={styles.input}
-                onChange={e => setSearchTerm(e.target.value)}
-                value={searchTerm}
-                placeholder={label}
-                onFocus={() => setIsOpen(true)}
-                onClick={e => e.stopPropagation()}
-              />
-            )
+            <input
+              type="text"
+              className={styles.input}
+              onChange={e => setSearchTerm(e.target.value)}
+              value={searchTerm}
+              placeholder={label}
+              onFocus={() => setIsOpen(true)}
+              onClick={e => e.stopPropagation()}
+            />
+          )
           : (
-              <>
-                {
-                  isCheckbox && Array.isArray(selectedOption)
-                    ? (
-                        <span className={styles['selected-value']}>
-                          {selectedOption.length > 0
-                            ? selectedOption.map(o => o.value).join(', ')
-                            : label}
-                        </span>
-                      )
-                    : (
-                        (selectedOption && 'value' in selectedOption)
-                          ? selectedOption.value
-                          : label
-                      )
-                }
+            <>
+              {
+                isCheckbox && Array.isArray(selectedOption)
+                  ? (
+                    <span className={styles['selected-value']}>
+                      {selectedOption.length > 0
+                        ? selectedOption.map(o => o.value).join(', ')
+                        : label}
+                    </span>
+                  )
+                  : (
+                    (selectedOption && 'value' in selectedOption)
+                      ? selectedOption.value
+                      : label
+                  )
+              }
 
-              </>
-            )}
+            </>
+          )}
 
         {searchable && searchTerm
           ? (
-              <button
-                type="button"
-                className={styles['clear-button']}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setSearchTerm('')
-                  setIsOpen(true)
-                }}
-                aria-label="Clear input"
-              >
-                <svg className={styles.icon} aria-hidden="true">
-                  <use href="/sprites.svg#cross" />
-                </svg>
-              </button>
-            )
-          : (
+            <button
+              type="button"
+              className={styles['clear-button']}
+              onClick={(e) => {
+                e.stopPropagation()
+                setSearchTerm('')
+                setIsOpen(true)
+              }}
+              aria-label="Clear input"
+            >
               <svg className={styles.icon} aria-hidden="true">
-                <use href={`/sprites.svg#${isOpen ? 'chevron-up' : 'chevron-down'}`} />
+                <use href="/#icon-cross" />
               </svg>
-            )}
+            </button>
+          )
+          : (
+            <svg className={styles.icon} aria-hidden="true">
+              <use href={`/#icon-${isOpen ? 'chevron-up' : 'chevron-down'}`} />
+            </svg>
+          )}
       </div>
 
       {isOpen && (
         <ul className={`${styles['dropdown-list']} ${bordered ? styles.bordered : ''}`}>
           {filteredOptions.length > 0
             ? (
-                filteredOptions.map(option => (
-                  <li
-                    key={option.id}
-                    onClick={() => {
-                      if (!isCheckbox) {
-                        onChange(option)
-                        setIsOpen(false)
-                        setSearchTerm(option.value)
-                      }
-                    }}
-                    className={styles.option}
-                  >
-                    {isCheckbox
-                      ? (
-                          <CheckboxInput
-                            name={`checkbox-${option.id}`}
-                            checked={Array.isArray(selectedOption) && selectedOption.some(o => o.id === option.id)}
-                            onChange={() => handleCheckboxToggle(option)}
-                          >
-                            {option.value}
-                          </CheckboxInput>
+              filteredOptions.map(option => (
+                <li
+                  key={option.id}
+                  onClick={() => {
+                    if (!isCheckbox) {
+                      onChange(option)
+                      setIsOpen(false)
+                      setSearchTerm(option.value)
+                    }
+                  }}
+                  className={styles.option}
+                >
+                  {isCheckbox
+                    ? (
+                      <CheckboxInput
+                        name={`checkbox-${option.id}`}
+                        checked={Array.isArray(selectedOption) && selectedOption.some(o => o.id === option.id)}
+                        onChange={() => handleCheckboxToggle(option)}
+                      >
+                        {option.value}
+                      </CheckboxInput>
 
-                        )
-                      : (
-                          option.value
-                        )}
-                  </li>
-                ))
-              )
+                    )
+                    : (
+                      option.value
+                    )}
+                </li>
+              ))
+            )
             : (
-                <li className={styles.option}>Ничего не найдено</li>
-              )}
+              <li className={styles.option}>Ничего не найдено</li>
+            )}
         </ul>
       )}
     </div>
