@@ -97,6 +97,14 @@
   }
 }
 
+.selected-value {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .clear-button {
   display: flex;
   align-items: center;

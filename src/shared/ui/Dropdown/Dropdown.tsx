@@ -1,5 +1,5 @@
 import type { DropdownProps, IOption } from './Dropdown.types'
-import { CheckboxInput } from '@uiComponents/Checkboxinput/Checkboxinput'
+import { CheckboxInput } from '@uiComponents/CheckboxInput/Checkboxinput'
 import React, { useMemo, useRef, useState } from 'react'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import styles from './styles.module.scss'
@@ -82,13 +82,24 @@ export const Dropdown: React.FC<DropdownProps> = ({
               />
             )
           : (
-              isCheckbox && Array.isArray(selectedOption)
-                ? selectedOption.length > 0
-                  ? selectedOption.map(o => o.value).join(', ')
-                  : label
-                : selectedOption
-                  ? (selectedOption as IOption).value
-                  : label
+              <>
+                {
+                  isCheckbox && Array.isArray(selectedOption)
+                    ? (
+                        <span className={styles['selected-value']}>
+                          {selectedOption.length > 0
+                            ? selectedOption.map(o => o.value).join(', ')
+                            : label}
+                        </span>
+                      )
+                    : (
+                        (selectedOption && 'value' in selectedOption)
+                          ? selectedOption.value
+                          : label
+                      )
+                }
+
+              </>
             )}
 
         {searchable && searchTerm
@@ -123,10 +134,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                   <li
                     key={option.id}
                     onClick={() => {
-                      if (isCheckbox) {
-                        handleCheckboxToggle(option)
-                      }
-                      else {
+                      if (!isCheckbox) {
                         onChange(option)
                         setIsOpen(false)
                         setSearchTerm(option.value)

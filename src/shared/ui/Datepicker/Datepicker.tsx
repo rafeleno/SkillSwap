@@ -68,7 +68,11 @@ export const Datepicker: React.FC<DatepickerProps> = ({ selectedDate, setSelecte
               <Dropdown
                 options={months}
                 selectedOption={selectedMonth}
-                onChange={option => changeMonth(Number(option.id))}
+                onChange={(option) => {
+                  if (!Array.isArray(option)) {
+                    changeMonth(Number(option.id))
+                  }
+                }}
                 label="Месяц"
                 searchable={false}
                 bordered={false}
@@ -78,7 +82,11 @@ export const Datepicker: React.FC<DatepickerProps> = ({ selectedDate, setSelecte
               <Dropdown
                 options={years}
                 selectedOption={selectedYear}
-                onChange={option => changeYear(Number(option.value))}
+                onChange={(option) => {
+                  if (!Array.isArray(option)) {
+                    changeYear(Number(option.value))
+                  }
+                }}
                 label="Год"
                 searchable={false}
                 bordered={false}
