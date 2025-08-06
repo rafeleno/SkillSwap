@@ -33,7 +33,16 @@ export async function generateSprite() {
     return
   }
 
+      const relativePath = path.relative(config.inputDir, filePath)
+      const symbolId = relativePath
+        .replace(/\.svg$/i, '')
+        .replace(/.+\\/g, '')
+        .replace(/.+\//g, '')
+        .replace(/\s+/g, '-')
+        .toLowerCase()
+
   let sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n`;
+
 
   for (const filePath of svgFiles) {
     let svgContent = await fs.readFile(filePath, 'utf8');
