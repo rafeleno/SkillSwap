@@ -2,35 +2,48 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { RootState } from '../../store'
 import { createSlice } from '@reduxjs/toolkit'
+import { fetchUserById, fetchUsers } from './thunks'
 
 interface UserState {
+  users: TUser[] | null
   user: TUser | null
   status: 'idle' | 'loading' | 'succeeded' | 'failed'
   error: string | null
-  // isAuthenticated: boolean
-  token: string | null
 }
 
 const initialState: UserState = {
+  users: null,
   user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null,
   status: 'idle',
   error: null,
-  // isAuthenticated: !!localStorage.getItem('authToken'),
-  token: localStorage.getItem('authToken'),
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    // Для удаления пользователя, можно вызвать без аргументов
-    setUser: (state, action: PayloadAction<TUser | null>) => {
+    setUser: (state, action: PayloadAction<TUser>) => {
       state.user = action.payload
       if (action.payload) {
         localStorage.setItem('user', JSON.stringify(action.payload))
       }
       else {
         localStorage.removeItem('user')
+      }
+    },
+    checkAuthStatus: (state) => {
+      const user = localStorage.getItem('user')
+      if (user) {
+        try {
+          state.user = JSON.parse(user)
+        }
+        catch {
+          localStorage.removeItem('user')
+          state.user = null
+        }
+      }
+      else {
+        state.user = null
       }
     },
     // Авторизация пользователя с сохранением в localStorage
@@ -59,25 +72,31 @@ export const userSlice = createSlice({
     // },
 
     // Проверка статуса авторизации при загрузке приложения
-    checkAuthStatus: (state) => {
-      // const token = localStorage.getItem('authToken')
-      const user = localStorage.getItem('user')
+
+    login: (
+      state,
+      action: PayloadAction<{ email: string, password: string }>,
+    ) => {
+      const { email, password } = action.payload
+
+      const user = state.users.find(
+        u => u.email === email && u.password === password,
+      )
 
       if (user) {
-        try {
-          state.user = JSON.parse(user)
-          // state.token = token
-          // state.isAuthenticated = true
-        }
-        catch {
-          localStorage.removeItem('user')
-          // localStorage.removeItem('authToken')
-          // state.isAuthenticated = false
-        }
+        state.user = user
+        state.error = null
+        localStorage.setItem('user', JSON.stringify(user))
       }
       else {
-        // state.isAuthenticated = false
+        state.error = 'Неверный email или пароль'
       }
+    },
+
+    logout: (state) => {
+      state.user = null
+      state.error = null
+      localStorage.removeItem('user')
     },
 
     updateUserField: <K extends keyof TUser>(state: UserState, action: PayloadAction<{ field: K, value: TUser[K] }>) => {
@@ -86,22 +105,53 @@ export const userSlice = createSlice({
         localStorage.setItem('user', JSON.stringify(state.user))
       }
     },
+
     toggleFavourites: (state, action: PayloadAction<string>) => {
       if (state.user) {
-        if (!state.user.favourites.includes(action.payload)) {
+        if (!state.user.favourites) {
+          state.user.favourites = []
+        }
+        const index = state.user.favourites.indexOf(action.payload)
+        if (index === -1) {
           state.user.favourites.push(action.payload)
-          localStorage.setItem('user', JSON.stringify(state.user))
         }
         else {
-          state.user.favourites = state.user.favourites.filter(favourite => favourite !== action.payload)
-          localStorage.setItem('user', JSON.stringify(state.user))
+          state.user.favourites.splice(index, 1)
         }
+        localStorage.setItem('user', JSON.stringify(state.user))
       }
     },
     resetUser: (state) => {
       state.user = null
       localStorage.removeItem('user')
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsers.pending, (state) => {
+        state.status = 'loading'
+        state.error = null
+      })
+      .addCase(fetchUsers.fulfilled, (state, action: PayloadAction<TUser[]>) => {
+        state.status = 'succeeded'
+        state.users = action.payload
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.payload as string
+      })
+      .addCase(fetchUserById.pending, (state) => {
+        state.status = 'loading'
+        state.error = null
+      })
+      .addCase(fetchUserById.fulfilled, (state, action: PayloadAction<TUser>) => {
+        state.status = 'succeeded'
+        state.user = action.payload
+      })
+      .addCase(fetchUserById.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.payload as string
+      })
   },
 })
 
@@ -142,17 +192,17 @@ export const userSlice = createSlice({
 // },
 // })
 
+export const selectUsers = (state: RootState) => state.user.users
 export const selectCurrentUser = (state: RootState) => state.user.user
 export const selectUserStatus = (state: RootState) => state.user.status
 export const selectUserError = (state: RootState) => state.user.error
-// export const selectIsAuthenticated = (state: RootState) => state.user.isAuthenticated
-export const selectAuthToken = (state: RootState) => state.user.token
+export const selectFavourites = (state: RootState) => state.user.user?.favourites || []
 
 export const {
   setUser,
   resetUser,
-  // login,
-  // logout,
+  login,
+  logout,
   checkAuthStatus,
   toggleFavourites,
   updateUserField,

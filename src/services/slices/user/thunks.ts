@@ -2,23 +2,6 @@ import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { RootState } from '../../store'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-export const fetchUserData = createAsyncThunk(
-  'user/fetchUserData',
-  async (userId: string, { rejectWithValue }) => {
-    try {
-      const response = await fetch(`/api/users/${userId}`)
-      if (!response.ok)
-        throw new Error('Failed to fetch user data')
-      const data = await response.json()
-      localStorage.setItem('user', JSON.stringify(data))
-      return data
-    }
-    catch (error: any) {
-      return rejectWithValue(error.message)
-    }
-  },
-) // переписать
-
 export const saveUserData = createAsyncThunk(
   'user/saveData',
   async (userData: Partial<TUser>, { getState, rejectWithValue }) => {
@@ -46,6 +29,27 @@ export const fetchUsers = createAsyncThunk(
     }
     catch (error: any) {
       return thunkAPI.rejectWithValue(error.message)
+    }
+  },
+)
+
+export const fetchUserById = createAsyncThunk(
+  'user/fetchUserById',
+  async (userId: string, thunkAPI) => {
+    try {
+      const response = await fetch('/db/users.json')
+      const users: TUser[] = await response.json()
+
+      const user = users.find(u => u.id === userId)
+
+      if (!user) {
+        return thunkAPI.rejectWithValue('Пользователь не найден')
+      }
+
+      return user
+    }
+    catch (error: any) {
+      return thunkAPI.rejectWithValue(error.message || 'Ошибка загрузки пользователя')
     }
   },
 )
