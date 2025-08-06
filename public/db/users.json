@@ -1,7 +1,7 @@
 [
   {
     "id": "482",
-    "avatar": "/avatars/user1.jpg",
+    "avatar": "/assets/images/avatars/user1.jpg",
     "name": "Иван",
     "location": "Санкт-Петербург",
     "age": "34 года",
@@ -15,10 +15,10 @@
       "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
     },
     "images": [
-      "../../src/assets/images/skillsImages/playing_drums2.jpg",
-      "../../src/assets/images/skillsImages/playing_drums2.jpg",
-      "../../src/assets/images/skillsImages/playing_drums3.jpg",
-      "../../src/assets/images/skillsImages/playing_drums4.jpg"
+      "/assets/images/skillsImages/playing_drums1.jpg",
+      "/assets/images/skillsImages/playing_drums2.jpg",
+      "/assets/images/skillsImages/playing_drums3.jpg",
+      "/assets/images/skillsImages/playing_drums4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -40,7 +40,7 @@
   },
   {
     "id": "739",
-    "avatar": "/avatars/user2.jpg",
+    "avatar": "/assets/images/avatars/user2.jpg",
     "name": "Анна",
     "location": "Казань",
     "age": "26 лет",
@@ -54,10 +54,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
     },
     "images": [
-      "../../src/assets/images/skillsImages/english1.jpg",
-      "../../src/assets/images/skillsImages/english2.jpg",
-      "../../src/assets/images/skillsImages/english3.jpg",
-      "../../src/assets/images/skillsImages/english4.jpg"
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -79,7 +79,7 @@
   },
   {
     "id": "215",
-    "avatar": "/avatars/user3.jpg",
+    "avatar": "/assets/images/avatars/user3.jpg",
     "name": "Максим",
     "location": "Москва",
     "age": "23 года",
@@ -93,10 +93,10 @@
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
     },
     "images": [
-      "../../src/assets/images/skillsImages/yoga1.jpg",
-      "../../src/assets/images/skillsImages/yoga2.jpg",
-      "../../src/assets/images/skillsImages/yoga3.jpg",
-      "../../src/assets/images/skillsImages/yoga4.jpg"
+      "/assets/images/skillsImages/yoga1.jpg",
+      "/assets/images/skillsImages/yoga2.jpg",
+      "/assets/images/skillsImages/yoga3.jpg",
+      "/assets/images/skillsImages/yoga4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -118,7 +118,7 @@
   },
   {
     "id": "604",
-    "avatar": "/avatars/user4.jpg",
+    "avatar": "/assets/images/avatars/user4.jpg",
     "name": "Илона",
     "location": "Екатеринбург",
     "age": "33 года",
@@ -132,10 +132,10 @@
       "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
     },
     "images": [
-      "../../src/assets/images/skillsImages/photography1.jpg",
-      "../../src/assets/images/skillsImages/photography2.jpg",
-      "../../src/assets/images/skillsImages/photography3.jpg",
-      "../../src/assets/images/skillsImages/photography4.jpg"
+      "/assets/images/skillsImages/photography1.jpg",
+      "/assets/images/skillsImages/photography2.jpg",
+      "/assets/images/skillsImages/photography3.jpg",
+      "/assets/images/skillsImages/photography4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -157,7 +157,7 @@
   },
   {
     "id": "918",
-    "avatar": "/avatars/user5.jpg",
+    "avatar": "/assets/images/avatars/user5.jpg",
     "name": "Михаил",
     "location": "Новосибирск",
     "age": "29 лет",
@@ -171,10 +171,10 @@
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
     },
     "images": [
-      "../../src/assets/images/skillsImages/project_management1.jpg",
-      "../../src/assets/images/skillsImages/project_management2.jpg",
-      "../../src/assets/images/skillsImages/project_management3.jpg",
-      "../../src/assets/images/skillsImages/project_management4.jpg"
+      "/assets/images/skillsImages/project_management1.jpg",
+      "/assets/images/skillsImages/project_management2.jpg",
+      "/assets/images/skillsImages/project_management3.jpg",
+      "/assets/images/skillsImages/project_management4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -196,7 +196,7 @@
   },
   {
     "id": "357",
-    "avatar": "/avatars/user6.jpg",
+    "avatar": "/assets/images/avatars/user6.jpg",
     "name": "Мария",
     "location": "Краснодар",
     "age": "21 год",
@@ -210,10 +210,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
     },
     "images": [
-      "../../src/assets/images/skillsImages/english1.jpg",
-      "../../src/assets/images/skillsImages/english2.jpg",
-      "../../src/assets/images/skillsImages/english3.jpg",
-      "../../src/assets/images/skillsImages/english4.jpg"
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -235,7 +235,7 @@
   },
   {
     "id": "846",
-    "avatar": "/avatars/user7.jpg",
+    "avatar": "/assets/images/avatars/user7.jpg",
     "name": "Виктория",
     "location": "Кемерово",
     "age": "30 лет",
@@ -249,10 +249,10 @@
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
     },
     "images": [
-      "../../src/assets/images/skillsImages/home1.jpg",
-      "../../src/assets/images/skillsImages/home2.jpg",
-      "../../src/assets/images/skillsImages/home3.jpg",
-      "../../src/assets/images/skillsImages/home4.jpg"
+      "/assets/images/skillsImages/home1.jpg",
+      "/assets/images/skillsImages/home2.jpg",
+      "/assets/images/skillsImages/home3.jpg",
+      "/assets/images/skillsImages/home4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -274,7 +274,7 @@
   },
   {
     "id": "102",
-    "avatar": "/avatars/user8.jpg",
+    "avatar": "/assets/images/avatars/user8.jpg",
     "name": "Елизавета",
     "location": "Владивосток",
     "age": "25 лет",
@@ -288,10 +288,10 @@
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
     },
     "images": [
-      "../../src/assets/images/skillsImages/mental1.jpg",
-      "../../src/assets/images/skillsImages/mental2.jpg",
-      "../../src/assets/images/skillsImages/mental3.jpg",
-      "../../src/assets/images/skillsImages/mental4.jpg"
+      "/assets/images/skillsImages/mental1.jpg",
+      "/assets/images/skillsImages/mental2.jpg",
+      "/assets/images/skillsImages/mental3.jpg",
+      "/assets/images/skillsImages/mental4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -313,7 +313,7 @@
   },
   {
     "id": "573",
-    "avatar": "/avatars/user9.jpg",
+    "avatar": "/assets/images/avatars/user9.jpg",
     "name": "Виктория",
     "location": "Сочи",
     "age": "31 год",
@@ -327,10 +327,10 @@
       "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
     },
     "images": [
-      "../../src/assets/images/skillsImages/nutrition1.jpg",
-      "../../src/assets/images/skillsImages/nutrition2.jpg",
-      "../../src/assets/images/skillsImages/nutrition3.jpg",
-      "../../src/assets/images/skillsImages/nutrition4.jpg"
+      "/assets/images/skillsImages/nutrition1.jpg",
+      "/assets/images/skillsImages/nutrition2.jpg",
+      "/assets/images/skillsImages/nutrition3.jpg",
+      "/assets/images/skillsImages/nutrition4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -352,7 +352,7 @@
   },
   {
     "id": "294",
-    "avatar": "/avatars/user10.jpg",
+    "avatar": "/assets/images/avatars/user10.jpg",
     "name": "Елена",
     "location": "Красноярск",
     "age": "28 лет",
@@ -366,10 +366,10 @@
       "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
     },
     "images": [
-      "../../src/assets/images/skillsImages/drawing1.jpg",
-      "../../src/assets/images/skillsImages/drawing2.jpg",
-      "../../src/assets/images/skillsImages/drawing3.jpg",
-      "../../src/assets/images/skillsImages/drawing4.jpg"
+      "/assets/images/skillsImages/drawing1.jpg",
+      "/assets/images/skillsImages/drawing2.jpg",
+      "/assets/images/skillsImages/drawing3.jpg",
+      "/assets/images/skillsImages/drawing4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -396,7 +396,7 @@
   },
   {
     "id": "680",
-    "avatar": "/avatars/user11.jpg",
+    "avatar": "/assets/images/avatars/user11.jpg",
     "name": "Константин",
     "location": "Иркутск",
     "age": "36 лет",
@@ -410,10 +410,10 @@
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
     },
     "images": [
-      "../../src/assets/images/skillsImages/entrepreneurship1.jpg",
-      "../../src/assets/images/skillsImages/entrepreneurship2.jpg",
-      "../../src/assets/images/skillsImages/entrepreneurship3.jpg",
-      "../../src/assets/images/skillsImages/entrepreneurship4.jpg"
+      "/assets/images/skillsImages/entrepreneurship1.jpg",
+      "/assets/images/skillsImages/entrepreneurship2.jpg",
+      "/assets/images/skillsImages/entrepreneurship3.jpg",
+      "/assets/images/skillsImages/entrepreneurship4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -435,7 +435,7 @@
   },
   {
     "id": "431",
-    "avatar": "/avatars/user12.jpg",
+    "avatar": "/assets/images/avatars/user12.jpg",
     "name": "София",
     "location": "Абакан",
     "age": "24 года",
@@ -449,10 +449,10 @@
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
     },
     "images": [
-      "../../src/assets/images/skillsImages/german1.jpg",
-      "../../src/assets/images/skillsImages/german2.jpg",
-      "../../src/assets/images/skillsImages/german3.jpg",
-      "../../src/assets/images/skillsImages/german4.jpg"
+      "/assets/images/skillsImages/german1.jpg",
+      "/assets/images/skillsImages/german2.jpg",
+      "/assets/images/skillsImages/german3.jpg",
+      "/assets/images/skillsImages/german4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -474,7 +474,7 @@
   },
   {
     "id": "758",
-    "avatar": "/avatars/user13.jpg",
+    "avatar": "/assets/images/avatars/user13.jpg",
     "name": "Екатерина",
     "location": "Пермь",
     "age": "33 года",
@@ -488,10 +488,10 @@
       "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
     },
     "images": [
-      "../../src/assets/images/skillsImages/reading1.jpg",
-      "../../src/assets/images/skillsImages/reading2.jpg",
-      "../../src/assets/images/skillsImages/reading3.jpg",
-      "../../src/assets/images/skillsImages/reading4.jpg"
+      "/assets/images/skillsImages/reading1.jpg",
+      "/assets/images/skillsImages/reading2.jpg",
+      "/assets/images/skillsImages/reading3.jpg",
+      "/assets/images/skillsImages/reading4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -513,7 +513,7 @@
   },
   {
     "id": "019",
-    "avatar": "/avatars/user14.jpg",
+    "avatar": "/assets/images/avatars/user14.jpg",
     "name": "Дарья",
     "location": "Ярославль",
     "age": "26 лет",
@@ -527,10 +527,10 @@
       "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
     },
     "images": [
-      "../../src/assets/images/skillsImages/houseplants1.jpg",
-      "../../src/assets/images/skillsImages/houseplants2.jpg",
-      "../../src/assets/images/skillsImages/houseplants3.jpg",
-      "../../src/assets/images/skillsImages/houseplants4.jpg"
+      "/assets/images/skillsImages/houseplants1.jpg",
+      "/assets/images/skillsImages/houseplants2.jpg",
+      "/assets/images/skillsImages/houseplants3.jpg",
+      "/assets/images/skillsImages/houseplants4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -552,7 +552,7 @@
   },
   {
     "id": "365",
-    "avatar": "/avatars/user15.jpg",
+    "avatar": "/assets/images/avatars/user15.jpg",
     "name": "Алла",
     "location": "Архангельск",
     "age": "22 года",
@@ -566,10 +566,10 @@
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
     },
     "images": [
-      "../../src/assets/images/skillsImages/video1.jpg",
-      "../../src/assets/images/skillsImages/video2.jpg",
-      "../../src/assets/images/skillsImages/video3.jpg",
-      "../../src/assets/images/skillsImages/video4.jpg"
+      "/assets/images/skillsImages/video1.jpg",
+      "/assets/images/skillsImages/video2.jpg",
+      "/assets/images/skillsImages/video3.jpg",
+      "/assets/images/skillsImages/video4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -591,7 +591,7 @@
   },
   {
     "id": "827",
-    "avatar": "/avatars/user16.jpg",
+    "avatar": "/assets/images/avatars/user16.jpg",
     "name": "Максим",
     "location": "Иркутск",
     "age": "35 лет",
@@ -605,10 +605,10 @@
       "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
     },
     "images": [
-      "../../src/assets/images/skillsImages/playing_drums1.jpg",
-      "../../src/assets/images/skillsImages/playing_drums2.jpg",
-      "../../src/assets/images/skillsImages/playing_drums3.jpg",
-      "../../src/assets/images/skillsImages/playing_drums4.jpg"
+      "/assets/images/skillsImages/playing_drums1.jpg",
+      "/assets/images/skillsImages/playing_drums2.jpg",
+      "/assets/images/skillsImages/playing_drums3.jpg",
+      "/assets/images/skillsImages/playing_drums4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -625,7 +625,7 @@
   },
   {
     "id": "540",
-    "avatar": "/avatars/user17.jpg",
+    "avatar": "/assets/images/avatars/user17.jpg",
     "name": "Виктория",
     "location": "Москва",
     "age": "30 лет",
@@ -639,10 +639,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
     },
     "images": [
-      "../../src/assets/images/skillsImages/english1.jpg",
-      "../../src/assets/images/skillsImages/english2.jpg",
-      "../../src/assets/images/skillsImages/english3.jpg",
-      "../../src/assets/images/skillsImages/english4.jpg"
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -664,7 +664,7 @@
   },
   {
     "id": "693",
-    "avatar": "/avatars/user18.jpg",
+    "avatar": "/assets/images/avatars/user18.jpg",
     "name": "Анатолий",
     "location": "Киров",
     "age": "32 года",
@@ -678,10 +678,10 @@
       "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
     },
     "images": [
-      "../../src/assets/images/skillsImages/yoga1.jpg",
-      "../../src/assets/images/skillsImages/yoga2.jpg",
-      "../../src/assets/images/skillsImages/yoga3.jpg",
-      "../../src/assets/images/skillsImages/yoga4.jpg"
+      "/assets/images/skillsImages/yoga1.jpg",
+      "/assets/images/skillsImages/yoga2.jpg",
+      "/assets/images/skillsImages/yoga3.jpg",
+      "/assets/images/skillsImages/yoga4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -703,7 +703,7 @@
   },
   {
     "id": "204",
-    "avatar": "/avatars/user19.jpg",
+    "avatar": "/assets/images/avatars/user19.jpg",
     "name": "Любовь",
     "location": "Уфа",
     "age": "24 года",
@@ -717,10 +717,10 @@
       "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
     },
     "images": [
-      "../../src/assets/images/skillsImages/photography1.jpg",
-      "../../src/assets/images/skillsImages/photography2.jpg",
-      "../../src/assets/images/skillsImages/photography3.jpg",
-      "../../src/assets/images/skillsImages/photography4.jpg"
+      "/assets/images/skillsImages/photography1.jpg",
+      "/assets/images/skillsImages/photography2.jpg",
+      "/assets/images/skillsImages/photography3.jpg",
+      "/assets/images/skillsImages/photography4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -742,7 +742,7 @@
   },
   {
     "id": "871",
-    "avatar": "/avatars/user20.jpg",
+    "avatar": "/assets/images/avatars/user20.jpg",
     "name": "Андрей",
     "location": "Владивосток",
     "age": "35 лет",
@@ -756,10 +756,10 @@
       "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
     },
     "images": [
-      "../../src/assets/images/skillsImages/project_management1.jpg",
-      "../../src/assets/images/skillsImages/project_management2.jpg",
-      "../../src/assets/images/skillsImages/project_management3.jpg",
-      "../../src/assets/images/skillsImages/project_management4.jpg"
+      "/assets/images/skillsImages/project_management1.jpg",
+      "/assets/images/skillsImages/project_management2.jpg",
+      "/assets/images/skillsImages/project_management3.jpg",
+      "/assets/images/skillsImages/project_management4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -781,7 +781,7 @@
   },
   {
     "id": "156",
-    "avatar": "/avatars/user21.jpg",
+    "avatar": "/assets/images/avatars/user21.jpg",
     "name": "Влада",
     "location": "Йошкар-Ола",
     "age": "21 год",
@@ -795,10 +795,10 @@
       "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
     },
     "images": [
-      "../../src/assets/images/skillsImages/english1.jpg",
-      "../../src/assets/images/skillsImages/english2.jpg",
-      "../../src/assets/images/skillsImages/english3.jpg",
-      "../../src/assets/images/skillsImages/english4.jpg"
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -820,7 +820,7 @@
   },
   {
     "id": "308",
-    "avatar": "/avatars/user22.jpg",
+    "avatar": "/assets/images/avatars/user22.jpg",
     "name": "Дарья",
     "location": "Самара",
     "age": "28 лет",
@@ -834,10 +834,10 @@
       "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
     },
     "images": [
-      "../../src/assets/images/skillsImages/home1.jpg",
-      "../../src/assets/images/skillsImages/home2.jpg",
-      "../../src/assets/images/skillsImages/home3.jpg",
-      "../../src/assets/images/skillsImages/home4.jpg"
+      "/assets/images/skillsImages/home1.jpg",
+      "/assets/images/skillsImages/home2.jpg",
+      "/assets/images/skillsImages/home3.jpg",
+      "/assets/images/skillsImages/home4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -859,7 +859,7 @@
   },
   {
     "id": "942",
-    "avatar": "/avatars/user23.jpg",
+    "avatar": "/assets/images/avatars/user23.jpg",
     "name": "Наталья",
     "location": "Ростов-на-Дону",
     "age": "35 лет",
@@ -873,10 +873,10 @@
       "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
     },
     "images": [
-      "../../src/assets/images/skillsImages/mental1.jpg",
-      "../../src/assets/images/skillsImages/mental2.jpg",
-      "../../src/assets/images/skillsImages/mental3.jpg",
-      "../../src/assets/images/skillsImages/mental4.jpg"
+      "/assets/images/skillsImages/mental1.jpg",
+      "/assets/images/skillsImages/mental2.jpg",
+      "/assets/images/skillsImages/mental3.jpg",
+      "/assets/images/skillsImages/mental4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -898,7 +898,7 @@
   },
   {
     "id": "617",
-    "avatar": "/avatars/user24.jpg",
+    "avatar": "/assets/images/avatars/user24.jpg",
     "name": "Ольга",
     "location": "Челябинск",
     "age": "31 год",
@@ -912,10 +912,10 @@
       "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
     },
     "images": [
-      "../../src/assets/images/skillsImages/nutrition1.jpg",
-      "../../src/assets/images/skillsImages/nutrition2.jpg",
-      "../../src/assets/images/skillsImages/nutrition3.jpg",
-      "../../src/assets/images/skillsImages/nutrition4.jpg"
+      "/assets/images/skillsImages/nutrition1.jpg",
+      "/assets/images/skillsImages/nutrition2.jpg",
+      "/assets/images/skillsImages/nutrition3.jpg",
+      "/assets/images/skillsImages/nutrition4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -937,7 +937,7 @@
   },
   {
     "id": "485",
-    "avatar": "/avatars/user25.jpg",
+    "avatar": "/assets/images/avatars/user25.jpg",
     "name": "Мария",
     "location": "Красноярск",
     "age": "28 лет",
@@ -951,10 +951,10 @@
       "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
     },
     "images": [
-      "../../src/assets/images/skillsImages/drawing1.jpg",
-      "../../src/assets/images/skillsImages/drawing2.jpg",
-      "../../src/assets/images/skillsImages/drawing3.jpg",
-      "../../src/assets/images/skillsImages/drawing4.jpg"
+      "/assets/images/skillsImages/drawing1.jpg",
+      "/assets/images/skillsImages/drawing2.jpg",
+      "/assets/images/skillsImages/drawing3.jpg",
+      "/assets/images/skillsImages/drawing4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -981,7 +981,7 @@
   },
   {
     "id": "230",
-    "avatar": "/avatars/user26.jpg",
+    "avatar": "/assets/images/avatars/user26.jpg",
     "name": "Алексей",
     "location": "Иркутск",
     "age": "36 лет",
@@ -995,10 +995,10 @@
       "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
     },
     "images": [
-      "../../src/assets/images/skillsImages/entrepreneurship1.jpg",
-      "../../src/assets/images/skillsImages/entrepreneurship2.jpg",
-      "../../src/assets/images/skillsImages/entrepreneurship3.jpg",
-      "../../src/assets/images/skillsImages/entrepreneurship4.jpg"
+      "/assets/images/skillsImages/entrepreneurship1.jpg",
+      "/assets/images/skillsImages/entrepreneurship2.jpg",
+      "/assets/images/skillsImages/entrepreneurship3.jpg",
+      "/assets/images/skillsImages/entrepreneurship4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -1020,7 +1020,7 @@
   },
   {
     "id": "759",
-    "avatar": "/avatars/user27.jpg",
+    "avatar": "/assets/images/avatars/user27.jpg",
     "name": "Ольга",
     "location": "Нижний Новгород",
     "age": "30 лет",
@@ -1034,10 +1034,10 @@
       "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
     },
     "images": [
-      "../../src/assets/images/skillsImages/german1.jpg",
-      "../../src/assets/images/skillsImages/german2.jpg",
-      "../../src/assets/images/skillsImages/german3.jpg",
-      "../../src/assets/images/skillsImages/german4.jpg"
+      "/assets/images/skillsImages/german1.jpg",
+      "/assets/images/skillsImages/german2.jpg",
+      "/assets/images/skillsImages/german3.jpg",
+      "/assets/images/skillsImages/german4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -1059,8 +1059,8 @@
   },
   {
     "id": "804",
-    "avatar": "/avatars/user28.jpg",
-    "name": "Казань",
+    "avatar": "/assets/images/avatars/user28.jpg",
+    "name": "Виктория",
     "location": "Пермь",
     "age": "25 лет",
     "gender": "female",
@@ -1073,10 +1073,10 @@
       "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
     },
     "images": [
-      "../../src/assets/images/skillsImages/reading1.jpg",
-      "../../src/assets/images/skillsImages/reading2.jpg",
-      "../../src/assets/images/skillsImages/reading3.jpg",
-      "../../src/assets/images/skillsImages/reading4.jpg"
+      "/assets/images/skillsImages/reading1.jpg",
+      "/assets/images/skillsImages/reading2.jpg",
+      "/assets/images/skillsImages/reading3.jpg",
+      "/assets/images/skillsImages/reading4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -1098,7 +1098,7 @@
   },
   {
     "id": "312",
-    "avatar": "/avatars/user29.jpg",
+    "avatar": "/assets/images/avatars/user29.jpg",
     "name": "Юлия",
     "location": "Ярославль",
     "age": "26 лет",
@@ -1112,10 +1112,10 @@
       "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
     },
     "images": [
-      "../../src/assets/images/skillsImages/houseplants1.jpg",
-      "../../src/assets/images/skillsImages/houseplants2.jpg",
-      "../../src/assets/images/skillsImages/houseplants3.jpg",
-      "../../src/assets/images/skillsImages/houseplants4.jpg"
+      "/assets/images/skillsImages/houseplants1.jpg",
+      "/assets/images/skillsImages/houseplants2.jpg",
+      "/assets/images/skillsImages/houseplants3.jpg",
+      "/assets/images/skillsImages/houseplants4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {
@@ -1137,7 +1137,7 @@
   },
   {
     "id": "678",
-    "avatar": "/avatars/user30.jpg",
+    "avatar": "/assets/images/avatars/user30.jpg",
     "name": "Константин",
     "location": "Архангельск",
     "age": "22 года",
@@ -1151,10 +1151,10 @@
       "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
     },
     "images": [
-      "../../src/assets/images/skillsImages/video1.jpg",
-      "../../src/assets/images/skillsImages/video2.jpg",
-      "../../src/assets/images/skillsImages/video3.jpg",
-      "../../src/assets/images/skillsImages/video4.jpg"
+      "/assets/images/skillsImages/video1.jpg",
+      "/assets/images/skillsImages/video2.jpg",
+      "/assets/images/skillsImages/video3.jpg",
+      "/assets/images/skillsImages/video4.jpg"
     ],
     "subcategoriesWantToLearn": [
       {

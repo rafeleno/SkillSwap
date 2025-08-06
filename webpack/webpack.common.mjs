@@ -74,17 +74,21 @@ export default {
       template: './public/index.html',
       chunks: ['main'],
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, '../public'),
-          to: path.resolve(__dirname, '../dist'),
-          globOptions: {
-            ignore: ['**/index.html'],
-          },
-        },
-      ],
-    }),
+        new CopyPlugin({
+  patterns: [
+    {
+      from: path.resolve(__dirname, '../public'),
+      to: path.resolve(__dirname, '../dist'),
+      globOptions: {
+        ignore: ['**/index.html'],
+      },
+    },
+    {
+      from: path.resolve(__dirname, '../src/assets/images'),
+      to: path.resolve(__dirname, '../dist/assets/images'),
+    },
+  ],
+}),
     new SvgSpritePlugin({
       inputDir: path.join(__dirname, '../src/assets/svg'),
       outputFile: path.join(__dirname, '../dist/sprite.svg'),
