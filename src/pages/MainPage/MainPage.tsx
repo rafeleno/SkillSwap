@@ -4,7 +4,7 @@ import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
 import React, { useMemo, useState } from 'react'
 
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // Должен отдавать слайс
 import users from '../../../public/db/users.json'
 import styles from './styles.module.scss'
@@ -68,7 +68,7 @@ export const MainPage: React.FC = () => {
   const recommendedUsers = getRecommendedUsers(currentUser, users).slice(0, 9)
 
   const handleCard = (userId: string) => {
-    navigate(`/${userId}`)
+    navigate(`/skills/${userId}`)
   }
   return (
     <div className={styles.mainPage}>
