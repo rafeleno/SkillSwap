@@ -18,10 +18,10 @@ export async function generateSprite() {
   const config = {
     inputDir: process.env.SVG_SPRITE_INPUT || path.join(__dirname, '../src/assets/svg'),
   }
-  let svgFiles;
+  let svgFiles
 
   try {
-    svgFiles = await getSVGFiles(config.inputDir);
+    svgFiles = await getSVGFiles(config.inputDir)
   }
   catch (err) {
     console.error('SVG sprite generation error:', err)
@@ -33,20 +33,11 @@ export async function generateSprite() {
     return
   }
 
-      const relativePath = path.relative(config.inputDir, filePath)
-      const symbolId = relativePath
-        .replace(/\.svg$/i, '')
-        .replace(/.+\\/g, '')
-        .replace(/.+\//g, '')
-        .replace(/\s+/g, '-')
-        .toLowerCase()
-
-  let sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n`;
-
+  let sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n`
 
   for (const filePath of svgFiles) {
-    let svgContent = await fs.readFile(filePath, 'utf8');
-    let stroke = '';
+    let svgContent = await fs.readFile(filePath, 'utf8')
+    let stroke = ''
 
     const relativePath = path.relative(config.inputDir, filePath)
     const symbolId = relativePath
@@ -60,18 +51,19 @@ export async function generateSprite() {
       .replace(/<\/svg>/i, '')
       .trim()
 
-    const viewBox = svgContent.match(/viewBox=".+"/)[0];
+    const viewBox = svgContent.match(/viewBox=".+"/)[0]
 
     if (!svgContent.includes('ignore fill')) {
       svgContent = svgContent
-        .replace(/^[fill="none"]fill=".+"/g, 'fill="inherit"')
+        .replace(/^[fil="noe]fill=".+"/g, 'fill="inherit"')
     }
 
     if (!svgContent.includes('ignore stroke')) {
       svgContent = svgContent
-        .replace(/stroke=".+"/g, 'stroke="currentColor"');
-    } else {
-      stroke += 'stroke="none"';
+        .replace(/stroke=".+"/g, 'stroke="currentColor"')
+    }
+    else {
+      stroke += 'stroke="none"'
     }
 
     sprite += `  <symbol id="icon-${symbolId}" ${stroke} fill="none" ${viewBox} >\n`
@@ -79,7 +71,7 @@ export async function generateSprite() {
     sprite += `  </symbol>\n`
   }
 
-  sprite += `</svg>`;
+  sprite += `</svg>`
 
-  return sprite;
+  return sprite
 }

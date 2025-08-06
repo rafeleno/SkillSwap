@@ -2,17 +2,24 @@
 @use '../../styles/typography' as t;
 
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 666;
   display: flex;
-  gap: 32px;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  max-width: 1440px;
-  margin: auto;
-  margin-bottom: 32px;
-  padding: 36px 36px 20px;
+  justify-content: center;
+  width: 100%;
   background-color: c.$color-background;
+
+  &-content {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 1440px;
+    margin: auto;
+    padding: 36px 36px 20px;
+  }
 }
 
 .nav {

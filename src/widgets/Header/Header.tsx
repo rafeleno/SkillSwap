@@ -40,72 +40,75 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
 
   return (
     <header className={styles.header}>
-      <MainLogo />
+      <div className={styles['header-content']}>
+        <MainLogo />
 
-      <nav className={styles.nav}>
-        <button className={styles.link}>О проекте</button>
-        <button
-          className={styles.dropdown}
-          onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
-            e.stopPropagation()
-            toggleSkillsPopup()
-          }}
-        >
-          Все навыки
-          <svg
-            className={`${styles.dropdownIcon} ${isSkillsPopupOpen && styles.dropdownIconOpen}`}
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <nav className={styles.nav}>
+          <button className={styles.link}>О проекте</button>
+          <button
+            className={styles.dropdown}
+            onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
+              e.stopPropagation()
+              toggleSkillsPopup()
+            }}
           >
-            <use href="#icon-chevron-down" />
-          </svg>
-          {isSkillsPopupOpen
-            && (
-              <SkillsPopup
-                onClose={closeSkillsPopup}
-              />
-            )}
-        </button>
-      </nav>
-
-      <Search
-        value={searchValue}
-        onChange={e => setSearchValue(e.target.value)}
-        onClear={() => setSearchValue('')}
-        placeholder="Искать навык"
-      />
-
-      <div className={styles['icons-and-user']}>
-        <IconButton name="moon" onClick={() => {}} />
-        {user
-          ? (
-              <>
-                <NotificationDropdown
-                  isOpen={isNotificationOpen}
-                  onClose={closeNotification}
-                  onClick={toggleNotification}
+            Все навыки
+            <svg
+              className={`${styles.dropdownIcon} ${isSkillsPopupOpen && styles.dropdownIconOpen}`}
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use href="#icon-chevron-down" />
+            </svg>
+            {isSkillsPopupOpen
+              && (
+                <SkillsPopup
+                  onClose={closeSkillsPopup}
                 />
-                <IconButton name="like" onClick={() => {}} />
+              )}
+          </button>
+        </nav>
 
-                <div className={styles['user-info']}>
-                  <span className={styles['user-name']}>{user.name}</span>
-                  <img src={userAvatar} alt="Аватар пользователя" className={styles['user-avatar']} />
+        <Search
+          value={searchValue}
+          onChange={e => setSearchValue(e.target.value)}
+          onClear={() => setSearchValue('')}
+          placeholder="Искать навык"
+        />
+
+        <div className={styles['icons-and-user']}>
+          <IconButton name="moon" onClick={() => {}} />
+          {user
+            ? (
+                <>
+                  <NotificationDropdown
+                    isOpen={isNotificationOpen}
+                    onClose={closeNotification}
+                    onClick={toggleNotification}
+                  />
+                  <IconButton name="like" onClick={() => {}} />
+
+                  <div className={styles['user-info']}>
+                    <span className={styles['user-name']}>{user.name}</span>
+                    <img src={userAvatar} alt="Аватар пользователя" className={styles['user-avatar']} />
+                  </div>
+                </>
+              )
+            : (
+                <div className={styles['auth-buttons']}>
+                  <MainButton type="secondary" onClick={() => navigate('/login')}>
+                    Войти
+                  </MainButton>
+                  <MainButton type="primary" onClick={() => navigate('/register')}>
+                    Зарегистрироваться
+                  </MainButton>
                 </div>
-              </>
-            )
-          : (
-              <div className={styles['auth-buttons']}>
-                <MainButton type="secondary" onClick={() => navigate('/login')}>
-                  Войти
-                </MainButton>
-                <MainButton type="primary" onClick={() => navigate('/register')}>
-                  Зарегистрироваться
-                </MainButton>
-              </div>
-            )}
+              )}
+        </div>
+
       </div>
     </header>
   )
