@@ -8,8 +8,8 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 1440px;
-  width: 100%;
+  max-width: 1440px;
+  margin: auto;
   margin-bottom: 32px;
   padding: 36px 36px 20px;
   background-color: c.$color-background;
