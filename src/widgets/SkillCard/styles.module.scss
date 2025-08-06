@@ -8,6 +8,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 32px 52px;
+  background-color: c.$color-card-background;
 
   &__swiper {
     max-width: 440px;
@@ -36,12 +37,12 @@ p {
 
       &-prev {
         left: 16px;
-        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(270deg);
       }
 
       &-next {
         right: 16px;
-        transform: translateY(-50%) rotate(180deg);
+        transform: translateY(-50%) rotate(90deg);
       }
 
       &:hover {
@@ -90,6 +91,7 @@ p {
     display: flex;
     gap: 77px;
     justify-content: space-between;
+    height: 100%;
   }
 
   &__text-content {

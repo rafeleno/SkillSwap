@@ -14,20 +14,21 @@ export const SkillPage: React.FC<SkillPageProps> = () => {
   const currentSwap = useSelector(selectSwapById(id))
 
   return (
-    <div className={styles.container}>
-      {currentSwap
-        ? (
-            <div className={styles.wrapper}>
-              <UserCard type="detailed" user={currentSwap} />
-              <SkillCard type="view" title={currentSwap.skillCanTeach.name} category={currentSwap.skillCanTeach.subcategoryId} description={currentSwap.skillCanTeach.description} photos={currentSwap.images} />
-            </div>
-          )
-        : (
-            <h1>Загрузка информации о пользователе ...</h1>
-          )}
+    <div className={styles['skill-page']}>
+      <div className={styles.container}>
+        {currentSwap
+          ? (
+              <div className={styles.wrapper}>
+                <UserCard type="detailed" user={currentSwap} />
+                <SkillCard type="view" title={currentSwap.skillCanTeach.name} category={currentSwap.skillCanTeach.name} description={currentSwap.skillCanTeach.description} photos={currentSwap.images} />
+              </div>
+            )
+          : (
+              <h1>Загрузка информации о пользователе ...</h1>
+            )}
 
-      <UserCardList type="slider" users={allSwaps} title="Похожие предложения" />
+        <UserCardList type="slider" users={allSwaps} title="Похожие предложения" />
+      </div>
     </div>
-
   )
 }

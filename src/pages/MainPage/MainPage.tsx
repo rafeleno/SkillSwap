@@ -4,6 +4,7 @@ import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
 import React, { useMemo, useState } from 'react'
 
+import { redirect, useNavigate } from 'react-router-dom'
 // Должен отдавать слайс
 import users from '../../../public/db/users.json'
 import styles from './styles.module.scss'
@@ -16,7 +17,7 @@ export const initialFilters: FiltersState = {
 }
 export const MainPage: React.FC = () => {
   const [filters, setFilters] = useState<FiltersState>(initialFilters)
-
+  const navigate = useNavigate()
   const filteredUsers = useMemo(() => {
     return users.filter((user) => {
       if (filters.gender[0] !== 'notSpecified' && user.gender !== filters.gender[0]) {
@@ -66,22 +67,25 @@ export const MainPage: React.FC = () => {
   const currentUser = users[0] // TODO: изменить на текущего пользователя
   const recommendedUsers = getRecommendedUsers(currentUser, users).slice(0, 9)
 
+  const handleCard = (userId: string) => {
+    navigate(`/${userId}`)
+  }
   return (
     <div className={styles.mainPage}>
       <FilterTab onFiltersChange={handleFiltersChange} filters={filters} setFilters={setFilters}></FilterTab>
       {
         (filters.skill.length !== 0 || filters.locations.length !== 0)
         && (
-          <UserCardList type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
+          <UserCardList onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
         )
       }
       {
         (filters.skill.length === 0 && filters.locations.length === 0)
         && (
           <div className={styles['user-card-list__container']}>
-            <UserCardList type="regular" title="Популярное" buttonText="Смотреть все" buttonIconId="chevron-right" users={popularUsers}></UserCardList>
-            <UserCardList type="regular" title="Новое" buttonText="Смотреть все" buttonIconId="chevron-right" users={newUsers}></UserCardList>
-            <UserCardList type="regular" title="Рекомендуем" buttonText="Смотреть все" buttonIconId="chevron-right" users={recommendedUsers}></UserCardList>
+            <UserCardList onCardClick={handleCard} type="regular" title="Популярное" buttonText="Смотреть все" buttonIconId="chevron-right" users={popularUsers}></UserCardList>
+            <UserCardList onCardClick={handleCard} type="regular" title="Новое" buttonText="Смотреть все" buttonIconId="chevron-right" users={newUsers}></UserCardList>
+            <UserCardList onCardClick={handleCard} type="regular" title="Рекомендуем" buttonText="Смотреть все" buttonIconId="chevron-right" users={recommendedUsers}></UserCardList>
           </div>
         )
       }

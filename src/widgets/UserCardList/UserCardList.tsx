@@ -42,7 +42,7 @@ export const UserCardList: React.FC<UserCardListProps> = ({
                 <UserCard
                   type="preview"
                   user={user}
-                  onClick={onCardClick}
+                  onClick={() => onCardClick(user.id)}
                   onLike={onLike}
                 />
               </li>
