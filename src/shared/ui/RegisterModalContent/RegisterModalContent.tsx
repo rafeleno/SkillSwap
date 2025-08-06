@@ -4,22 +4,21 @@ import light from '@images/modalImages/light-bulb.png'
 import { MainButton } from '@uiComponents/MainButton'
 import { PrimaryTextInput } from '@uiComponents/PrimaryTextInput'
 import React, { useContext, useState } from 'react'
-import styles from './styles.module.scss'
-import { useValidation } from '../../hooks/useValidation'
 import { RegisterContext } from '../../contexts/RegisterContext/RegisterContext'
-
+import { useValidation } from '../../hooks/useValidation'
+import styles from './styles.module.scss'
 
 export const RegisterModalContent: React.FC<RegisterModalContentProps> = ({
   onNext,
 }) => {
-  const { stepOneStates } = useContext(RegisterContext);
+  const { stepOneStates } = useContext(RegisterContext)
 
-  const [password] = stepOneStates.passwordState;
-  const [email] = stepOneStates.emailState;
+  const [password] = stepOneStates.passwordState
+  const [email] = stepOneStates.emailState
   const isValid = useValidation([
     password.length > 8,
-    /.+@.+\..+/.test(email)
-  ]);
+    /.[^\n\r@\u2028\u2029]*@.+\..+/.test(email),
+  ])
 
   const inputs: InputProps[] = [
     {
@@ -34,7 +33,7 @@ export const RegisterModalContent: React.FC<RegisterModalContentProps> = ({
       label: 'Пароль',
       state: stepOneStates.passwordState,
     },
-  ];
+  ]
 
   return (
     <div className={styles.container}>
@@ -61,7 +60,7 @@ export const RegisterModalContent: React.FC<RegisterModalContentProps> = ({
       </form>
 
       <div className={styles.info}>
-        <img src={light} alt={'Лампочка'} className={styles.infoImage} />
+        <img src={light} alt="Лампочка" className={styles.infoImage} />
         <div className={styles.infoText}>
           <h3>
             Добро пожаловать в SkillSwap!

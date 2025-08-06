@@ -1,30 +1,31 @@
-import type { RegisterModalProps } from './RegisterModal.types';
-import { RegisterModalContent } from '@uiComponents/RegisterModalContent';
-import React, { FormEventHandler, useCallback, useContext, useState } from 'react';
-import { selectAllCategories } from '../../services/slices/skill/skillSlice';
-import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice';
-import { useDispatch, useSelector } from '../../services/store';
-import styles from './styles.module.scss';
-import { RegisterModalContentStepTwo } from '@widgetComponents/RegisterModalContentStepTwo';
-import { RegisterStepThree } from '@uiComponents/RegisterStepThree';
-import { useValidation } from '../../shared/hooks/useValidation';
-import { RegisterContext } from '../../shared/contexts/RegisterContext/RegisterContext';
+import type { FormEventHandler } from 'react'
+import type { RegisterModalProps } from './RegisterModal.types'
+import { RegisterModalContent } from '@uiComponents/RegisterModalContent'
+import { RegisterStepThree } from '@uiComponents/RegisterStepThree'
+import { RegisterModalContentStepTwo } from '@widgetComponents/RegisterModalContentStepTwo'
+import React, { useCallback, useContext, useState } from 'react'
+import { selectAllCategories } from '../../services/slices/skill/skillSlice'
+import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice'
+import { useDispatch, useSelector } from '../../services/store'
+import { RegisterContext } from '../../shared/contexts/RegisterContext/RegisterContext'
+import { useValidation } from '../../shared/hooks/useValidation'
+import styles from './styles.module.scss'
 
 export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(1)
   const {
     stepOneStates,
     stepTwoStates,
-    stepThreeStates
-  } = useContext(RegisterContext);
+    stepThreeStates,
+  } = useContext(RegisterContext)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const nextStep = () => setCurrentStep(prev => prev + 1);
-  const prevStep = () => setCurrentStep(prev => prev - 1);
+  const nextStep = () => setCurrentStep(prev => prev + 1)
+  const prevStep = () => setCurrentStep(prev => prev - 1)
 
   const onSubmit: FormEventHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     // Пример отправки регистрации
     // dispatch(registerUserThunk({
@@ -68,24 +69,27 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) 
       </div>
 
       <main className={styles.content}>
-        {currentStep === 1 &&
-          <RegisterModalContent
-            onNext={nextStep}
-          />
-        }
-        {currentStep === 2 &&
-          <RegisterModalContentStepTwo
-            onNext={nextStep}
-            onPrev={prevStep}
-          />
-        }
-        {currentStep === 3 &&
-          <RegisterStepThree
-            onSubmit={onSubmit}
-            onPrev={prevStep}
-          />
-        }
+        {currentStep === 1
+          && (
+            <RegisterModalContent
+              onNext={nextStep}
+            />
+          )}
+        {currentStep === 2
+          && (
+            <RegisterModalContentStepTwo
+              onNext={nextStep}
+              onPrev={prevStep}
+            />
+          )}
+        {currentStep === 3
+          && (
+            <RegisterStepThree
+              onSubmit={onSubmit}
+              onPrev={prevStep}
+            />
+          )}
       </main>
     </div>
-  );
+  )
 }

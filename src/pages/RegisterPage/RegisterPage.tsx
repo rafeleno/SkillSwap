@@ -1,7 +1,8 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { ICategory } from '../../services/slices/skill/skillSlice'
+import { RegisterModal } from '@widgetComponents/RegisterModal'
 import React, { useState } from 'react'
-import { RegisterModalContent } from '../../shared/ui/RegisterModalContent'
+import { RegisterContextProvider } from '../../shared/contexts/RegisterContext/RegisterContext'
 import styles from './styles.module.scss'
 
 export const RegisterPage: React.FC = () => {
@@ -31,15 +32,8 @@ export const RegisterPage: React.FC = () => {
   const handleSubmit = () => {}
 
   return (
-    <div className={styles.container}>
-      <RegisterModalContent
-        type="stepOne"
-        user={user}
-        onUpdateUser={handleUpdateUser}
-        passwordState={[password, setPassword]}
-        onSubmit={handleSubmit}
-        categories={categories}
-      />
-    </div>
+    <RegisterContextProvider>
+      <RegisterModal />
+    </RegisterContextProvider>
   )
 }
