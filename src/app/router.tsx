@@ -27,12 +27,12 @@ function HeaderCompact() {
 
 export function DefaultLayout() {
   return (
-    <>
+    <div className={styles.defaultLayout}>
       {/* TODO: вытяннуть из слайса */}
-      <Header user={666} />
+      <Header user={null} />
       <Outlet />
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -73,6 +73,7 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
         </nav>
 
         <Search
+          user={user}
           value={searchValue}
           onChange={e => setSearchValue(e.target.value)}
           onClear={() => setSearchValue('')}

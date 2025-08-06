@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 
 export const Search: React.FC<SearchProps> = ({
+  user,
   value,
   placeholder = 'Искать навык',
   onChange,
@@ -10,7 +11,7 @@ export const Search: React.FC<SearchProps> = ({
 }) => {
   return (
     <>
-      <div className={styles.searchContainer}>
+      <div className={user ? (styles.searchContainer_logged, styles.searchContainer) : styles.searchContainer}>
         <span className={styles.searchIcon}>
           <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#icon-search" />

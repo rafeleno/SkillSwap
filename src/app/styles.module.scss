@@ -10,3 +10,13 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.footer {
+  align-self: flex-end;
+}

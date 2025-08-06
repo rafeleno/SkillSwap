@@ -13,6 +13,7 @@ a {
 
 .footer {
   display: flex;
+  align-self: flex-end;
   justify-content: center;
   width: 100%;
   background-color: c.$color-card-background;
@@ -42,13 +43,12 @@ a {
   height: 100%;
 
   &-list {
-    padding-top: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 324px;
+    padding-top: 12px;
     list-style-type: none;
-
   }
 }
 
