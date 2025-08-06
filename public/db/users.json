@@ -36,7 +36,9 @@
         "subcategoryId": "video_editing",
         "name": "Видеомонтаж"
       }
-    ]
+    ],
+    "email": "ivan482@mail.ru",
+    "password": "passIvan482"
   },
   {
     "id": "739",
@@ -75,7 +77,9 @@
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       }
-    ]
+    ],
+    "email": "anna739@mail.ru",
+    "password": "passAnna739"
   },
   {
     "id": "215",
@@ -114,7 +118,9 @@
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
-    ]
+    ],
+    "email": "maxim215@mail.ru",
+    "password": "passMaxim215"
   },
   {
     "id": "604",
@@ -153,7 +159,9 @@
         "subcategoryId": "mindfulness",
         "name": "Осознанность"
       }
-    ]
+    ],
+    "email": "ilona604@mail.ru",
+    "password": "passIlona604"
   },
   {
     "id": "918",
@@ -192,7 +200,9 @@
         "subcategoryId": "nutrition_and_health",
         "name": "Здоровое питание"
       }
-    ]
+    ],
+    "email": "mikhail918@mail.ru",
+    "password": "passMikhail918"
   },
   {
     "id": "357",
@@ -231,7 +241,9 @@
         "subcategoryId": "yoga_and_meditation",
         "name": "Йога"
       }
-    ]
+    ],
+    "email": "maria357@mail.ru",
+    "password": "passMaria357"
   },
   {
     "id": "846",
@@ -270,7 +282,9 @@
         "subcategoryId": "personal_brand",
         "name": "Личный бренд"
       }
-    ]
+    ],
+    "email": "viktoria846@mail.ru",
+    "password": "passViktoria846"
   },
   {
     "id": "102",
@@ -309,7 +323,9 @@
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
-    ]
+    ],
+    "email": "elizaveta102@mail.ru",
+    "password": "passElizaveta102"
   },
   {
     "id": "573",
@@ -348,7 +364,9 @@
         "subcategoryId": "photography",
         "name": "Фотография"
       }
-    ]
+    ],
+    "email": "viktoria573@mail.ru",
+    "password": "passViktoria573"
   },
   {
     "id": "294",
@@ -392,7 +410,9 @@
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
-    ]
+    ],
+    "email": "elena294@mail.ru",
+    "password": "passElena294"
   },
   {
     "id": "680",
@@ -431,7 +451,9 @@
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
-    ]
+    ],
+    "email": "konstantin680@mail.ru",
+    "password": "passKonstantin680"
   },
   {
     "id": "431",
@@ -470,7 +492,9 @@
         "subcategoryId": "resume_and_interview",
         "name": "Резюме и собеседование"
       }
-    ]
+    ],
+    "email": "sofia431@mail.ru",
+    "password": "passSofia431"
   },
   {
     "id": "758",
@@ -509,7 +533,9 @@
         "subcategoryId": "repair",
         "name": "Ремонт"
       }
-    ]
+    ],
+    "email": "ekaterina758@mail.ru",
+    "password": "passEkaterina758"
   },
   {
     "id": "019",
@@ -548,7 +574,9 @@
         "subcategoryId": "french",
         "name": "Французский"
       }
-    ]
+    ],
+    "email": "daria019@mail.ru",
+    "password": "passDaria019"
   },
   {
     "id": "365",
@@ -587,7 +615,9 @@
         "subcategoryId": "learning_skills",
         "name": "Навыки обучения"
       }
-    ]
+    ],
+    "email": "alla365@mail.ru",
+    "password": "passAlla365"
   },
   {
     "id": "827",
@@ -621,7 +651,9 @@
         "subcategoryId": "yoga_and_meditation",
         "name": "Медитация"
       }
-    ]
+    ],
+    "email": "maxim827@mail.ru",
+    "password": "passMaxim827"
   },
   {
     "id": "540",
@@ -660,7 +692,9 @@
         "subcategoryId": "project_management",
         "name": "Управление проектами"
       }
-    ]
+    ],
+    "email": "viktoria540@mail.ru",
+    "password": "passViktoria540"
   },
   {
     "id": "693",
@@ -699,7 +733,9 @@
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
-    ]
+    ],
+    "email": "anatoliy693@mail.ru",
+    "password": "passAnatoliy693"
   },
   {
     "id": "204",
@@ -738,7 +774,9 @@
         "subcategoryId": "mindfulness",
         "name": "Осознанность"
       }
-    ]
+    ],
+    "email": "lyubov204@mail.ru",
+    "password": "passLyubov204"
   },
   {
     "id": "871",
@@ -777,7 +815,9 @@
         "subcategoryId": "nutrition_and_health",
         "name": "Здоровое питание"
       }
-    ]
+    ],
+    "email": "andrey871@mail.ru",
+    "password": "passAndrey871"
   },
   {
     "id": "156",
@@ -816,7 +856,9 @@
         "subcategoryId": "yoga_and_meditation",
         "name": "Йога"
       }
-    ]
+    ],
+    "email": "vlada156@mail.ru",
+    "password": "passVlada156"
   },
   {
     "id": "308",
@@ -855,7 +897,9 @@
         "subcategoryId": "personal_brand",
         "name": "Личный бренд"
       }
-    ]
+    ],
+    "email": "daria308@mail.ru",
+    "password": "passDaria308"
   },
   {
     "id": "942",
@@ -894,7 +938,9 @@
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
-    ]
+    ],
+    "email": "natalia942@mail.ru",
+    "password": "passNatalia942"
   },
   {
     "id": "617",
@@ -933,7 +979,9 @@
         "subcategoryId": "photography",
         "name": "Фотография"
       }
-    ]
+    ],
+    "email": "olga617@mail.ru",
+    "password": "passOlga617"
   },
   {
     "id": "485",
@@ -977,7 +1025,9 @@
         "subcategoryId": "personal_development",
         "name": "Личностное развитие"
       }
-    ]
+    ],
+    "email": "maria485@mail.ru",
+    "password": "passMaria485"
   },
   {
     "id": "230",
@@ -1016,7 +1066,9 @@
         "subcategoryId": "acting",
         "name": "Актёрское мастерство"
       }
-    ]
+    ],
+    "email": "aleksey230@mail.ru",
+    "password": "passAleksey230"
   },
   {
     "id": "759",
@@ -1055,7 +1107,9 @@
         "subcategoryId": "resume_and_interview",
         "name": "Резюме и собеседование"
       }
-    ]
+    ],
+    "email": "olga759@mail.ru",
+    "password": "passOlga759"
   },
   {
     "id": "804",
@@ -1094,7 +1148,9 @@
         "subcategoryId": "repair",
         "name": "Ремонт"
       }
-    ]
+    ],
+    "email": "viktoria804@mail.ru",
+    "password": "passViktoria804"
   },
   {
     "id": "312",
@@ -1133,7 +1189,9 @@
         "subcategoryId": "french",
         "name": "Французский"
       }
-    ]
+    ],
+    "email": "yulia312@mail.ru",
+    "password": "passYulia312"
   },
   {
     "id": "678",
@@ -1172,6 +1230,8 @@
         "subcategoryId": "learning_skills",
         "name": "Навыки обучения"
       }
-    ]
+    ],
+    "email": "konstantin678@mail.ru",
+    "password": "passKonstantin678"
   }
 ]

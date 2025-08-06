@@ -19,6 +19,8 @@ export interface TUser {
   images: string[]
   subcategoriesWantToLearn: Skill[]
   favourites?: string[]
+  email: string
+  password: string
 }
 
 export interface UserCardProps {

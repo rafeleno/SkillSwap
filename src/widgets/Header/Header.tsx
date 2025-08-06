@@ -1,7 +1,5 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
-import skillsData from '@databases/skills.json'
 import userAvatar from '@images/avatars/user1.jpg'
-import chevronDown from '@svg/main/chevron-down.svg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { MainLogo } from '@uiComponents/MainLogo'
@@ -30,8 +28,8 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
     setIsNotificationOpen(false)
   }
 
-  const toggleSkillsPopup = () => {
-    setIsSkillsPopupOpen(prev => !prev)
+  const openSkillsPopup = () => {
+    setIsSkillsPopupOpen(true)
   }
 
   const closeSkillsPopup = () => {
@@ -47,9 +45,9 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
           <button className={styles.link}>О проекте</button>
           <button
             className={styles.dropdown}
-            onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
               e.stopPropagation()
-              toggleSkillsPopup()
+              openSkillsPopup()
             }}
           >
             Все навыки
