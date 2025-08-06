@@ -1,5 +1,5 @@
 import type { DropdownProps, IOption } from './Dropdown.types'
-import { CheckboxInput } from '@uiComponents/Checkboxinput/Checkboxinput'
+import { CheckboxInput } from '@uiComponents/CheckboxInput/Checkboxinput'
 import React, { useMemo, useRef, useState } from 'react'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import styles from './styles.module.scss'
