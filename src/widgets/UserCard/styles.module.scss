@@ -1,22 +1,21 @@
 @use '@colors' as c;
 @use '@typographyStyles' as t;
 
-
 .user-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 324px;
+  width: 324px;
   min-height: 368px;
   padding: 20px;
   background-color: c.$color-card-background;
   border-radius: 12px;
   user-select: none;
 
-    &-detailed {
-      height: 444px;
-      padding: 32px;
-    }
+  &-detailed {
+    height: 444px;
+    padding: 32px;
+  }
 }
 
 .header {
@@ -52,22 +51,23 @@
   margin-top: 20px;
 }
 
-.sections, .section {
+.sections,
+.section {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
-    &-detailed {
+  &-detailed {
     gap: 24px;
   }
 }
 
 .section {
   gap: 8px;
-  
-    &-detailed {
-      gap: 14px;
-    }
+
+  &-detailed {
+    gap: 14px;
+  }
 }
 
 .label {

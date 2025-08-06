@@ -1,14 +1,12 @@
 import type { FavoritesPageProps } from './FavoritesPage.types'
+import { ProfileMenu } from '@widgetComponents/ProfileMenu'
+import { UserCardList } from '@widgetComponents/UserCardList'
 import React from 'react'
-import styles from './styles.module.scss'
-import { UserCardList } from '@widgetComponents/UserCardList';
 
 import users from '../../../public/db/users.json'
-import { ProfileMenu } from '@widgetComponents/ProfileMenu';
-
+import styles from './styles.module.scss'
 
 export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
-
   const favoriteUsers = users
     .filter(user => user.likes >= 50)
     .sort((a, b) => b.likes - a.likes)
@@ -17,7 +15,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
   return (
     <div className={styles.favoritesPage}>
       <ProfileMenu />
-      <UserCardList type="regular" title="Избранное" buttonIconId="chevron-right" users={favoriteUsers} />     
+      <UserCardList type="regular" title="Избранное" buttonIconId="chevron-right" users={favoriteUsers} />
     </div>
   )
 }

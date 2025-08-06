@@ -72,7 +72,7 @@ export const MainPage: React.FC = () => {
       {
         (filters.skill.length !== 0 || filters.locations.length !== 0)
         && (
-          <UserCardList type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={filteredUsers.length}></UserCardList>
+          <UserCardList type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
         )
       }
       {

@@ -3,7 +3,7 @@ import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 export interface UserCardListProps {
   type: 'regular' | 'sorted' | 'slider'
   title: string
-  counter?: number
+  counter?: string
   users: TUser[]
   className?: string
   buttonText?: string
