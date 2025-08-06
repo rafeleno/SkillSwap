@@ -9,8 +9,15 @@ import styles from './styles.module.scss'
 export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike }) => {
   const { avatar, name, location, age, description, skillCanTeach, subcategoriesWantToLearn, id } = user
 
-  const handleLike = () => onLike(id)
-  const handleButtonClick = () => onClick(id)
+  const handleLike = () => {
+    if (onLike)
+      onLike(id)
+  }
+
+  const handleButtonClick = () => {
+    if (onClick)
+      onClick(id)
+  }
 
   return (
     <article
