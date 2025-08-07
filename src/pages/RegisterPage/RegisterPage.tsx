@@ -6,30 +6,35 @@ import { RegisterContextProvider } from '../../shared/contexts/RegisterContext/R
 import styles from './styles.module.scss'
 
 export const RegisterPage: React.FC = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
 
   // TODO: Получить из слайса
   // Заглушка пользователя
-  const user: TUser = {
-    id: '',
-    email,
-    name: '',
-    description: '',
-    avatar: '',
-    categories: [],
-    rating: 0,
-  }
+  // const user: TUser = {
+  //   id: '',
+  //   email,
+  //   password,
+  //   name: '',
+  //   description: '',
+  //   avatar: '',
+  //   subcategoriesWantToLearn: [],
+  //   skillCanTeach: [],
+  //   age: '20',
+  //   gender: 'male',
+  //   images:
+  //   rating: 0,
+  // }
 
-  // Заглушка категорий
-  const categories: ICategory[] = []
+  // // Заглушка категорий
+  // const categories: ICategory[] = []
 
-  const handleUpdateUser = (field: keyof TUser, value: any) => {
-    if (field === 'email')
-      setEmail(value)
-  }
+  // const handleUpdateUser = (field: keyof TUser, value: any) => {
+  //   if (field === 'email')
+  //     setEmail(value)
+  // }
 
-  const handleSubmit = () => {}
+  // const handleSubmit = () => {}
 
   return (
     <RegisterContextProvider>

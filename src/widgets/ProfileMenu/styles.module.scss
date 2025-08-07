@@ -1,8 +1,10 @@
 @use '@colors' as c;
 
 .profile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 324px;
-  height: min-content;
   padding: 20px;
   background-color: c.$color-card-background;
   border-radius: 8px;
@@ -16,5 +18,11 @@
     svg {
       margin-right: 12px;
     }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }

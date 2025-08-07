@@ -14,6 +14,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   bordered = true, // отображать ли рамку
   searchable, // включён ли режим поиска
   isCheckbox, // активен ли режим множественного выбора
+  placeholder,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
@@ -76,7 +77,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 className={styles.input}
                 onChange={e => setSearchTerm(e.target.value)}
                 value={searchTerm}
-                placeholder={label}
+                placeholder={placeholder}
                 onFocus={() => setIsOpen(true)}
                 onClick={e => e.stopPropagation()}
               />

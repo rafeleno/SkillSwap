@@ -3,9 +3,11 @@ import { MainLogo } from '@uiComponents/MainLogo'
 import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
 import React, { Suspense } from 'react'
+import { useSelector } from 'react-redux'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { Pages } from '../pages'
 import { SkillPage } from '../pages/SkillPage/SkillPage'
+import { selectCurrentUser } from '../services/slices/user/userSlice'
 import { ProtectedRoute } from '../shared/lib/components/ProtectedRoute'
 import styles from './styles.module.scss'
 
@@ -26,10 +28,12 @@ function HeaderCompact() {
 }
 
 export function DefaultLayout() {
+  const userSelector = useSelector(selectCurrentUser)
+
   return (
     <div className={styles.defaultLayout}>
       {/* TODO: вытяннуть из слайса */}
-      <Header user={null} />
+      <Header user={userSelector} />
       <Outlet />
       <Footer />
     </div>
@@ -90,7 +94,7 @@ export function AppRouter() {
         {/* Только для авторизованных */}
         <Route element={<DefaultLayout />}>
           <Route
-            path="/profile"
+            path="/profile/:id/:page"
             element={(
               <ProtectedRoute>
                 <Pages.Profile />

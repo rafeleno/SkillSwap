@@ -17,6 +17,19 @@
   border-width: 1px;
   border-radius: 12px;
 
+  &.active {
+    background-color: c.$color-button-hover;
+  }
+
+  &.fixed.active {
+    background-color: c.$color-button-hover;
+    border-color: c.$color-button-hover;
+  }
+
+  &.primary.active {
+    background-color: c.$color-button-hover;
+  }
+
   &.primary {
     background-color: c.$color-accent;
     border-color: c.$color-accent;

@@ -1,4 +1,6 @@
 import type { IOption } from '@uiComponents/Dropdown/Dropdown.types'
+import type { useState } from 'react'
+import type { AppDispatch } from 'services/store'
 import type { RegisterModalContentStepTwoProps } from './RegisterModalContentStepTwo.types'
 import sexData from '@databases/sex.json'
 import skillsData from '@databases/skills_dropdown.json'
@@ -7,60 +9,139 @@ import { Datepicker } from '@uiComponents/Datepicker'
 import { Dropdown } from '@uiComponents/Dropdown'
 import { MainButton } from '@uiComponents/MainButton'
 import { PrimaryTextInput } from '@uiComponents/PrimaryTextInput'
-import React, { useContext, useEffect, useState } from 'react'
-import styles from './styles.module.scss'
-import userInfoPng from '../../assets/images/modalImages/user-info.png';
-import { useValidation } from '../../shared/hooks/useValidation';
+import { set } from 'date-fns'
+import React, { useContext, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import userInfoPng from '../../assets/images/modalImages/user-info.png'
+import { selectAllCategories, selectSkillsStatus } from '../../services/slices/skill/skillSlice'
 import { RegisterContext } from '../../shared/contexts/RegisterContext/RegisterContext'
+import { useValidation } from '../../shared/hooks/useValidation'
+import styles from './styles.module.scss'
 
 export const RegisterModalContentStepTwo: React.FC<RegisterModalContentStepTwoProps> = ({
   onNext,
-  onPrev
+  onPrev,
 }) => {
-  const { stepTwoStates } = useContext(RegisterContext);
+  const { stepTwoStates } = useContext(RegisterContext)
 
-  const subcategories = skillsData.flatMap(item => item.subcategory)
+  // const subcategories = skillsData.flatMap(item => item.subcategory)
+  const [subcategories, setSubcategories] = stepTwoStates.subcategoriesState
+  const [categories, setCategories] = stepTwoStates.categoriesState
+  const [selectedCategory, setSelectedCategory] = stepTwoStates.toLearnState
+  const [selectedSubcategory, setSelectedSubcategory] = stepTwoStates.toSabLearnState
 
-  const [nameValue, setNameValue] = stepTwoStates.nameState;
-  const [dateValue, setDateValue] = stepTwoStates.dateState;
-  const [genderValue, setGenderValue] = stepTwoStates.genderState;
-  const [locationValue, setLocationValue] = stepTwoStates.locationState;
-  const [toLearnValue, setToLearnValue] = stepTwoStates.toLearnState;
-  const [toSubLearnValue, setToSubLearnValue] = stepTwoStates.toSabLearnState;
+  const skillData = useSelector(selectAllCategories)
+  const skillsStatus = useSelector(selectSkillsStatus)
+  const dispatch = useDispatch<AppDispatch>()
+
+  const handleSubcategoryChange = (option: IOption) => {
+    setSelectedSubcategory(option)
+  }
+
+  // Загружаем данные о навыках при монтировании компонента
+  useEffect(() => {
+    if (skillData.length === 0 && skillsStatus === 'idle') {
+    }
+  }, [dispatch, skillData.length, skillsStatus])
+
+  // Обновляем категории при получении данных из store
+  useEffect(() => {
+    if (skillData.length > 0) {
+      const categoryOptions = skillData.map(category => ({
+        id: category.id,
+        value: category.name,
+      }))
+      setCategories(categoryOptions)
+    }
+  }, [skillData])
+
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+
+  const [nameValue, setNameValue] = stepTwoStates.nameState
+  const [dateValue, setDateValue] = stepTwoStates.dateState
+  const [genderValue, setGenderValue] = stepTwoStates.genderState
+  const [locationValue, setLocationValue] = stepTwoStates.locationState
+  const [toLearnValue, setToLearnValue] = stepTwoStates.toLearnState
+  const [toSubLearnValue, setToSubLearnValue] = stepTwoStates.toSabLearnState
+  const [avatar, setAvatar] = stepTwoStates.avatarState
+
+  const handleCategoryChange = (option: IOption) => {
+    setSelectedCategory(option)
+    setSelectedSubcategory(null)
+    const originalCategory = skillData.find(cat => cat.id === option.id)
+    if (originalCategory && originalCategory.children) {
+      const subcategoryOptions = originalCategory.children.map(sub => ({
+        id: sub.id,
+        value: sub.name,
+      }))
+      setSubcategories(subcategoryOptions)
+    }
+    else {
+      setSubcategories([])
+    }
+  }
+
+  const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault()
+    const file = event.target.files && event.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = () => {
+        const base64Image = reader.result as string
+        setAvatar(base64Image)
+      }
+      reader.readAsDataURL(file)
+    }
+  }
 
   const isValid = useValidation([
     nameValue !== null,
     dateValue !== null,
     genderValue !== null,
     locationValue !== null,
-    toLearnValue.length > 0,
-    toSubLearnValue.length > 0
-  ]);
+    toLearnValue !== null,
+    toSubLearnValue !== null,
+  ])
 
   return (
     <article className={styles.container}>
-
       <div className={styles.formContainer}>
         <div className={styles.iconContainer}>
-          <svg
-            className={styles.iconUser}
-            width="54"
-            height="54"
-            viewBox="0 0 54 54"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use href="#icon-user-circle" />
-          </svg>
-          <svg
-            className={styles.iconAdd}
-            width="16"
-            height="16"
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use href="#icon-add" />
-          </svg>
+          <label htmlFor="avatar" className={styles.label}>
+            <input
+              type="file"
+              id="avatar"
+              className={styles.hiddenInput}
+              multiple={false}
+              onChange={handleAvatarChange}
+              aria-label="Выберите изображения навыка"
+            />
+            {avatar && (
+              <img src={typeof avatar === 'string' ? avatar : ''} alt="Аватар пользователя" />
+            )}
+            {!avatar && (
+              <svg
+                className={styles.iconUser}
+                width="54"
+                height="54"
+                viewBox="0 0 54 54"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <use href="#icon-user-circle" />
+              </svg>
+            )}
+            <svg
+              className={styles.iconAdd}
+              width="16"
+              height="16"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use href="#icon-add" />
+            </svg>
+          </label>
         </div>
         <form className={styles.registerForm}>
           <PrimaryTextInput
@@ -101,11 +182,9 @@ export const RegisterModalContentStepTwo: React.FC<RegisterModalContentStepTwoPr
 
           {/* TODO: Исправить передачу параметров, когда подправят dropdown */}
           <Dropdown
-            options={skillsData}
-            selectedOption={skillsData.find(element => element.value === toLearnValue[0])}
-            onChange={(option: IOption) => {
-              setToLearnValue([option.value])
-            }}
+            options={categories}
+            selectedOption={selectedCategory}
+            onChange={handleCategoryChange}
             label="Категория навыка, которому хотите научиться"
             searchable={false}
           />
@@ -113,10 +192,8 @@ export const RegisterModalContentStepTwo: React.FC<RegisterModalContentStepTwoPr
           {/* TODO: Исправить передачу параметров, когда подправят dropdown */}
           <Dropdown
             options={subcategories}
-            selectedOption={subcategories.find(element => element.value === toSubLearnValue[0])}
-            onChange={(option: IOption) => {
-              setToSubLearnValue([option.value])
-            }}
+            selectedOption={selectedSubcategory}
+            onChange={handleSubcategoryChange}
             label="Подкатегория навыка, которому хотите научиться"
             searchable={false}
           />

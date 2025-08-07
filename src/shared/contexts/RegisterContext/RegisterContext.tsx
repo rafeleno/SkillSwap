@@ -17,8 +17,11 @@ export function RegisterContextProvider({ children }: TRegisterContextProps) {
           dateState: useState<Date | null>(null),
           genderState: useState<string>(''),
           locationState: useState<string>(''),
-          toLearnState: useState<string[]>([]),
-          toSabLearnState: useState<string[]>([]),
+          toLearnState: useState<IOption | null>(null),
+          toSabLearnState: useState<IOption | null>(null),
+          categoriesState: useState<IOption[]>([]),
+          subcategoriesState: useState<IOption[]>([]),
+          avatarState: useState<string | null>(null),
         },
         stepThreeStates: {
           selectedCategoryState: useState<IOption | null>(null),

@@ -13,7 +13,8 @@ npm start
 ```
 
 ### Технологии
-**React** 
+
+**React**
 **TypeScript**
 **Redux Toolkit**
 **React Router v6**
@@ -47,6 +48,7 @@ npm start
 ```
 
 ### Основной функционал
+
 - Аутентификация и защита маршрутов
 - Уведомления с разделением на новые и прочитанные
 - Поиск и фильтрация навыков
@@ -54,11 +56,14 @@ npm start
 - Гибкая модульная архитектура
 
 ### Основные директории
+
 # src/app/
+
 - **App.tsx** — корневой компонент
 - **router.tsx** — маршрутизация через React Router v6
 
 # src/services/
+
 - **store.ts** — конфигурация Redux Toolkit
 - **slices/** — структура по доменам:
 - filter/ - фильтрация навыков
@@ -70,15 +75,19 @@ npm start
 (thunks, actions, reducers по соответствующим сущностям)
 
 # src/shared/
+
 Хуки (hooks/):
+
 - **useClickOutside.ts** - хук для обработки кликов вне элемента
 - **useFilters.ts** - хук для работы с фильтрами
 
 ### Утилиты (lib/)
+
 - **types.ts** — глобальные типы
 - **components/** — ProtectedRoute.tsx
 
 ### ProtectedRoute
+
 Файл: src/shared/lib/components/ProtectedRoute.tsx
 
 Компонент защищает маршруты на основе авторизации пользователя:
@@ -102,6 +111,7 @@ export function ProtectedRoute({ onlyUnAuth, children }: ProtectedRouteProps) {
 ```
 
 ### UI-компоненты (ui/)
+
 Примеры:
 
 ```
@@ -110,8 +120,8 @@ export function ProtectedRoute({ onlyUnAuth, children }: ProtectedRouteProps) {
 ```
 
 # src/pages/
+
 - **CatalogPage/** - страница каталога навыков
-- **FavoritesPage/** - страница избранного
 - **LoginPage/** - страница входа
 - **MainPage/** - главная страница
 - **OnboardingPage/** - онбординг
@@ -120,11 +130,13 @@ export function ProtectedRoute({ onlyUnAuth, children }: ProtectedRouteProps) {
 - **SkillPage/** - страница навыка
 
 Страницы ошибок:
+
 - **NotFound404/**
 - **NotFound500/**
 - **NotFoundPage/**
 
 # src/widgets/
+
 - **Header/** - шапка сайта
 - **Footer/** - подвал сайта
 - **NotificationModal/** - модальное окно уведомлений
@@ -135,10 +147,11 @@ export function ProtectedRoute({ onlyUnAuth, children }: ProtectedRouteProps) {
 - **RegisterModal/** - модальное окно регистрации
 
 # src/styles/
-- **_colors.scss** - цветовая схема приложения
-- **_mixins.scss** - SCSS миксины
-- **_global.scss** - глобальные стили
-- **_typography.scss** - типографика
+
+- **\_colors.scss** - цветовая схема приложения
+- **\_mixins.scss** - SCSS миксины
+- **\_global.scss** - глобальные стили
+- **\_typography.scss** - типографика
 
 ### Защита маршрутов
 
@@ -178,7 +191,9 @@ dispatch(markAsRead(id))
 ```bash
 npm run create
 ```
+
 Выберите тип:
+
 - **ui — базовые элементы (кнопки, инпуты, селекторы)**
 - **widgets — составные компоненты (карточки, блоки)**
 - **pages — страницы приложения**
@@ -199,6 +214,7 @@ import styles from './styles.module.scss'
 ```
 
 ### Советы по разработке
+
 - **Используйте classnames для динамических классов**
 - **Повторно используйте хуки из shared/hooks/**
 - **UI — в shared/ui/, логика — в shared/hooks/, состояние — в services/slices/**

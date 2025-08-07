@@ -2,73 +2,77 @@
 @use '@typographyStyles' as t;
 
 .container {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    width: 100%;
-    padding: 40px 60px;
-    background-color: c.$color-card-background;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding: 40px 60px;
+  background-color: c.$color-card-background;
+  border-radius: 12px;
 }
 
 .register-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 .icon {
-    &-container {
-        position: relative;
-        width: 72px;
-        height: 72px;
-    }
+  &-container {
+    position: relative;
+    width: 72px;
+    height: 72px;
+  }
 
-    &-user {
-        position: absolute;
-        right: 9px;
-        bottom: 9px;
-        stroke: #FFF;
-    }
+  &-user {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    stroke: #fff;
+  }
 
-    &-add {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        color: #FFF;
-        background-color: c.$color-accent;
-        border-radius: 8px;
-    }
+  &-add {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #fff;
+    background-color: c.$color-accent;
+    border-radius: 8px;
+  }
 }
 
 .flex-row {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
 }
 
 .onboarding {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0 60px;
-    text-align: center;
-    background-color: c.$color-card-background;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 60px;
+  text-align: center;
+  background-color: c.$color-card-background;
+  border-radius: 12px;
+}
+
+.hidden-input {
+  display: none;
 }

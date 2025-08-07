@@ -1,8 +1,9 @@
 @use '@colors' as c;
 
-.favorites-page {
+.favorites {
   display: flex;
   gap: 24px;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 136px;
   padding: 20px 36px;
 }

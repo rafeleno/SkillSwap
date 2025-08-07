@@ -1,12 +1,11 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
-import userAvatar from '@images/avatars/user1.jpg'
 import { IconButton } from '@uiComponents/IconButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { MainLogo } from '@uiComponents/MainLogo'
 import { Search } from '@uiComponents/Search'
 import { SkillsPopup } from '@widgetComponents/SkillsPopup'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
 
@@ -14,7 +13,12 @@ interface HeaderProps {
   user: null | TUser
 }
 
+export function removeLastEl(value: string): string {
+  return value.slice(0, -1)
+}
+
 export const Header: React.FC<HeaderProps> = ({ user }) => {
+  const { avatar, name } = user || {}
   const [searchValue, setSearchValue] = useState('')
   const [isNotificationOpen, setIsNotificationOpen] = useState(false)
   const [isSkillsPopupOpen, setIsSkillsPopupOpen] = useState<boolean>(false)
@@ -90,10 +94,26 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
                   />
                   <IconButton name="like" onClick={() => {}} />
 
-                  <div className={styles['user-info']}>
-                    <span className={styles['user-name']}>{user.name}</span>
-                    <img src={userAvatar} alt="Аватар пользователя" className={styles['user-avatar']} />
-                  </div>
+                  <Link to={`/profile/${user.id}/data`}>
+                    <div className={styles['user-info']}>
+                      <span className={styles['user-name']}>{name}</span>
+                      {avatar && (
+                        <img src={removeLastEl(avatar)} alt="Аватар пользователя" className={styles['user-avatar']} />
+                      )}
+                      {!avatar && (
+                        <svg
+                          className={styles['user-avatar']}
+                          width="54"
+                          height="54"
+                          viewBox="0 0 48 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <use href="#icon-user-circle" />
+                        </svg>
+                      )}
+                    </div>
+                  </Link>
                 </>
               )
             : (

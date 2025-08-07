@@ -9,10 +9,11 @@ export const MainButton: React.FC<MainButtonProps> = ({
   onClick,
   leftIconId,
   rightIconId,
+  isActive,
 }) => {
   return (
     <button
-      className={`${styles.button} ${styles[type]}`}
+      className={`${styles.button} ${styles[type]} ${isActive ? styles.active : ''}`}
       disabled={disabled}
       onClick={onClick}
     >

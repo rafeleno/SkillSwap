@@ -65,11 +65,11 @@ export const PrimaryTextInput: React.FC<InputProps> = ({
             ? (showPassword ? 'text' : 'password')
             : type === 'email' ? 'email' : 'text'}
           value={value}
-          placeholder={type === 'password'
+          placeholder={placeholder || (type === 'password'
             ? 'Введите ваш пароль'
             : type === 'email'
               ? 'Введите ваш email'
-              : placeholder || ''}
+              : placeholder || '')}
           className={inputClasses}
           onChange={handleChange}
           onFocus={handleFocus}

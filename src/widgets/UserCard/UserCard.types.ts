@@ -11,7 +11,7 @@ export interface TUser {
   avatar: string
   name: string
   location: string
-  age: string // строка, типа "34 года"
+  age: string | Date
   gender: string
   likes: number
   description: string

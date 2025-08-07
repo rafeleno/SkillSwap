@@ -2,7 +2,8 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { RootState } from '../../store'
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchUserById, fetchUsers } from './thunks'
+import { redirect } from 'react-router-dom'
+import { fetchUserById, fetchUsers, registerUser } from './thunks'
 
 interface UserState {
   users: TUser[] | null
@@ -128,6 +129,18 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(registerUser.pending, (state) => {
+        state.status = 'loading'
+        state.error = null
+      })
+      .addCase(registerUser.fulfilled, (state, action: PayloadAction<TUser>) => {
+        state.status = 'succeeded'
+        state.user = action.payload
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.payload as string
+      })
       .addCase(fetchUsers.pending, (state) => {
         state.status = 'loading'
         state.error = null

@@ -13,4 +13,5 @@ export interface DropdownProps {
   height?: number
   bordered?: boolean
   isCheckbox?: boolean
+  placeholder?: string
 }

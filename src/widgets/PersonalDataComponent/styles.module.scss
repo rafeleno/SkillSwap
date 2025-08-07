@@ -1,0 +1,112 @@
+@use '@colors' as c;
+
+.profile {
+  display: flex;
+  width: 1020px;
+  padding: 60px;
+  background-color: c.$color-card-background;
+  border-radius: 8px;
+
+  &-form {
+    width: 460px;
+
+    .change-password {
+      width: fit-content;
+      margin-bottom: 16px;
+      color: #508826;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    &-input-wrap {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-avatar-wrap {
+    position: relative;
+    height: fit-content;
+    margin-left: 196px;
+
+    .avatar {
+      width: 244px;
+      height: 244px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .gallery-edit {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background-color: #deebc5;
+      border-radius: 50%;
+    }
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  margin-bottom: 4px;
+  color: c.$color-text-primary;
+  font-size: 16px;
+}
+
+.input-base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px 20px;
+  color: c.$color-text-primary;
+  font-size: 16px;
+  text-align: left;
+  background-color: c.$color-card-background;
+  border: 1px solid c.$color-caption;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(c.$color-accent, 0.3);
+  }
+
+  &:hover {
+    border-color: c.$color-accent;
+  }
+
+  &.borderless {
+    width: 252px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+
+    &:hover {
+      color: c.$color-text-link;
+    }
+  }
+}
+
+.input {
+  @extend .input-base;
+
+  height: 48px;
+}
+
+.textarea {
+  @extend .input-base;
+
+  resize: none;
+}

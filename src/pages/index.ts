@@ -10,9 +10,6 @@ export const Pages = {
   Catalog: lazy(() => import('./MainPage').then(module => ({
     default: module.MainPage,
   }))),
-  Favorites: lazy(() => import('./FavoritesPage').then(module => ({
-    default: module.FavoritesPage,
-  }))),
   Login: lazy(() => import('./LoginPage').then(module => ({
     default: module.LoginPage,
   }))),

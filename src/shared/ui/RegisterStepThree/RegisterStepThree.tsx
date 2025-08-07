@@ -1,39 +1,39 @@
 import type { IOption } from '@uiComponents/Dropdown/Dropdown.types'
+import type { AppDispatch } from '../../../services/store'
 import type { RegisterStepThreeProps } from './RegisterStepThree.types'
 import schoolBoardImage from '@images/modalImages/school-board.png'
 import { Dropdown } from '@uiComponents/Dropdown'
 import { MainButton } from '@uiComponents/MainButton'
 import React, { useContext, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styles from './styles.module.scss'
 import { fetchSkills } from 'services/slices/skill/thunks'
-import { selectAllCategories, selectSkillsStatus } from '../../../services/slices/skill/skillSlice';
-import { AppDispatch } from '../../../services/store';
+import { selectAllCategories, selectSkillsStatus } from '../../../services/slices/skill/skillSlice'
 import { RegisterContext } from '../../contexts/RegisterContext/RegisterContext'
+import styles from './styles.module.scss'
 
 export const RegisterStepThree: React.FC<RegisterStepThreeProps> = ({
   onPrev,
   onSubmit,
 }) => {
-  const { stepThreeStates } = useContext(RegisterContext);
+  const { stepThreeStates } = useContext(RegisterContext)
 
-  const [selectedCategory, setSelectedCategory] = stepThreeStates.selectedCategoryState;
-  const [selectedSubcategory, setSelectedSubcategory] = stepThreeStates.selectedSubcategoryState;
-  const [categories, setCategories] = stepThreeStates.categoriesState;
-  const [subcategories, setSubcategories] = stepThreeStates.subcategoriesState;
-  const [files, setFiles] = stepThreeStates.filesState;
-  const [dragActive, setDragActive] = stepThreeStates.dragActiveState;
+  const [selectedCategory, setSelectedCategory] = stepThreeStates.selectedCategoryState
+  const [selectedSubcategory, setSelectedSubcategory] = stepThreeStates.selectedSubcategoryState
+  const [categories, setCategories] = stepThreeStates.categoriesState
+  const [subcategories, setSubcategories] = stepThreeStates.subcategoriesState
+  const [files, setFiles] = stepThreeStates.filesState
+  const [dragActive, setDragActive] = stepThreeStates.dragActiveState
 
   // Получаем данные из Redux store
-  const skillData = useSelector(selectAllCategories);
-  const skillsStatus = useSelector(selectSkillsStatus);
-  const dispatch = useDispatch<AppDispatch>();
+  const skillData = useSelector(selectAllCategories)
+  const skillsStatus = useSelector(selectSkillsStatus)
+  const dispatch = useDispatch<AppDispatch>()
 
   // Загружаем данные о навыках при монтировании компонента
   useEffect(() => {
     if (skillData.length === 0 && skillsStatus === 'idle') {
     }
-  }, [dispatch, skillData.length, skillsStatus]);
+  }, [dispatch, skillData.length, skillsStatus])
 
   // Обновляем категории при получении данных из store
   useEffect(() => {
@@ -151,7 +151,7 @@ export const RegisterStepThree: React.FC<RegisterStepThreeProps> = ({
           />
           <div
             className={`${styles.fileupload} ${dragActive ? styles.drag : ''
-              }`}
+            }`}
             onDragEnter={handleDrag}
             onDragOver={handleDrag}
             onDragLeave={handleLeave}

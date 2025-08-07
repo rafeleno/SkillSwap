@@ -1,0 +1,1 @@
+export { PersonalDataComponent } from './PersonalDataComponent';

@@ -19,6 +19,25 @@ export const saveUserData = createAsyncThunk(
   },
 ) // удалить
 
+export const registerUser = createAsyncThunk(
+  'user/register',
+  async (userData: TUser, { getState, rejectWithValue }) => {
+    try {
+      const { user } = getState() as RootState
+      if (user.user) {
+        throw new Error('User is already registered')
+      }
+      else {
+        localStorage.setItem('user', JSON.stringify(userData))
+        return userData
+      }
+    }
+    catch (error: any) {
+      return rejectWithValue(error.message)
+    }
+  },
+)
+
 export const fetchUsers = createAsyncThunk(
   'user/fetchUsers',
   async (_, thunkAPI) => {

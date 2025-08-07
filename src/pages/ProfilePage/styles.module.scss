@@ -1,1 +1,9 @@
 @use '@colors' as c;
+
+.profile-page {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  height: 100%;
+  margin: 136px 60px;
+}

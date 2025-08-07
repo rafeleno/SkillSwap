@@ -5,4 +5,5 @@ export interface MainButtonProps {
   leftIconId?: string
   rightIconId?: string
   disabled?: boolean
+  isActive?: boolean
 }
