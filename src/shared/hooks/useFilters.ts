@@ -57,8 +57,9 @@ export function useFilters({
         const prevArray = prev[type] || []
         const exists = prevArray.includes(id)
 
-        function collectDescendants(nodeId: string, skills: FiltersMap): string[] {
-          const node = skills[skills.findIndex(skill => skill.id === nodeId)]
+        // Логика для сбора дочерних элементов
+        const collectDescendants = (nodeId: string, skills: FiltersMap): string[] => {
+          const node = skills.find(skill => skill.id === nodeId)
           if (!node)
             return []
           return node.children?.reduce(
@@ -66,6 +67,7 @@ export function useFilters({
             [],
           ) || []
         }
+
         const newArray = (() => {
           if (exists) {
             if (type === 'skill') {
@@ -79,10 +81,8 @@ export function useFilters({
             }
             if (type === 'skill') {
               const newArray = [...prevArray, id, ...collectDescendants(id, skillsMap)]
-              const uniqueArray = Array.from(new Set(newArray))
-              return uniqueArray
+              return Array.from(new Set(newArray))
             }
-
             return [...prevArray, id]
           }
         })()
@@ -91,6 +91,12 @@ export function useFilters({
           ...prev,
           [type]: newArray,
         }
+
+        // Вызов onChange, если он определен
+        if (onChange) {
+          onChange(newFilters)
+        }
+
         return newFilters
       })
     },
