@@ -2,15 +2,19 @@ import type { LoginPageProps } from './LoginPage.types'
 import { Login } from '@widgetComponents/Login'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { login } from '../../services/slices/user/userSlice'
+import { useDispatch } from '../../services/store'
 import styles from './styles.module.scss'
 
 export const LoginPage: React.FC<LoginPageProps> = () => {
+  const dispatch = useDispatch()
   const [emailValue, setEmailValue] = useState<string | null>(null)
   const [passwordValue, setPasswordValue] = useState<string | null>(null)
   const navigate = useNavigate()
 
-  // TODO: добавить функционал входа пользователя
-  const onSubmit = () => {}
+  const onSubmit = () => {
+    dispatch(login({ email: emailValue, password: passwordValue }))
+  }
 
   // TODO: добавить функционал перехода к регистрации
   const onRegister = () => {

@@ -14,10 +14,9 @@ interface HeaderProps {
 }
 
 export function removeLastEl(value: string): string {
-  if (value) {
-    return value.slice(0, -1)
-  }
-  return null
+  if (value.includes('.jpg'))
+    return value
+  return value.slice(0, -1)
 }
 
 export const Header: React.FC<HeaderProps> = ({ user }) => {

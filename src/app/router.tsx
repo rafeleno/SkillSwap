@@ -103,16 +103,6 @@ export function AppRouter() {
           />
         </Route>
         <Route element={<DefaultLayout />}>
-          <Route
-            path="/favorites"
-            element={(
-              <ProtectedRoute>
-                <Pages.Favorites />
-              </ProtectedRoute>
-            )}
-          />
-        </Route>
-        <Route element={<DefaultLayout />}>
           <Route path="*" element={<Pages.NotFound404 />} />
         </Route>
       </Routes>

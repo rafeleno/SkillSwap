@@ -1,11 +1,11 @@
 @use '@colors' as c;
 
 .container {
+  width: 1136px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   justify-self: center;
-  inline-size: 78.8%;
 }
 
 .form,
