@@ -8,25 +8,38 @@ import { MainButton } from '@uiComponents/MainButton'
 import { PrimaryTextInput } from '@uiComponents/PrimaryTextInput'
 import { removeLastEl } from '@widgetComponents/Header/Header'
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { selectCurrentUser } from '../../services/slices/user/userSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice'
 import styles from './styles.module.scss'
-
-// TODO: Вынести в общие функции
-export function getFirstWord(value: string): string {
-  return value.trim().split(/\s+/)[0] || ''
-}
 
 export const PersonalDataComponent: React.FC<PersonalDataComponentProps> = () => {
   const userSelector = useSelector(selectCurrentUser)
   const { email, name, avatar, age: dateOfBirth, location, description, gender } = userSelector
   const emailState = useState(email)
   const nameState = useState(name)
-  const [date, setDate] = useState(new Date(dateOfBirth))
+  const [date, setDate] = useState(
+    dateOfBirth ? new Date(dateOfBirth) : new Date(),
+  )
   const [genderValue, setGenderValue] = useState<string | null>(gender)
+  const [descriptionValue, setDescriptionValue] = useState<string | null>(description)
   const [locationValue, setLocationValue] = useState<string | null>(location)
+  const [avatarValue, setAvatarValue] = useState<string | null>(avatar)
 
-  console.log(locationValue)
+  const dispatch = useDispatch()
+
+  const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault()
+    const file = event.target.files && event.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = () => {
+        const base64Image = reader.result as string
+        setAvatarValue(base64Image)
+        dispatch(updateUserField({ field: avatar, value: base64Image }))
+      }
+      reader.readAsDataURL(file)
+    }
+  }
 
   return (
     <div className={styles.profile}>
@@ -98,29 +111,68 @@ export const PersonalDataComponent: React.FC<PersonalDataComponentProps> = () =>
             id="description"
             className={styles.textarea}
             rows={4}
-            value={description}
+            value={descriptionValue}
+            onChange={e => setDescriptionValue(e.target.value)}
             placeholder="Коротко опишите, чему можете научить"
             aria-label="Коротко опишите, чему можете научить"
           />
         </div>
         <MainButton
           type="primary"
-          onClick={() => {}}
+          onClick={() => {
+            dispatch(updateUserField({ field: 'description', value: description }))
+            dispatch(updateUserField({ field: 'avatar', value: avatarValue }))
+            dispatch(updateUserField({ field: 'name', value: nameState[0] }))
+            dispatch(updateUserField({ field: 'location', value: locationValue }))
+            dispatch(updateUserField({ field: 'age', value: date }))
+            dispatch(updateUserField({ field: 'gender', value: genderValue }))
+            dispatch(updateUserField({ field: 'email', value: emailState }))
+
+            localStorage.setItem('user', JSON.stringify({
+              description: descriptionValue,
+              avatar: avatarValue,
+              name: nameState[0],
+              location: locationValue,
+              age: date,
+              gender: genderValue,
+              email: emailState,
+            }))
+          }}
           aria-label="Продолжить"
         >
           Сохранить
         </MainButton>
       </div>
       <div className={styles.profileAvatarWrap}>
-        <img
-          className={styles.avatar}
-          src={removeLastEl(avatar)}
-          alt=""
-        />
-        <div className={styles.galleryEdit}>
-          <svg width="24" height="24">
-            <use href="/sprites.svg#gallery-edit" />
+        {avatarValue && (
+          <img src={removeLastEl(avatarValue)} alt="Аватар пользователя" className={styles.avatar} />
+        )}
+        {!avatarValue && (
+          <svg
+            className={styles['user-avatar']}
+            width="244"
+            height="244"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use href="#icon-user-circle" />
           </svg>
+        )}
+        <div className={styles.galleryEdit}>
+          <label htmlFor="avatar">
+            <svg width="24" height="24">
+              <use href="/sprites.svg#gallery-edit" />
+            </svg>
+            <input
+              type="file"
+              id="avatar"
+              className={styles.hiddenInput}
+              multiple={false}
+              onChange={handleAvatarChange}
+              aria-label="Выберите изображения навыка"
+            />
+          </label>
         </div>
       </div>
     </div>

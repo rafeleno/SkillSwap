@@ -122,10 +122,6 @@ export const userSlice = createSlice({
         localStorage.setItem('user', JSON.stringify(state.user))
       }
     },
-    resetUser: (state) => {
-      state.user = null
-      localStorage.removeItem('user')
-    },
   },
   extraReducers: (builder) => {
     builder
@@ -213,7 +209,6 @@ export const selectFavourites = (state: RootState) => state.user.user?.favourite
 
 export const {
   setUser,
-  resetUser,
   login,
   logout,
   checkAuthStatus,
