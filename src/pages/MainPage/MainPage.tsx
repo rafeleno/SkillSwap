@@ -71,18 +71,18 @@ export const MainPage: React.FC = () => {
 
   const getRecommendedUsers = (currentUser: TUser | null, allUsers: TUser[]) => {
     // Если currentUser не существует, возвращаем топ пользователей по лайкам
-    if (!currentUser || !currentUser.skillCanTeach || !currentUser.skillCanTeach.skillId) {
-      return allUsers
-        .filter(user => user.likes >= 30) // Фильтруем пользователей с достаточным количеством лайков
-        .sort((a, b) => b.likes - a.likes) // Сортируем по убыванию лайков
-    }
+    // if (!currentUser || !currentUser.skillCanTeach || !currentUser.skillCanTeach.skillId) {
+    return allUsers
+      .filter(user => user.likes >= 30) // Фильтруем пользователей с достаточным количеством лайков
+      .sort((a, b) => b.likes - a.likes) // Сортируем по убыванию лайков
+    // }
 
-    // Если currentUser есть, фильтруем по совпадению навыков
-    return allUsers.filter((user) => {
-      return user.subcategoriesWantToLearn.some((subcat: any) =>
-        subcat.skillId === currentUser.skillCanTeach?.skillId,
-      )
-    })
+    // // Если currentUser есть, фильтруем по совпадению навыков
+    // return allUsers.filter((user) => {
+    //   return user.subcategoriesWantToLearn.some((subcat: any) =>
+    //     subcat.skillId === currentUser.skillCanTeach?.skillId,
+    //   )
+    // })
   }
 
   const recommendedUsers = getRecommendedUsers(currentUser, users).slice(0, 9)
