@@ -93,8 +93,8 @@ export const MainPage: React.FC = () => {
 
   const handleLike = (userId: string) => {
     if (!currentUser) {
-      // Если пользователь не авторизован, перенаправляем на страницу регистрации
-      navigate('/register')
+      // Если пользователь не авторизован, перенаправляем на страницу входа
+      navigate('/login')
       return
     }
 
