@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export const ProfilePage: React.FC<ProfilePageProps> = () => {
-
   const params = useParams<{ id: string, page: string }>()
   return (
     <div className={styles.profilePage}>
