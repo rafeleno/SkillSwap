@@ -1,12 +1,21 @@
 import type { NotificationDropdownProps } from './NotificationDropdown.types'
 import { Notification } from '@uiComponents/Notification'
 import { NotificationBell } from '@uiComponents/NotificationBell'
-import React, { useRef } from 'react'
-import { getNewNotifications, getReadNotifications } from '../../services/slices/notifications/notificationsSlice'
-import { useSelector } from '../../services/store'
+import React, { useEffect, useRef } from 'react'
+import { fetchNotifications } from '../../services/slices/notifications/action'
+import { clearReadNotifications, getNewNotifications, getReadNotifications, markAllAsRead } from '../../services/slices/notifications/notificationsSlice'
+import { useDispatch, useSelector } from '../../services/store'
 import { useClickOutside } from '../../shared/hooks/useClickOutside'
-
 import styles from './styles.module.scss'
+
+// Функция для перемешивания массива уведомлений
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
 
 export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
   isOpen,
@@ -14,6 +23,7 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
   onClick,
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null)
+  const dispatch = useDispatch()
 
   const newNotifications = useSelector(getNewNotifications)
   const viewedNotifications = useSelector(getReadNotifications)
@@ -22,6 +32,24 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
     if (isOpen)
       onClose()
   })
+
+  useEffect(() => {
+    if (isOpen) {
+      dispatch(fetchNotifications())
+    }
+  }, [isOpen, dispatch])
+
+  const handleMarkAllAsRead = () => {
+    dispatch(markAllAsRead())
+  }
+
+  const handleClearReadNotifications = () => {
+    dispatch(clearReadNotifications())
+  }
+
+  // Перемешиваем уведомления и берем первые 2
+  const randomNewNotifications = shuffleArray([...newNotifications]).slice(0, 2)
+  const randomViewedNotifications = shuffleArray([...viewedNotifications]).slice(0, 2)
 
   return (
     <div ref={wrapperRef} className={styles['dropdown-wrapper']}>
@@ -35,13 +63,13 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
           <div className={styles.section}>
             <div className={styles.header}>
               <h2 className={styles.sectionTitle}>Новые уведомления</h2>
-              <button className={styles['mark-all']}>Прочитать все</button>
+              <button className={styles['mark-all']} onClick={handleMarkAllAsRead}>Прочитать все</button>
             </div>
 
             {newNotifications.length > 0
               ? (
                   <div className={styles['notification-list']}>
-                    {newNotifications.map(notification => (
+                    {randomNewNotifications.map(notification => (
                       <Notification
                         key={notification.id}
                         isNew={notification.isNew}
@@ -71,13 +99,13 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
           <div className={styles.section}>
             <div className={styles.header}>
               <h2 className={styles.sectionTitle}>Просмотренные</h2>
-              <button className={styles['clear-all']}>Очистить</button>
+              <button className={styles['clear-all']} onClick={handleClearReadNotifications}>Очистить</button>
             </div>
 
             {viewedNotifications.length > 0
               ? (
                   <div className={styles['notification-list']}>
-                    {viewedNotifications.map(notification => (
+                    {randomViewedNotifications.map(notification => (
                       <Notification
                         key={notification.id}
                         isNew={false}

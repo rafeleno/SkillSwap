@@ -1,7 +1,8 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
+import { fetchNotifications } from './action'
 
-interface TNotification {
+export interface TNotification {
   id: number
   type: 'offer' | 'accepted'
   userName: string
@@ -12,11 +13,15 @@ interface TNotification {
 interface TNotificationsState {
   newNotifications: TNotification[]
   readNotifications: TNotification[]
+  loading: boolean
+  error: string | null
 }
 
 const initialState: TNotificationsState = {
   newNotifications: [],
   readNotifications: [],
+  loading: false,
+  error: null,
 }
 
 export const notificationsSlice = createSlice({
@@ -50,6 +55,22 @@ export const notificationsSlice = createSlice({
     clearReadNotifications: (state) => {
       state.readNotifications = []
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchNotifications.pending, (state) => {
+        state.loading = true
+        state.error = null
+      })
+      .addCase(fetchNotifications.fulfilled, (state, action: PayloadAction<TNotification[]>) => {
+        state.newNotifications = action.payload.filter(n => n.isNew)
+        state.readNotifications = action.payload.filter(n => !n.isNew)
+        state.loading = false
+      })
+      .addCase(fetchNotifications.rejected, (state, action: PayloadAction<any>) => {
+        state.loading = false
+        state.error = action.payload
+      })
   },
   selectors: {
     getNewNotifications: state => state.newNotifications,

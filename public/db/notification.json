@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "type": "offer",
+    "userName": "Николай",
+    "date": "сегодня",
+    "isNew": true
+  },
+  {
+    "id": 2,
+    "type": "accepted",
+    "userName": "Татьяна",
+    "date": "вчера",
+    "isNew": false
+  },
+  {
+    "id": 3,
+    "type": "offer",
+    "userName": "Игорь",
+    "date": "2 дня назад",
+    "isNew": true
+  },
+  {
+    "id": 4,
+    "type": "accepted",
+    "userName": "Мария",
+    "date": "3 дня назад",
+    "isNew": false
+  },
+  {
+    "id": 5,
+    "type": "offer",
+    "userName": "Алексей",
+    "date": "4 дня назад",
+    "isNew": true
+  },
+  {
+    "id": 6,
+    "type": "accepted",
+    "userName": "Ольга",
+    "date": "5 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 7,
+    "type": "offer",
+    "userName": "Сергей",
+    "date": "6 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 8,
+    "type": "accepted",
+    "userName": "Елена",
+    "date": "7 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 9,
+    "type": "offer",
+    "userName": "Дмитрий",
+    "date": "8 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 10,
+    "type": "accepted",
+    "userName": "Анна",
+    "date": "9 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 11,
+    "type": "offer",
+    "userName": "Виктор",
+    "date": "10 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 12,
+    "type": "accepted",
+    "userName": "Ксения",
+    "date": "11 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 13,
+    "type": "offer",
+    "userName": "Павел",
+    "date": "12 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 14,
+    "type": "accepted",
+    "userName": "Маргарита",
+    "date": "13 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 15,
+    "type": "offer",
+    "userName": "Анастасия",
+    "date": "14 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 16,
+    "type": "accepted",
+    "userName": "Роман",
+    "date": "15 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 17,
+    "type": "offer",
+    "userName": "Светлана",
+    "date": "16 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 18,
+    "type": "accepted",
+    "userName": "Артем",
+    "date": "17 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 19,
+    "type": "offer",
+    "userName": "Евгений",
+    "date": "18 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 20,
+    "type": "accepted",
+    "userName": "Тимур",
+    "date": "19 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 21,
+    "type": "offer",
+    "userName": "Наталья",
+    "date": "20 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 22,
+    "type": "accepted",
+    "userName": "Валентин",
+    "date": "21 день назад",
+    "isNew": false
+  },
+  {
+    "id": 23,
+    "type": "offer",
+    "userName": "Кирилл",
+    "date": "22 дня назад",
+    "isNew": true
+  },
+  {
+    "id": 24,
+    "type": "accepted",
+    "userName": "Людмила",
+    "date": "23 дня назад",
+    "isNew": false
+  },
+  {
+    "id": 25,
+    "type": "offer",
+    "userName": "Станислав",
+    "date": "24 дня назад",
+    "isNew": true
+  },
+  {
+    "id": 26,
+    "type": "accepted",
+    "userName": "Вера",
+    "date": "25 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 27,
+    "type": "offer",
+    "userName": "Григорий",
+    "date": "26 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 28,
+    "type": "accepted",
+    "userName": "Нина",
+    "date": "27 дней назад",
+    "isNew": false
+  },
+  {
+    "id": 29,
+    "type": "offer",
+    "userName": "Федор",
+    "date": "28 дней назад",
+    "isNew": true
+  },
+  {
+    "id": 30,
+    "type": "accepted",
+    "userName": "София",
+    "date": "29 дней назад",
+    "isNew": false
+  }
+]
