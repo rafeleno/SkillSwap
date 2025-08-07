@@ -4,14 +4,12 @@ import type { RegisterModalProps } from './RegisterModal.types'
 import { RegisterModalContent } from '@uiComponents/RegisterModalContent'
 import { RegisterStepThree } from '@uiComponents/RegisterStepThree'
 import { RegisterModalContentStepTwo } from '@widgetComponents/RegisterModalContentStepTwo'
-import React, { useCallback, useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { selectAllCategories, selectCategoryById } from '../../services/slices/skill/skillSlice'
+import { selectAllCategories } from '../../services/slices/skill/skillSlice'
 import { registerUser } from '../../services/slices/user/thunks'
-import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice'
 import { useDispatch, useSelector } from '../../services/store'
 import { RegisterContext } from '../../shared/contexts/RegisterContext/RegisterContext'
-import { useValidation } from '../../shared/hooks/useValidation'
 import styles from './styles.module.scss'
 
 export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) => {
@@ -46,9 +44,6 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) 
 
   const onSubmit: FormEventHandler = (event) => {
     event.preventDefault()
-    console.log(stepOneStates)
-    console.log(stepTwoStates)
-    console.log(stepThreeStates)
 
     const images = stepThreeStates.filesState ? stepThreeStates.filesState : []
     // const avatar = stepTwoStates.avatarState ? stepTwoStates.avatarState : null
@@ -80,7 +75,6 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ totalSteps = 3 }) 
       password: stepOneStates.passwordState[0],
     }
     dispatch(registerUser(userData)).then(() => {
-      console.log('User registered:', userData)
       navigate('/')
     })
 

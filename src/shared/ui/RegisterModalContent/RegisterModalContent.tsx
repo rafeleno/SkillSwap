@@ -1,9 +1,9 @@
 import type { InputProps } from '@uiComponents/PrimaryTextInput/Input.types'
-import type { RegisterModalContentProps, TInitialInputs } from './RegisterModalContent.types'
+import type { RegisterModalContentProps } from './RegisterModalContent.types'
 import light from '@images/modalImages/light-bulb.png'
 import { MainButton } from '@uiComponents/MainButton'
 import { PrimaryTextInput } from '@uiComponents/PrimaryTextInput'
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { RegisterContext } from '../../contexts/RegisterContext/RegisterContext'
 import { useValidation } from '../../hooks/useValidation'
 import styles from './styles.module.scss'
@@ -16,7 +16,7 @@ export const RegisterModalContent: React.FC<RegisterModalContentProps> = ({
   const [password] = stepOneStates.passwordState
   const [email] = stepOneStates.emailState
   const isValid = useValidation([
-    password.length > 8,
+    password.length > 7,
     /.[^\n\r@\u2028\u2029]*@.+\..+/.test(email),
   ])
 
