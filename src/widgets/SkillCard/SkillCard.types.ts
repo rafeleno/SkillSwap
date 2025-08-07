@@ -4,4 +4,5 @@ export interface SkillCardProps {
   category: string
   description: string
   photos: string[]
+  userId: string
 }

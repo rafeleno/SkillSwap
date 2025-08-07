@@ -4,10 +4,16 @@ import { LikeButton } from '@uiComponents/LikeButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { Tag } from '@uiComponents/Tag'
 import React from 'react'
+import { selectCurrentUser } from '../../services/slices/user/userSlice'
+import { useSelector } from '../../services/store'
 import styles from './styles.module.scss'
 
 export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike }) => {
   const { avatar, name, location, age, description, skillCanTeach, subcategoriesWantToLearn, id } = user
+  // Получаем текущего пользователя и его избранных из Redux
+  const currentUser = useSelector(selectCurrentUser)
+  // Определяем, находится ли этот пользователь в избранном у текущего пользователя
+  const isLiked = currentUser?.favourites?.includes(id) || false
 
   const handleLike = () => {
     if (onLike)
@@ -39,6 +45,7 @@ export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike 
             <LikeButton
               className={styles.favorite}
               onClick={handleLike}
+              isActive={isLiked}
               aria-label={`Добавить ${name} в избранное`}
             />
           )}

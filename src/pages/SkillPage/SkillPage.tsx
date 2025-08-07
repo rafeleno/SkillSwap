@@ -20,7 +20,14 @@ export const SkillPage: React.FC<SkillPageProps> = () => {
           ? (
               <div className={styles.wrapper}>
                 <UserCard type="detailed" user={currentSwap} />
-                <SkillCard type="view" title={currentSwap.skillCanTeach.name} category={currentSwap.skillCanTeach.name} description={currentSwap.skillCanTeach.description} photos={currentSwap.images} />
+                <SkillCard
+                  type="view"
+                  title={currentSwap.skillCanTeach.name}
+                  category={currentSwap.skillCanTeach.name}
+                  description={currentSwap.skillCanTeach.description}
+                  photos={currentSwap.images}
+                  userId={currentSwap.id}
+                />
               </div>
             )
           : (

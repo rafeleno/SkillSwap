@@ -1,20 +1,35 @@
 import type { SkillCardProps } from './SkillCard.types'
 import { IconButton } from '@uiComponents/IconButton'
+import { LikeButton } from '@uiComponents/LikeButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { NotificationContent } from '@uiComponents/NotificationContent'
 import { Modal } from '@widgetComponents/Modal'
 import React, { useState } from 'react'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { selectCurrentUser, toggleFavourites } from '../../services/slices/user/userSlice'
+import { useDispatch, useSelector } from '../../services/store'
 import styles from './styles.module.scss'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/scrollbar'
 
-export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, description, photos }) => {
+export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, description, photos, userId }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
+
+  const dispatch = useDispatch()
+  // Получаем текущего пользователя и его избранных из Redux
+  const currentUser = useSelector(selectCurrentUser)
+  // Проверяем, находится ли пользователь в избранном
+  const isLiked = currentUser?.favourites?.includes(userId) || false
+
+  const handleLike = () => {
+    if (userId) {
+      dispatch(toggleFavourites(userId))
+    }
+  }
 
   return (
     <>
@@ -27,7 +42,11 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, des
         )}
         {type === 'view' && (
           <div className={styles['skill-card__options']}>
-            <IconButton onClick={() => {}} name="like"></IconButton>
+            <LikeButton
+              onClick={handleLike}
+              isActive={isLiked}
+              aria-label={isLiked ? `Убрать из избранного` : `Добавить в избранное`}
+            />
             <IconButton onClick={() => {}} name="share"></IconButton>
             <IconButton onClick={() => {}} name="more-square"></IconButton>
           </div>
