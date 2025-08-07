@@ -8,6 +8,7 @@ import { fetchUsers } from '../../services/slices/user/thunks'
 import { selectCurrentUser, selectUsers, selectUserStatus, toggleFavourites } from '../../services/slices/user/userSlice'
 import { useDispatch, useSelector } from '../../services/store'
 import styles from './styles.module.scss'
+import { FiltersTags } from '@widgetComponents/FiltersTags'
 
 export const initialFilters: FiltersState = {
   skill: [],
@@ -108,7 +109,14 @@ export const MainPage: React.FC = () => {
       {
         (filters.skill.length !== 0 || filters.locations.length !== 0)
         && (
-          <UserCardList onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
+          <div className={styles.filteredContainer}>
+            <FiltersTags
+              onFiltersChange={handleFiltersChange}
+              filters={filters}
+              setFilters={setFilters}
+            />
+            <UserCardList onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
+          </div>
         )
       }
       {

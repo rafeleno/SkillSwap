@@ -1,0 +1,8 @@
+@use '@colors' as c;
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
