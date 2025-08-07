@@ -4,12 +4,11 @@ import { useSelector } from 'react-redux'
 import { selectFilterTypes, selectGenders, selectLocations } from '../../services/slices/filter/filterSlice'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
 import { useFilters } from '../../shared/hooks/useFilters'
-import styles from './styles.module.scss'
+import { CheckboxInput } from '../../shared/ui/Checkboxinput/Checkboxinput'
+import { CheckboxParentInput } from '../../shared/ui/CheckboxParentInput'
 import { MainButton } from '../../shared/ui/MainButton'
 import { RadioInput } from '../../shared/ui/RadioInput'
-import { CheckboxParentInput } from '../../shared/ui/CheckboxParentInput'
-import { CheckboxInput } from '../../shared/ui/Checkboxinput/Checkboxinput'
-import { useLikeHandler } from 'shared/hooks/useLikeHandler'
+import styles from './styles.module.scss'
 
 // TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
 
