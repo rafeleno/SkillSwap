@@ -8,6 +8,7 @@ import { fetchUsers } from '../../services/slices/user/thunks'
 import { selectCurrentUser, selectUsers, selectUserStatus, toggleFavourites } from '../../services/slices/user/userSlice'
 import { useDispatch, useSelector } from '../../services/store'
 import styles from './styles.module.scss'
+import { useLikeHandler } from '../../shared/hooks/useLikeHandler'
 
 export const initialFilters: FiltersState = {
   skill: [],
@@ -21,6 +22,8 @@ export const MainPage: React.FC = () => {
   const users = useSelector(selectUsers)
   const userStatus = useSelector(selectUserStatus)
   const currentUser = useSelector(selectCurrentUser)
+
+  const handleLike = useLikeHandler();
 
   useEffect(() => {
     if (userStatus === 'idle') {
@@ -91,16 +94,6 @@ export const MainPage: React.FC = () => {
     navigate(`/skills/${userId}`)
   }
 
-  const handleLike = (userId: string) => {
-    if (!currentUser) {
-      // Если пользователь не авторизован, перенаправляем на страницу регистрации
-      navigate('/register')
-      return
-    }
-
-    // Если пользователь авторизован, выполняем toggleFavourites
-    dispatch(toggleFavourites(userId))
-  }
 
   return (
     <div className={styles.mainPage}>
@@ -108,7 +101,7 @@ export const MainPage: React.FC = () => {
       {
         (filters.skill.length !== 0 || filters.locations.length !== 0)
         && (
-          <UserCardList onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
+          <UserCardList onLike={handleLike} onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
         )
       }
       {

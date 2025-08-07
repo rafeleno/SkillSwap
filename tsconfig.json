@@ -7,16 +7,30 @@
     ],
     "target": "ESNext",
     "jsx": "react-jsx",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "baseUrl": "src",
     "module": "ESNext",
     "moduleResolution": "Node",
     "paths": {
-      "@widgetComponents/*": ["../src/widgets/*"],
-      "@pageComponents/*": ["../src/pages/*"],
-      "@uiComponents/*": ["../src/shared/ui/*"],
-      "@images/*": ["../public/images/*"],
-      "@svg/*": ["../public/svg/*"]
+      "@widgetComponents/*": [
+        "../src/widgets/*"
+      ],
+      "@pageComponents/*": [
+        "../src/pages/*"
+      ],
+      "@uiComponents/*": [
+        "../src/shared/ui/*"
+      ],
+      "@images/*": [
+        "../public/images/*"
+      ],
+      "@svg/*": [
+        "../public/svg/*"
+      ]
     },
     "resolveJsonModule": true,
     "allowJs": true,
@@ -25,5 +39,7 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
