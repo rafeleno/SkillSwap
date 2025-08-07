@@ -1,5 +1,6 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { FiltersState } from 'shared/hooks/useFilters'
+import { FiltersTags } from '@widgetComponents/FiltersTags'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
 import React, { useEffect, useMemo, useState } from 'react'
@@ -100,7 +101,14 @@ export const MainPage: React.FC = () => {
       {
         (filters.skill.length !== 0 || filters.locations.length !== 0)
         && (
-          <UserCardList onLike={handleLike} onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
+          <div className={styles.filteredContainer}>
+            <FiltersTags
+              onFiltersChange={handleFiltersChange}
+              filters={filters}
+              setFilters={setFilters}
+            />
+            <UserCardList onCardClick={handleCard} type="sorted" title="Подходящих предложений" buttonText="Сначала новые" buttonIconId="sort" users={filteredUsers} counter={(filteredUsers.length).toString()}></UserCardList>
+          </div>
         )
       }
       {

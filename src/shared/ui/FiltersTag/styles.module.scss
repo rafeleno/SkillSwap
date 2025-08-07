@@ -1,0 +1,26 @@
+@use '@colors' as c;
+@use '@typographyStyles' as t;
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: fit-content;
+    height: 48px;
+    font-size: t.$font-h4-size;
+    line-height: t.$font-h4-line-height;
+    font-weight: t.$font-weight-regular;
+    color: c.$color-text-primary;
+    background-color: c.$color-card-background;
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+
+.cross-button {
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
