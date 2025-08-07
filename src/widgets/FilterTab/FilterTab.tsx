@@ -1,14 +1,15 @@
 import type { FilterTabProps } from './FilterTab.types'
-import { CheckboxInput } from '@uiComponents/CheckboxInput/Checkboxinput'
-import { CheckboxParentInput } from '@uiComponents/CheckboxParentInput'
-import { MainButton } from '@uiComponents/MainButton'
-import { RadioInput } from '@uiComponents/RadioInput'
 import React, { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectFilterTypes, selectGenders, selectLocations } from '../../services/slices/filter/filterSlice'
 import { selectAllCategories } from '../../services/slices/skill/skillSlice'
 import { useFilters } from '../../shared/hooks/useFilters'
 import styles from './styles.module.scss'
+import { MainButton } from '../../shared/ui/MainButton'
+import { RadioInput } from '../../shared/ui/RadioInput'
+import { CheckboxParentInput } from '../../shared/ui/CheckboxParentInput'
+import { CheckboxInput } from '../../shared/ui/Checkboxinput/Checkboxinput'
+import { useLikeHandler } from 'shared/hooks/useLikeHandler'
 
 // TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
 
@@ -82,7 +83,7 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
       <div className={styles['filters-tab__container']}>
         <ul className={`${styles['filters-tab']} ${styles['filters-tab__bottom-fade']}`}>
           {skills.filter(item => item.parent === null).map(category => (
-          // TODO: Доделать скролл(стили)
+            // TODO: Доделать скролл(стили)
             <li key={category.id} className={styles.option}>
               <CheckboxParentInput
                 id={category.id}
