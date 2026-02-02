@@ -2,21 +2,30 @@ $color-text-primary: #253017;
 $color-text-disabled: #9ca197;
 $color-text-link: #508826;
 $color-black: #000;
+$color-white: #fff;
 
 $color-button-pressed: $color-text-link;
 $color-button-hover: #deebc5;
 
-$color-card-background: #fff;
+$color-card-background: $color-white;
 $color-input-background: $color-card-background;
 
-$color-button-hover: #deebc5;
 $color-caption: #69735d;
+$color-placeholder: #8e8e93;
 $color-toggle: #b2b9a9;
 $color-disabled: #e4e8df;
 $color-accent: #abd27a;
+$color-accent-light: rgba(171, 210, 122, 0.2);
+$color-accent-hover: rgba(171, 210, 122, 0.3);
+$color-accent-semi: rgba(171, 210, 122, 0.5);
 $color-background: #f9faf7;
 $color-alarm: #e0796e;
 $color-error: #bf3920;
+
+$color-overlay: rgba(142, 142, 142, 0.6);
+$color-shadow: rgba(37, 48, 23, 0.1);
+$color-shadow-light: rgba(37, 48, 23, 0.08);
+$color-shadow-medium: rgba(37, 48, 23, 0.15);
 
 $color-tag-business: #eee7f7;
 $color-tag-arts: #f7e7f2;

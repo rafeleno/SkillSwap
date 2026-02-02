@@ -16,6 +16,7 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 12px;
+  transition: all 0.2s ease;
 
   &.active {
     background-color: c.$color-button-hover;

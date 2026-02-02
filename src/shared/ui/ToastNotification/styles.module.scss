@@ -18,6 +18,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 .toast-notification-content {
@@ -51,6 +62,7 @@
   border-width: 1px;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.2s ease;
 
   &:hover {
     color: c.$color-caption;

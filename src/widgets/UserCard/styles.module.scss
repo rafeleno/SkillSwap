@@ -1,6 +1,5 @@
 @use '@colors' as c;
 @use '@typographyStyles' as t;
-
 .user-card {
   display: flex;
   flex-direction: column;
@@ -11,69 +10,56 @@
   background-color: c.$color-card-background;
   border-radius: 12px;
   user-select: none;
-
   &-detailed {
     height: 444px;
     padding: 32px;
   }
 }
-
 .header {
   position: relative;
   display: flex;
   gap: 12px;
   align-items: center;
 }
-
 .avatar {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
-
 .name {
   font-weight: t.$font-weight-semibold;
   font-family: OpenSans, sans-serif;
 }
-
 .meta {
   font-size: t.$font-caption-size;
 }
-
 .favorite {
   position: absolute;
   top: 0;
   right: 0;
 }
-
 .description {
   margin-top: 20px;
 }
-
 .sections,
 .section {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   &-detailed {
     gap: 24px;
   }
 }
-
 .section {
   gap: 8px;
-
   &-detailed {
     gap: 14px;
   }
 }
-
 .label {
   font-weight: t.$font-weight-medium;
 }
-
 .want-tags {
   display: flex;
   flex-wrap: wrap;

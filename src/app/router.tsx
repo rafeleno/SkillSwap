@@ -4,7 +4,7 @@ import { Footer } from '@widgetComponents/Footer'
 import { Header } from '@widgetComponents/Header'
 import React, { Suspense } from 'react'
 import { useSelector } from 'react-redux'
-import { Outlet, Route, Routes } from 'react-router-dom'
+import { Outlet, Route, Routes, useNavigate } from 'react-router-dom'
 import { Pages } from '../pages'
 import { SkillPage } from '../pages/SkillPage/SkillPage'
 import { selectCurrentUser } from '../services/slices/user/userSlice'
@@ -13,13 +13,15 @@ import styles from './styles.module.scss'
 
 // TODO: Вынести компонент
 function HeaderCompact() {
+  const navigate = useNavigate()
+
   return (
     <header className={styles.header}>
       <MainLogo />
       <MainButton
         type="tertiary"
         rightIconId="cross"
-        onClick={() => {}}
+        onClick={() => navigate(-1)}
       >
         Закрыть
       </MainButton>

@@ -1,12 +1,16 @@
 @use '@colors' as c;
 
-//  TODO: Сделать плавным как radio
 .checkbox {
   &-icon {
     width: 24px;
     height: 24px;
     margin: 2px;
     margin-right: 10px;
+    transform-origin: center;
+    transition:
+      fill 0.2s ease,
+      transform 0.2s ease;
+    fill: c.$color-text-primary;
   }
 
   &-container {
@@ -18,11 +22,27 @@
 
 .input {
   display: none;
+
+  &:checked + .checkbox-icon {
+    fill: c.$color-accent;
+  }
 }
 
 .label {
   display: flex;
   cursor: pointer;
+
+  &:hover {
+    .checkbox-icon {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    .checkbox-icon {
+      transform: scale(0.95);
+    }
+  }
 }
 
 .text {

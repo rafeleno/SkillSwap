@@ -8,7 +8,7 @@
 }
 
 .bordered {
-  border: 1px solid c.$color-caption;  
+  border: 1px solid c.$color-caption;
 }
 
 .button {
@@ -22,20 +22,21 @@
   background: c.$color-card-background;
   border: none;
   border-radius: 12px;
+  transition: border-color 0.2s ease;
 }
 
 .selected {
-  color: c.$color-text-primary;  
+  color: c.$color-text-primary;
 }
 
 .input {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 .dropdown-list {
@@ -54,7 +55,21 @@
   background: c.$color-card-background;
   border-top: none;
   border-radius: 0 0 12px 12px;
+  animation: slideDown 0.2s ease;
+}
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-list {
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -65,14 +80,14 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(255 255 255 / 30%);
+    background-color: rgba(c.$color-white, 0.3);
     background-clip: content-box;
     border: 2px solid transparent;
     border-radius: 4px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(255 255 255 / 50%);
+    background-color: rgba(c.$color-white, 0.5);
   }
 }
 
@@ -80,15 +95,16 @@
   display: flex;
   align-items: center;
   padding-left: 12px;
-  color: c.$color-text-primary;  
+  color: c.$color-text-primary;
   font-size: t.$font-h4-size;
   font-family: t.$font-secondary;
   line-height: 32px;
   background: c.$color-card-background;
   border-radius: 12px;
+  transition: background-color 0.2s ease;
 
   &:hover {
-    background: rgba(c.$color-accent, 0.3);
+    background: c.$color-accent-hover;
   }
 
   &:focus {
@@ -111,6 +127,18 @@
   padding: 0;
   background: transparent;
   border: none;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 .icon {

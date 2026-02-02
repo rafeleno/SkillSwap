@@ -40,14 +40,14 @@
     position: absolute;
     right: 9px;
     bottom: 9px;
-    stroke: #fff;
+    stroke: c.$color-white;
   }
 
   &-add {
     position: absolute;
     right: 10px;
     bottom: 10px;
-    color: #fff;
+    color: c.$color-white;
     background-color: c.$color-accent;
     border-radius: 8px;
   }

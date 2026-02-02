@@ -44,8 +44,8 @@ export const Login: React.FC<LoginProps> = ({
           </MainButton>
 
           <div className={styles.formLinks}>
-            <button className={styles.formLinksButton} onClick={onRegister}>Зарегистрироваться</button>
-            <button className={styles.formLinksButton} onClick={onForgetPassword}>Забыли пароль?</button>
+            <button className={styles.formLinksButton} type="button" onClick={onRegister}>Зарегистрироваться</button>
+            <button className={styles.formLinksButton} type="button" onClick={onForgetPassword}>Забыли пароль?</button>
           </div>
         </div>
       </form>

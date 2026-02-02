@@ -12,6 +12,14 @@
   white-space: nowrap;
   text-align: center;
   border-radius: 20px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px c.$color-shadow;
+  }
 }
 
 .tag-languages {

@@ -9,6 +9,18 @@
   padding: 80px 60px;
   background: c.$color-card-background;
   border-radius: 12px;
+  animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .backdrop {
@@ -21,5 +33,15 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(142 142 142 / 60%);
+  background-color: c.$color-overlay;
+  animation: backdropFadeIn 0.2s ease;
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

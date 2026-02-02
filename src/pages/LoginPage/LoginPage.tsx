@@ -18,7 +18,8 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
 
   // TODO: добавить функционал перехода к регистрации
   const onRegister = () => {
-    navigate('/register')
+    // replace: true чтобы модалка не попала в историю
+    navigate('/register', { replace: true })
   }
 
   // TODO: добавить функционал перехода на страницу восстановления пароля

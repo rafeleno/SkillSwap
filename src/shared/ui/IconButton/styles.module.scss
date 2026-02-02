@@ -6,9 +6,19 @@
   cursor: pointer;
   inline-size: fit-content;
   block-size: fit-content;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .svg {
   fill: none;
 }
-

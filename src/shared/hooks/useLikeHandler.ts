@@ -1,17 +1,17 @@
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { selectCurrentUser, toggleFavourites } from "../../services/slices/user/userSlice";
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { selectCurrentUser, toggleFavourites } from '../../services/slices/user/userSlice'
 
-export const useLikeHandler = () => {
-  const navigate = useNavigate();
-  const currentUser = useSelector(selectCurrentUser);
-  const dispatch = useDispatch();
+export function useLikeHandler() {
+  const navigate = useNavigate()
+  const currentUser = useSelector(selectCurrentUser)
+  const dispatch = useDispatch()
 
   const handleLike = (userId: string) => {
     if (!currentUser) {
       // Если пользователь не авторизован, перенаправляем на страницу регистрации
-      navigate('/register')
+      // replace: true чтобы модалка не попала в историю
+      navigate('/register', { replace: true })
       return
     }
 
@@ -19,5 +19,5 @@ export const useLikeHandler = () => {
     dispatch(toggleFavourites(userId))
   }
 
-  return handleLike;
+  return handleLike
 }
