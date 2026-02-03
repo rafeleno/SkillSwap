@@ -1,0 +1,18 @@
+{
+  "scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "stylelint.validate": ["css", "scss"],
+  "prettier.enableDebugLogs": true
+}

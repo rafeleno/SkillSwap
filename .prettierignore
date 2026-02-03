@@ -1,0 +1,9 @@
+dist/
+node_modules/
+*.png
+*.svg
+*.ts
+*.tsx
+*.js
+*.mjs
+*.jsx

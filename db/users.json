@@ -1,0 +1,1619 @@
+[
+  {
+    "id": "482",
+    "avatar": "/assets/images/avatars/user1.jpg",
+    "name": "Иван",
+    "location": "Санкт-Петербург",
+    "age": "34 года",
+    "gender": "male",
+    "likes": 15,
+    "description": "Привет! Люблю ритм, кофе по утрам и людей, которые не боятся пробовать новое",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "music_and_sound",
+      "name": "Игра на барабанах",
+      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
+    },
+    "images": [
+      "/assets/images/skillsImages/playing_drums1.jpg",
+      "/assets/images/skillsImages/playing_drums2.jpg",
+      "/assets/images/skillsImages/playing_drums3.jpg",
+      "/assets/images/skillsImages/playing_drums4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business",
+        "subcategoryId": "time_management",
+        "name": "Тайм-менеджмент"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Медитация"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "357",
+      "102",
+      "573",
+      "294",
+      "693",
+      "678"
+    ],
+    "email": "ivan482@mail.ru",
+    "password": "passIvan482"
+  },
+  {
+    "id": "739",
+    "avatar": "/assets/images/avatars/user2.jpg",
+    "name": "Анна",
+    "location": "Казань",
+    "age": "26 лет",
+    "gender": "female",
+    "likes": 20,
+    "description": "Танцую в душе, верю в чудеса и обожаю неожиданные повороты",
+    "skillCanTeach": {
+      "skillId": "languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
+    },
+    "images": [
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      }
+    ],
+    "favourites": [
+      "482",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680",
+      "431"
+    ],
+    "email": "anna739@mail.ru",
+    "password": "passAnna739"
+  },
+  {
+    "id": "215",
+    "avatar": "/assets/images/avatars/user3.jpg",
+    "name": "Максим",
+    "location": "Москва",
+    "age": "23 года",
+    "gender": "male",
+    "likes": 22,
+    "description": "Люблю запах новых книг, длинные прогулки и искренние разговоры",
+    "skillCanTeach": {
+      "skillId": "health",
+      "subcategoryId": "yoga_and_meditation",
+      "name": "Йога для начинающих",
+      "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
+    },
+    "images": [
+      "/assets/images/skillsImages/yoga1.jpg",
+      "/assets/images/skillsImages/yoga2.jpg",
+      "/assets/images/skillsImages/yoga3.jpg",
+      "/assets/images/skillsImages/yoga4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "maxim215@mail.ru",
+    "password": "passMaxim215"
+  },
+  {
+    "id": "604",
+    "avatar": "/assets/images/avatars/user4.jpg",
+    "name": "Илона",
+    "location": "Екатеринбург",
+    "age": "33 года",
+    "gender": "female",
+    "likes": 35,
+    "description": "Завариваю мечты вместе с утренним кофе",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "photography",
+      "name": "Основы фотографии",
+      "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
+    },
+    "images": [
+      "/assets/images/skillsImages/photography1.jpg",
+      "/assets/images/skillsImages/photography2.jpg",
+      "/assets/images/skillsImages/photography3.jpg",
+      "/assets/images/skillsImages/photography4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "team_management",
+        "name": "Управление командой"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "mindfulness",
+        "name": "Осознанность"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680",
+      "758"
+    ],
+    "email": "ilona604@mail.ru",
+    "password": "passIlona604"
+  },
+  {
+    "id": "918",
+    "avatar": "/assets/images/avatars/user5.jpg",
+    "name": "Михаил",
+    "location": "Новосибирск",
+    "age": "29 лет",
+    "gender": "male",
+    "likes": 39,
+    "description": "Кофе в руке, идеи в голове, смелость в сердце",
+    "skillCanTeach": {
+      "skillId": "business",
+      "subcategoryId": "project_management",
+      "name": "Управление проектами",
+      "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
+    },
+    "images": [
+      "/assets/images/skillsImages/project_management1.jpg",
+      "/assets/images/skillsImages/project_management2.jpg",
+      "/assets/images/skillsImages/project_management3.jpg",
+      "/assets/images/skillsImages/project_management4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "music_and_sound",
+        "name": "Фортепиано"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "speed_reading",
+        "name": "Скорочтение"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "mikhail918@mail.ru",
+    "password": "passMikhail918"
+  },
+  {
+    "id": "357",
+    "avatar": "/assets/images/avatars/user6.jpg",
+    "name": "Мария",
+    "location": "Краснодар",
+    "age": "21 год",
+    "gender": "female",
+    "likes": 37,
+    "description": "Привет! Слушаю музыку, ловлю вдохновение и не боюсь мечтать",
+    "skillCanTeach": {
+      "skillId": "languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
+    },
+    "images": [
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Йога"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680",
+      "019"
+    ],
+    "email": "maria357@mail.ru",
+    "password": "passMaria357"
+  },
+  {
+    "id": "846",
+    "avatar": "/assets/images/avatars/user7.jpg",
+    "name": "Виктория",
+    "location": "Кемерово",
+    "age": "30 лет",
+    "gender": "female",
+    "likes": 7,
+    "description": "Привет! Живу ярко, дышу глубоко и не теряю себя",
+    "skillCanTeach": {
+      "skillId": "home",
+      "subcategoryId": "cleaning_and_organization",
+      "name": "Организация пространства",
+      "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
+    },
+    "images": [
+      "/assets/images/skillsImages/home1.jpg",
+      "/assets/images/skillsImages/home2.jpg",
+      "/assets/images/skillsImages/home3.jpg",
+      "/assets/images/skillsImages/home4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "education",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "personal_brand",
+        "name": "Личный бренд"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "viktoria846@mail.ru",
+    "password": "passViktoria846"
+  },
+  {
+    "id": "102",
+    "avatar": "/assets/images/avatars/user8.jpg",
+    "name": "Елизавета",
+    "location": "Владивосток",
+    "age": "25 лет",
+    "gender": "female",
+    "likes": 3,
+    "description": "Люблю закаты, разговоры по душам и лёгкость бытия",
+    "skillCanTeach": {
+      "skillId": "health",
+      "subcategoryId": "mental_health",
+      "name": "Психологическое здоровье",
+      "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
+    },
+    "images": [
+      "/assets/images/skillsImages/mental1.jpg",
+      "/assets/images/skillsImages/mental2.jpg",
+      "/assets/images/skillsImages/mental3.jpg",
+      "/assets/images/skillsImages/mental4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "languages",
+        "subcategoryId": "japanese",
+        "name": "Японский"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "coaching",
+        "name": "Коучинг"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "573",
+      "294",
+      "680",
+      "365"
+    ],
+    "email": "elizaveta102@mail.ru",
+    "password": "passElizaveta102"
+  },
+  {
+    "id": "573",
+    "avatar": "/assets/images/avatars/user9.jpg",
+    "name": "Виктория",
+    "location": "Сочи",
+    "age": "31 год",
+    "gender": "female",
+    "likes": 47,
+    "description": "Пью кофе, строю планы и иду туда, где свет",
+    "skillCanTeach": {
+      "skillId": "health",
+      "subcategoryId": "nutrition_and_health",
+      "name": "Основы здорового питания",
+      "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
+    },
+    "images": [
+      "/assets/images/skillsImages/nutrition1.jpg",
+      "/assets/images/skillsImages/nutrition2.jpg",
+      "/assets/images/skillsImages/nutrition3.jpg",
+      "/assets/images/skillsImages/nutrition4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "languages",
+        "subcategoryId": "english",
+        "name": "Английский"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "294",
+      "680",
+      "827"
+    ],
+    "email": "viktoria573@mail.ru",
+    "password": "passViktoria573"
+  },
+  {
+    "id": "294",
+    "avatar": "/assets/images/avatars/user10.jpg",
+    "name": "Елена",
+    "location": "Красноярск",
+    "age": "28 лет",
+    "gender": "female",
+    "likes": 48,
+    "description": "Танцую, пишу, мечтаю — всё это про меня",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "drawing_and_illustration",
+      "name": "Основы рисования",
+      "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
+    },
+    "images": [
+      "/assets/images/skillsImages/drawing1.jpg",
+      "/assets/images/skillsImages/drawing2.jpg",
+      "/assets/images/skillsImages/drawing3.jpg",
+      "/assets/images/skillsImages/drawing4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "languages",
+        "subcategoryId": "spanish",
+        "name": "Испанский"
+      },
+      {
+        "skillId": "home",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "680",
+      "540"
+    ],
+    "email": "elena294@mail.ru",
+    "password": "passElena294"
+  },
+  {
+    "id": "680",
+    "avatar": "/assets/images/avatars/user11.jpg",
+    "name": "Константин",
+    "location": "Иркутск",
+    "age": "36 лет",
+    "gender": "male",
+    "likes": 4,
+    "description": "Верю в добро, людей и силу спонтанных решений",
+    "skillCanTeach": {
+      "skillId": "business",
+      "subcategoryId": "entrepreneurship",
+      "name": "Основы предпринимательства",
+      "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
+    },
+    "images": [
+      "/assets/images/skillsImages/entrepreneurship1.jpg",
+      "/assets/images/skillsImages/entrepreneurship2.jpg",
+      "/assets/images/skillsImages/entrepreneurship3.jpg",
+      "/assets/images/skillsImages/entrepreneurship4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health",
+        "subcategoryId": "physical_training",
+        "name": "Тренировки"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "teaching_skills",
+        "name": "Преподавание"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "693"
+    ],
+    "email": "konstantin680@mail.ru",
+    "password": "passKonstantin680"
+  },
+  {
+    "id": "431",
+    "avatar": "/assets/images/avatars/user12.jpg",
+    "name": "София",
+    "location": "Абакан",
+    "age": "24 года",
+    "gender": "female",
+    "likes": 41,
+    "description": "Люблю утренний свет, свежий ветер и искренние взгляды",
+    "skillCanTeach": {
+      "skillId": "languages",
+      "subcategoryId": "german",
+      "name": "Основы немецкого языка",
+      "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
+    },
+    "images": [
+      "/assets/images/skillsImages/german1.jpg",
+      "/assets/images/skillsImages/german2.jpg",
+      "/assets/images/skillsImages/german3.jpg",
+      "/assets/images/skillsImages/german4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "home",
+        "subcategoryId": "cleaning_and_organization",
+        "name": "Уборка"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "music_and_sound",
+        "name": "Музыка"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "resume_and_interview",
+        "name": "Резюме и собеседование"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "204"
+    ],
+    "email": "sofia431@mail.ru",
+    "password": "passSofia431"
+  },
+  {
+    "id": "758",
+    "avatar": "/assets/images/avatars/user13.jpg",
+    "name": "Екатерина",
+    "location": "Пермь",
+    "age": "33 года",
+    "gender": "female",
+    "likes": 43,
+    "description": "Мечтаю в большом, живу в моменте, двигаюсь вперёд",
+    "skillCanTeach": {
+      "skillId": "education",
+      "subcategoryId": "speed_reading",
+      "name": "Скорочтение",
+      "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
+    },
+    "images": [
+      "/assets/images/skillsImages/reading1.jpg",
+      "/assets/images/skillsImages/reading2.jpg",
+      "/assets/images/skillsImages/reading3.jpg",
+      "/assets/images/skillsImages/reading4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health",
+        "subcategoryId": "mental_health",
+        "name": "Здоровье"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "home",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "871"
+    ],
+    "email": "ekaterina758@mail.ru",
+    "password": "passEkaterina758"
+  },
+  {
+    "id": "019",
+    "avatar": "/assets/images/avatars/user14.jpg",
+    "name": "Дарья",
+    "location": "Ярославль",
+    "age": "26 лет",
+    "gender": "female",
+    "likes": 48,
+    "description": "Завариваю чай и запускаю новые идеи",
+    "skillCanTeach": {
+      "skillId": "home",
+      "subcategoryId": "houseplants",
+      "name": "Уход за домашними растениями",
+      "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
+    },
+    "images": [
+      "/assets/images/skillsImages/houseplants1.jpg",
+      "/assets/images/skillsImages/houseplants2.jpg",
+      "/assets/images/skillsImages/houseplants3.jpg",
+      "/assets/images/skillsImages/houseplants4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "decor_and_diy",
+        "name": "Декор"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "team_management",
+        "name": "Управление"
+      },
+      {
+        "skillId": "languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "156"
+    ],
+    "email": "daria019@mail.ru",
+    "password": "passDaria019"
+  },
+  {
+    "id": "365",
+    "avatar": "/assets/images/avatars/user15.jpg",
+    "name": "Алла",
+    "location": "Архангельск",
+    "age": "22 года",
+    "gender": "female",
+    "likes": 26,
+    "description": "Ритм в наушниках, энергия в душе, шаг в будущее",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "video_editing",
+      "name": "Видеомонтаж для начинающих",
+      "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
+    },
+    "images": [
+      "/assets/images/skillsImages/video1.jpg",
+      "/assets/images/skillsImages/video2.jpg",
+      "/assets/images/skillsImages/video3.jpg",
+      "/assets/images/skillsImages/video4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Питание"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "308"
+    ],
+    "email": "alla365@mail.ru",
+    "password": "passAlla365"
+  },
+  {
+    "id": "827",
+    "avatar": "/assets/images/avatars/user16.jpg",
+    "name": "Максим",
+    "location": "Иркутск",
+    "age": "35 лет",
+    "gender": "male",
+    "likes": 51,
+    "description": "Ценю людей с огнём внутри и лёгким сердцем",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "music_and_sound",
+      "name": "Игра на барабанах",
+      "description": "Привет! Я играю на барабанах уже больше 10 лет — от репетиций в гараже до выступлений на сцене с живыми группами. Научу основам техники (и как не отбить себе пальцы), играть любимые ритмы и разбирать песни, импровизировать и звучать уверенно даже без партитуры"
+    },
+    "images": [
+      "/assets/images/skillsImages/playing_drums1.jpg",
+      "/assets/images/skillsImages/playing_drums2.jpg",
+      "/assets/images/skillsImages/playing_drums3.jpg",
+      "/assets/images/skillsImages/playing_drums4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business",
+        "subcategoryId": "time_management",
+        "name": "Тайм-менеджмент"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Медитация"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "942"
+    ],
+    "email": "maxim827@mail.ru",
+    "password": "passMaxim827"
+  },
+  {
+    "id": "540",
+    "avatar": "/assets/images/avatars/user17.jpg",
+    "name": "Виктория",
+    "location": "Москва",
+    "age": "30 лет",
+    "gender": "female",
+    "likes": 52,
+    "description": "Люблю движение, простые радости и свежие старты",
+    "skillCanTeach": {
+      "skillId": "languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас. Мы будем практиковаться в разговоре на различные темы, чтобы вы могли свободно общаться."
+    },
+    "images": [
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "617"
+    ],
+    "email": "viktoria540@mail.ru",
+    "password": "passViktoria540"
+  },
+  {
+    "id": "693",
+    "avatar": "/assets/images/avatars/user18.jpg",
+    "name": "Анатолий",
+    "location": "Киров",
+    "age": "32 года",
+    "gender": "male",
+    "likes": 53,
+    "description": "Слушаю тишину, когда она говорит важное",
+    "skillCanTeach": {
+      "skillId": "health",
+      "subcategoryId": "yoga_and_meditation",
+      "name": "Йога для начинающих",
+      "description": "Я проведу вас через основы йоги, помогу освоить базовые позы и дыхательные техники. Занятия помогут вам расслабиться, улучшить гибкость и общее самочувствие."
+    },
+    "images": [
+      "/assets/images/skillsImages/yoga1.jpg",
+      "/assets/images/skillsImages/yoga2.jpg",
+      "/assets/images/skillsImages/yoga3.jpg",
+      "/assets/images/skillsImages/yoga4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "485"
+    ],
+    "email": "anatoliy693@mail.ru",
+    "password": "passAnatoliy693"
+  },
+  {
+    "id": "204",
+    "avatar": "/assets/images/avatars/user19.jpg",
+    "name": "Любовь",
+    "location": "Уфа",
+    "age": "24 года",
+    "gender": "female",
+    "likes": 54,
+    "description": "Кофе, идеи и немного безумства — мой идеальный рецепт",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "photography",
+      "name": "Основы фотографии",
+      "description": "Научу вас основам фотографии, включая композицию, освещение и работу с камерой. Мы будем практиковаться в различных условиях."
+    },
+    "images": [
+      "/assets/images/skillsImages/photography1.jpg",
+      "/assets/images/skillsImages/photography2.jpg",
+      "/assets/images/skillsImages/photography3.jpg",
+      "/assets/images/skillsImages/photography4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "team_management",
+        "name": "Управление командой"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "mindfulness",
+        "name": "Осознанность"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "230"
+    ],
+    "email": "lyubov204@mail.ru",
+    "password": "passLyubov204"
+  },
+  {
+    "id": "871",
+    "avatar": "/assets/images/avatars/user20.jpg",
+    "name": "Андрей",
+    "location": "Владивосток",
+    "age": "35 лет",
+    "gender": "male",
+    "likes": 55,
+    "description": "Открыт миру, идеям и новым маршрутам",
+    "skillCanTeach": {
+      "skillId": "business",
+      "subcategoryId": "project_management",
+      "name": "Управление проектами",
+      "description": "Научу вас основам управления проектами, включая планирование, организацию и контроль выполнения задач."
+    },
+    "images": [
+      "/assets/images/skillsImages/project_management1.jpg",
+      "/assets/images/skillsImages/project_management2.jpg",
+      "/assets/images/skillsImages/project_management3.jpg",
+      "/assets/images/skillsImages/project_management4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "music_and_sound",
+        "name": "Фортепиано"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "speed_reading",
+        "name": "Скорочтение"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Здоровое питание"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "759"
+    ],
+    "email": "andrey871@mail.ru",
+    "password": "passAndrey871"
+  },
+  {
+    "id": "156",
+    "avatar": "/assets/images/avatars/user21.jpg",
+    "name": "Влада",
+    "location": "Йошкар-Ола",
+    "age": "21 год",
+    "gender": "female",
+    "likes": 56,
+    "description": "Люблю тёплые слова, холодный воздух и живые чувства",
+    "skillCanTeach": {
+      "skillId": "languages",
+      "subcategoryId": "english",
+      "name": "Разговорный английский",
+      "description": "Я помогу вам уверенно говорить на английском языке, улучшить произношение и расширить словарный запас."
+    },
+    "images": [
+      "/assets/images/skillsImages/english1.jpg",
+      "/assets/images/skillsImages/english2.jpg",
+      "/assets/images/skillsImages/english3.jpg",
+      "/assets/images/skillsImages/english4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "drawing_and_illustration",
+        "name": "Рисование"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "health",
+        "subcategoryId": "yoga_and_meditation",
+        "name": "Йога"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "804"
+    ],
+    "email": "vlada156@mail.ru",
+    "password": "passVlada156"
+  },
+  {
+    "id": "308",
+    "avatar": "/assets/images/avatars/user22.jpg",
+    "name": "Дарья",
+    "location": "Самара",
+    "age": "28 лет",
+    "gender": "female",
+    "likes": 57,
+    "description": "Пишу жизнь в настоящем времени и с эмоцией",
+    "skillCanTeach": {
+      "skillId": "home",
+      "subcategoryId": "cleaning_and_organization",
+      "name": "Организация пространства",
+      "description": "Научу вас, как эффективно организовать ваше пространство, чтобы сделать его более уютным и функциональным."
+    },
+    "images": [
+      "/assets/images/skillsImages/home1.jpg",
+      "/assets/images/skillsImages/home2.jpg",
+      "/assets/images/skillsImages/home3.jpg",
+      "/assets/images/skillsImages/home4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "education",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "personal_brand",
+        "name": "Личный бренд"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "312"
+    ],
+    "email": "daria308@mail.ru",
+    "password": "passDaria308"
+  },
+  {
+    "id": "942",
+    "avatar": "/assets/images/avatars/user23.jpg",
+    "name": "Наталья",
+    "location": "Ростов-на-Дону",
+    "age": "35 лет",
+    "gender": "female",
+    "likes": 58,
+    "description": "Ценю честность, вдохновение и лёгкую иронию",
+    "skillCanTeach": {
+      "skillId": "health",
+      "subcategoryId": "mental_health",
+      "name": "Психологическое здоровье",
+      "description": "Я помогу вам разобраться в вопросах ментального здоровья, дам советы по управлению стрессом и улучшению эмоционального состояния."
+    },
+    "images": [
+      "/assets/images/skillsImages/mental1.jpg",
+      "/assets/images/skillsImages/mental2.jpg",
+      "/assets/images/skillsImages/mental3.jpg",
+      "/assets/images/skillsImages/mental4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "languages",
+        "subcategoryId": "japanese",
+        "name": "Японский"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "coaching",
+        "name": "Коучинг"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "678"
+    ],
+    "email": "natalia942@mail.ru",
+    "password": "passNatalia942"
+  },
+  {
+    "id": "617",
+    "avatar": "/assets/images/avatars/user24.jpg",
+    "name": "Ольга",
+    "location": "Челябинск",
+    "age": "31 год",
+    "gender": "female",
+    "likes": 59,
+    "description": "Живу в ритме сердца и верю в неожиданные встречи",
+    "skillCanTeach": {
+      "skillId": "health",
+      "subcategoryId": "nutrition_and_health",
+      "name": "Основы здорового питания",
+      "description": "Научу вас, как правильно составлять рацион, чтобы поддерживать здоровье и энергию на высоком уровне."
+    },
+    "images": [
+      "/assets/images/skillsImages/nutrition1.jpg",
+      "/assets/images/skillsImages/nutrition2.jpg",
+      "/assets/images/skillsImages/nutrition3.jpg",
+      "/assets/images/skillsImages/nutrition4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "business",
+        "subcategoryId": "sales_and_negotiation",
+        "name": "Навыки продаж"
+      },
+      {
+        "skillId": "languages",
+        "subcategoryId": "english",
+        "name": "Английский"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "photography",
+        "name": "Фотография"
+      }
+    ],
+    "favourites": [
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "olga617@mail.ru",
+    "password": "passOlga617"
+  },
+  {
+    "id": "485",
+    "avatar": "/assets/images/avatars/user25.jpg",
+    "name": "Мария",
+    "location": "Красноярск",
+    "age": "28 лет",
+    "gender": "female",
+    "likes": 61,
+    "description": "Пью латте и планирую что-то дерзкое",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "drawing_and_illustration",
+      "name": "Основы рисования",
+      "description": "Научу вас основам рисования, включая техники и подходы, которые помогут развить ваши навыки."
+    },
+    "images": [
+      "/assets/images/skillsImages/drawing1.jpg",
+      "/assets/images/skillsImages/drawing2.jpg",
+      "/assets/images/skillsImages/drawing3.jpg",
+      "/assets/images/skillsImages/drawing4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "languages",
+        "subcategoryId": "spanish",
+        "name": "Испанский"
+      },
+      {
+        "skillId": "home",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "project_management",
+        "name": "Управление проектами"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "personal_development",
+        "name": "Личностное развитие"
+      }
+    ],
+    "favourites": [
+      "482",
+      "215",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680",
+      "431"
+    ],
+    "email": "maria485@mail.ru",
+    "password": "passMaria485"
+  },
+  {
+    "id": "230",
+    "avatar": "/assets/images/avatars/user26.jpg",
+    "name": "Алексей",
+    "location": "Иркутск",
+    "age": "36 лет",
+    "gender": "male",
+    "likes": 62,
+    "description": "Влюбляюсь в новое и не боюсь перемен",
+    "skillCanTeach": {
+      "skillId": "business",
+      "subcategoryId": "entrepreneurship",
+      "name": "Основы предпринимательства",
+      "description": "Научу вас, как начать свой бизнес с нуля, включая идеи, планирование и реализацию."
+    },
+    "images": [
+      "/assets/images/skillsImages/entrepreneurship1.jpg",
+      "/assets/images/skillsImages/entrepreneurship2.jpg",
+      "/assets/images/skillsImages/entrepreneurship3.jpg",
+      "/assets/images/skillsImages/entrepreneurship4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health",
+        "subcategoryId": "physical_training",
+        "name": "Тренировки"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "teaching_skills",
+        "name": "Преподавание"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "acting",
+        "name": "Актёрское мастерство"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "604",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "aleksey230@mail.ru",
+    "password": "passAleksey230"
+  },
+  {
+    "id": "759",
+    "avatar": "/assets/images/avatars/user27.jpg",
+    "name": "Ольга",
+    "location": "Нижний Новгород",
+    "age": "30 лет",
+    "gender": "female",
+    "likes": 63,
+    "description": "Иду вперёд, даже если маршрут неизвестен",
+    "skillCanTeach": {
+      "skillId": "languages",
+      "subcategoryId": "german",
+      "name": "Основы немецкого языка",
+      "description": "Научу вас основам немецкого языка, включая грамматику, словарный запас и разговорные навыки."
+    },
+    "images": [
+      "/assets/images/skillsImages/german1.jpg",
+      "/assets/images/skillsImages/german2.jpg",
+      "/assets/images/skillsImages/german3.jpg",
+      "/assets/images/skillsImages/german4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "home",
+        "subcategoryId": "cleaning_and_organization",
+        "name": "Уборка"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "music_and_sound",
+        "name": "Музыка"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "resume_and_interview",
+        "name": "Резюме и собеседование"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "918",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680",
+      "758"
+    ],
+    "email": "olga759@mail.ru",
+    "password": "passOlga759"
+  },
+  {
+    "id": "804",
+    "avatar": "/assets/images/avatars/user28.jpg",
+    "name": "Виктория",
+    "location": "Пермь",
+    "age": "25 лет",
+    "gender": "female",
+    "likes": 64,
+    "description": "Люблю запах свежих страниц и ярких идей",
+    "skillCanTeach": {
+      "skillId": "education",
+      "subcategoryId": "speed_reading",
+      "name": "Скорочтение",
+      "description": "Научу вас техникам скорочтения, которые помогут вам читать быстрее и усваивать информацию эффективнее."
+    },
+    "images": [
+      "/assets/images/skillsImages/reading1.jpg",
+      "/assets/images/skillsImages/reading2.jpg",
+      "/assets/images/skillsImages/reading3.jpg",
+      "/assets/images/skillsImages/reading4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health",
+        "subcategoryId": "mental_health",
+        "name": "Здоровье"
+      },
+      {
+        "skillId": "art",
+        "subcategoryId": "video_editing",
+        "name": "Видеомонтаж"
+      },
+      {
+        "skillId": "home",
+        "subcategoryId": "repair",
+        "name": "Ремонт"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "357",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "viktoria804@mail.ru",
+    "password": "passViktoria804"
+  },
+  {
+    "id": "312",
+    "avatar": "/assets/images/avatars/user29.jpg",
+    "name": "Юлия",
+    "location": "Ярославль",
+    "age": "26 лет",
+    "gender": "female",
+    "likes": 65,
+    "description": "Мечтаю, иду, ошибаюсь, снова мечтаю",
+    "skillCanTeach": {
+      "skillId": "home",
+      "subcategoryId": "houseplants",
+      "name": "Уход за домашними растениями",
+      "description": "Научу вас, как правильно ухаживать за домашними растениями, чтобы они радовали вас своим цветением и зеленью."
+    },
+    "images": [
+      "/assets/images/skillsImages/houseplants1.jpg",
+      "/assets/images/skillsImages/houseplants2.jpg",
+      "/assets/images/skillsImages/houseplants3.jpg",
+      "/assets/images/skillsImages/houseplants4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "art",
+        "subcategoryId": "decor_and_diy",
+        "name": "Декор"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "team_management",
+        "name": "Управление"
+      },
+      {
+        "skillId": "languages",
+        "subcategoryId": "french",
+        "name": "Французский"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "846",
+      "102",
+      "573",
+      "294",
+      "680",
+      "019"
+    ],
+    "email": "yulia312@mail.ru",
+    "password": "passYulia312"
+  },
+  {
+    "id": "678",
+    "avatar": "/assets/images/avatars/user30.jpg",
+    "name": "Константин",
+    "location": "Архангельск",
+    "age": "22 года",
+    "gender": "male",
+    "likes": 66,
+    "description": "Пью эспрессо и верю в хорошее",
+    "skillCanTeach": {
+      "skillId": "art",
+      "subcategoryId": "video_editing",
+      "name": "Видеомонтаж для начинающих",
+      "description": "Научу вас основам видеомонтажа, включая работу с программами и создание интересных видео."
+    },
+    "images": [
+      "/assets/images/skillsImages/video1.jpg",
+      "/assets/images/skillsImages/video2.jpg",
+      "/assets/images/skillsImages/video3.jpg",
+      "/assets/images/skillsImages/video4.jpg"
+    ],
+    "subcategoriesWantToLearn": [
+      {
+        "skillId": "health",
+        "subcategoryId": "nutrition_and_health",
+        "name": "Питание"
+      },
+      {
+        "skillId": "business",
+        "subcategoryId": "marketing_and_advertising",
+        "name": "Маркетинг"
+      },
+      {
+        "skillId": "education",
+        "subcategoryId": "learning_skills",
+        "name": "Навыки обучения"
+      }
+    ],
+    "favourites": [
+      "482",
+      "739",
+      "215",
+      "604",
+      "918",
+      "357",
+      "102",
+      "573",
+      "294",
+      "680"
+    ],
+    "email": "konstantin678@mail.ru",
+    "password": "passKonstantin678"
+  }
+]

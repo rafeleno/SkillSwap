@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[940],{814:(e,n,t)=>{t.r(n),t.d(n,{NotFound500:()=>c});var s=t(2920),r=t(6540),a=t.n(r),o=t(5920);const u=t.p+"assets/images/error-500272856a594b2e3425f6d.png";var c=function(){var e=(0,o.Zp)();return a().createElement("div",{className:"not-found500__xJEBy"},a().createElement(s.T,{title:"На сервере произошла ошибка",description:"Попробуйте позже или вернитесь на главную страницу",isTwoButtons:!0,onClose:function(){return e("/")},image:u}))}}}]);
+//# sourceMappingURL=940.43969f8ea0fa89cdea1a.js.map

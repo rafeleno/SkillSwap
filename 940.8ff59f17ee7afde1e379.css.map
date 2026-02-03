@@ -1,0 +1,1 @@
+{"version":3,"file":"940.8ff59f17ee7afde1e379.css","mappings":"AAAA,qBAEE,mBADA,aAIA,YAFA,uBACA,UACA","sources":["webpack:///./src/pages/NotFound500/styles.module.scss"],"sourcesContent":[".not-found500 {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: auto;\n  height: 100%;\n}\n"],"names":[],"sourceRoot":""}

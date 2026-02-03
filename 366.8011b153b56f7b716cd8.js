@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[366],{8366:(e,k,s)=>{s.r(k),s.d(k,{SkillPage:()=>a.r});var a=s(7077)}}]);
