@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[963],{1344:(e,t,n)=>{n.r(t),n.d(t,{NotFound404:()=>c});var s=n(2920),r=n(6540),a=n(5920);const o=n.p+"assets/images/error-404c8ca055b6e4e6997b20f.png";var c=function(){var e=(0,a.Zp)();return r.createElement("div",{className:"not-found404__EisBV"},r.createElement(s.T,{title:"Страница не найдена",description:"К сожалению, эта страница недоступна. Вернитесь на главную страницу или попробуйте позже",isTwoButtons:!0,onClose:function(){return e("/")},image:o}))}}}]);
+//# sourceMappingURL=963.391e880b17ca89f4d9e6.js.map

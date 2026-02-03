@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[193],{5193:(e,n,u)=>{u.r(n),u.d(n,{NotFoundPage:()=>a});var t=u(6540),a=function(){return t.createElement("div",null,"NotFoundPage")}}}]);
+//# sourceMappingURL=193.5f2c94528981268da406.js.map
