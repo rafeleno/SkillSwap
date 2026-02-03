@@ -1,9 +1,14 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { merge } from 'webpack-merge'
+import common from './webpack.common.mjs'
 
-export default {
+export default merge(common, {
   mode: 'production',
   devtool: 'source-map',
+  output: {
+    publicPath: '/SkillSwap/',
+  },
 
   plugins: [
     new MiniCssExtractPlugin({
@@ -51,4 +56,4 @@ export default {
       }),
     ],
   },
-}
+})

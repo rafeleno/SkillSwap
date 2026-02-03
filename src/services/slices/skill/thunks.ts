@@ -1,11 +1,12 @@
 import type { ICategory } from './skillSlice'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { getAssetPath } from '../../../shared/utils/getAssetPath'
 
 export const fetchSkills = createAsyncThunk<ICategory[], void>(
   'skills/fetchSkills',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('/db/skills.json')
+      const response = await fetch(getAssetPath('/db/skills.json'))
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)

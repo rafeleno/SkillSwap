@@ -1,6 +1,7 @@
 import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { RootState } from '../../store'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { getAssetPath } from '../../../shared/utils/getAssetPath'
 
 export const saveUserData = createAsyncThunk(
   'user/saveData',
@@ -17,7 +18,7 @@ export const saveUserData = createAsyncThunk(
       return rejectWithValue(error.message)
     }
   },
-) // удалить
+) // TODO: удалить
 
 export const registerUser = createAsyncThunk(
   'user/register',
@@ -42,7 +43,7 @@ export const fetchUsers = createAsyncThunk(
   'user/fetchUsers',
   async (_, thunkAPI) => {
     try {
-      const response = await fetch('/db/users.json') // получаем TUser[]
+      const response = await fetch(getAssetPath('/db/users.json')) // получаем TUser[]
       const data = await response.json()
       return data
     }
@@ -56,7 +57,7 @@ export const fetchUserById = createAsyncThunk(
   'user/fetchUserById',
   async (userId: string, thunkAPI) => {
     try {
-      const response = await fetch('/db/users.json')
+      const response = await fetch(getAssetPath('/db/users.json'))
       const users: TUser[] = await response.json()
 
       const user = users.find(u => u.id === userId)

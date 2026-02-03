@@ -6,6 +6,7 @@ import { Tag } from '@uiComponents/Tag'
 import React from 'react'
 import { selectCurrentUser } from '../../services/slices/user/userSlice'
 import { useSelector } from '../../services/store'
+import { getAssetPath } from '../../shared/utils/getAssetPath'
 import styles from './styles.module.scss'
 
 export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike }) => {
@@ -33,7 +34,7 @@ export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike 
       <section>
         <header className={styles.header} aria-label={`Основные данные пользователя ${name}`}>
           <img
-            src={avatar}
+            src={getAssetPath(avatar)}
             alt={`Фото пользователя ${name}`}
             className={styles.avatar}
           />

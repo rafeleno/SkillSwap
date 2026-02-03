@@ -10,6 +10,7 @@ import { removeLastEl } from '@widgetComponents/Header/Header'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCurrentUser, updateUserField } from '../../services/slices/user/userSlice'
+import { getAssetPath } from '../../shared/utils/getAssetPath'
 import styles from './styles.module.scss'
 
 export const PersonalDataComponent: React.FC<PersonalDataComponentProps> = () => {
@@ -145,7 +146,7 @@ export const PersonalDataComponent: React.FC<PersonalDataComponentProps> = () =>
       </div>
       <div className={styles.profileAvatarWrap}>
         {avatarValue && (
-          <img src={removeLastEl(avatarValue)} alt="Аватар пользователя" className={styles.avatar} />
+          <img src={getAssetPath(removeLastEl(avatarValue))} alt="Аватар пользователя" className={styles.avatar} />
         )}
         {!avatarValue && (
           <svg

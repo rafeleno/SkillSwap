@@ -9,6 +9,7 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { selectCurrentUser, toggleFavourites } from '../../services/slices/user/userSlice'
 import { useDispatch, useSelector } from '../../services/store'
+import { getAssetPath } from '../../shared/utils/getAssetPath'
 import styles from './styles.module.scss'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
@@ -91,7 +92,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ type, title, category, des
               <SwiperSlide key={index}>
                 <img
                   className={styles['skill-card__swiper__image']}
-                  src={photo}
+                  src={getAssetPath(photo)}
                   role="img"
                   aria-label={`Изображение ${index + 1} из ${photos.length}`}
                 />

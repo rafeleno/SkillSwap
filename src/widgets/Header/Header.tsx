@@ -6,6 +6,7 @@ import { Search } from '@uiComponents/Search'
 import { SkillsPopup } from '@widgetComponents/SkillsPopup'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { getAssetPath } from '../../shared/utils/getAssetPath'
 import { NotificationDropdown } from '../NotificationDropdown'
 import styles from './styles.module.scss'
 
@@ -100,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
                     <div className={styles['user-info']}>
                       <span className={styles['user-name']}>{name}</span>
                       {avatar && (
-                        <img src={removeLastEl(avatar)} alt="Аватар пользователя" className={styles['user-avatar']} />
+                        <img src={getAssetPath(removeLastEl(avatar))} alt="Аватар пользователя" className={styles['user-avatar']} />
                       )}
                       {!avatar && (
                         <svg
