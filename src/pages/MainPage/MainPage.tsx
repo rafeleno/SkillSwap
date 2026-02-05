@@ -1,12 +1,11 @@
-import type { TUser } from '@widgetComponents/UserCard/UserCard.types'
 import type { FiltersState } from 'shared/hooks/useFilters'
 import { FiltersTags } from '@widgetComponents/FiltersTags'
 import { FilterTab } from '@widgetComponents/FilterTab'
 import { UserCardList } from '@widgetComponents/UserCardList'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { fetchUsers } from '../../services/slices/user/thunks'
-import { selectCurrentUser, selectUsers, selectUserStatus, toggleFavourites } from '../../services/slices/user/userSlice'
+import { selectUsers, selectUserStatus } from '../../services/slices/user/userSlice'
 import { useDispatch, useSelector } from '../../services/store'
 import { useLikeHandler } from '../../shared/hooks/useLikeHandler'
 import styles from './styles.module.scss'
@@ -22,7 +21,6 @@ export const MainPage: React.FC = () => {
   const navigate = useNavigate()
   const users = useSelector(selectUsers)
   const userStatus = useSelector(selectUserStatus)
-  const currentUser = useSelector(selectCurrentUser)
 
   const handleLike = useLikeHandler()
 
@@ -38,62 +36,60 @@ export const MainPage: React.FC = () => {
     if (!users)
       return []
     return users.filter((user) => {
+      // Фильтр по полу
       if (filters.gender[0] !== 'notSpecified' && user.gender !== filters.gender[0]) {
         return false
       }
+      // Фильтр по локации
       if (filters.locations.length !== 0 && !filters.locations.includes(user.location.trim())) {
         return false
       }
-      if (filters.filterType[0] === 'wantToLearn' && !filters.skill.includes(user.skillCanTeach.subcategoryId)) {
-        return false
-      }
-      const subcategoriesWantToLearnIds = user.subcategoriesWantToLearn.map(sub => sub.subcategoryId)
-      if (filters.filterType[0] === 'wantToTeach' && !filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))) {
-        return false
-      }
-      // TODO: Возможно не работает
-      // Режим фильтрации по типу "всё"
-      if (filters.skill.includes(user.skillCanTeach.subcategoryId) || filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))) {
+
+      // Если навыки не выбраны — показываем всех (прошедших предыдущие фильтры)
+      if (filters.skill.length === 0) {
         return true
       }
-      return false
+
+      const subcategoriesWantToLearnIds = user.subcategoriesWantToLearn.map(sub => sub.subcategoryId)
+
+      // Фильтр по типу
+      if (filters.filterType[0] === 'wantToLearn') {
+        return filters.skill.includes(user.skillCanTeach.subcategoryId)
+      }
+      if (filters.filterType[0] === 'wantToTeach') {
+        return filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))
+      }
+
+      // Режим "всё" — показываем если совпадает хотя бы один навык
+      return filters.skill.includes(user.skillCanTeach.subcategoryId)
+        || filters.skill.some(id => subcategoriesWantToLearnIds.includes(id))
     })
   }, [users, filters])
 
-  const handleFiltersChange = (filters: FiltersState) => {
+  const handleFiltersChange = useCallback((filters: FiltersState) => {
     setFilters(prev => ({ ...prev, ...filters }))
-  }
+  }, [])
 
-  const popularUsers = users
+  const popularUsers = useMemo(() => users
     .filter(user => user.likes >= 50)
     .sort((a, b) => b.likes - a.likes) // чтобы самые лайкнутые были первыми
-    .slice(0, 3)
+    .slice(0, 3), [users])
 
-  const newUsers = [...users]
+  const newUsers = useMemo(() => [...users]
     .sort((a, b) => Number(b.id) - Number(a.id)) // "новые" с бОльшим id
-    .slice(0, 3)
+    .slice(0, 3), [users])
 
-  const getRecommendedUsers = (currentUser: TUser | null, allUsers: TUser[]) => {
-    // Если currentUser не существует, возвращаем топ пользователей по лайкам
-    // if (!currentUser || !currentUser.skillCanTeach || !currentUser.skillCanTeach.skillId) {
-    return allUsers
+  const recommendedUsers = useMemo(() => {
+    // getRecommendedUsers logic inlined for clarity inside useMemo
+    return users
       .filter(user => user.likes >= 30) // Фильтруем пользователей с достаточным количеством лайков
       .sort((a, b) => b.likes - a.likes) // Сортируем по убыванию лайков
-    // }
+      .slice(0, 9)
+  }, [users])
 
-    // // Если currentUser есть, фильтруем по совпадению навыков
-    // return allUsers.filter((user) => {
-    //   return user.subcategoriesWantToLearn.some((subcat: any) =>
-    //     subcat.skillId === currentUser.skillCanTeach?.skillId,
-    //   )
-    // })
-  }
-
-  const recommendedUsers = getRecommendedUsers(currentUser, users).slice(0, 9)
-
-  const handleCard = (userId: string) => {
+  const handleCard = useCallback((userId: string) => {
     navigate(`/skills/${userId}`)
-  }
+  }, [navigate])
 
   return (
     <div className={styles.mainPage}>

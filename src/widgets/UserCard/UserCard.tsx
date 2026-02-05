@@ -3,28 +3,22 @@ import type { UserCardProps } from './UserCard.types'
 import { LikeButton } from '@uiComponents/LikeButton'
 import { MainButton } from '@uiComponents/MainButton'
 import { Tag } from '@uiComponents/Tag'
-import React from 'react'
-import { selectCurrentUser } from '../../services/slices/user/userSlice'
-import { useSelector } from '../../services/store'
+import React, { useCallback } from 'react'
 import { getAssetPath } from '../../shared/utils/getAssetPath'
 import styles from './styles.module.scss'
 
-export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike }) => {
+export const UserCard = React.memo<UserCardProps>(({ type, user, onClick, onLike, isLiked = false }) => {
   const { avatar, name, location, age, description, skillCanTeach, subcategoriesWantToLearn, id } = user
-  // Получаем текущего пользователя и его избранных из Redux
-  const currentUser = useSelector(selectCurrentUser)
-  // Определяем, находится ли этот пользователь в избранном у текущего пользователя
-  const isLiked = currentUser?.favourites?.includes(id) || false
 
-  const handleLike = () => {
+  const handleLike = useCallback(() => {
     if (onLike)
       onLike(id)
-  }
+  }, [onLike, id])
 
-  const handleButtonClick = () => {
+  const handleButtonClick = useCallback(() => {
     if (onClick)
       onClick(id)
-  }
+  }, [onClick, id])
 
   return (
     <article
@@ -84,4 +78,4 @@ export const UserCard: React.FC<UserCardProps> = ({ type, user, onClick, onLike 
       )}
     </article>
   )
-}
+})

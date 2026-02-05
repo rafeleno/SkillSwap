@@ -1,8 +1,12 @@
 import type { CheckboxInputProps } from './Checkboxinput.types'
-import React from 'react'
+import React, { useCallback } from 'react'
 import styles from './styles.module.scss'
 
-export const CheckboxInput: React.FC<CheckboxInputProps> = ({ checked, name, onChange, children }) => {
+export const CheckboxInput = React.memo<CheckboxInputProps>(({ checked, name, onChange, filterKey, filterId, children }) => {
+  const handleChange = useCallback(() => {
+    onChange(filterKey, filterId)
+  }, [onChange, filterKey, filterId])
+
   return (
     <div className={styles['checkbox-container']}>
       <label className={styles.label}>
@@ -10,7 +14,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({ checked, name, onC
           type="checkbox"
           checked={checked}
           name={name}
-          onChange={onChange}
+          onChange={handleChange}
           className={styles.input}
         />
         <svg className={styles['checkbox-icon']}>
@@ -20,4 +24,4 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({ checked, name, onC
       </label>
     </div>
   )
-}
+})

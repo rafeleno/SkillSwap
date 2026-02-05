@@ -2,8 +2,10 @@ export interface CheckboxParentInputProps {
   id: string
   checked: boolean
   name: string
-  onChange: () => void
+  onChange: (filterKey?: string, filterId?: string) => void
+  filterKey?: string
+  filterId?: string
   openState: boolean
-  setOpenState: (prev: any) => any
+  setOpenState: React.Dispatch<React.SetStateAction<Record<string, boolean>>>
   children: React.ReactNode
 }

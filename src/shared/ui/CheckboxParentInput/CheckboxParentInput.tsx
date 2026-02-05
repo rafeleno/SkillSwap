@@ -1,8 +1,16 @@
 import type { CheckboxParentInputProps } from './CheckboxParentInput.types'
-import React from 'react'
+import React, { useCallback } from 'react'
 import styles from './styles.module.scss'
 
-export const CheckboxParentInput: React.FC<CheckboxParentInputProps> = ({ id, checked, name, onChange, openState, setOpenState, children }) => {
+export const CheckboxParentInput = React.memo<CheckboxParentInputProps>(({ id, checked, name, onChange, filterKey, filterId, openState, setOpenState, children }) => {
+  const handleToggleOpen = useCallback(() => {
+    setOpenState((prev: Record<string, boolean>) => ({ ...prev, [id]: !prev[id] }))
+  }, [id, setOpenState])
+
+  const handleChange = useCallback(() => {
+    onChange(filterKey, filterId)
+  }, [onChange, filterKey, filterId])
+
   return (
     <div className={`${styles['checkbox-container']} ${openState && styles['checkbox-open']}`}>
       <div className={styles['checkbox-content']}>
@@ -11,7 +19,7 @@ export const CheckboxParentInput: React.FC<CheckboxParentInputProps> = ({ id, ch
             type="checkbox"
             checked={checked}
             name={name}
-            onChange={onChange}
+            onChange={handleChange}
             className={styles.input}
           />
           <svg className={styles['checkbox-icon']}>
@@ -20,11 +28,11 @@ export const CheckboxParentInput: React.FC<CheckboxParentInputProps> = ({ id, ch
           <span className={styles.text}>{children}</span>
         </label>
       </div>
-      <button onClick={() => setOpenState(prev => ({ ...prev, [id]: !prev[id] }))} className={styles['arrow-button']}>
+      <button onClick={handleToggleOpen} className={styles['arrow-button']}>
         <svg className={`${styles.arrow} ${!openState && styles['arrow-closed']}`}>
           <use href="#icon-arrow" />
         </svg>
       </button>
     </div>
   )
-}
+})

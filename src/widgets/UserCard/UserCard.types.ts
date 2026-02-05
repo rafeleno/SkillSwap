@@ -28,4 +28,5 @@ export interface UserCardProps {
   user: TUser
   onClick?: (userId: string) => void
   onLike?: (userId: string) => void
+  isLiked?: boolean
 }

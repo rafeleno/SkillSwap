@@ -127,7 +127,7 @@ export const PersonalDataComponent: React.FC<PersonalDataComponentProps> = () =>
             dispatch(updateUserField({ field: 'location', value: locationValue }))
             dispatch(updateUserField({ field: 'age', value: date }))
             dispatch(updateUserField({ field: 'gender', value: genderValue }))
-            dispatch(updateUserField({ field: 'email', value: emailState }))
+            dispatch(updateUserField({ field: 'email', value: emailState[0] }))
 
             localStorage.setItem('user', JSON.stringify({
               description: descriptionValue,
@@ -136,7 +136,7 @@ export const PersonalDataComponent: React.FC<PersonalDataComponentProps> = () =>
               location: locationValue,
               age: date,
               gender: genderValue,
-              email: emailState,
+              email: emailState[0],
             }))
           }}
           aria-label="Продолжить"

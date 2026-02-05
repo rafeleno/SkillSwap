@@ -2,16 +2,18 @@ import type { UserCardListProps } from './UserCardList.types'
 import { MainButton } from '@uiComponents/MainButton'
 import { UserCard } from '@widgetComponents/UserCard'
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { selectCurrentUser } from '../../services/slices/user/userSlice'
 import styles from './styles.module.scss'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/scrollbar'
 
-export const UserCardList: React.FC<UserCardListProps> = ({
+export const UserCardList = React.memo<UserCardListProps>(({
   type,
   title,
   counter,
@@ -27,6 +29,8 @@ export const UserCardList: React.FC<UserCardListProps> = ({
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
 
+  const currentUser = useSelector(selectCurrentUser)
+
   const renderEmptyState = () => (
     <p className={styles.userCardListEmpty} aria-label="Нет пользователей для отображения">
       Нет пользователей для отображения
@@ -37,19 +41,24 @@ export const UserCardList: React.FC<UserCardListProps> = ({
     users.length
       ? (
           <ul className={styles.cardGrid} role="list" aria-label="Список пользователей">
-            {users.map(user => (
-              <li key={user.id} className={styles.cardItem} aria-label={`Карточка пользователя ${user.name}`}>
-                <UserCard
-                  type="preview"
-                  user={user}
-                  onClick={() => onCardClick(user.id)}
-                  onLike={onLike}
-                />
-              </li>
-            ))}
+            {users.map((user) => {
+              const isLiked = currentUser?.favourites?.includes(user.id)
+              return (
+                <li key={user.id} className={styles.cardItem} aria-label={`Карточка пользователя ${user.name}`}>
+                  <UserCard
+                    type="preview"
+                    user={user}
+                    onClick={onCardClick}
+                    onLike={onLike}
+                    isLiked={isLiked}
+                  />
+                </li>
+              )
+            })}
           </ul>
         )
       : renderEmptyState()
+
   const renderButton = () =>
     buttonText && (
       <MainButton
@@ -63,6 +72,7 @@ export const UserCardList: React.FC<UserCardListProps> = ({
         {buttonText}
       </MainButton>
     )
+
   const renderSection = (headerContent: React.ReactNode, bodyContent: React.ReactNode) => (
     <section className={`${styles.userCardList} ${className || ''}`} aria-label={title}>
       <header className={styles.header} aria-label={title}>{headerContent}</header>
@@ -107,17 +117,21 @@ export const UserCardList: React.FC<UserCardListProps> = ({
                       setIsEnd(swiper.isEnd)
                     }}
                   >
-                    {users.map((user, index) => (
-                      <SwiperSlide key={user.id}>
-                        <UserCard
-                          type="preview"
-                          user={user}
-                          onClick={onCardClick}
-                          onLike={onLike}
-                          aria-label={`Профиль ${index + 1} из ${users.length}`}
-                        />
-                      </SwiperSlide>
-                    ))}
+                    {users.map((user, index) => {
+                      const isLiked = currentUser?.favourites?.includes(user.id)
+                      return (
+                        <SwiperSlide key={user.id}>
+                          <UserCard
+                            type="preview"
+                            user={user}
+                            onClick={onCardClick}
+                            onLike={onLike}
+                            isLiked={isLiked}
+                            aria-label={`Профиль ${index + 1} из ${users.length}`}
+                          />
+                        </SwiperSlide>
+                      )
+                    })}
                     <nav>
                       <button
                         className={`${styles.swiperButton} ${styles.swiperButtonPrev} ${isBeginning ? styles.swiperButtonHidden : ''}`}
@@ -150,4 +164,4 @@ export const UserCardList: React.FC<UserCardListProps> = ({
       )}
     </>
   )
-}
+})

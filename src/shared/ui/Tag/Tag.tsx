@@ -60,7 +60,7 @@ const TAG_CONFIG: Record<TagVariant, { text: string, colorClass: string }> = {
   more: { text: '', colorClass: styles['tag-more'] },
 }
 
-export const Tag: React.FC<TagProps> = ({ variant, count, className = '' }) => {
+export const Tag = React.memo<TagProps>(({ variant, count, className = '' }) => {
   const config = TAG_CONFIG[variant]
 
   if (!config) {
@@ -83,4 +83,4 @@ export const Tag: React.FC<TagProps> = ({ variant, count, className = '' }) => {
       {content}
     </span>
   )
-}
+})

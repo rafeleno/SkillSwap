@@ -2,7 +2,7 @@ import type { LikeButtonProps } from './LikeButton.types'
 import React from 'react'
 import styles from './styles.module.scss'
 
-export const LikeButton: React.FC<LikeButtonProps> = ({
+export const LikeButton = React.memo<LikeButtonProps>(({
   onClick,
   isActive = false,
   className = '',
@@ -22,4 +22,4 @@ export const LikeButton: React.FC<LikeButtonProps> = ({
       </svg>
     </button>
   )
-}
+})

@@ -10,8 +10,6 @@ import { MainButton } from '../../shared/ui/MainButton'
 import { RadioInput } from '../../shared/ui/RadioInput'
 import styles from './styles.module.scss'
 
-// TODO: Можо меморизировать чекбоксы и радиокнопки, при выборе одной все ререндорятся
-
 // TODO: Вынести базовые значения в глобал
 // Парметры типа "Все", которые не должны влиять на "наличее фильтров"
 export const essentialFiltersOptions = ['all', 'notSpecified']
@@ -33,8 +31,6 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
       return acc
     }, {} as Record<string, boolean>),
   )
-  // const optionalFilters =
-  // useMemo - Излишество
 
   const filtersCount = useMemo(() => {
     return Object.keys(filters).reduce((acc, key) => {
@@ -55,9 +51,7 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
         </h2>
         {!!filtersCount && (
           <MainButton
-            onClick={() => {
-              clearAllFilters()
-            }}
+            onClick={clearAllFilters}
             type="compact"
             rightIconId="cross"
           >
@@ -71,7 +65,9 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
             <RadioInput
               checked={filters.filterType?.includes(filterType.id) ?? false}
               name={filterType.name}
-              onChange={() => toggleFilter('filterType', filterType.id)}
+              onChange={toggleFilter}
+              filterKey="filterType"
+              filterId={filterType.id}
             >
               {filterType.name}
             </RadioInput>
@@ -82,13 +78,14 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
       <div className={styles['filters-tab__container']}>
         <ul className={`${styles['filters-tab']} ${styles['filters-tab__bottom-fade']}`}>
           {skills.filter(item => item.parent === null).map(category => (
-            // TODO: Доделать скролл(стили)
             <li key={category.id} className={styles.option}>
               <CheckboxParentInput
                 id={category.id}
                 checked={filters.skill?.includes(category.id) ?? false}
                 name={category.name}
-                onChange={() => toggleFilter('skill', category.id)}
+                onChange={toggleFilter}
+                filterKey="skill"
+                filterId={category.id}
                 openState={openStates[category.id]}
                 setOpenState={setOpenStates}
               >
@@ -100,9 +97,11 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
                   {category.children.map(subCategory => (
                     <li key={subCategory.id} className={styles.option}>
                       <CheckboxInput
-                        checked={filters.skill?.includes(subCategory.id) ?? false} // Костыль
+                        checked={filters.skill?.includes(subCategory.id) ?? false}
                         name={subCategory.name}
-                        onChange={() => toggleFilter('skill', subCategory.id)}
+                        onChange={toggleFilter}
+                        filterKey="skill"
+                        filterId={subCategory.id}
                       >
                         {subCategory.name}
                       </CheckboxInput>
@@ -123,7 +122,9 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
             <RadioInput
               checked={filters.gender?.includes(gender.id) ?? false}
               name={gender.name}
-              onChange={() => toggleFilter('gender', gender.id)}
+              onChange={toggleFilter}
+              filterKey="gender"
+              filterId={gender.id}
             >
               {gender.name}
             </RadioInput>
@@ -139,7 +140,9 @@ export const FilterTab: React.FC<FilterTabProps> = ({ onFiltersChange, filters, 
               <CheckboxInput
                 checked={filters.locations?.includes(location.id) ?? false}
                 name={location.name}
-                onChange={() => toggleFilter('locations', location.id)}
+                onChange={toggleFilter}
+                filterKey="locations"
+                filterId={location.id}
               >
                 {location.name}
               </CheckboxInput>

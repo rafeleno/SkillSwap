@@ -100,7 +100,7 @@ export function useFilters({
         return newFilters
       })
     },
-    [onChange],
+    [onChange, skillsMap, setFilters],
   )
 
   const clearAllFilters = useCallback(() => {
